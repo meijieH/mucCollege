@@ -1,0 +1,9 @@
+/*我的课程*/
+
+/*课程盒子*/
+.ml-ls-b{
+	padding: 0;
+}
+.ml-ls-b-info a:hover{
+	text-decoration: none;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+     <constant name="struts.i18n.encoding" value="utf-8"/>
+     <constant name="struts.devMode" value="true" />
+     <!--Struts2中Action对象的创建交给spring完成-->
+     <constant name="struts.objectFactory" value="spring" />      
+     <package name="admin" namespace="/admin" extends="struts-default">
+	        <action name="admin_*" class="adminAction" method="{1}">
+	        	<result name="index">/admin/index.jsp</result> 
+	        	<result name="input">/admin/login.jsp</result>
+	        	<result name="show_info">/admin/show_info.jsp</result>
+	        	<result name="show_edit">/admin/show_edit.jsp</result>
+	        	<result name="all_student">/admin/all_student.jsp</result>
+	        	<result name="all_teacher">/admin/all_teacher.jsp</result>
+	        	<result name="view_student">/admin/view_student.jsp</result>
+	        	<result name="view_teacher">/admin/view_teacher.jsp</result>
+	        	<result name="edit_student">/admin/edit_student.jsp</result>
+	        	<result name="edit_teacher">/admin/edit_teacher.jsp</result>
+	        	<result name="add_question">/admin/add_question.jsp</result>
+	        	<result name="view_question">/admin/view_question.jsp</result>
+	        	<result name="all_question">/admin/all_question.jsp</result>
+	        	<result name="edit_question">/admin/edit_question.jsp</result>
+	        	<result name="add_course">/admin/add_course.jsp</result>
+	        	<result name="view_course">/admin/view_course.jsp</result>
+	        	<result name="edit_course">/admin/edit_course.jsp</result>
+	        </action>  
+	 </package> 
+	 <package name="student" namespace="/student" extends="struts-default">
+	        <action name="student_*" class="studentAction" method="{1}">
+	        	<result name="index">/student/student.jsp</result> 
+	        	<result name="input">/student/stud_login.jsp</result> 
+	        </action>  
+	 </package>
+	 <!-- 杨赟 -->
+	 <!-- 我只负责管理teacher包，只需复制修改teacher包中的配置信息，请不要用该struts.xml覆盖你原有的文件! -->
+	<package name="teacher" namespace="/teacher" extends="struts-default">
+		<global-results>
+			<result>/teacher/testresult.jsp</result>
+			<result name="index">/teacher/index.jsp</result><!-- teacher的主页 -->
+		</global-results>
+		<action name="teacher_*" class="com.mucCollege.action.TeacherAction" method="{1}">
+			<result name="input">/teacher/teacherActionTest.jsp</result><!-- 当表单验证不通过时返回的输入页面 -->
+			<result name="*Success">/teacher/testresult.jsp</result><!-- 成功时返回的页面，请通过{1}来获取action的前缀 -->
+			<result name="*Fail">/teacher/testresult.jsp</result><!-- 失败时返回的页面-->
+			<result name="*Exception">/index.jsp</result><!-- 异常界面，暂时不会返回异常页面 -->
+		</action>
+	</package>
+
+</struts>

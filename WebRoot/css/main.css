@@ -1,0 +1,27 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	font-family:"Microsoft Yahei",微软雅黑;
+}
+
+/*学生页面*/
+ul>li{
+	list-style: none;
+}
+nav ul{
+	float: right;
+}
+nav ul li{
+	float: left;
+	margin-left: 20px;
+}
+aside{
+	clear:left;
+}
+aside ul li{
+    margin-top: 10px;
+}
+
+
