@@ -18,8 +18,7 @@ public class Testpaper implements java.io.Serializable {
 	private Integer totalscore;
 	private Integer totaltime;
 	private Set tests = new HashSet(0);
-	private Set testques = new HashSet(0);
-	private Set testques_1 = new HashSet(0);
+	private Set blocks = new HashSet(0);
 	private Set tests_1 = new HashSet(0);
 
 	// Constructors
@@ -31,15 +30,14 @@ public class Testpaper implements java.io.Serializable {
 	/** full constructor */
 	public Testpaper(String testpapername, Integer creator,
 			Integer questionnum, Integer totalscore, Integer totaltime,
-			Set tests, Set testques, Set testques_1, Set tests_1) {
+			Set tests, Set blocks, Set tests_1) {
 		this.testpapername = testpapername;
 		this.creator = creator;
 		this.questionnum = questionnum;
 		this.totalscore = totalscore;
 		this.totaltime = totaltime;
 		this.tests = tests;
-		this.testques = testques;
-		this.testques_1 = testques_1;
+		this.blocks = blocks;
 		this.tests_1 = tests_1;
 	}
 
@@ -101,20 +99,12 @@ public class Testpaper implements java.io.Serializable {
 		this.tests = tests;
 	}
 
-	public Set getTestques() {
-		return this.testques;
+	public Set getBlocks() {
+		return this.blocks;
 	}
 
-	public void setTestques(Set testques) {
-		this.testques = testques;
-	}
-
-	public Set getTestques_1() {
-		return this.testques_1;
-	}
-
-	public void setTestques_1(Set testques_1) {
-		this.testques_1 = testques_1;
+	public void setBlocks(Set blocks) {
+		this.blocks = blocks;
 	}
 
 	public Set getTests_1() {

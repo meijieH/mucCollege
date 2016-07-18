@@ -42,5 +42,11 @@
             </key>
             <one-to-many class="com.mucCollege.model.Teamark" />
         </set>
+        <set name="teamarks_2" inverse="true">
+            <key>
+                <column name="stuque" />
+            </key>
+            <one-to-many class="com.mucCollege.model.Teamark" />
+        </set>
     </class>
 </hibernate-mapping>

@@ -23,10 +23,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <form action="admin/admin_addStudent" method="post">
-  		 <input type="text" name="student.stuname" placeholder="请输入用户名">
-  		 <input type="password" name="student.password"  placeholder="请输入密码">
-  		 <input type="text" name="student.stunum" placeholder="请输入学号">
+    <form action="admin/admin_addCourse" method="post">
+  		 <input type="text" name="course.coursename" placeholder="请输入课程名">
+  		 <input type="password" name="course.detail"  placeholder="请输入细节">
+  		 <button type="submit">提交</button>
   	</form>
   </body>
 </html>

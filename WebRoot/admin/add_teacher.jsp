@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		 <input type="text" name="teacher.teaname" placeholder="请输入用户名">
   		 <input type="password" name="teacher.password"  placeholder="请输入密码">
   		 <input type="text" name="teacher.teanum" placeholder="请输入学号">
+  		 <button type="submit">提交</button>
   	</form>
   </body>
 </html>

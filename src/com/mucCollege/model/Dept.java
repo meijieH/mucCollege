@@ -13,6 +13,7 @@ public class Dept implements java.io.Serializable {
 
 	private Integer deptid;
 	private String deptname;
+	private String deptdes;
 	private Set stuClasses = new HashSet(0);
 	private Set teachers = new HashSet(0);
 	private Set teachers_1 = new HashSet(0);
@@ -25,9 +26,10 @@ public class Dept implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Dept(String deptname, Set stuClasses, Set teachers, Set teachers_1,
-			Set stuClasses_1) {
+	public Dept(String deptname, String deptdes, Set stuClasses, Set teachers,
+			Set teachers_1, Set stuClasses_1) {
 		this.deptname = deptname;
+		this.deptdes = deptdes;
 		this.stuClasses = stuClasses;
 		this.teachers = teachers;
 		this.teachers_1 = teachers_1;
@@ -50,6 +52,14 @@ public class Dept implements java.io.Serializable {
 
 	public void setDeptname(String deptname) {
 		this.deptname = deptname;
+	}
+
+	public String getDeptdes() {
+		return this.deptdes;
+	}
+
+	public void setDeptdes(String deptdes) {
+		this.deptdes = deptdes;
 	}
 
 	public Set getStuClasses() {

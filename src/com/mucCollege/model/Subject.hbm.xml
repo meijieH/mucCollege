@@ -23,5 +23,13 @@
             </key>
             <one-to-many class="com.mucCollege.model.Course" />
         </set>
+        <set name="courses_1" inverse="true">
+            <key>
+                <column name="subject">
+                    <comment>科目大类,不具体到专业</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Course" />
+        </set>
     </class>
 </hibernate-mapping>

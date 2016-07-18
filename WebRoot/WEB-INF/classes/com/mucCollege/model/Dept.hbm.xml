@@ -15,6 +15,11 @@
                 <comment>院系名称</comment>
             </column>
         </property>
+        <property name="deptdes" type="java.lang.String">
+            <column name="deptdes" length="300">
+                <comment>学院描述</comment>
+            </column>
+        </property>
         <set name="stuClasses" inverse="true">
             <key>
                 <column name="dept">

@@ -72,6 +72,14 @@ public class AdminAction{
 	public void setQuestion(Question question) {
 		this.question = question;
 	}
+	//所以试题
+	private ArrayList<Question> questionList;	
+	public ArrayList<Question> getQuestionList() {
+		return questionList;
+	}
+	public void setQuestionList(ArrayList<Question> questionList) {
+		this.questionList = questionList;
+	}
 	//课程
 	private Course course;
 	public Course getCourse() {
@@ -167,7 +175,7 @@ public class AdminAction{
 		student=adminService.showStudentInfo(student.getStudentid());
 		return "edit_student";
 	}
-	public String showTeacherEditInfo(Teacher teacher){
+	public String showTeacherEditInfo(){
 		teacher=adminService.showTeacherInfo(teacher.getTeacherid());
 		return "edit_teacher";
 	}
@@ -184,21 +192,22 @@ public class AdminAction{
 	//增加试题
 	public String addQuestion(){
 		adminService.addQuestion(question);
-		return "add_question";
+		return "view_question";
 	}
 	//显示所有题目
 	public String showAllQuestion(){
-		adminService.showAllQuestion();
+		System.out.println("全部");
+		questionList=adminService.showAllQuestion();
 		return "all_question";
 	}
 	//显示每道题的信息
 	public String showQuestion(){
-		adminService.showQuestion(question.getQuestionid());
+		question=adminService.showQuestion(question.getQuestionid());
 		return "view_question";
 	}
 	//修改题目
 	public String showEditQuestion(){
-		adminService.showQuestion(question.getQuestionid());
+		question=adminService.showQuestion(question.getQuestionid());
 		return "edit_question";
 	}
 	public String updateQuestion(){
@@ -214,7 +223,7 @@ public class AdminAction{
 	//增加课程
 	public String addCourse(){
 		adminService.addCourse(course);
-		return "add_course";
+		return "view_course";
 	}
 	//查看课程
 	public String showCourse(){
@@ -239,7 +248,7 @@ public class AdminAction{
 	//增加学院
 	public String addDept() throws Exception{
 		adminService.addDept(dept);
-		return "add_dept";
+		return "view_dept";
 	}
 	//查看学院
 	public String showDept(){
@@ -251,9 +260,9 @@ public class AdminAction{
 		adminService.showDept(dept.getDeptid());
 		return "edit_dept";
 	}
-	public String updateDept(){
-		adminService.updateCourse(course);
-		return "edit_course";
+	public String updateDept() throws Exception{
+		adminService.updateDept(dept);
+		return "view_course";
 	}
 	/*//删除学院
 	public String deleteDept() throws Exception{
@@ -262,5 +271,4 @@ public class AdminAction{
 	}*/
 }
 //针对所有对象的删除都没写
-//add的几个页面也没写跳转
-//也没测试这些页面，只有管理员的增删改查测试过
+//addCourse有问题

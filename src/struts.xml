@@ -26,6 +26,8 @@
 	        	<result name="add_course">/admin/add_course.jsp</result>
 	        	<result name="view_course">/admin/view_course.jsp</result>
 	        	<result name="edit_course">/admin/edit_course.jsp</result>
+	        	<result name="view_dept">/admin/view_dept.jsp</result>
+	        	<result name="edit_dept">/admin/edit_dept.jsp</result>
 	        </action>  
 	 </package> 
 	 <package name="student" namespace="/student" extends="struts-default">

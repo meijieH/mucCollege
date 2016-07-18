@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>  
   <body>
     <s:form action="admin/admin_updateTeacher" method="post">
-    	<s:textfield name="teacher.teachername" label="教师名称"></s:textfield>
+    	<s:textfield name="teacher.teaname" label="教师名称"></s:textfield>
     	<s:hidden name="teacher.teacherid"></s:hidden>
     	<s:submit value="保存"></s:submit>
     </s:form>  

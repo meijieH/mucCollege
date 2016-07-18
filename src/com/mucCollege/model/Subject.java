@@ -14,6 +14,7 @@ public class Subject implements java.io.Serializable {
 	private Integer subjectid;
 	private String subjectname;
 	private Set courses = new HashSet(0);
+	private Set courses_1 = new HashSet(0);
 
 	// Constructors
 
@@ -22,9 +23,10 @@ public class Subject implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Subject(String subjectname, Set courses) {
+	public Subject(String subjectname, Set courses, Set courses_1) {
 		this.subjectname = subjectname;
 		this.courses = courses;
+		this.courses_1 = courses_1;
 	}
 
 	// Property accessors
@@ -51,6 +53,14 @@ public class Subject implements java.io.Serializable {
 
 	public void setCourses(Set courses) {
 		this.courses = courses;
+	}
+
+	public Set getCourses_1() {
+		return this.courses_1;
+	}
+
+	public void setCourses_1(Set courses_1) {
+		this.courses_1 = courses_1;
 	}
 
 }

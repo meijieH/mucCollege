@@ -43,21 +43,13 @@
             </key>
             <one-to-many class="com.mucCollege.model.Test" />
         </set>
-        <set name="testques" inverse="true">
+        <set name="blocks" inverse="true">
             <key>
                 <column name="testpaper">
-                    <comment>对应的试卷</comment>
+                    <comment>外键，说明属于哪份卷子</comment>
                 </column>
             </key>
-            <one-to-many class="com.mucCollege.model.Testque" />
-        </set>
-        <set name="testques_1" inverse="true">
-            <key>
-                <column name="testpaper">
-                    <comment>对应的试卷</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Testque" />
+            <one-to-many class="com.mucCollege.model.Block" />
         </set>
         <set name="tests_1" inverse="true">
             <key>

@@ -15,9 +15,9 @@
                 <comment>对应题库中的题</comment>
             </column>
         </many-to-one>
-        <many-to-one name="testpaper" class="com.mucCollege.model.Testpaper" fetch="select" lazy="false">
-            <column name="testpaper">
-                <comment>对应的试卷</comment>
+        <many-to-one name="group" class="com.mucCollege.model.Group" fetch="select" lazy="false">
+            <column name="group">
+                <comment>对应的组</comment>
             </column>
         </many-to-one>
         <property name="quesnum" type="java.lang.Integer">
@@ -33,6 +33,11 @@
         <property name="depth" type="java.lang.Integer">
             <column name="depth">
                 <comment>题目难度如98</comment>
+            </column>
+        </property>
+        <property name="testpaper" type="java.lang.Integer">
+            <column name="testpaper">
+                <comment>对应的试卷</comment>
             </column>
         </property>
         <set name="stuques" inverse="true">

@@ -15,10 +15,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
   </head> 
   <body>
-  	<a href="admin/admin_showTeacherEditInfo">修改学生信息</a>
+  	<a href="admin/admin_showTeacherEditInfo?teacher.teacherid=${teacher.teacherid}">修改教师信息</a>
     <c:out value="${teacher.teaname}"></c:out>
   </body>
 </html>

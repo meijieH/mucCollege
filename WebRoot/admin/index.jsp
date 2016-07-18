@@ -26,12 +26,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <a href="admin/admin_showAllStudent">显示所有学生</a>
     <a href="admin/admin_showAllTeacher">显示所有教师</a>   
-    <a href="add_student.jsp">添加学生</a>
-    <a href="add_teacher.jsp">添加老师</a>
-    <a href="add_question.jsp">添加试题</a>
+    <a href="<%=basePath%>admin/add_student.jsp">添加学生</a>
+    <a href="<%=basePath%>admin/add_teacher.jsp">添加老师</a>
+    <a href="<%=basePath%>admin/add_question.jsp">添加试题</a>
     <a href="admin/admin_showAllQuestion">显示所有题目</a>
-    <a href="add_"></a>
-    <a href="add_dept.jsp">添加学院</a>
+    <a href="<%=basePath%>admin/add_course">添加课程</a>
+    <a href="<%=basePath%>admin/add_dept.jsp">添加学院</a>
 
   </body>
 </html>

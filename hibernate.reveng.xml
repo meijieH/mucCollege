@@ -110,8 +110,20 @@
 			<generator class="increment"></generator>
 		</primary-key>
 	</table>
-<table name="testque" catalog="java_test"
-	class="com.mucCollege.model.Testque">
+	<table name="testque" catalog="java_test"
+		class="com.mucCollege.model.Testque">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+	<table name="block" catalog="java_test"
+		class="com.mucCollege.model.Block">
+		<primary-key>
+			<generator class="increment"></generator>
+		</primary-key>
+	</table>
+<table name="group" catalog="java_test"
+	class="com.mucCollege.model.Group">
 	<primary-key>
 		<generator class="increment"></generator>
 	</primary-key>

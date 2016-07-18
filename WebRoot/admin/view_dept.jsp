@@ -24,7 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<a href="admin/admin_showEditDept">修改问题</a>
+  	<a href="admin/admin_showEditDept?dept.deptid=${dept.deptid}">修改问题</a>
     <c:out value="${dept.deptname}"></c:out> 
   </body>
 </html>
