@@ -3,27 +3,28 @@ package com.mucCollege.action;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.swing.AbstractAction;
 
 import org.apache.struts2.interceptor.SessionAware;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.mucCollege.model.Teacher;
 import com.mucCollege.service.ServiceMessage;
 import com.mucCollege.service.TeacherService;
-import com.opensymphony.xwork2.Action;
 
 /**
+ * 注册register
+ * 登陆login
+ * 登出logout
+ * 修改updata
  * 此类提供了Teacher的注册，登陆，修改，登出操作，提供了session会话，校验器，详细的使用方式可以参考为该类编写的测试页面teacherActionTest.jsp
  * 同目录下的3个TeacherAction*.xml用于校验器检验
  * @author 杨赟
- *
+ * 修改该版本的日期:7/17
  */
 @Controller
-@Scope("prototype") 
+@Scope("prototype")
+@SuppressWarnings("serial")
 public class TeacherAction extends SuperAction implements SessionAware{
 	@Resource TeacherService teacherService;
 	private Teacher teacher;
@@ -82,7 +83,7 @@ public class TeacherAction extends SuperAction implements SessionAware{
 		return re.getResult();
 	}
 	
-	//以下为setter与getter，仅用于表单数据的采集
+	//以下为setter与getter，仅用于数据的采集
 	public void setSession(Map<String, Object> session) {
 		teacherService.setSession(session);
 	}

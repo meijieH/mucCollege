@@ -46,13 +46,13 @@ public class TeacherDao {
 	        return (ArrayList<Teacher>) teacherList;
 	    }		
 		/*根据主键查*/
-		public Teacher GetTeacherById(Integer teacherid) {
+		public Teacher QueryTeacherById(Integer teacherid) {
 	        Session s = factory.getCurrentSession();
 	        Teacher teacher = (Teacher)s.get(Teacher.class, teacherid);
 	        return teacher;
 	    }
 		/*根据工号查*/
-		public Teacher GetTeacherByTeanum(String teanum) { 
+		public Teacher QueryTeacherByTeanum(String teanum) { 
 	    	Session s = factory.getCurrentSession();
 	    	String hql = "From Teacher teacher where 1=1";
 	    	if(!teanum.equals("")) hql = hql + " and teacher.teanum like '%" + teanum + "%'";

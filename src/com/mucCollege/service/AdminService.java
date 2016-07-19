@@ -96,7 +96,7 @@ public class AdminService{
 		return db_student;
 	}
 	public Teacher showTeacherInfo(int teacherid){
-		Teacher db_teacher=teacherDao.GetTeacherById(teacherid);
+		Teacher db_teacher=teacherDao.QueryTeacherById(teacherid);
 		return db_teacher;
 	}
 	//修改单个用户信息

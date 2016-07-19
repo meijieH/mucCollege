@@ -1,8 +1,8 @@
 package com.mucCollege.action;
 
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
+@SuppressWarnings("serial")
 public abstract class SuperAction extends ActionSupport {
 	protected String message;//有关错误的信息。
 	/**

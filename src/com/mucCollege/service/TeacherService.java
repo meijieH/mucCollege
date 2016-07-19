@@ -22,7 +22,7 @@ public class TeacherService {
 	 * @return 注册成功返回RegSuccess 失败返回RegFail
 	 */
 	public ServiceMessage register(Teacher teacher){
-		Teacher result=dao.GetTeacherByTeanum(teacher.getTeanum());
+		Teacher result=dao.QueryTeacherByTeanum(teacher.getTeanum());
 		if(result!=null){
 			return new ServiceMessage("regFail","用户已存在");
 		}
@@ -37,15 +37,15 @@ public class TeacherService {
 	 * @return 登陆成功返回LoginSuccess 失败返回LoginFail
 	 */
 	public ServiceMessage login(Teacher teacher){
-		if(session.get("teacher")!=null){
+		if(session.get("user")!=null){
 			return new ServiceMessage("loginSuccess","用户已登陆，无需重复登陆，目前登陆的用户姓名："+((Teacher)session.get("teacher")).getTeaname());
 		}
-		Teacher result=dao.GetTeacherByTeanum(teacher.getTeanum());
+		Teacher result=dao.QueryTeacherByTeanum(teacher.getTeanum());
 		if(result==null){
 			return new ServiceMessage("loginFail","工号不存在");
 		}
 		if(result.getPassword().endsWith(teacher.getPassword())){
-			session.put("teacher", result);
+			session.put("user", result);
 			return new ServiceMessage("loginSuccess","正常登陆成功，用户姓名："+result.getTeaname());
 		}
 		return new ServiceMessage("loginFail","密码错误");
@@ -62,11 +62,8 @@ public class TeacherService {
 	 * @return 修改成功返回UpdataSuccess 失败返回UpdataFail
 	 */
 	public ServiceMessage updata(Teacher teacher) {
-		Teacher t=(Teacher) session.get("teacher");
-		if(t==null){
-			return new ServiceMessage("updataFail","用户并未登录");
-		}
-		Teacher result=dao.GetTeacherById(t.getTeacherid());
+		Teacher t=(Teacher) session.get("user");
+		Teacher result=dao.QueryTeacherById(t.getTeacherid());
 		if(teacher.getPassword()!=null&&!teacher.getPassword().equals(""))	result.setPassword(teacher.getPassword());
 		if(teacher.getPosition()!=null&&!teacher.getPosition().equals(""))	result.setPosition(teacher.getPosition());
 		if(teacher.getIntro()!=null&&!teacher.getIntro().equals(""))	result.setIntro(teacher.getIntro());

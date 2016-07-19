@@ -21,14 +21,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-box">
 		 登录
 		</button>
-	    <button type="button" class="btn btn-default" >
-		 注册
-		</button>
+		<a href="teacher/register.jsp" class="btn btn-default">注册</a>
 	</header>
 	 <main>
 	 	  <br/>
 	      <a href="student/student.jsp" class="btn btn-default">去学生页面（临时按钮）</a><br/>
-	      <a href="teacher/teacher.jsp" class="btn btn-default">去教师页面（临时按钮）</a>
+	      <a href="teacher/index.jsp" class="btn btn-default">去教师页面（临时按钮）</a>
 	</main>
 	<footer>
 		民大学院团队
@@ -42,23 +40,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        <h4 class="modal-title" id="myModalLabel">登录到民大学院</h4>
 	      </div>
 	      <div class="modal-body">
-	        <form class="form-horizontal">
+	        <form class="form-horizontal" action="teacher/teacher_login">
 			  <div class="form-group">
 			    <label for="number" class="col-sm-2 control-label">学工号</label>
 			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="number">
+			      <input type="text" class="form-control" id="number" name="teacher.teanum">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="password" class="col-sm-2 control-label">密码</label>
 			    <div class="col-sm-10">
-			      <input type="password" class="form-control" id="password">
+			      <input type="password" class="form-control" id="password" name="teacher.password">
 			    </div>
 			  </div>
 			  <div class="form-group">
 			        <label for="type"></label>
-					<input type="radio" id="type" name="type" value="teacher">教师
-					<input type="radio" id="type" name="type" value="student">学生
+					<input type="radio" id="type" name="type" value="teacher" checked disabled>教师
+					<input type="radio" id="type" name="type" value="student" disabled>学生
 			  </div>
 			  <div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
@@ -72,12 +70,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  </div>	
 	      	<div class="form-group">
 			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="button" class="btn btn-default">注册</button>
+			      <a href="teacher/register.jsp" class="btn btn-default">注册</a>
 			      <button type="submit" class="btn btn-primary">登录</button>
 			    </div>
 			</div>
+			</form>
 	      </div>
-	      </form>
 	    </div>
 	  </div>
 	</div>

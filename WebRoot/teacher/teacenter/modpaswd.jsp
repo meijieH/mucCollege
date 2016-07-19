@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<hr>
 	</header>
 	<main class="container-fluid">
+	<form action="teacher/teacher_updata" validate="true">
   		<div class="row">
 	    	<div class="form-group">
                 <label class="control-label col-md-1">原密码：</label>
@@ -32,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="form-group">
                 <label class="control-label col-md-1">新	密码：</label>
                 <div class="col-md-4"> 
-      	         	<input type="text">
+      	         	<input type="text" name="teacher.password">
                 </div>
             </div>
 		</div>
@@ -52,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class="form-group col-md-1">
 	        	<button type="reset" value="Reset" class="btn btn-primary pull-right">重 置</button>
 	    </div>
-
+	    </form>
 	</main>
 </body>
 </html>

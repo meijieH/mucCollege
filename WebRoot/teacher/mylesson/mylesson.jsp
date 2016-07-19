@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="struts"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -30,27 +31,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    <button class="btn btn-default" type="submit">搜  索</button> 
 		</form>
 		<form class="col-md-2">
-			<a href="#" class="btn btn-primary" role="button">  添加课程</a>
+			<a href="teacher/mylesson/addlesson.jsp" class="btn btn-primary" role="button">  添加课程</a>
 		</form>
 		</div>
 	</header>
 	<main>
 	<div>
 		<ul class="class-list">
+			<struts:iterator value="teacourseList">
 			<li>
 				<a href="teacher/mylesson/mylesdetail.jsp">
-						<img src="images/jisuanjijichu.jpg" alt="计算机基础" width="160px" height="160px;">
-						<p>计算机基础</p>
-						<p>授课班级：14软件工程班</p>
-						<p>开课时间：2015-05-07</p>
-					
-				   
+						<img src="images/jisuanjijichu.jpg" alt="<struts:property value="course.coursename" />" width="160px" height="160px;">
+						<p><struts:property value="course.coursename" /></p>
+						<p>授课班级：null</p>
+						<p>开课时间：数据库尚未设计该字段</p>
 				</a>
 				<a href="teacher/mylesson/mylesdetail.jsp" role="button" class="btn btn-success">进入课程</a>
 				<button type="button" class="btn btn-danger">删除课程</button>
 			</li>
-			
-			</ul>
+			</struts:iterator>
+		</ul>
 	</div>
 	</main>
 </body>

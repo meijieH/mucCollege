@@ -8,12 +8,13 @@ import javax.annotation.Resource;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Course;
 
-@Service@Transactional
+@Repository
 public class CourseDao {
 	@Resource SessionFactory factory;
 	//增
@@ -48,15 +49,13 @@ public class CourseDao {
         return course;
     }
 	//条件查找：通过课程名称查找
-	@SuppressWarnings("unchecked")
-	public ArrayList<Course> QueryCourseByName(String coursename) { 
+	public Course QueryCourseByName(String coursename) { 
     	Session s = factory.getCurrentSession();
-    	String hql = "From Course where 1=1";//最基本的
+    	String hql = "From Course course where 1=1";/**此行存在错误，导致数据库无法读取，已修正，原代码为 String hql = "From Course where 1=1";*@author 杨赟 *2016/7/19*/
     	if(!coursename.equals("")) hql = hql + " and course.coursename like '%" + coursename + "%'";
     	Query q = s.createQuery(hql);
-    	@SuppressWarnings("rawtypes")
-		List courseList = q.list();
-    	return (ArrayList<Course>) courseList;
+    	Course course = (Course) q.uniqueResult();
+    	return course;
     }
 	//条件查找：通过课程介绍查找
 		@SuppressWarnings("unchecked")
