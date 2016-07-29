@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mucCollege.dao.CourseDao;
 import com.mucCollege.dao.TeacourseDao;
 import com.mucCollege.model.Course;
-import com.mucCollege.model.Teacher;
 import com.mucCollege.model.Teacourse;
+import com.mucCollege.model.User;
 
 @Service
 @Transactional
@@ -28,7 +28,7 @@ public class TeacourseService {
 				return new ServiceMessage("Fail", "DAO异常");
 			}
 		}
-		Teacourse teacourse=new Teacourse((Teacher)session.get("user"), null, course, null, null);
+		Teacourse teacourse=new Teacourse((User)session.get("user"), null, course, null, null);
 		try {
 			dao.addTeacourse(teacourse);
 		} catch (Exception e) {
@@ -37,7 +37,7 @@ public class TeacourseService {
 		return new ServiceMessage("Success", "课程添加成功");
 	}
 	public ServiceMessage list(){
-		Teacher user=(Teacher) session.get("teacher");
+		User user=(User) session.get("teacher");
 		List<Teacourse> teacourseList=dao.QueryTeacourseByTeacher(user);
 		ServiceMessage re=new ServiceMessage("listSuccess","拉取课程信息成功");
 		re.setObject(teacourseList);

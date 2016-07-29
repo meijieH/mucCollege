@@ -1,6 +1,6 @@
 package com.mucCollege.aop;
 
-import com.mucCollege.model.Teacher;
+import com.mucCollege.model.User;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 /**
@@ -16,7 +16,7 @@ public class TeacherInterceptor extends AbstractInterceptor{
 			ai.getStack().set("message", "非法操作，权限异常！");
 			return "exception";
 		}
-		if(teacher instanceof Teacher) {
+		if(teacher instanceof User) {
 			return ai.invoke();
 		}
 		ai.getStack().set("message", "非法操作，权限异常！");

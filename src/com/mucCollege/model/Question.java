@@ -12,8 +12,8 @@ public class Question implements java.io.Serializable {
 	// Fields
 
 	private Integer questionid;
+	private Subject subject;
 	private Quetype quetype;
-	private String subject;
 	private Integer creator;
 	private String label;
 	private String stem;
@@ -28,6 +28,7 @@ public class Question implements java.io.Serializable {
 	private String option7;
 	private Boolean isPicture;
 	private Boolean isvisiable;
+	private Set collections = new HashSet(0);
 	private Set testques = new HashSet(0);
 	private Set errorques = new HashSet(0);
 	private Set testques_1 = new HashSet(0);
@@ -40,14 +41,14 @@ public class Question implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Question(Quetype quetype, String subject, Integer creator,
+	public Question(Subject subject, Quetype quetype, Integer creator,
 			String label, String stem, String answer, Integer quescore,
 			String option1, String option2, String option3, String option4,
 			String option5, String option6, String option7, Boolean isPicture,
-			Boolean isvisiable, Set testques, Set errorques, Set testques_1,
-			Set errorques_1) {
-		this.quetype = quetype;
+			Boolean isvisiable, Set collections, Set testques, Set errorques,
+			Set testques_1, Set errorques_1) {
 		this.subject = subject;
+		this.quetype = quetype;
 		this.creator = creator;
 		this.label = label;
 		this.stem = stem;
@@ -62,6 +63,7 @@ public class Question implements java.io.Serializable {
 		this.option7 = option7;
 		this.isPicture = isPicture;
 		this.isvisiable = isvisiable;
+		this.collections = collections;
 		this.testques = testques;
 		this.errorques = errorques;
 		this.testques_1 = testques_1;
@@ -78,20 +80,20 @@ public class Question implements java.io.Serializable {
 		this.questionid = questionid;
 	}
 
+	public Subject getSubject() {
+		return this.subject;
+	}
+
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
+
 	public Quetype getQuetype() {
 		return this.quetype;
 	}
 
 	public void setQuetype(Quetype quetype) {
 		this.quetype = quetype;
-	}
-
-	public String getSubject() {
-		return this.subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
 	}
 
 	public Integer getCreator() {
@@ -204,6 +206,14 @@ public class Question implements java.io.Serializable {
 
 	public void setIsvisiable(Boolean isvisiable) {
 		this.isvisiable = isvisiable;
+	}
+
+	public Set getCollections() {
+		return this.collections;
+	}
+
+	public void setCollections(Set collections) {
+		this.collections = collections;
 	}
 
 	public Set getTestques() {

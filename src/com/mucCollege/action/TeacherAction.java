@@ -8,7 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.mucCollege.model.Teacher;
+import com.mucCollege.model.User;
 import com.mucCollege.service.ServiceMessage;
 import com.mucCollege.service.TeacherService;
 
@@ -27,7 +27,7 @@ import com.mucCollege.service.TeacherService;
 @SuppressWarnings("serial")
 public class TeacherAction extends SuperAction implements SessionAware{
 	@Resource TeacherService teacherService;
-	private Teacher teacher;
+	private User teacher;
 	/**
 	 * 默认的主方法，当请求action是定义之外的内容，将不会显示错误而是跳转到teacher的主页
 	 */
@@ -87,10 +87,10 @@ public class TeacherAction extends SuperAction implements SessionAware{
 	public void setSession(Map<String, Object> session) {
 		teacherService.setSession(session);
 	}
-	public Teacher getTeacher() {
+	public User getTeacher() {
 		return teacher;
 	}
-	public void setTeacher(Teacher teacher) {
+	public void setTeacher(User teacher) {
 		this.teacher = teacher;
 	}
 }

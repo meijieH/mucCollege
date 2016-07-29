@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Controller;
 
 import com.mucCollege.model.Dept;
-import com.mucCollege.model.Teacher;
+import com.mucCollege.model.User;
 
 @Controller
 public class TeacherDao {
@@ -18,7 +18,7 @@ public class TeacherDao {
 		@Resource SessionFactory factory;
 		
 		/*增*/
-		public void addTeacher(Teacher teacher) throws Exception{
+		public void addTeacher(User teacher) throws Exception{
 			Session s = factory.getCurrentSession();
 			s.save(teacher);
 		}
@@ -26,69 +26,69 @@ public class TeacherDao {
 		/*删*/
 		public void deleteTeacher(Integer teacherid)throws Exception{
 		    Session s = factory.getCurrentSession();
-			Object teacher = s.load(Teacher.class, teacherid);
+			Object teacher = s.load(User.class, teacherid);
 			s.delete(teacher);
 		}
 		
 		/*改*/
-		public void updateTeacher(Teacher teacher)throws Exception{
+		public void updateTeacher(User teacher)throws Exception{
 			Session s = factory.getCurrentSession();
 			s.update(teacher);
 		}
 		
 		/*查所有*/
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public ArrayList<Teacher> QueryAllTeacher() {
+		public ArrayList<User> QueryAllTeacher() {
 	        Session s = factory.getCurrentSession();
 	        String hql = "From Teacher";   
 	        Query q = s.createQuery(hql);
 	        List teacherList = q.list();
-	        return (ArrayList<Teacher>) teacherList;
+	        return (ArrayList<User>) teacherList;
 	    }		
 		/*根据主键查*/
-		public Teacher QueryTeacherById(Integer teacherid) {
+		public User QueryTeacherById(Integer teacherid) {
 	        Session s = factory.getCurrentSession();
-	        Teacher teacher = (Teacher)s.get(Teacher.class, teacherid);
+	        User teacher = (User)s.get(User.class, teacherid);
 	        return teacher;
 	    }
 		/*根据工号查*/
-		public Teacher QueryTeacherByTeanum(String teanum) { 
+		public User QueryTeacherByTeanum(String teanum) { 
 	    	Session s = factory.getCurrentSession();
-	    	String hql = "From Teacher teacher where 1=1";
-	    	if(!teanum.equals("")) hql = hql + " and teacher.teanum like '%" + teanum + "%'";
+	    	String hql = "From User user where 1=1";
+	    	if(!teanum.equals("")) hql = hql + " and user.usernum like '%" + teanum + "%'";
 	    	Query q = s.createQuery(hql);
-	    	Teacher teacher = (Teacher) q.uniqueResult();
+	    	User teacher = (User) q.uniqueResult();
 	    	return teacher;
 	    }
 		/*根据老师姓名查*/
 		@SuppressWarnings({ "unchecked","rawtypes" })
-		public ArrayList<Teacher> QueryTeacherByTeaname(String teaname) { 
+		public ArrayList<User> QueryTeacherByTeaname(String teaname) { 
 	    	Session s = factory.getCurrentSession();
-	    	String hql = "From Teacher teacher where 1=1";
-	    	if(!teaname.equals("")) hql = hql + " and teacher.teaname like '%" + teaname + "%'";
+	    	String hql = "From User user where 1=1";
+	    	if(!teaname.equals("")) hql = hql + " and user.username like '%" + teaname + "%'";
 	    	Query q = s.createQuery(hql);
 	    	List teacherList = q.list();
-	    	return (ArrayList<Teacher>) teacherList;
+	    	return (ArrayList<User>) teacherList;
 	    }
 		/*根据老师院系查*/
 		@SuppressWarnings({ "unchecked","rawtypes" })
-		public ArrayList<Teacher> QueryTeacherByDept(Dept dept) { 
+		public ArrayList<User> QueryTeacherByDept(Dept dept) { 
 	    	Session s = factory.getCurrentSession();
-	    	String hql = "From Teacher teacher where 1=1";
-	    	if(null!=dept&&!dept.getDeptname().equals("")) hql = hql + " and teacher.dept.deptid like '%" + dept.getDeptid() + "%'";
+	    	String hql = "From User user where 1=1";
+	    	if(null!=dept&&!dept.getDeptname().equals("")) hql = hql + " and user.dept.deptid like '%" + dept.getDeptid() + "%'";
 	    	Query q = s.createQuery(hql);
 	    	List teacherList = q.list();
-	    	return (ArrayList<Teacher>) teacherList;
+	    	return (ArrayList<User>) teacherList;
 	    }
 		/*根据老师职称查*/
 		@SuppressWarnings({ "unchecked","rawtypes" })
-		public ArrayList<Teacher> QueryTeacherByPosition(String position) { 
+		public ArrayList<User> QueryTeacherByPosition(String position) { 
 	    	Session s = factory.getCurrentSession();
-	    	String hql = "From Teacher teacher where 1=1";
-	    	if(!position.equals("")) hql = hql + " and teacher.position like '%" + position + "%'";
+	    	String hql = "From User user where 1=1";
+	    	if(!position.equals("")) hql = hql + " and user.position like '%" + position + "%'";
 	    	Query q = s.createQuery(hql);
 	    	List teacherList = q.list();
-	    	return (ArrayList<Teacher>) teacherList;
+	    	return (ArrayList<User>) teacherList;
 	    }
 		
 }

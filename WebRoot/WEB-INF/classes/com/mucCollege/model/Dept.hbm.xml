@@ -11,7 +11,7 @@
             <generator class="increment"></generator>
         </id>
         <property name="deptname" type="java.lang.String">
-            <column name="deptname" length="25">
+            <column name="deptname" length="25" unique="true">
                 <comment>院系名称</comment>
             </column>
         </property>
@@ -28,21 +28,13 @@
             </key>
             <one-to-many class="com.mucCollege.model.StuClass" />
         </set>
-        <set name="teachers" inverse="true">
+        <set name="courses" inverse="true">
             <key>
                 <column name="dept">
-                    <comment>所在院系，外键</comment>
+                    <comment>所属学院，外键</comment>
                 </column>
             </key>
-            <one-to-many class="com.mucCollege.model.Teacher" />
-        </set>
-        <set name="teachers_1" inverse="true">
-            <key>
-                <column name="dept">
-                    <comment>所在院系，外键</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Teacher" />
+            <one-to-many class="com.mucCollege.model.Course" />
         </set>
         <set name="stuClasses_1" inverse="true">
             <key>
@@ -51,6 +43,14 @@
                 </column>
             </key>
             <one-to-many class="com.mucCollege.model.StuClass" />
+        </set>
+        <set name="users" inverse="true">
+            <key>
+                <column name="dept">
+                    <comment>所在学院、外键</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.User" />
         </set>
     </class>
 </hibernate-mapping>

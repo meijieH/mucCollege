@@ -36,7 +36,6 @@
 		 <property name="mappingResources">
 			    <list>	
 			      <value>com/mucCollege/model/Selectcourse.hbm.xml</value>
-			      <value>com/mucCollege/model/Admin.hbm.xml</value>
 			      <value>com/mucCollege/model/Test.hbm.xml</value>
 			      <value>com/mucCollege/model/Stupaper.hbm.xml</value>
 			      <value>com/mucCollege/model/Testpaper.hbm.xml</value>
@@ -46,16 +45,17 @@
 			      <value>com/mucCollege/model/Coustudent.hbm.xml</value>
 			      <value>com/mucCollege/model/Testque.hbm.xml</value>
 			      <value>com/mucCollege/model/Stuque.hbm.xml</value>
-			      <value>com/mucCollege/model/Teacher.hbm.xml</value>
 			      <value>com/mucCollege/model/Errorque.hbm.xml</value>
-			      <value>com/mucCollege/model/Student.hbm.xml</value>
 			      <value>com/mucCollege/model/Question.hbm.xml</value>
 			      <value>com/mucCollege/model/StuClass.hbm.xml</value>
 			      <value>com/mucCollege/model/Course.hbm.xml</value>
 			      <value>com/mucCollege/model/Teamark.hbm.xml</value>
 			      <value>com/mucCollege/model/Subject.hbm.xml</value>
 			      <value>com/mucCollege/model/Block.hbm.xml</value>
-			      <value>com/mucCollege/model/Group.hbm.xml</value></list>
+			      <value>com/mucCollege/model/Group.hbm.xml</value>
+			      <value>com/mucCollege/model/Usertype.hbm.xml</value>
+			      <value>com/mucCollege/model/Collection.hbm.xml</value>
+			      <value>com/mucCollege/model/User.hbm.xml</value></list>
 		</property>
 		 <property name="hibernateProperties">
 			 <value>

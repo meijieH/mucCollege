@@ -13,12 +13,10 @@ import com.mucCollege.dao.DeptDao;
 import com.mucCollege.dao.QuestionDao;
 import com.mucCollege.dao.StudentDao;
 import com.mucCollege.dao.TeacherDao;
-import com.mucCollege.model.Admin;
 import com.mucCollege.model.Course;
 import com.mucCollege.model.Dept;
 import com.mucCollege.model.Question;
-import com.mucCollege.model.Student;
-import com.mucCollege.model.Teacher;
+import com.mucCollege.model.User;
 
 @Service@Transactional
 public class AdminService{
@@ -40,19 +38,19 @@ public class AdminService{
 	}
 	//1.对管理的操作**********
 	//注册
-	public void register(Admin admin){
+	public void register(User admin){
 		adminDao.addAdmin(admin);
 	}
 	//登陆及验证：登陆用户名、密码格式放在jsp里验证
 	@Transactional(propagation=Propagation.NOT_SUPPORTED) 
-	public Admin CheckLogin(Admin admin){
-		ArrayList<Admin> adminList=adminDao.QueryAdmin((admin.getUsername()));
+	public User CheckLogin(User admin){
+		ArrayList<User> adminList=adminDao.QueryAdmin((admin.getUsername()));
 		if(adminList.size()==0) { 
 			this.errMessage = "用户名不存在";
 			System.out.print(this.errMessage);
 			return null;
 		} else{
-			Admin db_admin=adminList.get(0);
+			User db_admin=adminList.get(0);
 			if( !db_admin.getPassword().equals(admin.getPassword())) {
 			this.errMessage = "密码不正确！";
 			System.out.print(this.errMessage);
@@ -64,46 +62,46 @@ public class AdminService{
 		}		
 	}
 	//修改管理员信息
-	public void update(Admin admin){
+	public void update(User admin){
 		adminDao.updateAdmin(admin);
 	}
 	//显示管理员信息
-	public Admin showUserInfo(int adminid){
-		Admin db_admin=adminDao.GetAdminById(adminid);
+	public User showUserInfo(int adminid){
+		User db_admin=adminDao.GetAdminById(adminid);
 		return db_admin;
 	}
 	
 	//2.对学生/教师的操作**********
 	//增加用户
-    public void addStudent(Student student){
+    public void addStudent(User student){
     	studentDao.addUser(student);
     }    
-    public void addTeacher(Teacher teacher) throws Exception{
+    public void addTeacher(User teacher) throws Exception{
     	teacherDao.addTeacher(teacher);
     }
 	//显示所有用户信息
-	public ArrayList<Student> showAllStudent(){
-		ArrayList<Student> studentList=studentDao.QueryAllStudent();
+	public ArrayList<User> showAllStudent(){
+		ArrayList<User> studentList=studentDao.QueryAllStudent();
 		return studentList;
 	}
-	public ArrayList<Teacher> showAllTeacher(){
-		ArrayList<Teacher> teacherList=teacherDao.QueryAllTeacher();
+	public ArrayList<User> showAllTeacher(){
+		ArrayList<User> teacherList=teacherDao.QueryAllTeacher();
 		return teacherList;
 	}
 	//显示单个用户信息
-	public Student showStudentInfo(int studentid){
-		Student db_student=studentDao.GetStudentById(studentid);
+	public User showStudentInfo(int studentid){
+		User db_student=studentDao.GetStudentById(studentid);
 		return db_student;
 	}
-	public Teacher showTeacherInfo(int teacherid){
-		Teacher db_teacher=teacherDao.QueryTeacherById(teacherid);
+	public User showTeacherInfo(int teacherid){
+		User db_teacher=teacherDao.QueryTeacherById(teacherid);
 		return db_teacher;
 	}
 	//修改单个用户信息
-	public void updateStudent(Student student) throws Exception{
+	public void updateStudent(User student) throws Exception{
 		studentDao.updateStudent(student);
 	}
-	public void updateTeacher(Teacher teacher) throws Exception{
+	public void updateTeacher(User teacher) throws Exception{
 		teacherDao.updateTeacher(teacher);
 	}
 	//删除用户

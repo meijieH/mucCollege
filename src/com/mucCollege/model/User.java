@@ -4,23 +4,31 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Student entity. @author MyEclipse Persistence Tools
+ * User entity. @author MyEclipse Persistence Tools
  */
 
-public class Student implements java.io.Serializable {
+public class User implements java.io.Serializable {
 
 	// Fields
 
-	private Integer studentid;
+	private Integer userid;
+	private Dept dept;
+	private Usertype usertype;
 	private StuClass stuClass;
-	private String stuname;
+	private String username;
 	private String password;
-	private String stunumber;
+	private String usernum;
+	private String reaname;
 	private String gender;
 	private String phonenum;
 	private String email;
+	private String position;
+	private String intro;
+	private Set teacourses = new HashSet(0);
+	private Set testpapers = new HashSet(0);
 	private Set selectcourses = new HashSet(0);
 	private Set coustudents = new HashSet(0);
+	private Set collections = new HashSet(0);
 	private Set stupapers = new HashSet(0);
 	private Set stupapers_1 = new HashSet(0);
 	private Set coustudents_1 = new HashSet(0);
@@ -29,23 +37,38 @@ public class Student implements java.io.Serializable {
 	// Constructors
 
 	/** default constructor */
-	public Student() {
+	public User() {
+	}
+
+	/** minimal constructor */
+	public User(Usertype usertype) {
+		this.usertype = usertype;
 	}
 
 	/** full constructor */
-	public Student(StuClass stuClass, String stuname, String password,
-			String stunumber, String gender, String phonenum, String email,
-			Set selectcourses, Set coustudents, Set stupapers, Set stupapers_1,
+	public User(Dept dept, Usertype usertype, StuClass stuClass,
+			String username, String password, String usernum, String reaname,
+			String gender, String phonenum, String email, String position,
+			String intro, Set teacourses, Set testpapers, Set selectcourses,
+			Set coustudents, Set collections, Set stupapers, Set stupapers_1,
 			Set coustudents_1, Set selectcourses_1) {
+		this.dept = dept;
+		this.usertype = usertype;
 		this.stuClass = stuClass;
-		this.stuname = stuname;
+		this.username = username;
 		this.password = password;
-		this.stunumber = stunumber;
+		this.usernum = usernum;
+		this.reaname = reaname;
 		this.gender = gender;
 		this.phonenum = phonenum;
 		this.email = email;
+		this.position = position;
+		this.intro = intro;
+		this.teacourses = teacourses;
+		this.testpapers = testpapers;
 		this.selectcourses = selectcourses;
 		this.coustudents = coustudents;
+		this.collections = collections;
 		this.stupapers = stupapers;
 		this.stupapers_1 = stupapers_1;
 		this.coustudents_1 = coustudents_1;
@@ -54,12 +77,28 @@ public class Student implements java.io.Serializable {
 
 	// Property accessors
 
-	public Integer getStudentid() {
-		return this.studentid;
+	public Integer getUserid() {
+		return this.userid;
 	}
 
-	public void setStudentid(Integer studentid) {
-		this.studentid = studentid;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+
+	public Dept getDept() {
+		return this.dept;
+	}
+
+	public void setDept(Dept dept) {
+		this.dept = dept;
+	}
+
+	public Usertype getUsertype() {
+		return this.usertype;
+	}
+
+	public void setUsertype(Usertype usertype) {
+		this.usertype = usertype;
 	}
 
 	public StuClass getStuClass() {
@@ -70,12 +109,12 @@ public class Student implements java.io.Serializable {
 		this.stuClass = stuClass;
 	}
 
-	public String getStuname() {
-		return this.stuname;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setStuname(String stuname) {
-		this.stuname = stuname;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -86,12 +125,20 @@ public class Student implements java.io.Serializable {
 		this.password = password;
 	}
 
-	public String getStunumber() {
-		return this.stunumber;
+	public String getUsernum() {
+		return this.usernum;
 	}
 
-	public void setStunumber(String stunumber) {
-		this.stunumber = stunumber;
+	public void setUsernum(String usernum) {
+		this.usernum = usernum;
+	}
+
+	public String getReaname() {
+		return this.reaname;
+	}
+
+	public void setReaname(String reaname) {
+		this.reaname = reaname;
 	}
 
 	public String getGender() {
@@ -118,6 +165,38 @@ public class Student implements java.io.Serializable {
 		this.email = email;
 	}
 
+	public String getPosition() {
+		return this.position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public String getIntro() {
+		return this.intro;
+	}
+
+	public void setIntro(String intro) {
+		this.intro = intro;
+	}
+
+	public Set getTeacourses() {
+		return this.teacourses;
+	}
+
+	public void setTeacourses(Set teacourses) {
+		this.teacourses = teacourses;
+	}
+
+	public Set getTestpapers() {
+		return this.testpapers;
+	}
+
+	public void setTestpapers(Set testpapers) {
+		this.testpapers = testpapers;
+	}
+
 	public Set getSelectcourses() {
 		return this.selectcourses;
 	}
@@ -132,6 +211,14 @@ public class Student implements java.io.Serializable {
 
 	public void setCoustudents(Set coustudents) {
 		this.coustudents = coustudents;
+	}
+
+	public Set getCollections() {
+		return this.collections;
+	}
+
+	public void setCollections(Set collections) {
+		this.collections = collections;
 	}
 
 	public Set getStupapers() {

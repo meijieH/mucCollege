@@ -11,10 +11,18 @@
             <generator class="increment"></generator>
         </id>
         <property name="subjectname" type="java.lang.String">
-            <column name="subjectname" length="50">
+            <column name="subjectname" length="50" unique="true">
                 <comment>课程名字</comment>
             </column>
         </property>
+        <set name="questions" inverse="true">
+            <key>
+                <column name="subject">
+                    <comment>题目的科目大类</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Question" />
+        </set>
         <set name="courses" inverse="true">
             <key>
                 <column name="subject">

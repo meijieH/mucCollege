@@ -12,13 +12,14 @@ public class Testpaper implements java.io.Serializable {
 	// Fields
 
 	private Integer testpaperid;
+	private User user;
 	private String testpapername;
-	private Integer creator;
 	private Integer questionnum;
 	private Integer totalscore;
 	private Integer totaltime;
 	private Set tests = new HashSet(0);
 	private Set blocks = new HashSet(0);
+	private Set blocks_1 = new HashSet(0);
 	private Set tests_1 = new HashSet(0);
 
 	// Constructors
@@ -28,16 +29,17 @@ public class Testpaper implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Testpaper(String testpapername, Integer creator,
-			Integer questionnum, Integer totalscore, Integer totaltime,
-			Set tests, Set blocks, Set tests_1) {
+	public Testpaper(User user, String testpapername, Integer questionnum,
+			Integer totalscore, Integer totaltime, Set tests, Set blocks,
+			Set blocks_1, Set tests_1) {
+		this.user = user;
 		this.testpapername = testpapername;
-		this.creator = creator;
 		this.questionnum = questionnum;
 		this.totalscore = totalscore;
 		this.totaltime = totaltime;
 		this.tests = tests;
 		this.blocks = blocks;
+		this.blocks_1 = blocks_1;
 		this.tests_1 = tests_1;
 	}
 
@@ -51,20 +53,20 @@ public class Testpaper implements java.io.Serializable {
 		this.testpaperid = testpaperid;
 	}
 
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public String getTestpapername() {
 		return this.testpapername;
 	}
 
 	public void setTestpapername(String testpapername) {
 		this.testpapername = testpapername;
-	}
-
-	public Integer getCreator() {
-		return this.creator;
-	}
-
-	public void setCreator(Integer creator) {
-		this.creator = creator;
 	}
 
 	public Integer getQuestionnum() {
@@ -105,6 +107,14 @@ public class Testpaper implements java.io.Serializable {
 
 	public void setBlocks(Set blocks) {
 		this.blocks = blocks;
+	}
+
+	public Set getBlocks_1() {
+		return this.blocks_1;
+	}
+
+	public void setBlocks_1(Set blocks_1) {
+		this.blocks_1 = blocks_1;
 	}
 
 	public Set getTests_1() {

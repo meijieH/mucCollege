@@ -10,7 +10,7 @@ import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.mucCollege.model.Admin;
+import com.mucCollege.model.User;
 
 @Service
 @Transactional
@@ -19,42 +19,42 @@ public class AdminDao {
 	SessionFactory factory;
 
 	// 增
-	public void addAdmin(Admin admin) {
+	public void addAdmin(User admin) {
 		Session s = factory.getCurrentSession();
 		s.save(admin);
 	}
 
 	// 改
-	public void updateAdmin(Admin admin) {
+	public void updateAdmin(User admin) {
 		Session s = factory.getCurrentSession();
 		s.update(admin);
 	}
 
 	// 查全表
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Admin> QueryAllAdmin() {
+	public ArrayList<User> QueryAllAdmin() {
 		Session s = factory.getCurrentSession();
-		String hql = "From Admin";
+		String hql = "From User";
 		Query q = s.createQuery(hql);
 		List AdminList = q.list();
-		return (ArrayList<Admin>) AdminList;
+		return (ArrayList<User>) AdminList;
 	}
 	// ͨ通过id查询
-	public Admin GetAdminById(Integer adminid) {
+	public User GetAdminById(Integer adminid) {
 		Session s = factory.getCurrentSession();
-		Admin Admin = (Admin) s.get(Admin.class, adminid);// 返回类型是Object
+		User Admin = (User) s.get(User.class, adminid);// 返回类型是Object
 		return Admin;
 	}
 
 	// 通过adminName查询
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Admin> QueryAdmin(String adminname) {
+	public ArrayList<User> QueryAdmin(String adminname) {
 		Session s = factory.getCurrentSession();
-		String hql = "From Admin admin where 1=1";// 保证空条件查询不出错
+		String hql = "From User user where 1=1";// 保证空条件查询不出错
 		if (!adminname.equals(""))
-			hql = hql + " and admin.username like '%" + adminname + "%'";
+			hql = hql + " and user.username like '%" + adminname + "%'";
 		Query q = s.createQuery(hql);
 		List adminList = q.list();
-		return (ArrayList<Admin>) adminList;
+		return (ArrayList<User>) adminList;
 	}
 }

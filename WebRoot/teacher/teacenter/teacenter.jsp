@@ -1,10 +1,10 @@
-<%@page import="com.mucCollege.model.Teacher"%>
+<%@page import="com.mucCollege.model.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="struts" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-Teacher teacher=(Teacher)session.getAttribute("user");
+User teacher=(User)session.getAttribute("user");
 %>
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@ Teacher teacher=(Teacher)session.getAttribute("user");
 	    	<div class="form-group">
                 <label class="control-label col-md-1">学工号：</label>
                 <div class="col-md-4"> 
-      	         	<input type="text" value="<%=teacher.getTeanum()%>" disabled>
+      	         	<input type="text" value="<%=teacher.getUsernum()%>" disabled>
                 </div>
             </div>
 		</div>
@@ -36,7 +36,7 @@ Teacher teacher=(Teacher)session.getAttribute("user");
 	    	<div class="form-group">
                 <label class="control-label col-md-1">姓名：</label>
                 <div class="col-md-4"> 
-      	         	<input type="text" value="<%=teacher.getTeaname()%>" disabled>
+      	         	<input type="text" value="<%=teacher.getUsername()%>" disabled>
                 </div>
             </div>
 		</div>

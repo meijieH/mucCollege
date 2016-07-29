@@ -13,6 +13,7 @@ public class Course implements java.io.Serializable {
 
 	private Integer courseid;
 	private Subject subject;
+	private Dept dept;
 	private String coursename;
 	private String detail;
 	private String state;
@@ -28,10 +29,11 @@ public class Course implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Course(Subject subject, String coursename, String detail,
+	public Course(Subject subject, Dept dept, String coursename, String detail,
 			String state, Set selectcourses, Set selectcourses_1,
 			Set teacourses, Set teacourses_1) {
 		this.subject = subject;
+		this.dept = dept;
 		this.coursename = coursename;
 		this.detail = detail;
 		this.state = state;
@@ -57,6 +59,14 @@ public class Course implements java.io.Serializable {
 
 	public void setSubject(Subject subject) {
 		this.subject = subject;
+	}
+
+	public Dept getDept() {
+		return this.dept;
+	}
+
+	public void setDept(Dept dept) {
+		this.dept = dept;
 	}
 
 	public String getCoursename() {

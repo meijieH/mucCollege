@@ -12,8 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Course;
 import com.mucCollege.model.StuClass;
-import com.mucCollege.model.Teacher;
 import com.mucCollege.model.Teacourse;
+import com.mucCollege.model.User;
 @Service @Transactional
 
 public class TeacourseDao {
@@ -58,11 +58,11 @@ public class TeacourseDao {
 		
 		/*根据教师查*/
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public ArrayList<Teacourse> QueryTeacourseByTeacher(Teacher teacher) { 
+		public ArrayList<Teacourse> QueryTeacourseByTeacher(User teacher) { 
 			Session s = factory.getCurrentSession();
 	    	String hql = "From Teacourse teacourse where 1=1";
-	    	if(null!=teacher && teacher.getTeacherid()!=0) 
-	    		hql = hql + " and teacourse.teacher.teacherid like '%" + teacher.getTeacherid() + "%'";
+	    	if(null!=teacher && teacher.getUserid()!=0) 
+	    		hql = hql + " and teacourse.teacher.userid like '%" + teacher.getUserid() + "%'";
 	    	Query q = s.createQuery(hql);
 	    	List teacourseList = q.list();
 	    	return (ArrayList<Teacourse>) teacourseList;

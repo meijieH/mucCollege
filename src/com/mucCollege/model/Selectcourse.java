@@ -9,8 +9,8 @@ public class Selectcourse implements java.io.Serializable {
 	// Fields
 
 	private Long selectid;
-	private Student student;
 	private Course course;
+	private User user;
 
 	// Constructors
 
@@ -19,9 +19,9 @@ public class Selectcourse implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Selectcourse(Student student, Course course) {
-		this.student = student;
+	public Selectcourse(Course course, User user) {
 		this.course = course;
+		this.user = user;
 	}
 
 	// Property accessors
@@ -34,20 +34,20 @@ public class Selectcourse implements java.io.Serializable {
 		this.selectid = selectid;
 	}
 
-	public Student getStudent() {
-		return this.student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
-
 	public Course getCourse() {
 		return this.course;
 	}
 
 	public void setCourse(Course course) {
 		this.course = course;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

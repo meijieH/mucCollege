@@ -10,13 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import com.mucCollege.model.Admin;
 import com.mucCollege.model.Course;
 import com.mucCollege.model.Dept;
 import com.mucCollege.model.Question;
-import com.mucCollege.model.Student;
-import com.mucCollege.model.Teacher;
+import com.mucCollege.model.User;
 import com.mucCollege.service.AdminService;
 import com.opensymphony.xwork2.ActionContext;
 
@@ -25,43 +22,43 @@ import com.opensymphony.xwork2.ActionContext;
 public class AdminAction{
 	@Resource AdminService adminService;
 	//管理员 
-	private Admin admin;	
-	public Admin getAdmin() {
+	private User admin;	
+	public User getAdmin() {
 		return admin;
 	}
-	public void setAdmin(Admin admin) {
+	public void setAdmin(User admin) {
 		this.admin = admin;
 	}
 	//学生
-	private Student student;		
-	public Student getStudent() {
+	private User student;		
+	public User getStudent() {
 		return student;
 	}
-	public void setStudent(Student student) {
+	public void setStudent(User student) {
 		this.student = student;
 	}
 	//教师
-	private Teacher teacher;	
-	public Teacher getTeacher() {
+	private User teacher;	
+	public User getTeacher() {
 		return teacher;
 	}
-	public void setTeacher(Teacher teacher) {
+	public void setTeacher(User teacher) {
 		this.teacher = teacher;
 	}	
 	//所有学生
-	private ArrayList<Student> studentList;	
-	public ArrayList<Student> getStudentList() {
+	private ArrayList<User> studentList;	
+	public ArrayList<User> getStudentList() {
 		return studentList;
 	}
-	public void setStudentList(ArrayList<Student> studentList) {
+	public void setStudentList(ArrayList<User> studentList) {
 		this.studentList = studentList;
 	}
 	//所有教师
-	private ArrayList<Teacher> teacherList;	
-	public ArrayList<Teacher> getTeacherList() {
+	private ArrayList<User> teacherList;	
+	public ArrayList<User> getTeacherList() {
 		return teacherList;
 	}
-	public void setTeacherList(ArrayList<Teacher> teacherList) {
+	public void setTeacherList(ArrayList<User> teacherList) {
 		this.teacherList = teacherList;
 	}
 	//试题
@@ -99,9 +96,7 @@ public class AdminAction{
 	
 	//获取session
 	ActionContext actionContext=ActionContext.getContext();
-	Map session=actionContext.getSession();
-	
-	
+	Map session=actionContext.getSession();	
 	//1.对管理员的操作**********
     //注册
 	@SuppressWarnings("unchecked")
@@ -112,24 +107,24 @@ public class AdminAction{
 	//登陆
 	@SuppressWarnings("unchecked")
 	public String login(){
-		Admin db_admin=adminService.CheckLogin(admin);
+		User db_admin=adminService.CheckLogin(admin);
 		if(db_admin==null){
 			return "input";
 		}
 		else{
 			session.put("admin",db_admin);
-			admin=(Admin)session.get("admin");
+			admin=(User)session.get("admin");
 			return "index";	
 		}		
 	}	
 	//显示管理员信息
 	public String showAdminInfo(){
-		admin=(Admin)session.get("admin");
+		admin=(User)session.get("user");
 		return "show_info";
 	}	
 	//修改用户信息
 	public String showEdit(){
-		admin=(Admin)session.get("admin");
+		admin=(User)session.get("admin");
 		return "show_edit";
 	}
 	public String updateAdmin(){
@@ -138,7 +133,7 @@ public class AdminAction{
 	}
 	//回到首页
 	public String backIndex(){
-		admin=(Admin)session.get("admin");
+		admin=(User)session.get("admin");
 		return "index";
 	}
 		
@@ -163,20 +158,20 @@ public class AdminAction{
 	}
 	//显示单个学生/教师信息：只传一个id进来
 	public String showStudent() throws Exception{
-		student=adminService.showStudentInfo(student.getStudentid());
+		student=adminService.showStudentInfo(student.getUserid());
 		return "view_student";
 	}
 	public String showTeacher() throws Exception{
-		teacher=adminService.showTeacherInfo(teacher.getTeacherid());
+		teacher=adminService.showTeacherInfo(teacher.getUserid());
 		return "view_teacher";
 	}
 	//修改用户信息
 	public String showStudentEditInfo(){
-		student=adminService.showStudentInfo(student.getStudentid());
+		student=adminService.showStudentInfo(student.getUserid());
 		return "edit_student";
 	}
 	public String showTeacherEditInfo(){
-		teacher=adminService.showTeacherInfo(teacher.getTeacherid());
+		teacher=adminService.showTeacherInfo(teacher.getUserid());
 		return "edit_teacher";
 	}
 	public String updateStudent() throws Exception{

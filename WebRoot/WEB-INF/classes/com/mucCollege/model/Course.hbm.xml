@@ -15,6 +15,11 @@
                 <comment>科目大类,不具体到专业</comment>
             </column>
         </many-to-one>
+        <many-to-one name="dept" class="com.mucCollege.model.Dept" fetch="select" lazy="false">
+            <column name="dept">
+                <comment>所属学院，外键</comment>
+            </column>
+        </many-to-one>
         <property name="coursename" type="java.lang.String">
             <column name="coursename" length="20" unique="true">
                 <comment>课程名称</comment>

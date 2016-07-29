@@ -33,5 +33,13 @@
             </key>
             <one-to-many class="com.mucCollege.model.Group" />
         </set>
+        <set name="groups_1" inverse="true">
+            <key>
+                <column name="block">
+                    <comment>外键,说明属于哪个块</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Group" />
+        </set>
     </class>
 </hibernate-mapping>

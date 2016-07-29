@@ -10,9 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import com.mucCollege.model.Admin;
-import com.mucCollege.model.Student;
+import com.mucCollege.model.User;
 import com.mucCollege.service.AdminService;
 import com.mucCollege.service.StudentService;
 import com.opensymphony.xwork2.ActionContext;
@@ -21,12 +19,12 @@ import com.opensymphony.xwork2.ActionContext;
 @Controller@Scope("prototype")
 public class StudentAction{
 	@Resource StudentService studentService;	
-	private Student student;
+	private User student;
 	
-	public Student getStudent() {
+	public User getStudent() {
 		return student;
 	}
-	public void setStudent(Student student) {
+	public void setStudent(User student) {
 		this.student = student;
 	}
 	ActionContext actionContext=ActionContext.getContext();
@@ -51,13 +49,13 @@ public class StudentAction{
 	//登陆
 	@SuppressWarnings("unchecked")
 	public String login(){
-		Student db_student=studentService.CheckLogin(student);
+		User db_student=studentService.CheckLogin(student);
 		if(db_student==null){
 			return "input";
 		}
 		else{
 			session.put("student",db_student);
-			student=(Student)session.get("student");
+			student=(User)session.get("student");
 			return "index";	
 		}		
 	}	

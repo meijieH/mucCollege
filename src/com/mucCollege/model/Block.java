@@ -16,6 +16,7 @@ public class Block implements java.io.Serializable {
 	private String blockname;
 	private String blockdes;
 	private Set groups = new HashSet(0);
+	private Set groups_1 = new HashSet(0);
 
 	// Constructors
 
@@ -25,11 +26,12 @@ public class Block implements java.io.Serializable {
 
 	/** full constructor */
 	public Block(Testpaper testpaper, String blockname, String blockdes,
-			Set groups) {
+			Set groups, Set groups_1) {
 		this.testpaper = testpaper;
 		this.blockname = blockname;
 		this.blockdes = blockdes;
 		this.groups = groups;
+		this.groups_1 = groups_1;
 	}
 
 	// Property accessors
@@ -72,6 +74,14 @@ public class Block implements java.io.Serializable {
 
 	public void setGroups(Set groups) {
 		this.groups = groups;
+	}
+
+	public Set getGroups_1() {
+		return this.groups_1;
+	}
+
+	public void setGroups_1(Set groups_1) {
+		this.groups_1 = groups_1;
 	}
 
 }

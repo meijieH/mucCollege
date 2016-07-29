@@ -1,10 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page import="com.mucCollege.model.Teacher" %>
+<%@ page import="com.mucCollege.model.User" %>
 <%@ taglib uri="/struts-tags" prefix="struts" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-Teacher teacher=(Teacher)session.getAttribute("user");
+User teacher=(User)session.getAttribute("user");
 %>
 
 <!DOCTYPE>
@@ -43,9 +43,9 @@ Teacher teacher=(Teacher)session.getAttribute("user");
   			<%if(teacher==null){%>
   				<label>没有用户登陆</label>
   			<%}else{%>
-	  			<label><%=teacher.getTeaname()%></label>
-	  			<label>数据库索引(id):<%=teacher.getTeacherid()%></label>
-	  			<label>工号:<%=teacher.getTeanum()%></label>
+	  			<label><%=teacher.getUsername()%></label>
+	  			<label>数据库索引(id):<%=teacher.getUserid()%></label>
+	  			<label>工号:<%=teacher.getUserid()%></label>
 	  			<label>职称:<%=teacher.getPosition()%></label>
 	  			<label>简介:<%=teacher.getIntro()%></label>
 	  			<label>邮箱:<%=teacher.getEmail()%></label>

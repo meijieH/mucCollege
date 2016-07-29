@@ -1,9 +1,9 @@
-<%@page import="com.mucCollege.model.Teacher"%>
+<%@page import="com.mucCollege.model.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-Teacher teacher=(Teacher)session.getAttribute("user");
+User teacher=(User)session.getAttribute("user");
 %>
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,7 @@ Teacher teacher=(Teacher)session.getAttribute("user");
 <body>
 	<header>
 		<%if(teacher!=null){%>
-		<p>登陆的用户，<%=teacher.getTeaname() %></p><a href="teacher/teacher_logout">注销</a>
+		<p>登陆的用户，<%=teacher.getUsername() %></p><a href="teacher/teacher_logout">注销</a>
 		<%} %>
 		<aside>
 			<ul>
