@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+     <constant name="struts.i18n.encoding" value="utf-8"/>
+     <constant name="struts.devMode" value="true" />
+     <!--Struts2中Action对象的创建交给spring完成-->
+     <constant name="struts.objectFactory" value="spring" />      
+     <package name="admin" namespace="/admin" extends="struts-default">
+	        <action name="admin_*" class="adminAction" method="{1}">
+	        	<result name="index">/admin/index.jsp</result> 
+	        	<result name="input">/admin/login.jsp</result>
+	        	<result name="show_info">/admin/show_info.jsp</result>
+	        	<result name="show_edit">/admin/show_edit.jsp</result>
+	        	<result name="add_student">/admin/add_student.jsp</result>
+	        	<result name="add_teacher">/admin/add_teacher.jsp</result>
+	        	<result name="all_student">/admin/all_student.jsp</result>
+	        	<result name="all_teacher">/admin/all_teacher.jsp</result>
+	        	<result name="view_student">/admin/view_student.jsp</result>
+	        	<result name="view_teacher">/admin/view_teacher.jsp</result>
+	        	<result name="edit_student">/admin/edit_student.jsp</result>
+	        	<result name="edit_teacher">/admin/edit_teacher.jsp</result>
+	        	<result name="up_student">/admin/up_student.jsp</result>
+	        	<result name="up_teacher">/admin/up_teacher.jsp</result>
+	        	<result name="add_question">/admin/add_question.jsp</result>
+	        	<result name="show_question">/admin/show_question.jsp</result>
+	        	<result name="edit_question">/admin/edit_question.jsp</result>
+	        	<result name="de_question">/admin/de_question.jsp</result>
+	        	<result name="add_course">/admin/add_course.jsp</result>
+	        	<result name="show_course">/admin/show_course.jsp</result>
+	        	<result name="edit_course">/admin/edit_course.jsp</result>
+	        	<result name="up_course">/admin/up_course.jsp</result>
+	        	<result name="de_course">/admin/de_course.jsp</result>
+	        </action>  
+	 </package> 
+	 <package name="student" namespace="/student" extends="struts-default">
+	        <action name="student_*" class="studentAction" method="{1}">
+	        	<result name="index">/student/student.jsp</result> 
+	        	<result name="input">/student/stud_login.jsp</result> 
+	        </action>  
+	 </package>
+
+</struts>

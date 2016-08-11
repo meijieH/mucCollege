@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="mucCollege"
+  id="myeclipse.1461487131958"
+  context-root="/mucCollege"
+  j2ee-spec="5.0"
+  archive="mucCollege.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

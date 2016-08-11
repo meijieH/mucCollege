@@ -1,0 +1,128 @@
+package com.mucCollege.model;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Testpaper entity. @author MyEclipse Persistence Tools
+ */
+
+public class Testpaper implements java.io.Serializable {
+
+	// Fields
+
+	private Integer testpaperid;
+	private String testpapername;
+	private Integer creator;
+	private Integer questionnum;
+	private Integer totalscore;
+	private Integer totaltime;
+	private Set tests = new HashSet(0);
+	private Set testques = new HashSet(0);
+	private Set testques_1 = new HashSet(0);
+	private Set tests_1 = new HashSet(0);
+
+	// Constructors
+
+	/** default constructor */
+	public Testpaper() {
+	}
+
+	/** full constructor */
+	public Testpaper(String testpapername, Integer creator,
+			Integer questionnum, Integer totalscore, Integer totaltime,
+			Set tests, Set testques, Set testques_1, Set tests_1) {
+		this.testpapername = testpapername;
+		this.creator = creator;
+		this.questionnum = questionnum;
+		this.totalscore = totalscore;
+		this.totaltime = totaltime;
+		this.tests = tests;
+		this.testques = testques;
+		this.testques_1 = testques_1;
+		this.tests_1 = tests_1;
+	}
+
+	// Property accessors
+
+	public Integer getTestpaperid() {
+		return this.testpaperid;
+	}
+
+	public void setTestpaperid(Integer testpaperid) {
+		this.testpaperid = testpaperid;
+	}
+
+	public String getTestpapername() {
+		return this.testpapername;
+	}
+
+	public void setTestpapername(String testpapername) {
+		this.testpapername = testpapername;
+	}
+
+	public Integer getCreator() {
+		return this.creator;
+	}
+
+	public void setCreator(Integer creator) {
+		this.creator = creator;
+	}
+
+	public Integer getQuestionnum() {
+		return this.questionnum;
+	}
+
+	public void setQuestionnum(Integer questionnum) {
+		this.questionnum = questionnum;
+	}
+
+	public Integer getTotalscore() {
+		return this.totalscore;
+	}
+
+	public void setTotalscore(Integer totalscore) {
+		this.totalscore = totalscore;
+	}
+
+	public Integer getTotaltime() {
+		return this.totaltime;
+	}
+
+	public void setTotaltime(Integer totaltime) {
+		this.totaltime = totaltime;
+	}
+
+	public Set getTests() {
+		return this.tests;
+	}
+
+	public void setTests(Set tests) {
+		this.tests = tests;
+	}
+
+	public Set getTestques() {
+		return this.testques;
+	}
+
+	public void setTestques(Set testques) {
+		this.testques = testques;
+	}
+
+	public Set getTestques_1() {
+		return this.testques_1;
+	}
+
+	public void setTestques_1(Set testques_1) {
+		this.testques_1 = testques_1;
+	}
+
+	public Set getTests_1() {
+		return this.tests_1;
+	}
+
+	public void setTests_1(Set tests_1) {
+		this.tests_1 = tests_1;
+	}
+
+}
