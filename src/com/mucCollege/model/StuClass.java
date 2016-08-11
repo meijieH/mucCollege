@@ -16,11 +16,11 @@ public class StuClass implements java.io.Serializable {
 	private String classname;
 	private String major;
 	private String grade;
-	private Set students = new HashSet(0);
-	private Set students_1 = new HashSet(0);
+	private Set users = new HashSet(0);
 	private Set tests = new HashSet(0);
 	private Set teacourses = new HashSet(0);
 	private Set tests_1 = new HashSet(0);
+	private Set users_1 = new HashSet(0);
 	private Set teacourses_1 = new HashSet(0);
 
 	// Constructors
@@ -31,17 +31,17 @@ public class StuClass implements java.io.Serializable {
 
 	/** full constructor */
 	public StuClass(Dept dept, String classname, String major, String grade,
-			Set students, Set students_1, Set tests, Set teacourses,
-			Set tests_1, Set teacourses_1) {
+			Set users, Set tests, Set teacourses, Set tests_1, Set users_1,
+			Set teacourses_1) {
 		this.dept = dept;
 		this.classname = classname;
 		this.major = major;
 		this.grade = grade;
-		this.students = students;
-		this.students_1 = students_1;
+		this.users = users;
 		this.tests = tests;
 		this.teacourses = teacourses;
 		this.tests_1 = tests_1;
+		this.users_1 = users_1;
 		this.teacourses_1 = teacourses_1;
 	}
 
@@ -87,20 +87,12 @@ public class StuClass implements java.io.Serializable {
 		this.grade = grade;
 	}
 
-	public Set getStudents() {
-		return this.students;
+	public Set getUsers() {
+		return this.users;
 	}
 
-	public void setStudents(Set students) {
-		this.students = students;
-	}
-
-	public Set getStudents_1() {
-		return this.students_1;
-	}
-
-	public void setStudents_1(Set students_1) {
-		this.students_1 = students_1;
+	public void setUsers(Set users) {
+		this.users = users;
 	}
 
 	public Set getTests() {
@@ -125,6 +117,14 @@ public class StuClass implements java.io.Serializable {
 
 	public void setTests_1(Set tests_1) {
 		this.tests_1 = tests_1;
+	}
+
+	public Set getUsers_1() {
+		return this.users_1;
+	}
+
+	public void setUsers_1(Set users_1) {
+		this.users_1 = users_1;
 	}
 
 	public Set getTeacourses_1() {

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Course;
-import com.mucCollege.model.Student;
+import com.mucCollege.model.User;
 import com.mucCollege.model.Selectcourse;
 @Service @Transactional
 
@@ -57,11 +57,11 @@ public class SelectcourseDao {
 		
 		/*根据学生查*/
 		@SuppressWarnings({ "rawtypes", "unchecked" })
-		public ArrayList<Selectcourse> QuerySelectcourseByStudent(Student student) {
+		public ArrayList<Selectcourse> QuerySelectcourseByStudent(User student) {
 			Session s = factory.getCurrentSession();
 	    	String hql = "From Selectcourse selectcourse where 1=1";
-	    	if(null!=student && student.getStudentid()!=0) 
-	    		hql = hql + " and selectcourse.student.studentid like '%" + student.getStudentid() + "%'";
+	    	if(null!=student && student.getUserid()!=0) 
+	    		hql = hql + " and selectcourse.student.userid like '%" + student.getUserid() + "%'";
 	    	Query q = s.createQuery(hql);
 	    	List selectcourseList = q.list();
 	    	return (ArrayList<Selectcourse>) selectcourseList;

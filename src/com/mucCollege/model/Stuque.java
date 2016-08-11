@@ -18,6 +18,7 @@ public class Stuque implements java.io.Serializable {
 	private Integer score;
 	private Set teamarks = new HashSet(0);
 	private Set teamarks_1 = new HashSet(0);
+	private Set teamarks_2 = new HashSet(0);
 
 	// Constructors
 
@@ -27,13 +28,14 @@ public class Stuque implements java.io.Serializable {
 
 	/** full constructor */
 	public Stuque(Stupaper stupaper, Testque testque, String answer,
-			Integer score, Set teamarks, Set teamarks_1) {
+			Integer score, Set teamarks, Set teamarks_1, Set teamarks_2) {
 		this.stupaper = stupaper;
 		this.testque = testque;
 		this.answer = answer;
 		this.score = score;
 		this.teamarks = teamarks;
 		this.teamarks_1 = teamarks_1;
+		this.teamarks_2 = teamarks_2;
 	}
 
 	// Property accessors
@@ -92,6 +94,14 @@ public class Stuque implements java.io.Serializable {
 
 	public void setTeamarks_1(Set teamarks_1) {
 		this.teamarks_1 = teamarks_1;
+	}
+
+	public Set getTeamarks_2() {
+		return this.teamarks_2;
+	}
+
+	public void setTeamarks_2(Set teamarks_2) {
+		this.teamarks_2 = teamarks_2;
 	}
 
 }

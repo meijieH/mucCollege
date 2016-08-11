@@ -14,9 +14,7 @@ import com.mucCollege.model.Dept;
 @Service @Transactional
 
 public class DeptDao {
-
-		@Resource SessionFactory factory;
-		
+		@Resource SessionFactory factory;		
 		/*增*/
 		public void addDept(Dept dept) throws Exception{
 			Session s = factory.getCurrentSession();
@@ -32,8 +30,7 @@ public class DeptDao {
 		public void updateDept(Dept dept)throws Exception{
 			Session s = factory.getCurrentSession();
 			s.update(dept);
-		}
-		
+		}		
 		/*查所有*/
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		public ArrayList<Dept> QueryAllTestInfo() {

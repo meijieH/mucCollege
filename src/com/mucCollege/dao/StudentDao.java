@@ -11,70 +11,80 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.StuClass;
-import com.mucCollege.model.Student;
+import com.mucCollege.model.User;
 
 @Service@Transactional
 public class StudentDao {
 	@Resource SessionFactory factory;
 	//增
-	public void addUser(Student student){
+	public void addUser(User student){
 		Session s=factory.getCurrentSession();
 		s.save(student);
 	}
 	//改
-	public void updateStudent(Student student){
+	public void updateStudent(User student){
 		Session s=factory.getCurrentSession();
 		s.update(student);
 	}
 	//删
 	public void deleteStudent(Integer studentid){
 		Session s=factory.getCurrentSession();
-		Object student=s.load(Student.class, studentid);
+		Object student=s.load(User.class, studentid);
 		s.delete(student);
 	}
 	//查全表
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Student> QueryAllStudent(){
+	public ArrayList<User> QueryAllStudent(){
 		Session s=factory.getCurrentSession();
 		String hql="From Student";
 		Query q=s.createQuery(hql);
 		List studentList=q.list();
-		return (ArrayList<Student>)studentList;
+		return (ArrayList<User>)studentList;
 	}
 	//通过主键查询
-	public Student GetStudentById(Integer studentid) {  
+	public User GetStudentById(Integer studentid) {  
         Session s = factory.getCurrentSession();
-        Student student = (Student)s.get(Student.class,studentid);
+        User student = (User)s.get(User.class,studentid);
         return student;
     }
-	//通过姓名来查询
+	//通过用户名来查询
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Student> QueryStudentByName(String studentname) { 
+	public ArrayList<User> QueryStudentByUserName(String studentname) { 
     	Session s = factory.getCurrentSession();
-    	String hql = "From Student student where 1=1";
-    	if(!studentname.equals("")) hql = hql + " and student.stuname like '%" + studentname + "%'";
+    	String hql = "From User user where 1=1";
+    	if(!studentname.equals("")) hql = hql + " and user.username like '%" + studentname + "%'";
     	Query q = s.createQuery(hql);
     	List studentList = q.list();
-    	return (ArrayList<Student>) studentList;
+    	return (ArrayList<User>) studentList;
+    }
+	//通过真实名称来查询
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public ArrayList<User> QueryStudentByReaName(String studentname) { 
+    	Session s = factory.getCurrentSession();
+    	String hql = "From User user where 1=1";
+    	if(!studentname.equals("")) hql = hql + " and user.reaname like '%" + studentname + "%'";
+    	Query q = s.createQuery(hql);
+    	List studentList = q.list();
+    	return (ArrayList<User>) studentList;
     }
 	//通过学号来查询
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Student> QueryStudentByStunumber(String stunumber) { 
+	public ArrayList<User> QueryStudentByStunumber(String stunumber) { 
     	Session s = factory.getCurrentSession();
-    	String hql = "From Student student where 1=1";
-    	if(!stunumber.equals("")) hql=hql+" and student.stunumber like '%" + stunumber + "%'";
+    	String hql = "From User user where 1=1";
+    	if(!stunumber.equals("")) hql=hql+" and user.usernum like '%" + stunumber + "%'";
     	Query q = s.createQuery(hql);
     	List studentList = q.list();
-    	return (ArrayList<Student>) studentList;
+    	return (ArrayList<User>) studentList;
     }
 	//通过班级来查询
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Student> QueryStudentByClass(StuClass stuclass) { 
+	public ArrayList<User> QueryStudentByClass(StuClass stuclass) { 
     	Session s = factory.getCurrentSession();
-    	String hql = "From Student student where 1=1";
-    	if(!stuclass.equals("")) hql = hql + " and student.class.classid like '%" + stuclass.getClassid() + "%'";
+    	String hql = "From User user where 1=1";
+    	if(!stuclass.equals("")) hql = hql + " and user.class.classid like '%" + stuclass.getClassid() + "%'";
     	Query q = s.createQuery(hql);
     	List studentList = q.list();
-    	return (ArrayList<Student>) studentList;
+    	return (ArrayList<User>) studentList;
     }
 }

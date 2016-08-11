@@ -12,8 +12,8 @@ public class Stupaper implements java.io.Serializable {
 	// Fields
 
 	private Integer stupaperid;
-	private Student student;
 	private Test test;
+	private User user;
 	private Integer score;
 	private Integer status;
 	private Integer accuracy;
@@ -27,10 +27,10 @@ public class Stupaper implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Stupaper(Student student, Test test, Integer score, Integer status,
+	public Stupaper(Test test, User user, Integer score, Integer status,
 			Integer accuracy, Set stuques, Set stuques_1) {
-		this.student = student;
 		this.test = test;
+		this.user = user;
 		this.score = score;
 		this.status = status;
 		this.accuracy = accuracy;
@@ -48,20 +48,20 @@ public class Stupaper implements java.io.Serializable {
 		this.stupaperid = stupaperid;
 	}
 
-	public Student getStudent() {
-		return this.student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
-
 	public Test getTest() {
 		return this.test;
 	}
 
 	public void setTest(Test test) {
 		this.test = test;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Integer getScore() {

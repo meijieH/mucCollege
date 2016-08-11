@@ -30,21 +30,13 @@
                 <comment>年级</comment>
             </column>
         </property>
-        <set name="students" inverse="true">
+        <set name="users" inverse="true">
             <key>
                 <column name="class">
                     <comment>班级</comment>
                 </column>
             </key>
-            <one-to-many class="com.mucCollege.model.Student" />
-        </set>
-        <set name="students_1" inverse="true">
-            <key>
-                <column name="class">
-                    <comment>班级</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Student" />
+            <one-to-many class="com.mucCollege.model.User" />
         </set>
         <set name="tests" inverse="true">
             <key>
@@ -69,6 +61,14 @@
                 </column>
             </key>
             <one-to-many class="com.mucCollege.model.Test" />
+        </set>
+        <set name="users_1" inverse="true">
+            <key>
+                <column name="class">
+                    <comment>班级</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.User" />
         </set>
         <set name="teacourses_1" inverse="true">
             <key>

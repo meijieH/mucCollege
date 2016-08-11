@@ -9,8 +9,8 @@ public class Coustudent implements java.io.Serializable {
 	// Fields
 
 	private Integer coustudentid;
-	private Student student;
 	private Teacourse teacourse;
+	private User user;
 
 	// Constructors
 
@@ -19,9 +19,9 @@ public class Coustudent implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Coustudent(Student student, Teacourse teacourse) {
-		this.student = student;
+	public Coustudent(Teacourse teacourse, User user) {
 		this.teacourse = teacourse;
+		this.user = user;
 	}
 
 	// Property accessors
@@ -34,20 +34,20 @@ public class Coustudent implements java.io.Serializable {
 		this.coustudentid = coustudentid;
 	}
 
-	public Student getStudent() {
-		return this.student;
-	}
-
-	public void setStudent(Student student) {
-		this.student = student;
-	}
-
 	public Teacourse getTeacourse() {
 		return this.teacourse;
 	}
 
 	public void setTeacourse(Teacourse teacourse) {
 		this.teacourse = teacourse;
+	}
+
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 }

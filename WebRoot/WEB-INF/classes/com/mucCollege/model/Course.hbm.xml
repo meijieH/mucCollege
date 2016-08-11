@@ -10,14 +10,29 @@
             <column name="courseid" />
             <generator class="increment"></generator>
         </id>
+        <many-to-one name="subject" class="com.mucCollege.model.Subject" fetch="select" lazy="false">
+            <column name="subject">
+                <comment>科目大类,不具体到专业</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="dept" class="com.mucCollege.model.Dept" fetch="select" lazy="false">
+            <column name="dept">
+                <comment>所属学院，外键</comment>
+            </column>
+        </many-to-one>
         <property name="coursename" type="java.lang.String">
-            <column name="coursename" length="20">
+            <column name="coursename" length="20" unique="true">
                 <comment>课程名称</comment>
             </column>
         </property>
         <property name="detail" type="java.lang.String">
             <column name="detail" length="30">
                 <comment>课程介绍</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="30">
+                <comment>课程状态</comment>
             </column>
         </property>
         <set name="selectcourses" inverse="true">

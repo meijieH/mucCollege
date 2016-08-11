@@ -10,14 +10,14 @@
             <column name="stupaperid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="student" class="com.mucCollege.model.Student" fetch="select" lazy="false">
-            <column name="student">
-                <comment>学生</comment>
-            </column>
-        </many-to-one>
         <many-to-one name="test" class="com.mucCollege.model.Test" fetch="select" lazy="false">
             <column name="test">
                 <comment>对应的考试</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="user" class="com.mucCollege.model.User" fetch="select" lazy="false">
+            <column name="student">
+                <comment>学生</comment>
             </column>
         </many-to-one>
         <property name="score" type="java.lang.Integer">

@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.StuClass;
-import com.mucCollege.model.Stuque;
-import com.mucCollege.model.Tecmark;
 import com.mucCollege.model.Test;
 @Service @Transactional
 

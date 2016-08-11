@@ -77,5 +77,4 @@ public class TestqueDao {
 	    	List testqueList = q.list();
 	    	return (ArrayList<Testque>) testqueList;
 	    }
-
 }

@@ -10,14 +10,14 @@
             <column name="testpaperid" />
             <generator class="increment"></generator>
         </id>
+        <many-to-one name="user" class="com.mucCollege.model.User" fetch="select" lazy="false">
+            <column name="creator">
+                <comment>创建试卷的老师</comment>
+            </column>
+        </many-to-one>
         <property name="testpapername" type="java.lang.String">
             <column name="testpapername" length="30">
                 <comment>试卷的名字</comment>
-            </column>
-        </property>
-        <property name="creator" type="java.lang.Integer">
-            <column name="creator">
-                <comment>创建试卷的老师</comment>
             </column>
         </property>
         <property name="questionnum" type="java.lang.Integer">
@@ -43,21 +43,21 @@
             </key>
             <one-to-many class="com.mucCollege.model.Test" />
         </set>
-        <set name="testques" inverse="true">
+        <set name="blocks" inverse="true">
             <key>
                 <column name="testpaper">
-                    <comment>对应的试卷</comment>
+                    <comment>外键，说明属于哪份卷子</comment>
                 </column>
             </key>
-            <one-to-many class="com.mucCollege.model.Testque" />
+            <one-to-many class="com.mucCollege.model.Block" />
         </set>
-        <set name="testques_1" inverse="true">
+        <set name="blocks_1" inverse="true">
             <key>
                 <column name="testpaper">
-                    <comment>对应的试卷</comment>
+                    <comment>外键，说明属于哪份卷子</comment>
                 </column>
             </key>
-            <one-to-many class="com.mucCollege.model.Testque" />
+            <one-to-many class="com.mucCollege.model.Block" />
         </set>
         <set name="tests_1" inverse="true">
             <key>

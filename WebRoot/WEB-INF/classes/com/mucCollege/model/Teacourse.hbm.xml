@@ -10,7 +10,7 @@
             <column name="teacourseid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="teacher" class="com.mucCollege.model.Teacher" fetch="select" lazy="false">
+        <many-to-one name="user" class="com.mucCollege.model.User" fetch="select" lazy="false">
             <column name="teacher">
                 <comment>授课教师</comment>
             </column>
@@ -25,6 +25,31 @@
                 <comment>课程</comment>
             </column>
         </many-to-one>
+        <property name="year" type="java.lang.Integer">
+            <column name="year">
+                <comment>学年，值2014、2015等</comment>
+            </column>
+        </property>
+        <property name="term" type="java.lang.Integer">
+            <column name="term">
+                <comment>学期，值为1、2</comment>
+            </column>
+        </property>
+        <property name="couscore" type="java.lang.Double">
+            <column name="couscore" precision="22" scale="0">
+                <comment>学分</comment>
+            </column>
+        </property>
+        <property name="coutime" type="java.lang.Double">
+            <column name="coutime" precision="22" scale="0">
+                <comment>课时</comment>
+            </column>
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="state" length="20">
+                <comment>课程状态</comment>
+            </column>
+        </property>
         <set name="coustudents" inverse="true">
             <key>
                 <column name="teccourse">
