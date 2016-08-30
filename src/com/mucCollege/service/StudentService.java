@@ -51,6 +51,7 @@ public class StudentService{
 	}
 	//显示管理员信息
 	public User showUserInfo(User student){
+		// todo 如果一定确定这里数据库总能查到内容,直接用get(0)倒也没什么问题。如果不是的话,加个判断吧
 		User db_student=studentDao.QueryStudentByUserName(student.getUsername()).get(0);
 		return db_student;
 	}

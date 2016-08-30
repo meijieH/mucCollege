@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Teacourse entity. @author MyEclipse Persistence Tools
  */
-
+// todo 各种变量名还是采取驼峰吧
 public class Teacourse implements java.io.Serializable {
 
 	// Fields
