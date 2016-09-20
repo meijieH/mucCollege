@@ -18,7 +18,14 @@ import com.mucCollege.model.Testque;
 public class TestqueDao {
 
 		@Resource SessionFactory factory;
-		
+			public List<Testque> queryTestqueByGroupid(Integer id){
+		Session s = factory.getCurrentSession();
+    	String hql = "From Testque testque where testque.group.groupid like '%" + id + "%'";
+    	Query q = s.createQuery(hql);
+    	@SuppressWarnings("unchecked")
+		List<Testque> result=(List<Testque>) q.list();
+    	return  result;
+	}
 		/*增*/
 		public void addTestque(Testque testque) throws Exception{
 			Session s = factory.getCurrentSession();
