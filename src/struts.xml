@@ -36,35 +36,20 @@
 	        	<result name="input">/student/stud_login.jsp</result> 
 	        </action>  
 	 </package>
-	 <!-- /* 我只负责管理teacher包，只需复制修改teacher包中的配置信息，请不要用该struts.xml覆盖你原有的文件! */ -->
 	<package name="teacher" namespace="/teacher" extends="struts-default">
-		<interceptors><!-- 拦截器配置 -->
-			<interceptor name="teacherChecker" class="com.mucCollege.aop.TeacherInterceptor"></interceptor><!-- 检查teacher权限 -->
-		</interceptors>
-		<global-results>
-			<result name="*">/teacher/redirection.jsp</result>
-			<result name="index">/teacher/index.jsp</result><!-- teacher的主页 -->
-			<result name="exception">/teacher/redirection.jsp</result><!-- 异常界面，在拦截器拦截到非法操作时会返回 -->
-		</global-results>
-		
-		<action name="teacher_*" class="com.mucCollege.action.TeacherAction" method="{1}">
-			<result name="input">/teacher/register.jsp</result><!-- 当表单验证不通过时返回的输入页面 -->
-			<result name="{1}Success">/teacher/redirection.jsp</result><!-- 成功时返回的页面-->
-			<result name="{1}Fail">/teacher/redirection.jsp</result><!-- 失败时返回的页面-->
+	    <action name="teacher_*" class="com.mucCollege.action.TeacherAction" method="{1}">
+	        <result name="register">register.jsp</result>
+	        <result name="index">index.jsp</result>
+	        <result name="login">login.jsp</result>
 		</action>
-		<action name="teacher_updata" class="com.mucCollege.action.TeacherAction" method="updata">
-			<interceptor-ref name="teacherChecker"></interceptor-ref><!-- 该action需要使用拦截器来判断权限 -->
-			<interceptor-ref name="basicStack"></interceptor-ref><!-- 使用了其他拦截器后必须要安装默认的拦截器 -->
-		</action>
-		
 		<action name="teacourse_*" class="com.mucCollege.action.TeacourseAction" method="{1}">
-			<interceptor-ref name="teacherChecker"></interceptor-ref>
-			<interceptor-ref name="basicStack"></interceptor-ref>
-			<result name="input">/teacher/mylesson/addlesson.jsp</result>
-			<result name="listSuccess">/teacher/mylesson/mylesson.jsp</result><!-- 拉取教师课程列表成功后的返回页面 -->
+		    <result name="courselist">courselist.jsp</result>
+		    <result name="course">course.jsp</result>
+		</action>
+		<action name="teatest_*" class="com.mucCollege.action.TeatestAction" method="{1}">
+		    <result name="testlist">testlist.jsp</result>
+		    <result name="testpaper">testpaper.jsp</result>
 		</action>
 	</package>
-	<!-- /* 杨赟  */ -->
-	
 	
 </struts>

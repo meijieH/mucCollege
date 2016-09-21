@@ -17,10 +17,26 @@ import com.mucCollege.model.Course;
 @Repository
 public class CourseDao {
 	@Resource SessionFactory factory;
+    	public List<Course> queryActiveCourse() throws Exception{//获取已注册且正常的课程
+		Session s = factory.getCurrentSession();
+    	String hql = "From Course course where course.state like '%" + "正常" + "%'";
+    	Query q = s.createQuery(hql);
+    	@SuppressWarnings("unchecked")
+		List<Course> results=q.list();
+    	return results;
+	}
+	public Course queryCourseByCoursename(String coursename) throws Exception{//获取已注册且正常的课程
+		Session s = factory.getCurrentSession();
+    	String hql = "From Course course where course.coursename like '%" + coursename + "%'";
+    	Query q = s.createQuery(hql);
+    	Course result=(Course) q.uniqueResult();
+    	return result;
+	}
 	//增
-	public void addCourse(Course course){
-		Session s=factory.getCurrentSession();
-		s.save(course);
+	public Integer addCourse(Course course){
+		course.setCourseid(1);
+		Session s = factory.getCurrentSession();
+		return (Integer)s.save(course);
 	}
 	//改
 	public void updateCourse(Course course){

@@ -19,12 +19,23 @@ import com.mucCollege.model.User;
 public class TeacourseDao {
 
 		@Resource SessionFactory factory;
-		
-		/*增*/
-		public void addTeacourse(Teacourse teacourse) throws Exception{
-			Session s = factory.getCurrentSession();
-			s.save(teacourse);
-		}
+			public List<Teacourse> queryTeacourseByTeacherid (Integer teacherid) throws Exception{ 
+    	Session s = factory.getCurrentSession();
+    	String hql = "From Teacourse teacourse where teacourse.user.userid like '%" + teacherid + "%'";
+    	Query q = s.createQuery(hql);
+    	@SuppressWarnings("unchecked")
+		List<Teacourse> results=q.list();
+    	return results;
+    }
+	public Integer addTeacourse(Teacourse teacourse) throws Exception{
+		Session s=factory.getCurrentSession();
+		teacourse.setTeacourseid(1);
+		return (Integer) s.save(teacourse);
+	}
+	public Teacourse getTeacourseById(Integer id) throws Exception{
+		Session s=factory.getCurrentSession();
+		return (Teacourse) s.get(Teacourse.class, id);
+	}
 		
 		/*删*/
 		public void deleteTeacourse(Integer Teacourseid)throws Exception{
@@ -47,13 +58,6 @@ public class TeacourseDao {
 	        Query q = s.createQuery(hql);
 	        List teacourseList = q.list();
 	        return (ArrayList<Teacourse>) teacourseList;
-	    }
-		
-		/*根据主键查*/
-		public Teacourse GetTeacourseById(Integer Teacourseid) {
-	        Session s = factory.getCurrentSession();
-	        Teacourse teacourse = (Teacourse)s.get(Teacourse.class, Teacourseid);
-	        return teacourse;
 	    }
 		
 		/*根据教师查*/
