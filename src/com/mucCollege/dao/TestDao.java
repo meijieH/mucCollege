@@ -79,4 +79,12 @@ public class TestDao {
 	    	List tecmarkList = q.list();
 	    	return (ArrayList<Test>) tecmarkList;
 	    }
+    	public List<Test> queryTestByTeacourseId(Integer id) throws Exception{
+		Session s = factory.getCurrentSession();
+		String hql = "From Test test where test.teacourse.teacourseid like '%" + id + "%'";
+		Query q = s.createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Test> results=q.list();
+		return results;
+	}
 }

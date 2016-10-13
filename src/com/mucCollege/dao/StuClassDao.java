@@ -68,5 +68,16 @@ public class StuClassDao {
 		List classList = q.list();
     	return (ArrayList<StuClass>) classList;
     }
-
+    	public List<StuClass> queryAllStuClass() throws Exception{
+		Session s = factory.getCurrentSession();
+    	String hql = " From StuClass stuClass ";
+    	Query q = s.createQuery(hql);
+    	@SuppressWarnings("unchecked")
+		List<StuClass> results=q.list();
+    	return results;
+	}
+	public StuClass getStuClassById(Integer id){
+		Session s = factory.getCurrentSession();
+    	return (StuClass) s.get(StuClass.class, id);
+	}
 }

@@ -16,7 +16,11 @@ import com.mucCollege.model.Testpaper;
 public class TestpaperDao {
 
 		@Resource SessionFactory factory;
-		
+			public Testpaper getTestpaperById(Integer id) throws Exception{
+		Session s = factory.getCurrentSession();
+		Testpaper testpaper=(Testpaper) s.get(Testpaper.class, id);
+		return testpaper;
+	}
 		/*增*/
 		public void addTestpaper(Testpaper testpaper) throws Exception{
 			Session s = factory.getCurrentSession();
@@ -42,13 +46,7 @@ public class TestpaperDao {
 	        Query q = s.createQuery(hql);
 	        List testpaperList = q.list();
 	        return (ArrayList<Testpaper>) testpaperList;
-	    }		
-		/*根据主键查*/
-		public Testpaper GetTestpaperById(Integer testpaperid) {
-	        Session s = factory.getCurrentSession();
-	        Testpaper testpaper = (Testpaper)s.get(Testpaper.class, testpaperid);
-	        return testpaper;
-	    }		
+	    }				
 		/*根据组的卷的名称条件查*/
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		public ArrayList<Testpaper> QueryTestpaperByName(String testpapername) { 

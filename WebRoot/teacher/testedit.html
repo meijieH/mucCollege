@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.border{
+		border:thin solid;
+	}
+	.textinput{
+		border:none;
+		display:block;
+	}
+	.block{
+		margin:15px;
+		font-size:2em;
+	}
+	.group{
+		margin:10px;
+		font-size:1em;
+	}
+	.textinput:focus,.textinput:hover{
+		border:thin solid;
+	}
+</style>
+<script>
+function addquestion(id){
+	var question=document.createElement("textarea");
+	question.placeholder="键入您的题目内容";
+	question.className="textinput"
+	document.getElementById(id).appendChild(question);
+}
+function addgrounp(id){
+	var grounp=document.createElement("div");
+	grounp.id="1.2.1";
+	var questionsname=document.createElement("input");
+	questionsname.type="text";
+	questionsname.placeholder="键入您的小题名字";
+	questionsname.className="textinput group";
+	grounp.appendChild(questionsname);
+	document.getElementById(id).appendChild(grounp);
+	addquestion("1.2.1");
+	var questionbutton=document.createElement("button");
+	questionbutton.onclick="addquestion('1.2.1')";
+	questionbutton.innerHTML="+添加题目";
+	grounp.appendChild(questionbutton);
+	grounp.appendChild(document.createElement("hr"));
+}
+</script>
+</head>
+
+<body>
+<h1>界面未制作完成，仅供预览，无法实现功能</h1>
+<p>JS代码存在缺陷，该页面还不能好好地工作……——杨赟</p>
+<div id="1">
+	<input type="text" placeholder="键入您的大题名字" class="textinput block">
+    	<div class="border">
+    		<div id="1.1">
+            	<div id="1.1.1">
+                	<input type="text" placeholder="键入您的小题名字" class="textinput group">
+        			<textarea type="text" placeholder="键入您的题目内容" class="textinput"></textarea>
+                </div>
+        		<button onClick="addquestion('1.1.1')">+添加题目</button><hr>
+    		</div>
+            <button onClick="addgrounp('1.1')">+添加小题</button>
+        </div>
+	<hr>
+</div>
+<button>+添加大题</button>
+</body>
+</html>
