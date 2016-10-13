@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<a href="admin/admin_showEditCourse?course.courseid=${course.courseid}">修改问题</a>
+  	<a href="admin/admin_showEditCourse?course.courseid=${course.courseid}">修改课程</a>
     <c:out value="${course.coursename}"></c:out> 
   </body>
 </html>

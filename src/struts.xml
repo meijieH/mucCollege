@@ -33,7 +33,7 @@
 	 <package name="student" namespace="/student" extends="struts-default">
 	        <action name="student_*" class="studentAction" method="{1}">
 	        	<result name="index">/student/student.jsp</result> 
-	        	<result name="input">/student/stud_login.jsp</result> 
+	        	<result name="input">/student/stu_login.jsp</result> 
 	        </action>  
 	 </package>
 	<package name="teacher" namespace="/teacher" extends="struts-default">

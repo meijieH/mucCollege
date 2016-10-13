@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,25 +9,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'show_edit.jsp' starting page</title>
+    <title>My JSP 'reg.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-  </head>  
+  </head>
+  
   <body>
-    <s:form action="admin/admin_updateAdmin" method="post">
-    	<s:textfield name="admin.username" label="用户名"></s:textfield>
-    	<s:textfield name="admin.password" label="密码"></s:textfield>
-    	<s:hidden name="admin.userid"></s:hidden>	
-    	
-    	<s:hidden name="admin.usertype.usertypeid"></s:hidden>
-    	<s:submit value="保存"></s:submit>
-    </s:form>    
+    <form action="student/student_register" method="post">
+    	用户名：<input type="text" name="user.username">
+    	密码：<input type="text" name="user.password">
+    	<button type="submit">注册</button>
+   	</form>
   </body>
 </html>
