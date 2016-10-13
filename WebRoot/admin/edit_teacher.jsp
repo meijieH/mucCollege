@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -20,9 +22,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
-  </head>
-  
+  </head>  
   <body>
-    This is my JSP page. <br>
+    <s:form action="admin/admin_updateTeacher" method="post">
+    	<s:textfield name="teacher.username" label="教师名称"></s:textfield>
+    	<s:hidden name="teacher.userid"></s:hidden>
+    	<s:submit value="保存"></s:submit>
+    </s:form>  
   </body>
 </html>

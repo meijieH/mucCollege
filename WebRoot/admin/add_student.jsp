@@ -24,9 +24,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   	<form action="admin/admin_addStudent" method="post">
-  		 <input type="text" name="student.stuname" placeholder="请输入用户名">
+  		 <input type="text" name="student.username" placeholder="请输入用户名">
   		 <input type="password" name="student.password"  placeholder="请输入密码">
+  		 <input type="text" name="student.usernum" placeholder="请输入学号">
+  		 <button type="submit">提交</button>
   	</form>
-   
+    <a href="admin/admin_backIndex">回到首页</a>
   </body>
 </html>
