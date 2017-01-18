@@ -1,0 +1,14 @@
+body {
+      position: relative;
+}
+.nav-testing{
+    position: absolute;
+}
+.nav-testing-fix{
+	position:fixed;
+	top:0;
+
+}
+#plate1{
+	margin-top: 90px;
+}

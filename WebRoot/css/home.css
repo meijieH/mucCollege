@@ -1,0 +1,61 @@
+
+/*左侧*/
+.main-left{
+	float: left;
+	width: 17%;
+	min-width:160px;
+}
+.main-left .img{
+	padding: 5px;
+	border: 1px solid #eee;
+	border-radius: 40px;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	width: 92px;
+}
+.main-left .img img{
+	border-radius: 40px;
+}
+.name{
+	width:230px;
+	text-align: center;
+	color: green;
+	margin-bottom: 20px;
+}
+/*选项*/
+.option-nav{
+	margin-top:20px;
+}
+.option-nav ul>li{
+	background-color: #fff;
+	width: 140px;
+	height: 40px;
+	text-align: center;
+	color: rgb(29,163,98);
+	border-radius: 8px;
+	border-right: 8px;
+	line-height: 40px;
+	font-size: 16px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	list-style: none;
+	cursor: pointer;
+}
+.option-nav ul>li.active{
+	color:#fff;
+	background-color:rgb(29,163,98);
+}
+.option-nav ul>li.active:hover{
+	color:rgb(242,242,242);
+}
+.option-nav ul>li:hover{
+	color:rgba(29,163,98,.8);
+}
+/*右侧*/
+.main-right{
+	width: 83%;
+	float: left;
+	background-color:#F1F7EE;
+	height: 600px;
+}

@@ -1,0 +1,303 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	font-family:"Microsoft Yahei",微软雅黑;
+	background-color: #F1F7EE;
+}
+ul,li{
+	margin:0;
+}
+label{
+	font-weight:normal;
+}
+a{
+	color:#333;
+}
+a:hover{
+	text-decoration:none;
+}
+i{
+	display:inline-block;
+	padding-right:10px;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+
+/*隐藏和显示*/
+.display-none{
+	display:none;
+}
+.hidden{
+	visibility:hidden;
+}
+.visible{
+	visibility:visible;
+}
+/*统一绿色导航*/
+header{
+	width: 100%;
+	height: 60px;
+    background-color: #15c288;
+}
+.nav-logo{
+	float:left;
+	margin-right:29%;
+}
+.nav-logo>a{
+	display:inline-block;
+	padding-left:25px;
+	line-height:60px;
+	color:white;
+	font-size:22px;
+	text-decoration:none;
+}	
+.nav-logo i{
+	maigin-left:0;
+}
+.nav-theme{
+}
+.nav-theme ul li{
+	float:left;
+	color:white;
+	line-height:60px;
+	font-size:16px;
+	margin-right:30px;
+	cursor:pointer;
+}
+.user-info{
+	float:right;
+	height:60px;
+	
+}
+.user-study,.user-message,.user-name,.user-face{
+	display:inline-block;
+}
+.user-study,.user-message,.user-name{
+	line-height:60px;
+	color:white;
+	font-size:14px;
+}
+.user-name{
+	vertical-align: top;
+	padding-left:20px;
+	max-width:120px;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.user-message,.user-study{
+	padding-left:20px;
+	cursor:pointer;
+}
+.user-message:hover,.user-study:hover{
+	color:rgb(32,85,9);
+}
+.user-face{
+	display:relative;
+	height:60px;
+	width:30px;
+	line-height:60px;
+	margin-left:20px;
+	margin-right:60px;
+}
+.user-face img{
+	border-radius:15px;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+}
+.user-setting{
+	position:absolute;
+	top:60px;
+	right:0;
+}
+.user-setting ul{
+	border:1px solid #15c288;
+	border-top:none;
+}
+.user-setting ul li{
+	width:90px;
+	line-height:40px;
+	padding-left:10px;
+	background-color:white;
+	border-bottom:1px solid #eee;
+	cursor:pointer;
+	color:#333;
+}
+.user-setting ul li:hover>a{
+	color:rgb(42,150,100);
+}
+/*字体继承*/
+h1,h2,h3,h4,h5,h6{
+	margin:0;
+	font-family: inherit;
+}
+/*列表样式*/
+ul>li{
+	list-style: none;
+}
+/*输入框的默认样式*/
+input[type=text],input[type=password],input[type=email],textarea,input[type=number]{
+	width: 100%;
+	border: 1px solid rgb(209,233,237);
+	background-color:white;
+    line-height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+input[type=text]:hover,input[type=password]:hover,input[type=email]:hover,textarea:hover,input[type=number]:hover{
+	border: 1px solid rgba(21,194,36,.5);
+}
+input[type=number]{
+	width:50%;
+}
+select{
+	width: 50%;
+	border: 1px solid rgb(209,233,237);
+	background-color:white;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+select option{
+	height: 40px;
+}
+/*基本按钮*/
+.btn-agree{
+	border:1px solid #15c2888;
+	background:#15c288;
+	lineheight:40px;
+	padding-left:15px;
+	color:white;
+}
+.btn-agree:hover{
+	color:#eee;
+	background:rgb(21,194,136);
+}
+/*统一的内容页标题样式*/
+.content-title{
+	width: 300px;
+	font-family: inherit;
+	font-size: 16px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    line-height: 30px;
+    margin-top: 0;
+    margin-bottom:10px;
+    color:#15c288;
+}
+/*统一的内容页描述样式*/
+.content-describe{
+	padding:5px;
+	background-color: white;
+	border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 14px;
+    color:#bbb;
+}
+/*统一的注册类表单样式*/
+.default-form{
+	/*margin:0 auto;*/
+	width: 530px;
+	border-radius: 8px;
+	margin-top: 50px;
+}
+.default-form ul>li{
+	margin-bottom: 10px;
+}
+.default-form span.left-span{
+	display: inline-block;
+	float: left;
+	text-align: right;
+	font-size: 16px;
+	line-height: 40px;
+	padding-right: 10px;
+	width: 100px;
+}
+.default-form span.right-span{
+	display: inline-block;
+	width: 420px;
+}
+/*搜索样式*/
+.search-box{
+    margin-bottom: 10px;
+}
+.search-box .search-input{
+    width: 50%;
+    font-size: 16px;
+    color: black;
+    padding-left:10px;
+}
+.search-box button{
+    border: none;
+    line-height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+/*盒子列表*/
+.box-lists .box{
+	width: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    border:1px solid #eee;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.box-lists .box:hover{
+	border: 1px solid rgb(6,105,173);
+}
+.box-lists .box a{
+    text-decoration: none;
+}
+.box-content{
+    padding:8px;
+}
+.box-content img{
+    width: 100%;
+}
+/*表格*/
+.default-table{
+	width:100%;
+}
+/*表头*/
+.default-table thead tr{
+	line-height:40px;
+	background-color:white;
+	color:#15c288;
+	font-size:16px;
+	font-weight:normal;
+	border-bottom:1px solid #15c288;
+}
+.default-table th{
+	text-align:center;
+	font-weight:normal;
+}
+.default-table tr{
+	line-height:30px;
+}
+.default-table tbody td{
+	text-align:center;
+	background-color:white;
+}
+/*表内选框*/
+.default-table input[type="checkbox"]{
+	margin-right:10px;
+}
+/*文本盒子*/
+.box-label{
+	font-size:16px;
+	font-weight:bolder;
+	color:#15c288;
+	font-family:"Microsoft Yahei",微软雅黑;
+}

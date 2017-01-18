@@ -1,0 +1,32 @@
+.reg-form{
+	margin:0 auto;
+	width: 530px;
+	border-radius: 8px;
+	margin-top: 50px;
+}
+.reg-form ul>li{
+	margin-bottom: 10px;
+}
+.reg-form span.left-span{
+	display: inline-block;
+	float: left;
+	text-align: right;
+	font-size: 16px;
+	line-height: 40px;
+	padding-right: 10px;
+	width: 100px;
+}
+.reg-form span.right-span{
+	display: inline-block;
+	width: 420px;
+}
+.reg-form span.select-identity{
+	display: inline-block;
+	width: 420px;
+	line-height: 40px;
+	font-size: 16px;
+}
+.reg-form span.select-identity span{
+	cursor: pointer;
+	margin-right: 10px;
+}

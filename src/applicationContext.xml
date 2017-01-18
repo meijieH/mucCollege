@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"> 
+          <!--组件扫描    所有的注解都写在这个包里了，这个包里有dom、action、dao等子包     要改动base-package -->
+<context:component-scan base-package="com.mucCollege"/>  <!-- 要在xx包中找注解 -->
+	                                                                 <!-- 要改动数据库的连接 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">  <!-- 自动生成的class也可以的 -->
+		<property name="driverClass" value="org.gjt.mm.mysql.Driver"/><!-- 另外一个驱动，同样可连接数据库 -->
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/java_test?useUnicode=true&amp;characterEncoding=UTF-8"/>
+		<property name="user" value="root"/>                               <!-- 上句后半句会减少乱码的可能性 -->
+		<property name="password" value=""/>
+		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+		<property name="initialPoolSize" value="1"/>
+		<!--连接池中保留的最小连接数。-->
+		<property name="minPoolSize" value="1"/>	
+		<!--连接池中保留的最大连接数。Default: 15 -->
+		<property name="maxPoolSize" value="300"/>
+		<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+		<property name="maxIdleTime" value="60"/>	
+		<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+		<property name="acquireIncrement" value="5"/>	
+		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+		<property name="idleConnectionTestPeriod" value="60"/>
+	</bean>
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		 <property name="mappingResources">
+			    <list>	
+			      <value>com/mucCollege/model/Selectcourse.hbm.xml</value>
+			      <value>com/mucCollege/model/Test.hbm.xml</value>
+			      <value>com/mucCollege/model/Stupaper.hbm.xml</value>
+			      <value>com/mucCollege/model/Testpaper.hbm.xml</value>
+			      <value>com/mucCollege/model/Dept.hbm.xml</value>
+			      <value>com/mucCollege/model/Quetype.hbm.xml</value>
+			      <value>com/mucCollege/model/Teacourse.hbm.xml</value>
+			      <value>com/mucCollege/model/Coustudent.hbm.xml</value>
+			      <value>com/mucCollege/model/Testque.hbm.xml</value>
+			      <value>com/mucCollege/model/Stuque.hbm.xml</value>
+			      <value>com/mucCollege/model/Errorque.hbm.xml</value>
+			      <value>com/mucCollege/model/Question.hbm.xml</value>
+			      <value>com/mucCollege/model/StuClass.hbm.xml</value>
+			      <value>com/mucCollege/model/Course.hbm.xml</value>
+			      <value>com/mucCollege/model/Teamark.hbm.xml</value>
+			      <value>com/mucCollege/model/Subject.hbm.xml</value>
+			      <value>com/mucCollege/model/Block.hbm.xml</value>
+			      <value>com/mucCollege/model/Group.hbm.xml</value>
+			      <value>com/mucCollege/model/Usertype.hbm.xml</value>
+			      <value>com/mucCollege/model/Collection.hbm.xml</value>
+			      <value>com/mucCollege/model/User.hbm.xml</value></list>
+		</property>
+		 <property name="hibernateProperties">
+			 <value>
+			      hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+			      hibernate.hbm2ddl.auto=update
+			      hibernate.show_sql=false
+			      hibernate.format_sql=false
+			  </value>
+		 </property>
+	</bean>
+  	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>  <!-- 把sessionFactory注入每一个类中 -->
+	</bean>
+	<!--使用基于注解方式配置事务 -->
+	<tx:annotation-driven transaction-manager="txManager"/> 	  
+</beans>

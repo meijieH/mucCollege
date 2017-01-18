@@ -1,0 +1,15 @@
+.apply-lesson-left{
+    width:310px;
+    float:left;
+}
+.apply-lesson-t{
+    margin-top:10px;
+    margin-left:10px;
+}
+.al-describe-t{
+	margin-left:10px;
+	text-indent:2em;
+}
+.apply-lesson-right{
+    margin-left:320px;
+}
