@@ -14,6 +14,7 @@ public class Usertype implements java.io.Serializable {
 	private Integer usertypeid;
 	private String role;
 	private Set users = new HashSet(0);
+	private Set users_1 = new HashSet(0);
 
 	// Constructors
 
@@ -22,9 +23,10 @@ public class Usertype implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Usertype(String role, Set users) {
+	public Usertype(String role, Set users, Set users_1) {
 		this.role = role;
 		this.users = users;
+		this.users_1 = users_1;
 	}
 
 	// Property accessors
@@ -51,6 +53,14 @@ public class Usertype implements java.io.Serializable {
 
 	public void setUsers(Set users) {
 		this.users = users;
+	}
+
+	public Set getUsers_1() {
+		return this.users_1;
+	}
+
+	public void setUsers_1(Set users_1) {
+		this.users_1 = users_1;
 	}
 
 }

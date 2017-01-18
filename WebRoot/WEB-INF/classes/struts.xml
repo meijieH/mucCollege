@@ -30,6 +30,14 @@
 	        	<result name="edit_dept">/admin/edit_dept.jsp</result>
 	        </action>  
 	 </package> 
+	 <package name="user" namespace="/user" extends="struts-default">
+	        <action name="user_*" class="userAction" method="{1}">
+	        	<result name="admin">/admin/index.jsp</result> 
+	        	<result name="teacher">/teacher/teacher.jsp</result> 
+	        	<result name="student">/student/student.jsp</result> 
+	        	<result name="login">/index.jsp</result> 
+	        </action>  
+	 </package>
 	 <package name="student" namespace="/student" extends="struts-default">
 	        <action name="student_*" class="studentAction" method="{1}">
 	        	<result name="index">/student/student.jsp</result> 

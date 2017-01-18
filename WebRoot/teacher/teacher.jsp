@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +18,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<header>
 		<a href="index.jsp">注销</a>
 		<aside>
+		您已登陆，欢迎您<s:property value="#session.user.username"/><br>
+  <a href="teacher/teacher_logout">登出</a>
+  <a href="teacher/teacourse_list">我的课程</a>
 			<ul>
 				<fieldset>
                  	<legend>教师，MINDA</legend>
+                 	
                  	<li><a href="teacher/teacenter/teacenter.jsp">修改资料</a></li>
 				    <li><a href="teacher/teacenter/mymessage.jsp">查看消息</a></li>
 				    <li><a href="teacher/teacenter/modpaswd.jsp">密码修改</a></li>

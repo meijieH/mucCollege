@@ -20,6 +20,14 @@
                 <comment>学院描述</comment>
             </column>
         </property>
+        <set name="courses" inverse="true">
+            <key>
+                <column name="dept">
+                    <comment>所属学院，外键</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Course" />
+        </set>
         <set name="stuClasses" inverse="true">
             <key>
                 <column name="dept">
@@ -28,7 +36,15 @@
             </key>
             <one-to-many class="com.mucCollege.model.StuClass" />
         </set>
-        <set name="courses" inverse="true">
+        <set name="users" inverse="true">
+            <key>
+                <column name="dept">
+                    <comment>所在学院、外键</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.User" />
+        </set>
+        <set name="courses_1" inverse="true">
             <key>
                 <column name="dept">
                     <comment>所属学院，外键</comment>
@@ -44,7 +60,7 @@
             </key>
             <one-to-many class="com.mucCollege.model.StuClass" />
         </set>
-        <set name="users" inverse="true">
+        <set name="users_1" inverse="true">
             <key>
                 <column name="dept">
                     <comment>所在学院、外键</comment>

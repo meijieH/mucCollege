@@ -35,22 +35,6 @@
                 <comment>课程状态</comment>
             </column>
         </property>
-        <set name="selectcourses" inverse="true">
-            <key>
-                <column name="course">
-                    <comment>所选课程</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Selectcourse" />
-        </set>
-        <set name="selectcourses_1" inverse="true">
-            <key>
-                <column name="course">
-                    <comment>所选课程</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Selectcourse" />
-        </set>
         <set name="teacourses" inverse="true">
             <key>
                 <column name="course">

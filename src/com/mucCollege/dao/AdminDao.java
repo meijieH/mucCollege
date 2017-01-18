@@ -14,21 +14,9 @@ import com.mucCollege.model.User;
 
 @Service
 @Transactional
-public class AdminDao {
+public class AdminDao extends UserDao{
 	@Resource
 	SessionFactory factory;
-
-	// 增
-	public void addAdmin(User admin) {
-		Session s = factory.getCurrentSession();
-		s.save(admin);
-	}
-
-	// 改
-	public void updateAdmin(User admin) {
-		Session s = factory.getCurrentSession();
-		s.update(admin);
-	}
 
 	// 查全表
 	@SuppressWarnings({ "unchecked", "rawtypes" })

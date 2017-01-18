@@ -23,6 +23,14 @@
             </key>
             <one-to-many class="com.mucCollege.model.Question" />
         </set>
+        <set name="questions_1" inverse="true">
+            <key>
+                <column name="subject">
+                    <comment>题目的科目大类</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Question" />
+        </set>
         <set name="courses" inverse="true">
             <key>
                 <column name="subject">

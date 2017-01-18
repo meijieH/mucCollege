@@ -119,7 +119,7 @@ public class AdminAction{
 	}	
 	//显示管理员信息
 	public String showAdminInfo(){
-		admin=(User)session.get("user");
+		admin=(User)session.get("admin");
 		return "show_info";
 	}	
 	//修改用户信息
@@ -127,7 +127,7 @@ public class AdminAction{
 		admin=(User)session.get("admin");
 		return "show_edit";
 	}
-	public String updateAdmin(){
+	public String updateAdmin() throws Exception{
 		adminService.update(admin);
 		return "show_info";
 	}
@@ -139,7 +139,7 @@ public class AdminAction{
 		
 	//2.对学生和教师信息的操作**********
 	//增加用户
-	public String addStudent(){
+	public String addStudent() throws Exception{
 		adminService.addStudent(student);
 		return "view_student";
 	}

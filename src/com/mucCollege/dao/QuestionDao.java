@@ -51,7 +51,7 @@ public class QuestionDao {
 	public ArrayList<Question> QueryQuestionBySub(String subject) { 
     	Session s = factory.getCurrentSession();
     	String hql = "From Question question where 1=1";//保证空条件查询不出错
-    	if(!subject.equals("")) hql = hql + " and question.subject like '%" + subject + "%'";
+    	if(!subject.equals("")) hql = hql + " and question.subject.subjectname like '%" + subject + "%'";
     	Query q = s.createQuery(hql);
     	List subjectList = q.list();
     	return (ArrayList<Question>) subjectList;
@@ -76,4 +76,15 @@ public class QuestionDao {
     	List stemList = q.list();
     	return (ArrayList<Question>) stemList;
     }
+	//根据adder查询
+	@SuppressWarnings("unchecked")
+	public ArrayList<Question> QueryQuestionByAdder(String username){
+		Session s=factory.getCurrentSession();
+		String hql="From Question question where 1=1";
+		if(!username.equals(""))
+			hql=hql+" and question.adder.username like '%"+username+"%'";
+		Query q=s.createQuery(hql);
+		List adderList=q.list();
+		return (ArrayList<Question>)adderList;
+	}
 }

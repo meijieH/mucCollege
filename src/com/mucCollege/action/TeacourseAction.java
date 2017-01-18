@@ -74,7 +74,6 @@ public class TeacourseAction implements Action ,SessionAware{
 		}
 		return "course";
 	}
-	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session=session;
 	}

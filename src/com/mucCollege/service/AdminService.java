@@ -11,19 +11,17 @@ import com.mucCollege.dao.AdminDao;
 import com.mucCollege.dao.CourseDao;
 import com.mucCollege.dao.DeptDao;
 import com.mucCollege.dao.QuestionDao;
-import com.mucCollege.dao.StudentDao;
-import com.mucCollege.dao.TeacherDao;
+import com.mucCollege.dao.UserDao;
 import com.mucCollege.model.Course;
 import com.mucCollege.model.Dept;
 import com.mucCollege.model.Question;
 import com.mucCollege.model.User;
 
 @Service@Transactional
-public class AdminService{
+public class AdminService extends UserService{
 	@Resource SessionFactory factory;
 	@Resource AdminDao adminDao;
-	@Resource StudentDao studentDao;
-	@Resource TeacherDao teacherDao;
+	@Resource UserDao userDao;
 	@Resource QuestionDao questionDao;
 	@Resource CourseDao courseDao;
 	@Resource DeptDao deptDao;
@@ -38,8 +36,8 @@ public class AdminService{
 	}
 	//1.对管理的操作**********
 	//注册
-	public void register(User admin){
-		adminDao.addAdmin(admin);
+	public void register(User admin) throws Exception{
+		adminDao.addUser(admin);
 	}
 	//登陆及验证：登陆用户名、密码格式放在jsp里验证
 	@Transactional(propagation=Propagation.NOT_SUPPORTED) 
@@ -62,8 +60,8 @@ public class AdminService{
 		}		
 	}
 	//修改管理员信息
-	public void update(User admin){
-		adminDao.updateAdmin(admin);
+	public void update(User admin) throws Exception{
+		adminDao.updateUser(admin);
 	}
 	//显示管理员信息
 	public User showUserInfo(int adminid){
@@ -73,43 +71,43 @@ public class AdminService{
 	
 	//2.对学生/教师的操作**********
 	//增加用户
-    public void addStudent(User student){
-    	studentDao.addUser(student);
+    public void addStudent(User student) throws Exception{
+    	userDao.addUser(student);
     }    
     public void addTeacher(User teacher) throws Exception{
-    	teacherDao.addTeacher(teacher);
+    	userDao.addUser(teacher);
     }
 	//显示所有用户信息
 	public ArrayList<User> showAllStudent(){
-		ArrayList<User> studentList=studentDao.QueryAllStudent();
+		ArrayList<User> studentList=userDao.QueryAllStudent();
 		return studentList;
 	}
 	public ArrayList<User> showAllTeacher(){
-		ArrayList<User> teacherList=teacherDao.QueryAllTeacher();
+		ArrayList<User> teacherList=userDao.QueryAllTeacher();
 		return teacherList;
 	}
 	//显示单个用户信息
 	public User showStudentInfo(int studentid){
-		User db_student=studentDao.GetStudentById(studentid);
+		User db_student=userDao.QueryUserById(studentid);
 		return db_student;
 	}
 	public User showTeacherInfo(int teacherid){
-		User db_teacher=teacherDao.QueryTeacherById(teacherid);
+		User db_teacher=userDao.QueryUserById(teacherid);
 		return db_teacher;
 	}
 	//修改单个用户信息
 	public void updateStudent(User student) throws Exception{
-		studentDao.updateStudent(student);
+		userDao.updateUser(student);
 	}
 	public void updateTeacher(User teacher) throws Exception{
-		teacherDao.updateTeacher(teacher);
+		userDao.updateUser(teacher);
 	}
 	//删除用户
 	public void deleteStudent(int studentid) throws Exception{
-		studentDao.deleteStudent(studentid);
+		userDao.deleteUser(studentid);
 	}
 	public void deleteTeacher(int teacherid) throws Exception{
-		teacherDao.deleteTeacher(teacherid);
+		userDao.deleteUser(teacherid);
 	}
 	//3.对题目的操作**********
 	//增加题目

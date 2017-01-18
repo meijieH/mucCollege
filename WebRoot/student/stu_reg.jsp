@@ -20,8 +20,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <form action="student/student_register" method="post">
-    	用户名：<input type="text" name="user.username">
-    	密码：<input type="text" name="user.password">
+    	用户名：<input type="text" name="student.username">
+    	密码：<input type="text" name="student.password">
     	<button type="submit">注册</button>
    	</form>
   </body>

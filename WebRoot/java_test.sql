@@ -63,8 +63,10 @@ CREATE TABLE `collection` (
   `teacher` int(11) DEFAULT NULL,
   `question` int(11) DEFAULT NULL,
   PRIMARY KEY (`collectionid`),
-  KEY `teacher` (`teacher`),
-  KEY `question` (`question`),
+  KEY `FK9835AE9E16EC6DB6` (`question`),
+  KEY `FK9835AE9E69BC3297` (`teacher`),
+  CONSTRAINT `FK9835AE9E16EC6DB6` FOREIGN KEY (`question`) REFERENCES `question` (`questionid`),
+  CONSTRAINT `FK9835AE9E69BC3297` FOREIGN KEY (`teacher`) REFERENCES `user` (`userid`),
   CONSTRAINT `collection_ibfk_1` FOREIGN KEY (`teacher`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `collection_ibfk_2` FOREIGN KEY (`question`) REFERENCES `question` (`questionid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -85,15 +87,16 @@ CREATE TABLE `course` (
   PRIMARY KEY (`courseid`),
   UNIQUE KEY `coursename` (`coursename`),
   KEY `FKAF42E01BF5014F2E` (`subject`),
-  KEY `dept` (`dept`),
+  KEY `FKAF42E01BBFB17774` (`dept`),
+  CONSTRAINT `FKAF42E01BBFB17774` FOREIGN KEY (`dept`) REFERENCES `dept` (`deptid`),
   CONSTRAINT `FKAF42E01BF5014F2E` FOREIGN KEY (`subject`) REFERENCES `subject` (`subjectid`),
   CONSTRAINT `course_ibfk_1` FOREIGN KEY (`subject`) REFERENCES `subject` (`subjectid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `course_ibfk_2` FOREIGN KEY (`dept`) REFERENCES `dept` (`deptid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 /*Data for the table `course` */
 
-insert  into `course`(`courseid`,`coursename`,`detail`,`subject`,`state`,`dept`) values (1,'软件工程与计算一',NULL,NULL,NULL,NULL);
+insert  into `course`(`courseid`,`coursename`,`detail`,`subject`,`state`,`dept`) values (1,'软件工程与计算一',NULL,NULL,NULL,NULL),(2,'软件工程与计算二','啦啦啦',NULL,NULL,NULL),(4,'软件工程与计算','哈哈哈',NULL,NULL,NULL),(7,'计算机系统基础','马老师',NULL,NULL,NULL),(9,'中间件','吴倩',NULL,NULL,NULL),(12,'马原','黄竹',NULL,NULL,NULL),(14,'高数上下','乌大神',NULL,NULL,NULL),(15,'哈哈哈哈','嘿嘿嘿嘿',NULL,NULL,NULL);
 
 /*Table structure for table `coustudent` */
 
@@ -106,6 +109,8 @@ CREATE TABLE `coustudent` (
   PRIMARY KEY (`coustudentid`),
   KEY `FKCBFAE492F3A9A94C` (`student`),
   KEY `FKCBFAE492CF93E62E` (`teccourse`),
+  KEY `FKCBFAE4924F88E8F0` (`student`),
+  CONSTRAINT `FKCBFAE4924F88E8F0` FOREIGN KEY (`student`) REFERENCES `user` (`userid`),
   CONSTRAINT `FKCBFAE492CF93E62E` FOREIGN KEY (`teccourse`) REFERENCES `teacourse` (`teacourseid`),
   CONSTRAINT `FKCBFAE492F3A9A94C` FOREIGN KEY (`student`) REFERENCES `user` (`userid`),
   CONSTRAINT `coustudent_ibfk_1` FOREIGN KEY (`student`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -124,11 +129,11 @@ CREATE TABLE `dept` (
   `deptdes` varchar(300) DEFAULT NULL COMMENT '学院描述',
   PRIMARY KEY (`deptid`),
   UNIQUE KEY `deptname` (`deptname`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 /*Data for the table `dept` */
 
-insert  into `dept`(`deptid`,`deptname`,`deptdes`) values (1,'信息工程学院',NULL),(2,'生环学院',NULL),(3,'理学院',NULL),(6,'文传学院',NULL),(7,'文传学院3',NULL);
+insert  into `dept`(`deptid`,`deptname`,`deptdes`) values (1,'信息工程学院',NULL),(2,'生环学院',NULL),(3,'理学院',NULL),(6,'文传学院',NULL),(7,'文传学院3',NULL),(8,'马克思主义学院',NULL),(13,'哈哈哈',NULL),(15,'啦啦啦啦啦啦',NULL),(16,'哈喽小萝莉',NULL),(17,'外院',NULL);
 
 /*Table structure for table `errorque` */
 
@@ -170,7 +175,7 @@ CREATE TABLE `question` (
   `questionid` int(11) NOT NULL AUTO_INCREMENT COMMENT '题库中题的id',
   `type` int(10) DEFAULT NULL COMMENT '题型',
   `subject` int(11) DEFAULT NULL COMMENT '题目的科目大类',
-  `creator` int(20) DEFAULT NULL COMMENT '学号/学工号',
+  `adder` int(20) DEFAULT NULL COMMENT '学号/学工号',
   `label` varchar(120) DEFAULT NULL COMMENT '涉及的知识点',
   `stem` text COMMENT '题干',
   `answer` text COMMENT '标准答案',
@@ -186,13 +191,19 @@ CREATE TABLE `question` (
   `isvisiable` tinyint(1) DEFAULT NULL COMMENT '是否题目对学生可见',
   PRIMARY KEY (`questionid`),
   KEY `FKBA823BE6FAF0318B` (`type`),
-  KEY `subject` (`subject`),
+  KEY `FKBA823BE6F5014F2E` (`subject`),
+  KEY `FKBA823BE6C51047C3` (`adder`),
+  CONSTRAINT `FKBA823BE6C51047C3` FOREIGN KEY (`adder`) REFERENCES `user` (`userid`),
+  CONSTRAINT `FKBA823BE6F5014F2E` FOREIGN KEY (`subject`) REFERENCES `subject` (`subjectid`),
   CONSTRAINT `FKBA823BE6FAF0318B` FOREIGN KEY (`type`) REFERENCES `quetype` (`quetypeid`),
   CONSTRAINT `question_ibfk_1` FOREIGN KEY (`type`) REFERENCES `quetype` (`quetypeid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `question_ibfk_2` FOREIGN KEY (`subject`) REFERENCES `subject` (`subjectid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `question_ibfk_2` FOREIGN KEY (`subject`) REFERENCES `subject` (`subjectid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `question_ibfk_3` FOREIGN KEY (`adder`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `question` */
+
+insert  into `question`(`questionid`,`type`,`subject`,`adder`,`label`,`stem`,`answer`,`quescore`,`option1`,`option2`,`option3`,`option4`,`option5`,`option6`,`option7`,`isPicture`,`isvisiable`) values (1,NULL,NULL,NULL,'计算机科学',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `quetype` */
 
@@ -215,14 +226,17 @@ DROP TABLE IF EXISTS `selectcourse`;
 CREATE TABLE `selectcourse` (
   `selectid` bigint(11) NOT NULL AUTO_INCREMENT COMMENT '选课id号',
   `student` int(11) DEFAULT NULL COMMENT '学生',
-  `course` int(11) DEFAULT NULL COMMENT '所选课程',
+  `teacourse` int(11) DEFAULT NULL COMMENT '所选课程',
   PRIMARY KEY (`selectid`),
-  KEY `FK94AD681796E628A0` (`course`),
+  KEY `FK94AD681796E628A0` (`teacourse`),
   KEY `FK94AD6817F3A9A94C` (`student`),
-  CONSTRAINT `FK94AD681796E628A0` FOREIGN KEY (`course`) REFERENCES `course` (`courseid`),
+  KEY `FK94AD68174F88E8F0` (`student`),
+  KEY `FK94AD681765C76FAC` (`teacourse`),
+  CONSTRAINT `FK94AD68174F88E8F0` FOREIGN KEY (`student`) REFERENCES `user` (`userid`),
+  CONSTRAINT `FK94AD681765C76FAC` FOREIGN KEY (`teacourse`) REFERENCES `teacourse` (`teacourseid`),
   CONSTRAINT `FK94AD6817F3A9A94C` FOREIGN KEY (`student`) REFERENCES `user` (`userid`),
-  CONSTRAINT `selectcourse_ibfk_2` FOREIGN KEY (`course`) REFERENCES `course` (`courseid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `selectcourse_ibfk_3` FOREIGN KEY (`student`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `selectcourse_ibfk_3` FOREIGN KEY (`student`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `selectcourse_ibfk_4` FOREIGN KEY (`teacourse`) REFERENCES `teacourse` (`teacourseid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `selectcourse` */
@@ -241,6 +255,8 @@ CREATE TABLE `stupaper` (
   PRIMARY KEY (`stupaperid`),
   KEY `FK707913D8F3A9A94C` (`student`),
   KEY `FK707913D8BFC0040E` (`test`),
+  KEY `FK707913D84F88E8F0` (`student`),
+  CONSTRAINT `FK707913D84F88E8F0` FOREIGN KEY (`student`) REFERENCES `user` (`userid`),
   CONSTRAINT `FK707913D8BFC0040E` FOREIGN KEY (`test`) REFERENCES `test` (`testid`),
   CONSTRAINT `FK707913D8F3A9A94C` FOREIGN KEY (`student`) REFERENCES `user` (`userid`),
   CONSTRAINT `stupaper_ibfk_2` FOREIGN KEY (`test`) REFERENCES `test` (`testid`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -301,7 +317,9 @@ CREATE TABLE `teacourse` (
   KEY `FKE558542B96E628A0` (`course`),
   KEY `FKE558542B15915B06` (`class`),
   KEY `FKE558542B28103C9A` (`teacher`),
+  KEY `FKE558542B69BC3297` (`teacher`),
   CONSTRAINT `FKE558542B15915B06` FOREIGN KEY (`class`) REFERENCES `class` (`classid`),
+  CONSTRAINT `FKE558542B69BC3297` FOREIGN KEY (`teacher`) REFERENCES `user` (`userid`),
   CONSTRAINT `FKE558542B96E628A0` FOREIGN KEY (`course`) REFERENCES `course` (`courseid`),
   CONSTRAINT `teacourse_ibfk_2` FOREIGN KEY (`course`) REFERENCES `course` (`courseid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `teacourse_ibfk_4` FOREIGN KEY (`class`) REFERENCES `class` (`classid`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -363,7 +381,8 @@ CREATE TABLE `testpaper` (
   `totalscore` int(3) DEFAULT NULL COMMENT '总分',
   `totaltime` int(10) DEFAULT NULL COMMENT '答题时间min',
   PRIMARY KEY (`testpaperid`),
-  KEY `creator` (`creator`),
+  KEY `FKBA8FD83AFCD8E6E1` (`creator`),
+  CONSTRAINT `FKBA8FD83AFCD8E6E1` FOREIGN KEY (`creator`) REFERENCES `user` (`userid`),
   CONSTRAINT `testpaper_ibfk_1` FOREIGN KEY (`creator`) REFERENCES `user` (`userid`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -413,15 +432,21 @@ CREATE TABLE `user` (
   PRIMARY KEY (`userid`),
   UNIQUE KEY `usernum` (`usernum`),
   KEY `FK8FFE823B15915B06` (`class`),
-  KEY `dept` (`dept`),
-  KEY `usertype` (`usertype`),
+  KEY `FK36EBCB15915B06` (`class`),
+  KEY `FK36EBCB824130F4` (`usertype`),
+  KEY `FK36EBCBBFB17774` (`dept`),
+  CONSTRAINT `FK36EBCB15915B06` FOREIGN KEY (`class`) REFERENCES `class` (`classid`),
+  CONSTRAINT `FK36EBCB824130F4` FOREIGN KEY (`usertype`) REFERENCES `usertype` (`usertypeid`),
+  CONSTRAINT `FK36EBCBBFB17774` FOREIGN KEY (`dept`) REFERENCES `dept` (`deptid`),
   CONSTRAINT `FK8FFE823B15915B06` FOREIGN KEY (`class`) REFERENCES `class` (`classid`),
   CONSTRAINT `user_ibfk_1` FOREIGN KEY (`class`) REFERENCES `class` (`classid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `user_ibfk_3` FOREIGN KEY (`dept`) REFERENCES `dept` (`deptid`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `user_ibfk_4` FOREIGN KEY (`usertype`) REFERENCES `usertype` (`usertypeid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
+
+insert  into `user`(`userid`,`username`,`password`,`usernum`,`usertype`,`reaname`,`class`,`gender`,`phonenum`,`email`,`dept`,`position`,`intro`) values (1,'hmjhmj','45','45',1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'hmj','hmj','31',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,NULL,'123','32',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'456789','456789','21',2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(7,'sn','sn','200123',2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(8,'hmj','hmj','14047021',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(9,'dyf','dyf','14047001',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,'xxx123','xxx123','200567',2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(12,'qqq123','qqq123','14047003',3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `usertype` */
 
@@ -431,9 +456,11 @@ CREATE TABLE `usertype` (
   `usertypeid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户名',
   `role` varchar(30) DEFAULT NULL COMMENT '用户角色',
   PRIMARY KEY (`usertypeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `usertype` */
+
+insert  into `usertype`(`usertypeid`,`role`) values (1,'admin'),(2,'teacher'),(3,'student');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

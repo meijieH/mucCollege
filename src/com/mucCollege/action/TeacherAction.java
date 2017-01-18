@@ -13,10 +13,9 @@ import com.mucCollege.service.TeacherService;
 import com.opensymphony.xwork2.Action;
 
 
-@Controller
-@Scope("prototype")
+@Controller@Scope("prototype")
 public class TeacherAction implements Action ,SessionAware{
-	@Resource TeacherService service;
+	@Resource TeacherService teacherService;
 	private User teacher;
 	private String message;
 	private Map<String, Object> session;
@@ -26,7 +25,7 @@ public class TeacherAction implements Action ,SessionAware{
 	public String register() {
 
 		try {
-			service.add(teacher);
+			teacherService.register(teacher);
 		} catch (Exception e) {
 			setMessage(e.getMessage());
 			return "register";
@@ -35,7 +34,7 @@ public class TeacherAction implements Action ,SessionAware{
 	}
 	public String login(){
 		try{
-			User result=service.queryUserByUsernum(teacher.getUsernum());
+			User result=teacherService.queryUserByUsernum(teacher.getUsernum());
 			if(result==null){
 				setMessage("用户名不存在");
 				return "login";

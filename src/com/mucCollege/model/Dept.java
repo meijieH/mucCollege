@@ -14,10 +14,12 @@ public class Dept implements java.io.Serializable {
 	private Integer deptid;
 	private String deptname;
 	private String deptdes;
-	private Set stuClasses = new HashSet(0);
 	private Set courses = new HashSet(0);
-	private Set stuClasses_1 = new HashSet(0);
+	private Set stuClasses = new HashSet(0);
 	private Set users = new HashSet(0);
+	private Set courses_1 = new HashSet(0);
+	private Set stuClasses_1 = new HashSet(0);
+	private Set users_1 = new HashSet(0);
 
 	// Constructors
 
@@ -26,14 +28,16 @@ public class Dept implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Dept(String deptname, String deptdes, Set stuClasses, Set courses,
-			Set stuClasses_1, Set users) {
+	public Dept(String deptname, String deptdes, Set courses, Set stuClasses,
+			Set users, Set courses_1, Set stuClasses_1, Set users_1) {
 		this.deptname = deptname;
 		this.deptdes = deptdes;
-		this.stuClasses = stuClasses;
 		this.courses = courses;
-		this.stuClasses_1 = stuClasses_1;
+		this.stuClasses = stuClasses;
 		this.users = users;
+		this.courses_1 = courses_1;
+		this.stuClasses_1 = stuClasses_1;
+		this.users_1 = users_1;
 	}
 
 	// Property accessors
@@ -62,6 +66,14 @@ public class Dept implements java.io.Serializable {
 		this.deptdes = deptdes;
 	}
 
+	public Set getCourses() {
+		return this.courses;
+	}
+
+	public void setCourses(Set courses) {
+		this.courses = courses;
+	}
+
 	public Set getStuClasses() {
 		return this.stuClasses;
 	}
@@ -70,12 +82,20 @@ public class Dept implements java.io.Serializable {
 		this.stuClasses = stuClasses;
 	}
 
-	public Set getCourses() {
-		return this.courses;
+	public Set getUsers() {
+		return this.users;
 	}
 
-	public void setCourses(Set courses) {
-		this.courses = courses;
+	public void setUsers(Set users) {
+		this.users = users;
+	}
+
+	public Set getCourses_1() {
+		return this.courses_1;
+	}
+
+	public void setCourses_1(Set courses_1) {
+		this.courses_1 = courses_1;
 	}
 
 	public Set getStuClasses_1() {
@@ -86,12 +106,12 @@ public class Dept implements java.io.Serializable {
 		this.stuClasses_1 = stuClasses_1;
 	}
 
-	public Set getUsers() {
-		return this.users;
+	public Set getUsers_1() {
+		return this.users_1;
 	}
 
-	public void setUsers(Set users) {
-		this.users = users;
+	public void setUsers_1(Set users_1) {
+		this.users_1 = users_1;
 	}
 
 }
