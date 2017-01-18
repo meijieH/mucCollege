@@ -32,8 +32,8 @@ public class TeacourseAction implements Action ,SessionAware{
 	public String list(){
 		try {
 			teacourselist=teacourseService.teacourselist((User) session.get("user"));
-//			courselist=teacourseService.courselist();
-//			stuClasslist=teacourseService.stuClasslist();
+			courselist=teacourseService.courselist();
+			stuClasslist=teacourseService.stuClasslist();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -52,7 +52,6 @@ public class TeacourseAction implements Action ,SessionAware{
 		return list();
 	}
 	public String apply(){
-		System.out.println("申请课程...");
 		Course course=teacourse.getCourse();
 		course.setState("待审批");
 		course.setDept(((User)session.get("user")).getDept());

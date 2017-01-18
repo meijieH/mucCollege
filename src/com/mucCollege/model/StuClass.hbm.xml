@@ -70,6 +70,14 @@
             </key>
             <one-to-many class="com.mucCollege.model.User" />
         </set>
+        <set name="users_2" inverse="true">
+            <key>
+                <column name="class">
+                    <comment>班级</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.User" />
+        </set>
         <set name="teacourses_1" inverse="true">
             <key>
                 <column name="class">

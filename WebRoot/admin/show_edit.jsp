@@ -24,7 +24,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     <s:form action="admin/admin_updateAdmin" method="post">
     	<s:textfield name="admin.username" label="用户名"></s:textfield>
-    	<s:hidden name="admin.adminid"></s:hidden>
+    	<s:textfield name="admin.password" label="密码"></s:textfield>
+    	<s:hidden name="admin.userid"></s:hidden>	
+    	
+    	<s:hidden name="admin.usertype.usertypeid"></s:hidden>
     	<s:submit value="保存"></s:submit>
     </s:form>    
   </body>

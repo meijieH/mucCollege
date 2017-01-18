@@ -21,6 +21,7 @@ public class StuClass implements java.io.Serializable {
 	private Set teacourses = new HashSet(0);
 	private Set tests_1 = new HashSet(0);
 	private Set users_1 = new HashSet(0);
+	private Set users_2 = new HashSet(0);
 	private Set teacourses_1 = new HashSet(0);
 
 	// Constructors
@@ -32,7 +33,7 @@ public class StuClass implements java.io.Serializable {
 	/** full constructor */
 	public StuClass(Dept dept, String classname, String major, String grade,
 			Set users, Set tests, Set teacourses, Set tests_1, Set users_1,
-			Set teacourses_1) {
+			Set users_2, Set teacourses_1) {
 		this.dept = dept;
 		this.classname = classname;
 		this.major = major;
@@ -42,6 +43,7 @@ public class StuClass implements java.io.Serializable {
 		this.teacourses = teacourses;
 		this.tests_1 = tests_1;
 		this.users_1 = users_1;
+		this.users_2 = users_2;
 		this.teacourses_1 = teacourses_1;
 	}
 
@@ -125,6 +127,14 @@ public class StuClass implements java.io.Serializable {
 
 	public void setUsers_1(Set users_1) {
 		this.users_1 = users_1;
+	}
+
+	public Set getUsers_2() {
+		return this.users_2;
+	}
+
+	public void setUsers_2(Set users_2) {
+		this.users_2 = users_2;
 	}
 
 	public Set getTeacourses_1() {

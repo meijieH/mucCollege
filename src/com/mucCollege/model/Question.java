@@ -13,8 +13,8 @@ public class Question implements java.io.Serializable {
 
 	private Integer questionid;
 	private Subject subject;
+	private User user;
 	private Quetype quetype;
-	private Integer creator;
 	private String label;
 	private String stem;
 	private String answer;
@@ -32,6 +32,7 @@ public class Question implements java.io.Serializable {
 	private Set testques = new HashSet(0);
 	private Set errorques = new HashSet(0);
 	private Set testques_1 = new HashSet(0);
+	private Set collections_1 = new HashSet(0);
 	private Set errorques_1 = new HashSet(0);
 
 	// Constructors
@@ -41,15 +42,15 @@ public class Question implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Question(Subject subject, Quetype quetype, Integer creator,
-			String label, String stem, String answer, Integer quescore,
-			String option1, String option2, String option3, String option4,
-			String option5, String option6, String option7, Boolean isPicture,
+	public Question(Subject subject, User user, Quetype quetype, String label,
+			String stem, String answer, Integer quescore, String option1,
+			String option2, String option3, String option4, String option5,
+			String option6, String option7, Boolean isPicture,
 			Boolean isvisiable, Set collections, Set testques, Set errorques,
-			Set testques_1, Set errorques_1) {
+			Set testques_1, Set collections_1, Set errorques_1) {
 		this.subject = subject;
+		this.user = user;
 		this.quetype = quetype;
-		this.creator = creator;
 		this.label = label;
 		this.stem = stem;
 		this.answer = answer;
@@ -67,6 +68,7 @@ public class Question implements java.io.Serializable {
 		this.testques = testques;
 		this.errorques = errorques;
 		this.testques_1 = testques_1;
+		this.collections_1 = collections_1;
 		this.errorques_1 = errorques_1;
 	}
 
@@ -88,20 +90,20 @@ public class Question implements java.io.Serializable {
 		this.subject = subject;
 	}
 
+	public User getUser() {
+		return this.user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public Quetype getQuetype() {
 		return this.quetype;
 	}
 
 	public void setQuetype(Quetype quetype) {
 		this.quetype = quetype;
-	}
-
-	public Integer getCreator() {
-		return this.creator;
-	}
-
-	public void setCreator(Integer creator) {
-		this.creator = creator;
 	}
 
 	public String getLabel() {
@@ -238,6 +240,14 @@ public class Question implements java.io.Serializable {
 
 	public void setTestques_1(Set testques_1) {
 		this.testques_1 = testques_1;
+	}
+
+	public Set getCollections_1() {
+		return this.collections_1;
+	}
+
+	public void setCollections_1(Set collections_1) {
+		this.collections_1 = collections_1;
 	}
 
 	public Set getErrorques_1() {

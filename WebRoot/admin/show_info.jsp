@@ -6,20 +6,27 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <base href="<%=basePath%>">
     
-    <title>民大学院 后台管理 当前管理员信息</title>
+    <title>My JSP 'show_info.jsp' starting page</title>
     
-	
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 
   </head>
   
   <body>
-    <h1>管理员 我的信息</h1>
-    <a href="admin/admin_showEdit">修改我的信息</a>
+    This is my JSP page. <br>
+    <a href="admin/admin_showEdit">修改用户信息</a>
     <c:out value="${admin.username}"></c:out>
   </body>
 </html>

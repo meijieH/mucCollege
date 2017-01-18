@@ -24,18 +24,17 @@ public class TeacourseService {
 	public List<Teacourse> teacourselist(User teacher) throws Exception{
 		return teacourseDao.queryTeacourseByTeacherid(teacher.getUserid());
 	}
-//	这里报错临时注释掉了-dyf
-//	public List<Course> courselist() throws Exception{
-//		return courseDao.queryActiveCourse();
-//	}
-//	public List<StuClass> stuClasslist() throws Exception{
-//		return stuClassDao.queryAllStuClass();
-//	}
+	public List<Course> courselist() throws Exception{
+		return courseDao.queryActiveCourse();
+	}
+	public List<StuClass> stuClasslist() throws Exception{
+		return stuClassDao.queryAllStuClass();
+	}
 	public Teacourse getTeacourseById(Integer id)throws Exception{
 		return teacourseDao.getTeacourseById(id);
 	}
 	public void register(Teacourse teacourse) throws Exception{
-//		teacourse.setCourse(courseDao.getCourseById(teacourse.getCourse().getCourseid()));
+		teacourse.setCourse(courseDao.GetCourseById(teacourse.getCourse().getCourseid()));
 		teacourse.setStuClass(stuClassDao.getStuClassById(teacourse.getStuClass().getClassid()));
 		teacourseDao.addTeacourse(teacourse);
 	}
@@ -49,7 +48,7 @@ public class TeacourseService {
 			}
 		}
 		Integer courseid=courseDao.addCourse(teacourse.getCourse());
-//		teacourse.setCourse(courseDao.getCourseById(courseid));
+		teacourse.setCourse(courseDao.GetCourseById(courseid));
 		teacourse.setStuClass(stuClassDao.getStuClassById(teacourse.getStuClass().getClassid()));
 		teacourseDao.addTeacourse(teacourse);
 	}

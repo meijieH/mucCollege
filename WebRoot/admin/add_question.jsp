@@ -23,6 +23,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+  	<form action="admin/admin_addQuestion" method="post">
+  		 <input type="text" name="question.subject" placeholder="请输入试题名">
+  		 <input type="text" name="question.label"  placeholder="请输入知识点">
+  		 <!--  这里要获取登录用户作为creator -->
+  		 <input type="text" name="question.creator" placeholder="请输入学号">
+  		 <button type="submit">提交</button>
+  	</form>
   </body>
 </html>

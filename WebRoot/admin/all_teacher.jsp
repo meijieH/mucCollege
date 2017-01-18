@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,6 +24,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+  <ul>
+  	<s:iterator value="teacherList" status="status">
+		<s:if test="teacherList==null">
+			无可显示的记录。
+		</s:if>
+		<s:else>
+			<li>
+				<a href="admin/admin_showTeacher?teacher.userid=<s:property value='userid'/>">
+					<s:property value="username"/> 
+				</a>
+			</li>
+		</s:else>
+	</s:iterator>
+  </ul>
   </body>
 </html>

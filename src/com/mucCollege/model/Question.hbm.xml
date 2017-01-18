@@ -15,16 +15,16 @@
                 <comment>题目的科目大类</comment>
             </column>
         </many-to-one>
+        <many-to-one name="user" class="com.mucCollege.model.User" fetch="select" lazy="false">
+            <column name="adder">
+                <comment>学号/学工号</comment>
+            </column>
+        </many-to-one>
         <many-to-one name="quetype" class="com.mucCollege.model.Quetype" fetch="select" lazy="false">
             <column name="type">
                 <comment>题型</comment>
             </column>
         </many-to-one>
-        <property name="creator" type="java.lang.Integer">
-            <column name="creator">
-                <comment>学号/学工号</comment>
-            </column>
-        </property>
         <property name="label" type="java.lang.String">
             <column name="label" length="120">
                 <comment>涉及的知识点</comment>
@@ -119,6 +119,12 @@
                 </column>
             </key>
             <one-to-many class="com.mucCollege.model.Testque" />
+        </set>
+        <set name="collections_1" inverse="true">
+            <key>
+                <column name="question" />
+            </key>
+            <one-to-many class="com.mucCollege.model.Collection" />
         </set>
         <set name="errorques_1" inverse="true">
             <key>

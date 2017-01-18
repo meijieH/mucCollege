@@ -21,6 +21,7 @@ public class Teacourse implements java.io.Serializable {
 	private Double coutime;
 	private String state;
 	private Set coustudents = new HashSet(0);
+	private Set selectcourses = new HashSet(0);
 	private Set coustudents_1 = new HashSet(0);
 
 	// Constructors
@@ -32,7 +33,7 @@ public class Teacourse implements java.io.Serializable {
 	/** full constructor */
 	public Teacourse(User user, StuClass stuClass, Course course, Integer year,
 			Integer term, Double couscore, Double coutime, String state,
-			Set coustudents, Set coustudents_1) {
+			Set coustudents, Set selectcourses, Set coustudents_1) {
 		this.user = user;
 		this.stuClass = stuClass;
 		this.course = course;
@@ -42,6 +43,7 @@ public class Teacourse implements java.io.Serializable {
 		this.coutime = coutime;
 		this.state = state;
 		this.coustudents = coustudents;
+		this.selectcourses = selectcourses;
 		this.coustudents_1 = coustudents_1;
 	}
 
@@ -125,6 +127,14 @@ public class Teacourse implements java.io.Serializable {
 
 	public void setCoustudents(Set coustudents) {
 		this.coustudents = coustudents;
+	}
+
+	public Set getSelectcourses() {
+		return this.selectcourses;
+	}
+
+	public void setSelectcourses(Set selectcourses) {
+		this.selectcourses = selectcourses;
 	}
 
 	public Set getCoustudents_1() {

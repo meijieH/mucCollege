@@ -10,8 +10,8 @@
             <column name="selectid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="course" class="com.mucCollege.model.Course" fetch="select" lazy="false">
-            <column name="course">
+        <many-to-one name="teacourse" class="com.mucCollege.model.Teacourse" fetch="select" lazy="false">
+            <column name="teacourse">
                 <comment>所选课程</comment>
             </column>
         </many-to-one>

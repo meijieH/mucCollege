@@ -17,8 +17,6 @@ public class Course implements java.io.Serializable {
 	private String coursename;
 	private String detail;
 	private String state;
-	private Set selectcourses = new HashSet(0);
-	private Set selectcourses_1 = new HashSet(0);
 	private Set teacourses = new HashSet(0);
 	private Set teacourses_1 = new HashSet(0);
 
@@ -30,15 +28,12 @@ public class Course implements java.io.Serializable {
 
 	/** full constructor */
 	public Course(Subject subject, Dept dept, String coursename, String detail,
-			String state, Set selectcourses, Set selectcourses_1,
-			Set teacourses, Set teacourses_1) {
+			String state, Set teacourses, Set teacourses_1) {
 		this.subject = subject;
 		this.dept = dept;
 		this.coursename = coursename;
 		this.detail = detail;
 		this.state = state;
-		this.selectcourses = selectcourses;
-		this.selectcourses_1 = selectcourses_1;
 		this.teacourses = teacourses;
 		this.teacourses_1 = teacourses_1;
 	}
@@ -91,22 +86,6 @@ public class Course implements java.io.Serializable {
 
 	public void setState(String state) {
 		this.state = state;
-	}
-
-	public Set getSelectcourses() {
-		return this.selectcourses;
-	}
-
-	public void setSelectcourses(Set selectcourses) {
-		this.selectcourses = selectcourses;
-	}
-
-	public Set getSelectcourses_1() {
-		return this.selectcourses_1;
-	}
-
-	public void setSelectcourses_1(Set selectcourses_1) {
-		this.selectcourses_1 = selectcourses_1;
 	}
 
 	public Set getTeacourses() {

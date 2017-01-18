@@ -12,11 +12,17 @@ import com.mucCollege.model.Usertype;
 @Repository
 public class UsertypeDao {
 	@Resource SessionFactory factory;
-	public Usertype queryUsertypeByRole(String role) throws Exception{
+	/*public Usertype queryUsertypeByRole(String role) throws Exception{
 		Session s = factory.getCurrentSession();
     	String hql = "From Usertype usertype where usertype.role like '%" + role + "%'";
     	Query q = s.createQuery(hql);
     	Usertype teachertype = (Usertype) q.uniqueResult();
     	return teachertype;
+	}*/
+	public Usertype getUsertype(int id){
+		Usertype usertype=new Usertype();
+		usertype.setUsertypeid(id);
+		return usertype;
 	}
+	
 }

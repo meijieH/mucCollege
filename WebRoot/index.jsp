@@ -1,8 +1,10 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="struts" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 
 <!DOCTYPE html>
@@ -24,13 +26,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <div class="main-img">
 	 	 <div class="login-reg-box">
 	 	 	<div> 
-	 	 		<struts:form id="login-form" action="/teacher/teacher_login" method="post" cssClass="default-form">
+	 	 		<s:form id="login-form" action="user/user_login" method="post" cssClass="default-form">
 	 	 			<br><ul>
 	 	 				
 	 	 				<li>
-	 	 					<span class="left-span"><label for="number" >学工号</label></span>
+	 	 					<span class="left-span"><label for="usernum" >学工号</label></span>
 	 	 					<span class="right-span">
-	 	 						<input type="text" class="" id="number" name="user.usernum" placeholder="请输入学工号" autofocus>
+	 	 						<input type="text" class="" id="usernum" name="user.usernum" placeholder="请输入学工号" autofocus>
 	 	 					</span>
 	 	 				</li>
 	 	 				<li>
@@ -42,8 +44,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 	 				<li>
 		 					<span class="left-span">&nbsp;</span>
 		 					<span class="right-span select-identity">
-		 						<span><input type="radio" name="identity" checked>学生</span>
-		 					    <span><input type="radio" name="identity">教师</span>
+		 						<span><input type="radio" id="type" name="user.usertype.usertypeid" value="3" checked>学生</span>
+		 					    <span><input type="radio" id="type" name="user.usertype.usertypeid" value="2">教师</span>
+		 					    <span><input type="radio" id="type" name="user.usertype.usertypeid" value="1">管理员</span>
 		 					</span>
 		 				</li>
 	 	 				<li>
@@ -57,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					    </li>
 	 	 				<li>
 	 	 					<div class="login-reg-option">
-	 	 						<button type="button" class="btn-login" onclick="checkLogin();">
+	 	 						<button type="submit" class="btn-login" onclick="checkLogin();">
 								 登录
 								</button>
 							    <button type="button" class="" onclick="window.open('register.jsp','_blank');">
@@ -66,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 	 					</div>	
 	 	 				</li>
 	 	 			</ul>
-	 	 		</struts:form>
+	 	 		</s:form>
 	 	 	</div>
 		</div>
 	   </div>
@@ -117,8 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript">
 	    function checkLogin () {
 	    	var lg_form=document.getElementById("login-form");
-            alert(lg_form.number);
-	    	alert(lg_form.userPassword);
+	    	//..做一些数据校验..
 	        lg_form.submit();
 	    }
     </script>

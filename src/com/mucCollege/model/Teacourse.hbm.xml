@@ -58,6 +58,14 @@
             </key>
             <one-to-many class="com.mucCollege.model.Coustudent" />
         </set>
+        <set name="selectcourses" inverse="true">
+            <key>
+                <column name="teacourse">
+                    <comment>所选课程</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Selectcourse" />
+        </set>
         <set name="coustudents_1" inverse="true">
             <key>
                 <column name="teccourse">

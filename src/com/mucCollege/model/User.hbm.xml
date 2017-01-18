@@ -78,13 +78,13 @@
             </key>
             <one-to-many class="com.mucCollege.model.Teacourse" />
         </set>
-        <set name="testpapers" inverse="true">
+        <set name="coustudents" inverse="true">
             <key>
-                <column name="creator">
-                    <comment>创建试卷的老师</comment>
+                <column name="student">
+                    <comment>对应的学生</comment>
                 </column>
             </key>
-            <one-to-many class="com.mucCollege.model.Testpaper" />
+            <one-to-many class="com.mucCollege.model.Coustudent" />
         </set>
         <set name="selectcourses" inverse="true">
             <key>
@@ -94,29 +94,7 @@
             </key>
             <one-to-many class="com.mucCollege.model.Selectcourse" />
         </set>
-        <set name="coustudents" inverse="true">
-            <key>
-                <column name="student">
-                    <comment>对应的学生</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Coustudent" />
-        </set>
-        <set name="collections" inverse="true">
-            <key>
-                <column name="teacher" />
-            </key>
-            <one-to-many class="com.mucCollege.model.Collection" />
-        </set>
         <set name="stupapers" inverse="true">
-            <key>
-                <column name="student">
-                    <comment>学生</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Stupaper" />
-        </set>
-        <set name="stupapers_1" inverse="true">
             <key>
                 <column name="student">
                     <comment>学生</comment>
@@ -132,6 +110,20 @@
             </key>
             <one-to-many class="com.mucCollege.model.Coustudent" />
         </set>
+        <set name="coustudents_2" inverse="true">
+            <key>
+                <column name="student">
+                    <comment>对应的学生</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Coustudent" />
+        </set>
+        <set name="collections" inverse="true">
+            <key>
+                <column name="teacher" />
+            </key>
+            <one-to-many class="com.mucCollege.model.Collection" />
+        </set>
         <set name="selectcourses_1" inverse="true">
             <key>
                 <column name="student">
@@ -139,6 +131,68 @@
                 </column>
             </key>
             <one-to-many class="com.mucCollege.model.Selectcourse" />
+        </set>
+        <set name="teacourses_1" inverse="true">
+            <key>
+                <column name="teacher">
+                    <comment>授课教师</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Teacourse" />
+        </set>
+        <set name="testpapers" inverse="true">
+            <key>
+                <column name="creator">
+                    <comment>创建试卷的老师</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Testpaper" />
+        </set>
+        <set name="collections_1" inverse="true">
+            <key>
+                <column name="teacher" />
+            </key>
+            <one-to-many class="com.mucCollege.model.Collection" />
+        </set>
+        <set name="questions" inverse="true">
+            <key>
+                <column name="adder">
+                    <comment>学号/学工号</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Question" />
+        </set>
+        <set name="selectcourses_2" inverse="true">
+            <key>
+                <column name="student">
+                    <comment>学生</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Selectcourse" />
+        </set>
+        <set name="testpapers_1" inverse="true">
+            <key>
+                <column name="creator">
+                    <comment>创建试卷的老师</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Testpaper" />
+        </set>
+        <set name="stupapers_1" inverse="true">
+            <key>
+                <column name="student">
+                    <comment>学生</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Stupaper" />
+        </set>
+        <set name="stupapers_2" inverse="true">
+            <key>
+                <column name="student">
+                    <comment>学生</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Stupaper" />
         </set>
     </class>
 </hibernate-mapping>

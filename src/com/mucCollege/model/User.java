@@ -25,14 +25,21 @@ public class User implements java.io.Serializable {
 	private String position;
 	private String intro;
 	private Set teacourses = new HashSet(0);
-	private Set testpapers = new HashSet(0);
-	private Set selectcourses = new HashSet(0);
 	private Set coustudents = new HashSet(0);
-	private Set collections = new HashSet(0);
+	private Set selectcourses = new HashSet(0);
 	private Set stupapers = new HashSet(0);
-	private Set stupapers_1 = new HashSet(0);
 	private Set coustudents_1 = new HashSet(0);
+	private Set coustudents_2 = new HashSet(0);
+	private Set collections = new HashSet(0);
 	private Set selectcourses_1 = new HashSet(0);
+	private Set teacourses_1 = new HashSet(0);
+	private Set testpapers = new HashSet(0);
+	private Set collections_1 = new HashSet(0);
+	private Set questions = new HashSet(0);
+	private Set selectcourses_2 = new HashSet(0);
+	private Set testpapers_1 = new HashSet(0);
+	private Set stupapers_1 = new HashSet(0);
+	private Set stupapers_2 = new HashSet(0);
 
 	// Constructors
 
@@ -49,9 +56,12 @@ public class User implements java.io.Serializable {
 	public User(Dept dept, Usertype usertype, StuClass stuClass,
 			String username, String password, String usernum, String reaname,
 			String gender, String phonenum, String email, String position,
-			String intro, Set teacourses, Set testpapers, Set selectcourses,
-			Set coustudents, Set collections, Set stupapers, Set stupapers_1,
-			Set coustudents_1, Set selectcourses_1) {
+			String intro, Set teacourses, Set coustudents, Set selectcourses,
+			Set stupapers, Set coustudents_1, Set coustudents_2,
+			Set collections, Set selectcourses_1, Set teacourses_1,
+			Set testpapers, Set collections_1, Set questions,
+			Set selectcourses_2, Set testpapers_1, Set stupapers_1,
+			Set stupapers_2) {
 		this.dept = dept;
 		this.usertype = usertype;
 		this.stuClass = stuClass;
@@ -65,14 +75,21 @@ public class User implements java.io.Serializable {
 		this.position = position;
 		this.intro = intro;
 		this.teacourses = teacourses;
-		this.testpapers = testpapers;
-		this.selectcourses = selectcourses;
 		this.coustudents = coustudents;
-		this.collections = collections;
+		this.selectcourses = selectcourses;
 		this.stupapers = stupapers;
-		this.stupapers_1 = stupapers_1;
 		this.coustudents_1 = coustudents_1;
+		this.coustudents_2 = coustudents_2;
+		this.collections = collections;
 		this.selectcourses_1 = selectcourses_1;
+		this.teacourses_1 = teacourses_1;
+		this.testpapers = testpapers;
+		this.collections_1 = collections_1;
+		this.questions = questions;
+		this.selectcourses_2 = selectcourses_2;
+		this.testpapers_1 = testpapers_1;
+		this.stupapers_1 = stupapers_1;
+		this.stupapers_2 = stupapers_2;
 	}
 
 	// Property accessors
@@ -189,12 +206,12 @@ public class User implements java.io.Serializable {
 		this.teacourses = teacourses;
 	}
 
-	public Set getTestpapers() {
-		return this.testpapers;
+	public Set getCoustudents() {
+		return this.coustudents;
 	}
 
-	public void setTestpapers(Set testpapers) {
-		this.testpapers = testpapers;
+	public void setCoustudents(Set coustudents) {
+		this.coustudents = coustudents;
 	}
 
 	public Set getSelectcourses() {
@@ -205,36 +222,12 @@ public class User implements java.io.Serializable {
 		this.selectcourses = selectcourses;
 	}
 
-	public Set getCoustudents() {
-		return this.coustudents;
-	}
-
-	public void setCoustudents(Set coustudents) {
-		this.coustudents = coustudents;
-	}
-
-	public Set getCollections() {
-		return this.collections;
-	}
-
-	public void setCollections(Set collections) {
-		this.collections = collections;
-	}
-
 	public Set getStupapers() {
 		return this.stupapers;
 	}
 
 	public void setStupapers(Set stupapers) {
 		this.stupapers = stupapers;
-	}
-
-	public Set getStupapers_1() {
-		return this.stupapers_1;
-	}
-
-	public void setStupapers_1(Set stupapers_1) {
-		this.stupapers_1 = stupapers_1;
 	}
 
 	public Set getCoustudents_1() {
@@ -245,12 +238,92 @@ public class User implements java.io.Serializable {
 		this.coustudents_1 = coustudents_1;
 	}
 
+	public Set getCoustudents_2() {
+		return this.coustudents_2;
+	}
+
+	public void setCoustudents_2(Set coustudents_2) {
+		this.coustudents_2 = coustudents_2;
+	}
+
+	public Set getCollections() {
+		return this.collections;
+	}
+
+	public void setCollections(Set collections) {
+		this.collections = collections;
+	}
+
 	public Set getSelectcourses_1() {
 		return this.selectcourses_1;
 	}
 
 	public void setSelectcourses_1(Set selectcourses_1) {
 		this.selectcourses_1 = selectcourses_1;
+	}
+
+	public Set getTeacourses_1() {
+		return this.teacourses_1;
+	}
+
+	public void setTeacourses_1(Set teacourses_1) {
+		this.teacourses_1 = teacourses_1;
+	}
+
+	public Set getTestpapers() {
+		return this.testpapers;
+	}
+
+	public void setTestpapers(Set testpapers) {
+		this.testpapers = testpapers;
+	}
+
+	public Set getCollections_1() {
+		return this.collections_1;
+	}
+
+	public void setCollections_1(Set collections_1) {
+		this.collections_1 = collections_1;
+	}
+
+	public Set getQuestions() {
+		return this.questions;
+	}
+
+	public void setQuestions(Set questions) {
+		this.questions = questions;
+	}
+
+	public Set getSelectcourses_2() {
+		return this.selectcourses_2;
+	}
+
+	public void setSelectcourses_2(Set selectcourses_2) {
+		this.selectcourses_2 = selectcourses_2;
+	}
+
+	public Set getTestpapers_1() {
+		return this.testpapers_1;
+	}
+
+	public void setTestpapers_1(Set testpapers_1) {
+		this.testpapers_1 = testpapers_1;
+	}
+
+	public Set getStupapers_1() {
+		return this.stupapers_1;
+	}
+
+	public void setStupapers_1(Set stupapers_1) {
+		this.stupapers_1 = stupapers_1;
+	}
+
+	public Set getStupapers_2() {
+		return this.stupapers_2;
+	}
+
+	public void setStupapers_2(Set stupapers_2) {
+		this.stupapers_2 = stupapers_2;
 	}
 
 }

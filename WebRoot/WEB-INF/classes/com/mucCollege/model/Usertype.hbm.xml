@@ -23,5 +23,13 @@
             </key>
             <one-to-many class="com.mucCollege.model.User" />
         </set>
+        <set name="users_1" inverse="true">
+            <key>
+                <column name="usertype" not-null="true">
+                    <comment>用户角色</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.User" />
+        </set>
     </class>
 </hibernate-mapping>
