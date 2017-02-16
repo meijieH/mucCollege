@@ -1,0 +1,72 @@
+.settest-lesson-t{
+    float:left;
+    margin:10px 10px 0 20px;  
+}
+.manual-settest-btn{
+	height:42px;
+	line-height:30px;
+	margin:10px 10px 0 20px; 
+}
+/*搜索*/
+.paper-search{
+	margin:54px 0 10px 20px;
+}
+/*设置考试*/
+.settest-time{
+   margin:10px 20px;
+}
+.start,.end,.paper,.apply{
+   padding:5px;
+   float:left;
+   background-color:#8BD864;
+}
+.start{
+    background-color:#8BD864; 
+    border-radius:5px 0 0 5px;
+}
+.end{
+    
+}
+.paper div{
+	border:2px dotted white;
+	border-radius:5px;
+	color:white;
+	width:250px;
+	text-align:center;
+}
+.settest-time span{
+	padding:0 5px;
+	color:white;
+}
+.settest-time input{
+	border-radius:5px;
+	border:1px solid white;
+	margin-right:10px;
+	outline:none;
+}
+.apply{
+	border-radius:0 5px 5px 0;
+}
+.apply-btn{
+    height:24px;
+    border:1px solid green;
+    border-radius:5px;
+    padding:0 15px;
+    background:green;
+    color:white;
+}
+.apply-btn:hover{
+    background:green;
+    opacity:.8;
+}
+.apply-btn:focus{
+	outline:none;
+}
+
+/*试卷列表*/
+.paper-list{
+	margin:20px 20px;
+}
+.paper-list table tbody tr{
+    cursor:pointer;
+}

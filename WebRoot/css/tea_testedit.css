@@ -1,0 +1,167 @@
+/*标题设置*/
+.paper-title-set,.question-nav,.paper-time-set{
+	width:300px;
+	margin-top:10px;
+	margin-left:10px;
+}
+.paper-title-set input{
+	width:288px;
+	margin-top:5px;
+}
+/*题目导航*/
+.question-nav .box-title{
+	color:rgb(0,136,204);
+	text-align:center;
+	margin-bottom:10px;
+	font-size:22px;
+}
+.qes-num-list{
+	margin-top:5px;
+}
+.qes-big-num{
+	font-weight:bolder;
+	color:rgb(0,136,204);
+	padding:5px;
+	font-size:16px;
+}
+.qes-num-list .qes-num{
+	display:inline-block;
+	text-decoration:none;
+	border:1px solid rgb(209,233,237);
+	width:28px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	color:rgb(0,136,204);
+	border-radius:5px;
+	cursor:pointer;
+}
+.qes-num-list .qes-num:hover{
+	background-color:#eee;
+}
+/*题目编辑区*/
+.edit-zone{
+	float:left;
+	margin-left:10px;
+	margin-top:10px;
+}
+/*大题标题*/
+input.big-plate-title{
+    color:rgb(0,136,204);
+    width:95%;
+}
+input.big-plate-title:hover{
+}
+.big-plate-number{
+	line-height:45px;
+	width:41px;
+	height:40px;
+	font-size:16px;
+	text-align:center;
+	float:left;
+}
+.big-plate-describe{
+    padding:10px 20px 10px 20px;
+}
+.big-plate-describe input{
+	border:none;
+	background-color:rgb(229,229,227);
+}
+.qes-types{
+	display:block;
+	clear:both;
+	margin-top:10px;
+}
+/*添加题目的按钮们*/
+.operate-box{
+	clear:both;
+}
+.btn-addqes{
+	outline:none;
+	display:inline-block;
+	border-radius:5px;
+	border:1px solid #eee;
+	background-color:white;
+	color:#15c288;
+	
+}
+/*单个问题*/
+.question{
+	width:850px;
+	clear:both;
+}
+/*单个问题：简答题*/
+.question .short-answer textarea{
+	float:left;
+	width:664px;
+	max-width:664px;
+	margin-left:10px;
+	margin-top:5px;
+}
+/*单个问题：判断题*/
+.question .flag-qes textarea{
+	float:left;
+	width:664px;
+	max-width:664px;
+	margin-left:10px;
+	margin-top:5px;
+}
+/*单个问题：判断题*/
+.question .select-qes{
+	float:left;
+	width:674px;
+}
+.question .select-qes textarea{
+	float:left;
+	width:664px;
+	max-width:664px;
+	margin-left:10px;
+	margin-top:5px;
+}
+.question .select-qes textarea.text-option{
+	float:right;
+	width:92%;
+	height:43px;
+	max-width:618px;
+}
+.text-option-num{
+	padding-top:5px;
+	line-height:45px;
+	width:40px;
+	height:48px;
+	font-size:16px;
+	text-align:right;
+	float:left;
+}
+/*题目左侧*/
+.question-set{
+	width:175px;
+	float:left;
+	border:1px solid #eee;
+	padding:5px;
+	margin-top:5px;
+	border-radius:5px;
+	background-color:white;
+}
+.question-set .question-number{
+	line-height:28px;
+	font-size:14px;
+	color:rgb(0,136,204);
+}
+.question-set .question-number span{
+	font-weight:bolder;
+}
+.isAnswer{
+	color:#ddd;
+	height:50px;
+}
+.base-mark{
+	color:rgb(234,32,0);
+}
+.base-mark span{
+	padding-left:5px;
+	font-weight:bolder;
+}
+
+
+

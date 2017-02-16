@@ -1,43 +1,62 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="struts" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html>
 <html>
 <head>
     <base href="<%=basePath%>">
 	<meta charset="utf-8">
-	<title>个人中心-教师</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>民大学院 教学空间</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 <body>
-	<header>
-		<a href="index.jsp">注销</a>
-		<aside>
-		您已登陆，欢迎您<s:property value="#session.user.username"/><br>
-  <a href="teacher/teacher_logout">登出</a>
-  <a href="teacher/teacourse_list">我的课程</a>
+	<%@include file="/common/topbar.jsp" %>
+	<!-- 左侧栏 -->
+	<div class="main-left">
+		<div class="img">
+			<img src="/mucCollege/images/face.jpg" alt="" width="80" height="80">
+		</div>
+		<div class="name">
+			<i></i>张三
+		</div>
+		<div class="option-nav">
 			<ul>
-				<fieldset>
-                 	<legend>教师，MINDA</legend>
-                 	
-                 	<li><a href="teacher/teacenter/teacenter.jsp">修改资料</a></li>
-				    <li><a href="teacher/teacenter/mymessage.jsp">查看消息</a></li>
-				    <li><a href="teacher/teacenter/modpaswd.jsp">密码修改</a></li>
-                </fieldset>
-				<fieldset>
-                 	<legend>教学平台</legend>
-                 	<li><a href="teacher/mylesson/mylesson.jsp">我的课程</a></li>
-                 	<li><a href="teacher/mytest.jsp">我的题库</a></li>
-                 	<li><a href="teacher/test/testrecord.jsp">我的收藏</a></li>
-                </fieldset>
+				<li onclick="changeRight('teacher/frame_myteacenter.jsp')" class="active"><i class="fa fa-university"></i>教学平台</li>
+				<li onclick="changeRight('teacher/teacenter/teacenter.jsp')"><i class="fa fa-user"></i>个人信息</li>
+				<li onclick="window.open('teacher/questions/myqes.jsp','_blank')" class="link"><i class="fa fa-server"></i>题库集锦</li>
+				<li class="link"><i class="fa fa-file-text-o"></i>我的试卷<li>
 			</ul>
-	    </aside>
-	</header>
+		</div>
+	</div>
+	<!-- 右侧 -->
+
+	<div class="main-right">
+	    <iframe id="tea-main-right-frame"src="teacher/frame_myteacenter.jsp" frameborder="0" width="100%" height="100%"></iframe>
+	</div>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	function changeRight(src){
+	   var rightFrame=document.getElementById('tea-main-right-frame');
+	   console.log(src);
+	   rightFrame.src=src;
+	}
 	
+	/*左侧导航栏*/
+	$('.tea-option-nav ul li').click(function(){
+		if((!$(this).hasClass('active'))&&(!$(this).hasClass('link'))){
+			$(this).addClass('active');
+			$(this).siblings().removeClass('active');
+		}
+	});
+	
+	</script>
 </body>
 </html>

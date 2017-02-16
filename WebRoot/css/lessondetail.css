@@ -1,6 +1,62 @@
+/*学生端的页面*/
 .lsdt-main{
 	padding:0;
 }
 .lsdt-main-new>div{
 	padding:0;
+}
+/*课程*/
+.lesson-detail{
+	min-height: 100vh;
+	background-color:#F1F7EE;
+}
+/*左侧*/
+.lesson-detail-left{
+	padding-top: 10px;
+	margin-left: 20px;
+}
+/*课程名*/
+.lesson-name{
+	width: 300px;
+	font-family: inherit;
+	font-size: 16px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    line-height: 30px;
+    margin-top: 0;
+}
+/*课程、作业、试卷*/
+.courseware-box{
+	float: left;
+	margin-right: 20px;
+}
+.homework-box{
+	float: left;
+	margin-right: 20px;
+}
+.courseware-box,.homework-box{
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 400px;
+    background-color: #fff;
+    padding: 5px;
+}
+.courseware-title,.homework-title{
+	margin: 0;
+	font-size: 16px;
+	font-weight: bolder;
+	color: rgb(234,32,0);
+	line-height: 30px;
+	padding-left: 10px;
+	border-bottom: 1px solid #eee;
+}
+.courseware-lists,.homework-lists{
+	list-style: circle;
+}
+.courseware-lists li,.homework-lists li{
+	padding-left: 10px;
+	line-height: 30px;
 }

@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
     <base href="<%=basePath%>">
 	<meta charset="utf-8">
-	<title>我的课程</title>
+	<title>我的课程（？废弃？）</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -45,43 +45,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				    </div>
 				</a>
 			</li>
-			<li>
-				<a href="teacher/mylesson/mylesdetail.jsp">
-					<div>
-						<img src="images/jisuanjijichu.jpg" alt="计算机基础" width="160px" height="160px;">
-						<p>计算机基础</p>
-						<div>
-							<p>授课班级：14计算机一班</p>
-							<p>开课时间：2015-05-07</p>
-						</div>
-				    </div>
-				</a>
-			</li>
-			<li>
-				<a href="teacher/mylesson/mylesdetail.jsp">
-					<div>
-						<img src="images/jisuanjijichu.jpg" alt="计算机基础" width="160px" height="160px;">
-						<p>计算机基础</p>
-						<div>
-							<p>授课班级：15软件工程班</p>
-							<p>开课时间：2015-05-07</p>
-						</div>
-				    </div>
-				</a>
-			</li>
-			<li>
-				<a href="teacher/mylesson/mylesdetail.jsp">
-					<div>
-						<img src="images/jisuanjijichu.jpg" alt="计算机基础" width="160px" height="160px;">
-						<p>计算机基础</p>
-						<div>
-							<p>授课班级：14自动化班</p>
-							<p>开课时间：2015-05-07</p>
-						</div>
-				    </div>
-				</a>
-			</li>
-			
 		</ul>
 			<a href="#">
 					<h3>添加课程</h3>

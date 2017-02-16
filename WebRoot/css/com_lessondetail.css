@@ -1,0 +1,53 @@
+/*课程*/
+.lesson-detail{
+	min-height: 100vh;
+	background-color:#F1F7EE;
+}
+/*左侧*/
+.lesson-detail-left{
+	padding-top: 10px;
+	margin-left: 20px;
+}
+/*课程名*/
+.lesson-name{
+	width: 300px;
+	font-family: inherit;
+	font-size: 16px;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    line-height: 30px;
+    color:#15c288;
+    font-weight:bolder;
+    margin-top: 0;
+    margin-bottom:10px;
+}
+
+/*课程、作业、试卷*/
+.ld-box{
+	float: left;
+	margin-right: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    width: 400px;
+    background-color: #fff;
+    padding: 5px;
+}
+.ld-title{
+	margin: 0;
+	font-size: 16px;
+	font-weight: bolder;
+	color: rgb(234,32,0);
+	line-height: 30px;
+	padding-left: 10px;
+	border-bottom: 1px solid #eee;
+}
+.ld-lists{
+	list-style: circle;
+}
+.ld-lists li{
+	padding-left: 10px;
+	line-height: 30px;
+}

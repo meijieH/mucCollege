@@ -1,31 +1,67 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib uri="/struts-tags" prefix="struts" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<!-- 为了测试自己写的，需要重写一个类似的页面做替换	 杨赟 -->
-<!DOCTYPE HTML>
+
+<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <base href="<%=basePath%>">
-    <title>注册页面</title>
-  </head>
-  
-  <body>
-  <s:property value="getMessage()"/>
-    <fieldset>
-  		<legend>注册</legend>
-  		<s:form validate="true" action="user/user_register">
-  			<s:textfield label="工号" name="user.usernum" />
-  			<s:textfield label="密码" name="user.password" />
-  			<s:textfield label="姓名" name="user.username" />
-  			<s:textfield label="职称" name="user.position" />
-  			<s:textfield label="简介" name="user.intro" />
-  			<s:textfield label="邮箱" name="user.email" />
-  			<s:textfield label="手机号" name="user.phonenum" />
-  			<s:submit value="注册" />
-  		</s:form>
-  	</fieldset>
-  </body>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+    <title>民大学院 海量资源</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/register.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		
+	</header>
+	 <main>
+	 	<div class="reg-form">
+	 		<form action="">
+	 			<ul>
+	 				<li>
+	 					<span class="left-span">*选择角色</span>
+	 					<span class="right-span select-identity">
+	 						<span><input type="radio" name="identity">学生</span>
+	 					    <span><input type="radio" name="identity">教师</span>
+	 					</span>
+	 				</li>
+	 				<li>
+	 					<span class="left-span">*学工号</span>
+	 					<span class="right-span"><input type="text"></span>
+	 				</li>
+	 				<li>
+	 					<span class="left-span">*邮箱</span>
+	 					<span class="right-span"><input type="email"></span>
+	 				</li>
+
+	 				<li>
+	 					<span class="left-span">*密码</span>
+	 					<span class="right-span"><input type="password"></span>
+	 				</li>
+	 				<li>
+	 					<span class="left-span">*确认密码</span>
+	 					<span class="right-span"><input type="password"></span>
+	 				</li>
+	 				<li>
+	 					<span class="left-span">&nbsp;</span>
+	 					<span class="right-span"><input type="submit" value="确认注册" class="btn btn-default"></span>
+	 				</li>
+	 			</ul>
+	 		</form>
+	 	</div>
+	</main>
+	<!-- <footer>
+		民大学院团队
+	</footer> -->
+	<script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -10,16 +10,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 	<base href="<%=basePath%>">
 	<meta charset="utf-8">
-	<title>个人中心-学生</title>
-	<link rel="stylesheet" href="../css/main.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>民大学院 学习空间</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/home.css" rel="stylesheet">
 </head>
 <body>
-	<header>
-		
-		<aside>
+	<%@include file="/common/topbar.jsp" %>
+	<!-- 左侧栏 -->
+	<div class="main-left">
+		<div class="img">
+			<img src="/mucCollege/images/face.jpg" alt="" width="80" height="80">
+		</div>
+		<div class="name">
+			<i></i>张三
+		</div>
+		<div class="option-nav">
 			<ul>
+				<li>个人信息</li>
+				<li>学习中心</li>
+				<li>考试中心</li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-right">
+		<iframe src="student/frame_mystudy.jsp" frameborder="0" width="100%" height="100%"></iframe>
+		<!-- <ul>
 				<fieldset class="col-md-2">
                  	<legend><s:property value="user.username"/></legend>
                  	<li><a href="user/user_showInfo">查看信息</a></li>
@@ -39,12 +59,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 	<li><a href="student/test/mytest.jsp">我的考试</a></li>
 				    <li><a href="student/test/testrecord.jsp">考试记录</a></li>
                 </fieldset>
-			</ul>
-			
-	    </aside>
-	</header>
-
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>	
+			</ul> -->
+	</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>	
 </body>
 </html>

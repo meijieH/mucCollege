@@ -3,93 +3,109 @@
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
+<%@taglib prefix="struts" uri="/struts-tags"%> 
 <!DOCTYPE html>
 <html>
 <head>
 	<base href="<%=basePath%>">
 	<meta charset="utf-8">
-	<title>四六级模考</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>计算机基础 简单的课堂小练习</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/testing.css">
+    <link rel="stylesheet" href="css/std_testing.css">
 </head>
 
-<body class="container" data-spy="scroll" data-target=".navbar">	
-	<div class="panel panel-default">
-	  <div class="panel-body">
-	     <h1>四六级模考</h1>
-	     <p>
-	        <span>总分：100</span>&nbsp;&nbsp;&nbsp;
-	        <span>倒计时：1:40:20</span>&nbsp;&nbsp;&nbsp;
-	        <a href="#" class="btn btn-default">全屏浏览</a>
-	     </p>
-	     <p>卷面各题型分值说明</p>
-	     <ul> 
-	        <li>作文：15分</li>
-	        <li>快速阅读：10分，每题1分</li>
-	        <li>听力：35分，每题1分</li>
-	        <li>阅读：25分，选词填空每题0.5分，篇章阅读每题2分</li>
-	        <li>完形填空：15分，每题0.5分</li>
-	        <li>翻译5分，每题1分</li>
-	     </ul>
+<body>	
+	<header></header>
+
+	<!-- 试卷信息-->
+	<div class="testing-info">
+	  <div class="testing-info-content">
+	     <h1><struts:property value="testpaper.testpapername"/></h1>
+	     <div class="testing-info-describe">
+	        <span>总分：<struts:property value="testpaper.totalscore"/></span>
+	        <span>问题总数：<struts:property value="testpaper.questionnum"/></span>
+	        <span>总时长：<struts:property value="testpaper.totaltime"/></span>
+	        <span>倒计时：00：22:33</span>
+	        <!-- <a href="#" class="btn btn-default">全屏浏览</a> -->
+	     </div> 
 	  </div>
 	</div>
-	
-	<nav class="navbar navbar-default nav-testing">
-	  <div class="container-fluid">
+
+	<!-- 试卷导航 -->
+	<nav class="nav nav-testing">
+	  <!--<div class="">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">四六级模考</a>
+	      <a class="navbar-brand" href="#">简单的课堂小练习</a>
 	    </div>
-	    <ul class="nav navbar-nav">
+	    <ul class="navbar-nav">
 	      <li class="active"><a href="#plate1">作文</a></li>
 	      <li><a href="#plate2">快速阅读</a></li>
 	      <li><a href="#plate3">听力</a></li>
-	      <li><a href="#plate4">阅读理解</a></li>
-	      <li><a href="#plate5">完形填空</a></li>
-	      <li><a href="#plate6">翻译</a></li>
 	    </ul>
 	  </div>
+	    -->
 	</nav>
-	
-	<div id="plate1">    
-        <h2>一、作文</h2>
-        <p class="thumbnail">
-        	ections: For this part, you are allowed 30 minutes to write a short essay. You should start your essay with a brief description of the picture and then express your views on the importance of doing small things before undertaking something big. You should write at least 120 words but no more than 180 words.
-        </p>
-        <h4>
-        	You are allowed 30 minutes to write a short essay. You should start your essay with a brief description of the picture and then express your views on the importance of doing small things before undertaking something big. You should write at least 120 words but no more than 180 words.
-           <img src="images/dad-son.jpg" style="display:block;"/>
-          子：Dad, I'm a bit worried about disposing of nuclear waste（处理核废料）
-          父：If you can empty the dustbin（垃圾筒） here, you can do anything
-        </h4>
-         <div class="form-group">
-			  <textarea class="form-control" rows="5" id="answer" placeholder="在这里写答案"></textarea>
+
+	<!-- 版块区 -->
+	<struts:iterator value="testpaper.blocks">
+	<div class="plates">
+		<!-- 大板块区 -->
+		<div class="big-plates">
+			<!-- 大板块示例 1 -->
+			<div id="big-plate-1" class="big-plate"> 
+			     <!-- 大板块标题    -->
+		        <h2 class="big-plate-title">1、<struts:property value="blockname"/></h2>
+		        <!-- 大板块描述 -->
+		        <div class="big-plate-describe">
+		        	<struts:property value="blockdes"/>
+		        </div>
+		        <!-- 小版块区 -->
+		        <div class="small-plates">
+		        	<struts:iterator value="groups">
+		        	<!-- 小版块示例 -->
+		        	<div id="small-plate-1" class="small-plate">
+		        		<!-- 小版块标题 -->
+		        		<h3 class="small-plate-title">(1)<struts:property value="groupname"/></h3>
+		        		<!-- 小版块描述 -->
+		        		<div class="small-plate-describe">
+		        			<struts:property value="groupdes"/>
+		        		</div>
+		        		<!-- 题目区 -->
+		        		<div class="question">
+		        			<struts:iterator value="testques">
+		        			<!-- 题目：问答题 -->
+		        			<div class="question">
+		        				<!-- 题目编号 -->
+		        				<span class="question-number">1、<struts:property value="testquename"/></span>
+		        				<!-- 题干内容 -->
+		        				<div class="question-title">
+		        					<struts:property value="testquedes"/>
+		        				</div>
+		        			    <!-- 答案区 -->
+		        				<div class="answers">
+		        					<textarea class="answer-textare" rows="5"  placeholder="在这里写答案"></textarea>
+		        				</div>
+		        			</div>
+		        			</struts:iterator>
+		        		</div>
+		        	</div>
+		        	</struts:iterator>
+		        </div>
+		    </div> 
 		</div>
-    </div> 
-	
-	<div id="plate2">    
-        <h2>二、快速阅读</h2>
-        <p class="thumbnail">Directions:In this part, you will have 15 minutes to go over the passage quickly . For questions 1-7, choose the best answer from the four choices marked [A], [B], [C] and [D]. For questions 8-10, complete the sentences with the information given in the passage.</p>
-        <p>
-            Can Digital Textbooks Truly Replace the Print Kind?
-
-    The shortcomings of traditional print edition textbooks are obvious: For starters they're heavy, with the average physics textbook weighing 3.6 pounds. They're also expensive, especially when you factor in the average college student's limited budget, typically costing hundreds of dollars every semester. 
-
-     But the worst part is that print version of textbooks are constantly undergoing revisions. Many professors require that their students use only the latest versions in the classroom, essentially rendering older texts unusable. For students, it means they're basically stuck with a four pound that they can't sell back.
-
-    Which is why digital textbooks, if they live up to their promise, could help ease many of these shortcomings. But till now, they've been something like a mirage (幻影) in the distance, more like a hazy（模糊的）dream than an actual reality. Imagine the promise: Carrying all your textbooks in a 1.3 pound iPad? It sounds almost too good to be true.  
-    However the solution to any problem begins with a step in a direction. And at least for now, that hazy mirage in the distance? A little more tangible (可触摸的), a little less of a dream.
-        </p>
-         <div class="form-group">
-			  <label for="answer">答:</label>
-			  <textarea class="form-control" rows="5" id="answer" placeholder="在这里写答案"></textarea>
-		</div>
-    </div> 
+	</div>
+	</struts:iterator>
+	<!-- 尾端控制区 -->
+	<div class="tail-control">
+		<input type="button" class="btn btn-agree" value="提交"/>
+	</div>
 	
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/testing.js"></script>
+<script src="js/std_testing.js"></script>
 </body>
 </html>

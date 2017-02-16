@@ -1,0 +1,70 @@
+body{
+	background-color: #F1F7EE;
+}
+.frame-mystudy-nav{
+    height: 40px;
+    margin-bottom: 10px;
+}
+.frame-mystudy-nav>ul>li{
+    float: left;
+    width: 100px;
+    border-radius: 8px;
+    line-height: 40px;
+    margin-right: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+.frame-mystudy-nav>ul>li:hover{
+	background-color: rgb(255,86,8);
+	color: #fff;
+}
+#mylesson{
+    /*border: 1px solid red;*/
+}
+
+/*搜索样式*/
+.search-box{
+    margin-bottom: 10px;
+}
+.search-box .search-input{
+    width: 50%;
+    border: none;
+    font-size: 16px;
+    color: black;
+}
+.search-box button{
+    border: none;
+    line-height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+/*课程列表*/
+.lesson-lists .lesson-box{
+    width: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    border:1px solid #eee;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.lesson-lists .lesson-box a{
+    text-decoration: none;
+}
+.lesson-content{
+    padding:8px;
+}
+.lesson-content img{
+    width: 100%;
+}
+.lesson-name{
+    color: rgb(66,139,202);
+    text-decoration: none;
+    font-size: 16px;
+    padding-top: 10px;
+    line-height: 30px;
+}
+.lesson-name:hover{
+    color: grey;
+}

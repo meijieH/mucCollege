@@ -1,0 +1,55 @@
+body {
+      position: relative;
+      background-color: #F1F7EE;
+}
+.testing-info{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.testing-info-content{
+	background-color: #fff;
+	border-radius: 5px;
+	height: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-left: 20px;
+}
+.testing-info-content h1{
+	float: left;
+	font-size: 16px;
+	line-height: 40px;
+	margin: 0;
+	margin-right: 20px;
+}
+.testing-info-describe>span{
+	float: left;
+	display: inline-block;
+	line-height: 40px;
+	font-size: 14px;
+    width: 200px;
+    margin-right: 10px;
+}
+/*导航*/
+.nav-testing{
+    position: absolute;
+}
+.nav-testing-fix{
+	position:fixed;
+	top:0;
+
+}
+#plate1{
+	margin-top: 90px;
+}
+/*版块区*/
+.big-plates{
+	margin-left: 20px;
+}
+/*大板块*/
+.big-plate{
+
+}
+.big-plate h2{
+	font-size: 16px;
+	line-height: 40px;
+}
