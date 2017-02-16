@@ -25,9 +25,9 @@
 			data-target="#login-box">登录</button>
 		<button type="button" class="btn btn-default">注册</button>
 	</header>
-	<main> <br />
+	<!-- <main> <br />
 	<a href="student/student.jsp" class="btn btn-default">去学生页面（临时按钮）</a> <br />
-	<a href="teacher/teacher.jsp" class="btn btn-default">去教师页面（临时按钮）</a> </main>
+	<a href="teacher/teacher.jsp" class="btn btn-default">去教师页面（临时按钮）</a> </main> -->
 	<footer> 民大学院团队 </footer>
 	<!-- 登录模态框 -->
 	<div class="modal fade" id="login-box" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
