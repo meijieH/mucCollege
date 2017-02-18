@@ -17,7 +17,7 @@ import com.opensymphony.xwork2.ActionContext;
 @Transactional
 @Controller
 @Scope("prototype")
-public class userAction {
+public class UserAction {
 	@Resource
 	UserService userService;
 	private User user;
