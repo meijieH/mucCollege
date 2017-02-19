@@ -170,6 +170,18 @@ select{
 select option{
 	height: 40px;
 }
+/*页面布局 1024 居中*/
+.page-center{
+	width:1024px;
+	margin:0 auto;
+}
+.page-center-left{
+	width:248px;
+}
+.page-center-right{
+	width:774px;
+	float:right;
+}
 /*基本按钮*/
 .btn-agree{
 	border:1px solid #15c2888;
@@ -208,10 +220,8 @@ select option{
 }
 /*统一的注册类表单样式*/
 .default-form{
-	/*margin:0 auto;*/
-	width: 530px;
+	width: 550px;
 	border-radius: 8px;
-	margin-top: 50px;
 }
 .default-form ul>li{
 	margin-bottom: 10px;

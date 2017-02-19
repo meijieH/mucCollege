@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li>个人信息</li>
 				<li>学习中心</li>
 				<li>考试中心</li>
-				<li></li>
+				<li>试卷分析</li>
 			</ul>
 		</div>
 	</div>

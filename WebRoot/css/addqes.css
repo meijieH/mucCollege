@@ -1,0 +1,54 @@
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+	background:#fff;
+	color:#15c288;
+	border-radius:10px;
+	border:1px solid #15c288;
+}
+.nav>li>a:hover, .nav>li>a:focus{
+	border:1px solid #F1F7EE;
+	background:#F1F7EE;
+	color:#15c288;
+}
+.nav>li>a{
+	border:1px solid #F1F7EE;
+	margin-bottom:5px;
+}
+.nav-pills>li+li{
+	margin-left:2px;
+}
+.qes-types{
+	margin-top:10px;
+}
+.deleteOption{
+	display:inline-block;
+	width:20px;
+	font-size:20px;
+	cursor:pointer;
+	margin-top:2px;
+	color:#999;
+}
+.deleteOption:hover,.deleteOption:focus{
+	color:red;
+}
+.answerSelect{
+	width:420px;
+	height:42px;
+	line-height:42px;
+}
+.an swerSelect label{
+	margin-right:10px;
+	cursor:pointer;
+}
+.answerSelect label:hover,.answerSelect label:focus{
+	color:#15c288;
+}
+.answerSelect label input{
+	margin-right:5px;
+}
+.answerSelect .singleDisable,.answerSelect .multipleDisable{
+	color:#ddd;
+	cursor:none;
+}
+.answerSelect .singleDisable:hover,.answerSelect .multipleDisable:hover{
+	color:#ddd;
+}
