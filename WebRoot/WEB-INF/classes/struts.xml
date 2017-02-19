@@ -36,6 +36,9 @@
 	        	<result name="teacher">/teacher/teacher.jsp</result> 
 	        	<result name="student">/student/student.jsp</result> 
 	        	<result name="login">/index.jsp</result> 
+	        	<result name="register">/register.jsp</result>
+	        	<result name="show_view">/myInfo.jsp</result>
+	        	<result name="show_edit">/show_edit.jsp</result>
 	        </action>  
 	 </package>
 	 <package name="student" namespace="/student" extends="struts-default">

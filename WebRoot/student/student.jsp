@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -40,11 +41,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<iframe src="student/frame_mystudy.jsp" frameborder="0" width="100%" height="100%"></iframe>
 		<!-- <ul>
 				<fieldset class="col-md-2">
-                 	<legend>minda</legend>
-                 	<li><a href="#">修改资料</a></li>
-				    <li><a href="#">查看消息</a></li>
-				    <li><a href="#">密码修改</a></li>
-				    <li><a href="#">注销</a></li>
+                 	<legend><s:property value="user.username"/></legend>
+                 	<li><a href="user/user_showInfo">查看信息</a></li>
+                 	<li><a href="user/user_showEdit">修改资料</a></li>
+				    <li><a href="user/user_showMessage">查看消息</a></li>
+				    <li><a href="user/user_exit">注销</a></li>
                 </fieldset>
 				<fieldset class="col-md-2">
                  	<legend>学习中心</legend>
