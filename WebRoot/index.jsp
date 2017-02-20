@@ -50,7 +50,7 @@
 		 					</span>
 		 				</li>
 	 	 				<li>
-	 	 					<span class="left-spant"></span>
+	 	 					<span class="left-span"></span>
 	 	 					<span class="right-span">
 	 	 						<div class="checkbox">
 						           <label><input type="checkbox">记住密码</label>
