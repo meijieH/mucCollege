@@ -9,7 +9,7 @@ public class Errorque implements java.io.Serializable {
 	// Fields
 
 	private Integer errorqueid;
-	private Question question;
+	private Stuque stuque;
 
 	// Constructors
 
@@ -18,8 +18,8 @@ public class Errorque implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Errorque(Question question) {
-		this.question = question;
+	public Errorque(Stuque stuque) {
+		this.stuque = stuque;
 	}
 
 	// Property accessors
@@ -32,12 +32,12 @@ public class Errorque implements java.io.Serializable {
 		this.errorqueid = errorqueid;
 	}
 
-	public Question getQuestion() {
-		return this.question;
+	public Stuque getStuque() {
+		return stuque;
 	}
 
-	public void setQuestion(Question question) {
-		this.question = question;
+	public void setStuque(Stuque stuque) {
+		this.stuque = stuque;
 	}
 
 }

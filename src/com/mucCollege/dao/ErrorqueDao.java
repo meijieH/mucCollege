@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Errorque;
 import com.mucCollege.model.Question;
+import com.mucCollege.model.Stuque;
 
 @Service@Transactional
 public class ErrorqueDao {
@@ -48,13 +49,13 @@ public class ErrorqueDao {
         Errorque errorque = (Errorque)s.get(Errorque.class,errorqueid);//返回类型是Object
         return errorque;
     }
-	//通过question查询(此时question存的是题库表的题目,是一个对象)	
+	//通过stuque查询(此时question存的是题库表的题目,是一个对象s)	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Errorque> QueryErrorque(Question question) { 
+	public ArrayList<Errorque> QueryErrorqueByStuque(Stuque stuque) { 
     	Session s = factory.getCurrentSession();
     	String hql = "From Errorque errorque where 1=1";
-    	if(null!=question && question.getQuestionid()!=0) 
-    		hql = hql + " and errorque.question.questionid like '%" + question.getQuestionid() + "%'";
+    	if(null!=stuque && stuque.getStuqueid()!=0) 
+    		hql = hql + " and errorque.stuque.stuqueid like '%" + stuque.getStuqueid() + "%'";
     	Query q = s.createQuery(hql);
     	List errorqueList = q.list();
     	return (ArrayList<Errorque>) errorqueList;

@@ -52,7 +52,6 @@
 			      <value>com/mucCollege/model/Teamark.hbm.xml</value>
 			      <value>com/mucCollege/model/Subject.hbm.xml</value>
 			      <value>com/mucCollege/model/Block.hbm.xml</value>
-			      <value>com/mucCollege/model/Group.hbm.xml</value>
 			      <value>com/mucCollege/model/Usertype.hbm.xml</value>
 			      <value>com/mucCollege/model/Collection.hbm.xml</value>
 			      <value>com/mucCollege/model/User.hbm.xml</value></list>

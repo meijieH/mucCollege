@@ -39,12 +39,18 @@
 	        	<result name="register">/register.jsp</result>
 	        	<result name="show_view">/myInfo.jsp</result>
 	        	<result name="show_edit">/show_edit.jsp</result>
+	        	<result name="message">/message.jsp</result>
+	        	<result name="all_question">/teacher/questions/qesset.jsp</result>
+	        	<result name="my_question">/teacher/questions/myqes.jsp</result>
+	        	<result name="add_question">/teacher/questions/addqes.jsp</result>
+	        	<result name="show_question">/teacher/questions/quedetail.jsp</result>
 	        </action>  
 	 </package>
 	 <package name="student" namespace="/student" extends="struts-default">
 	        <action name="student_*" class="studentAction" method="{1}">
 	        	<result name="index">/student/student.jsp</result> 
 	        	<result name="input">/student/stu_login.jsp</result> 
+	        	<result name="myCourse">/student/study/mylesson.jsp</result>
 	        </action>  
 	 </package>
 	<package name="teacher" namespace="/teacher" extends="struts-default">
@@ -52,6 +58,7 @@
 	        <result name="register">register.jsp</result>
 	        <result name="index">index.jsp</result>
 	        <result name="login">login.jsp</result>
+	        
 		</action>
 		<action name="teacourse_*" class="com.mucCollege.action.TeacourseAction" method="{1}">
 		    <result name="courselist">courselist.jsp</result>
@@ -62,5 +69,4 @@
 		    <result name="testpaper">testpaper.jsp</result>
 		</action>
 	</package>
-	
 </struts>

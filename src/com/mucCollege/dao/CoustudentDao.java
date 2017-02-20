@@ -72,7 +72,7 @@ public class CoustudentDao {
 			Session s = factory.getCurrentSession();
 	    	String hql = "From Coustudent coustudent where 1=1";
 	    	if(null!=student && student.getUserid()!=0) 
-	    		hql = hql + " and coustudent.student.userid like '%" + student.getUserid() + "%'";
+	    		hql = hql + " and coustudent.user.userid like '%" + student.getUserid() + "%'";
 	    	Query q = s.createQuery(hql);
 	    	List coustudentList = q.list();
 	    	return (ArrayList<Coustudent>) coustudentList;

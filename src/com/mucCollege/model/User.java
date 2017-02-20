@@ -36,6 +36,7 @@ public class User implements java.io.Serializable {
 	private Set testpapers = new HashSet(0);
 	private Set collections_1 = new HashSet(0);
 	private Set questions = new HashSet(0);
+	private Set tests = new HashSet(0);
 	private Set selectcourses_2 = new HashSet(0);
 	private Set testpapers_1 = new HashSet(0);
 	private Set stupapers_1 = new HashSet(0);
@@ -59,7 +60,7 @@ public class User implements java.io.Serializable {
 			String intro, Set teacourses, Set coustudents, Set selectcourses,
 			Set stupapers, Set coustudents_1, Set coustudents_2,
 			Set collections, Set selectcourses_1, Set teacourses_1,
-			Set testpapers, Set collections_1, Set questions,
+			Set testpapers, Set collections_1, Set questions,Set tests,
 			Set selectcourses_2, Set testpapers_1, Set stupapers_1,
 			Set stupapers_2) {
 		this.dept = dept;
@@ -86,6 +87,7 @@ public class User implements java.io.Serializable {
 		this.testpapers = testpapers;
 		this.collections_1 = collections_1;
 		this.questions = questions;
+		this.tests=tests;
 		this.selectcourses_2 = selectcourses_2;
 		this.testpapers_1 = testpapers_1;
 		this.stupapers_1 = stupapers_1;
@@ -292,6 +294,14 @@ public class User implements java.io.Serializable {
 
 	public void setQuestions(Set questions) {
 		this.questions = questions;
+	}
+
+	public Set getTests() {
+		return tests;
+	}
+
+	public void setTests(Set tests) {
+		this.tests = tests;
 	}
 
 	public Set getSelectcourses_2() {

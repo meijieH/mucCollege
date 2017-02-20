@@ -24,6 +24,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 3.另外，宽泛而言，题目和题干选项，应当包含【文字+图片+音频】，
 子板块描述中也应当包含【文字+图片+音频】，因为子板块描述中，不仅仅是对题组的描述，
 还有可能是根据一段音频，回答题组中的问题，或根据图表回题组中的问题。
+4.用户注册密码确认验证未做
+5.忘记密码
+6.errorque不应该对应question。应该对应stuque
 -->
   </body>
 </html>

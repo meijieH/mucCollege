@@ -8,10 +8,11 @@ import javax.annotation.Resource;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.mucCollege.model.Question;
-
+@Repository
 @Service@Transactional
 public class QuestionDao {
 	@Resource SessionFactory factory;
@@ -43,7 +44,10 @@ public class QuestionDao {
 	//ͨ通过id查询
 	public Question GetQuestionById(Integer questionid) {  
         Session s = factory.getCurrentSession();
-        Question question = (Question)s.get(Question.class,questionid);//返回类型是Object
+        String hql="From Question question where question.questionid="+questionid;
+        Query q = s.createQuery(hql);
+    	List queList = q.list();
+        Question question = (Question)queList.get(0);//返回类型是Object
         return question;
     }
 	//通过subject查询	
@@ -78,12 +82,12 @@ public class QuestionDao {
     }
 	//根据adder查询
 	@SuppressWarnings("unchecked")
-	public ArrayList<Question> QueryQuestionByAdder(String username){
+	public ArrayList<Question> QueryQuestionByAdder(Integer creatorid){
 		Session s=factory.getCurrentSession();
 		String hql="From Question question where 1=1";
-		if(!username.equals(""))
-			hql=hql+" and question.adder.username like '%"+username+"%'";
+		hql=hql+" and question.user.userid ="+creatorid;
 		Query q=s.createQuery(hql);
+		@SuppressWarnings("rawtypes")
 		List adderList=q.list();
 		return (ArrayList<Question>)adderList;
 	}

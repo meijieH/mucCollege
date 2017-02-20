@@ -17,6 +17,7 @@ public class Question implements java.io.Serializable {
 	private Quetype quetype;
 	private String label;
 	private String stem;
+	private String annotation;
 	private String answer;
 	private Integer quescore;
 	private String option1;
@@ -28,12 +29,12 @@ public class Question implements java.io.Serializable {
 	private String option7;
 	private Boolean isPicture;
 	private Boolean isvisiable;
+	private Double depth;
 	private Set collections = new HashSet(0);
 	private Set testques = new HashSet(0);
-	private Set errorques = new HashSet(0);
 	private Set testques_1 = new HashSet(0);
 	private Set collections_1 = new HashSet(0);
-	private Set errorques_1 = new HashSet(0);
+	
 
 	// Constructors
 
@@ -43,16 +44,17 @@ public class Question implements java.io.Serializable {
 
 	/** full constructor */
 	public Question(Subject subject, User user, Quetype quetype, String label,
-			String stem, String answer, Integer quescore, String option1,
+			String stem,String annotation,  String answer,Integer quescore, String option1,
 			String option2, String option3, String option4, String option5,
 			String option6, String option7, Boolean isPicture,
-			Boolean isvisiable, Set collections, Set testques, Set errorques,
-			Set testques_1, Set collections_1, Set errorques_1) {
+			Boolean isvisiable,Double depth, Set collections, Set testques,
+			Set testques_1, Set collections_1) {
 		this.subject = subject;
 		this.user = user;
 		this.quetype = quetype;
 		this.label = label;
 		this.stem = stem;
+		this.annotation=annotation;
 		this.answer = answer;
 		this.quescore = quescore;
 		this.option1 = option1;
@@ -64,12 +66,11 @@ public class Question implements java.io.Serializable {
 		this.option7 = option7;
 		this.isPicture = isPicture;
 		this.isvisiable = isvisiable;
+		this.depth=depth;
 		this.collections = collections;
 		this.testques = testques;
-		this.errorques = errorques;
 		this.testques_1 = testques_1;
 		this.collections_1 = collections_1;
-		this.errorques_1 = errorques_1;
 	}
 
 	// Property accessors
@@ -122,12 +123,20 @@ public class Question implements java.io.Serializable {
 		this.stem = stem;
 	}
 
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public String getAnnotation() {
+		return annotation;
+	}
+	
 	public String getAnswer() {
 		return this.answer;
 	}
 
-	public void setAnswer(String answer) {
-		this.answer = answer;
+	public void setAnnotation(String annotation) {
+		this.annotation = annotation;
 	}
 
 	public Integer getQuescore() {
@@ -210,6 +219,14 @@ public class Question implements java.io.Serializable {
 		this.isvisiable = isvisiable;
 	}
 
+	public Double getDepth() {
+		return depth;
+	}
+
+	public void setDepth(Double depth) {
+		this.depth = depth;
+	}
+
 	public Set getCollections() {
 		return this.collections;
 	}
@@ -226,14 +243,6 @@ public class Question implements java.io.Serializable {
 		this.testques = testques;
 	}
 
-	public Set getErrorques() {
-		return this.errorques;
-	}
-
-	public void setErrorques(Set errorques) {
-		this.errorques = errorques;
-	}
-
 	public Set getTestques_1() {
 		return this.testques_1;
 	}
@@ -248,14 +257,6 @@ public class Question implements java.io.Serializable {
 
 	public void setCollections_1(Set collections_1) {
 		this.collections_1 = collections_1;
-	}
-
-	public Set getErrorques_1() {
-		return this.errorques_1;
-	}
-
-	public void setErrorques_1(Set errorques_1) {
-		this.errorques_1 = errorques_1;
 	}
 
 }

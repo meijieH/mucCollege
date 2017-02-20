@@ -37,7 +37,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<s:form action="user/user_updateUser" method="post" cssStyle="margin-left:20px;">
 			<s:hidden name="user.userid"></s:hidden>
 			<s:hidden name="user.usertype.usertypeid"></s:hidden>
-			<s:textfield name="user.username" label="电话" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
+			<s:textfield name="user.username" label="用户名" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
+			<s:textfield name="user.usernum" label="学工号" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
 			<s:textfield name="user.password" label="密码" cssClass="str_input"  cssStyle="margin-top:8px;"></s:textfield>
 			<s:textfield name="user.phonenum" label="电话" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
 			<s:textfield name="user.email" label="邮箱" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>

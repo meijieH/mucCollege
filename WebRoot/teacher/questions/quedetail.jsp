@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="renderer" content="webkit">
-	<title>民大学院 我的题库 教师</title>
+	<title>题目详情</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -28,10 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<img src="/mucCollege/images/face.jpg"/>
 			</span>
 			<div id="user-setting" class="display-none user-setting">
-				<ul>
-					<li><a href="#">修改密码</a></li>
-					<li><a href="#">退出</a></li>
-				</ul>
+				
 			</div>
 		</div>
 	</header>
@@ -55,7 +52,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 右侧 -->
 
 	<div class="tea-main-right">
-	    <iframe id="tea-main-right-frame"src="teacher/questions/frame_myqes.jsp" frameborder="0" width="100%" height="100%"></iframe>
+	    <s:form action="" method="post">
+				<table class="table de-table" style="rules:none;">
+					<tr>
+						<td>类型</td>
+						<td><s:property value="quetype.typename"/>
+						</td>
+					</tr>
+					<tr>
+						<td>创建者</td>
+						<td><s:property value="user.username"/>
+						</td>
+					</tr>
+					<tr>
+						<td>题干</td>
+						<td><s:property value="stem"/>
+						</td>
+					</tr>
+					<tr>
+						<td>答案</td>
+						<td><s:property value="answer"/>
+						</td>
+					</tr>
+				</table>
+				<button style="margin-left:500px;" type="submit"
+					class="btn btn-success btn-de">修改信息</button>
+			</s:form>
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript">

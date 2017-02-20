@@ -17,7 +17,9 @@ public class Stuque implements java.io.Serializable {
 	private String answer;
 	private Integer score;
 	private Set teamarks = new HashSet(0);
+	private Set errorques = new HashSet(0);
 	private Set teamarks_1 = new HashSet(0);
+	private Set errorques_1 = new HashSet(0);
 	private Set teamarks_2 = new HashSet(0);
 
 	// Constructors
@@ -28,13 +30,15 @@ public class Stuque implements java.io.Serializable {
 
 	/** full constructor */
 	public Stuque(Stupaper stupaper, Testque testque, String answer,
-			Integer score, Set teamarks, Set teamarks_1, Set teamarks_2) {
+			Integer score, Set teamarks,Set errorques, Set teamarks_1,Set errorques_1, Set teamarks_2) {
 		this.stupaper = stupaper;
 		this.testque = testque;
 		this.answer = answer;
 		this.score = score;
 		this.teamarks = teamarks;
+		this.errorques=errorques;
 		this.teamarks_1 = teamarks_1;
+		this.errorques_1=errorques_1;
 		this.teamarks_2 = teamarks_2;
 	}
 
@@ -104,4 +108,20 @@ public class Stuque implements java.io.Serializable {
 		this.teamarks_2 = teamarks_2;
 	}
 
+	public Set getErrorques() {
+		return errorques;
+	}
+
+	public void setErrorques(Set errorques) {
+		this.errorques = errorques;
+	}
+
+	public Set getErrorques_1() {
+		return errorques_1;
+	}
+
+	public void setErrorques_1(Set errorques_1) {
+		this.errorques_1 = errorques_1;
+	}
+	
 }

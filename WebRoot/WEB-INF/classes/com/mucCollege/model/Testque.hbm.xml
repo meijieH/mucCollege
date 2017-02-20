@@ -15,29 +15,24 @@
                 <comment>对应题库中的题</comment>
             </column>
         </many-to-one>
-        <many-to-one name="group" class="com.mucCollege.model.Group" fetch="select" lazy="false">
-            <column name="group">
-                <comment>对应的组</comment>
+        <many-to-one name="block" class="com.mucCollege.model.Block" fetch="select" lazy="false">
+            <column name="block">
+                <comment>对应的block</comment>
             </column>
         </many-to-one>
         <property name="quesnum" type="java.lang.Integer">
             <column name="quesnum">
-                <comment>题在试卷中的顺序</comment>
+                <comment>question在block中的顺序</comment>
             </column>
         </property>
         <property name="score" type="java.lang.Integer">
             <column name="score">
-                <comment>分数</comment>
+                <comment>question在block中的分数</comment>
             </column>
         </property>
         <property name="depth" type="java.lang.Integer">
             <column name="depth">
-                <comment>题目难度如98</comment>
-            </column>
-        </property>
-        <property name="testpaper" type="java.lang.Integer">
-            <column name="testpaper">
-                <comment>对应的试卷</comment>
+                <comment>question在block中的难度</comment>
             </column>
         </property>
         <set name="stuques" inverse="true">

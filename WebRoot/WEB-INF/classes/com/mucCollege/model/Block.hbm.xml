@@ -25,21 +25,13 @@
                 <comment>描述</comment>
             </column>
         </property>
-        <set name="groups" inverse="true">
+        <set name="testques" inverse="true">
             <key>
                 <column name="block">
-                    <comment>外键,说明属于哪个块</comment>
+                    <comment>对应的block</comment>
                 </column>
             </key>
-            <one-to-many class="com.mucCollege.model.Group" />
-        </set>
-        <set name="groups_1" inverse="true">
-            <key>
-                <column name="block">
-                    <comment>外键,说明属于哪个块</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Group" />
+            <one-to-many class="com.mucCollege.model.Testque" />
         </set>
     </class>
 </hibernate-mapping>

@@ -72,6 +72,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    </a>
         	</li>
         </ul>
+        <ul>
+        <s:iterator value="queList" status="status">
+			<s:if test="queList==null">
+				无可显示的记录。
+			</s:if>
+			<s:else>
+				<li>
+				创建者：<s:property value="user.username" />
+				题目<s:property value="stem"/>
+				</li>
+			</s:else>
+		</s:iterator>
+		</ul>
 	</div>
 </body>
 </html>

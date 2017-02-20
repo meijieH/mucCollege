@@ -1,5 +1,6 @@
 package com.mucCollege.action;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -9,9 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mucCollege.model.Question;
 import com.mucCollege.model.User;
 import com.mucCollege.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 @Service
 @Transactional
@@ -22,6 +25,8 @@ public class UserAction {
 	UserService userService;
 	private User user;
 	private String message;
+	private Question question;
+	private ArrayList<Question> queList;
 
 	public User getUser() {
 		return user;
@@ -39,6 +44,22 @@ public class UserAction {
 		this.message = message;
 	}
 
+	public ArrayList<Question> getQueList() {
+		return queList;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+	public void setQueList(ArrayList<Question> queList) {
+		this.queList = queList;
+	}
+
 	ActionContext actionContext = ActionContext.getContext();
 	@SuppressWarnings("rawtypes")
 	Map session = actionContext.getSession();
@@ -53,14 +74,15 @@ public class UserAction {
 		try {
 			user = userService.queryUserByUsernum(user.getUsernum());
 			if (user == null) {
-				setMessage("用户名不存在");
+				setMessage("学工号不存在");
 				return "login";
 			}
+
 			if (!user.getPassword().endsWith(user.getPassword())) {
-				setMessage("用户名或密码错误");
+				setMessage("学工号或密码错误");
 				return "login";
 			}
-			session.put("user",user);
+			session.put("user", user);
 		} catch (Exception e) {
 			setMessage(e.getMessage());
 			return "login";
@@ -79,6 +101,7 @@ public class UserAction {
 
 	/**
 	 * 注册register
+	 * 
 	 * @return
 	 */
 	public String register() {
@@ -93,6 +116,7 @@ public class UserAction {
 
 	/**
 	 * 修改及密码-->改为验证方式
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
@@ -103,6 +127,7 @@ public class UserAction {
 
 	/**
 	 * 显示用户信息
+	 * 
 	 * @return
 	 */
 	public String showInfo() {
@@ -112,16 +137,18 @@ public class UserAction {
 
 	/**
 	 * 显示要修改的信息
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public String showEdit() throws Exception{
+	public String showEdit() throws Exception {
 		user = (User) session.get("user");
 		return "show_edit";
 	}
 
 	/**
 	 * 修改用户信息
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
@@ -132,6 +159,7 @@ public class UserAction {
 
 	/**
 	 * 回到首页
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
@@ -139,14 +167,59 @@ public class UserAction {
 		user = (User) session.get("user");
 		return "index";
 	}
-	                                                          
+
 	/**
 	 * 退出
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public String exit() throws Exception{
+	public String exit() throws Exception {
 		session.remove("user");
 		return "login";
+	}
+
+	/**
+	 * 显示消息
+	 * 
+	 * @return
+	 */
+	public String showMessage() {
+		User user = (User) session.get("user");
+		return "message";
+	}
+
+	// 添加题目
+	public String toAddQuestion(){
+		User user=(User)session.get("user");
+		return "addQuestion";
+	}
+	public String addQuestion() {
+		User user = (User) session.get("user");
+		userService.addQuestion(question);
+		return "all_question";
+	}
+
+	// 显示所有题目
+	public String showAllQuestion() {
+		User user = (User) session.get("user");
+		queList = userService.showAllQuestion();
+		return "all_question";
+	}
+
+	// 显示我添加的所有题目
+	public String showMyQuestions() {
+		User user = (User) session.get("user");
+		queList = userService.showMyQuestions(user.getUserid());
+		return "my_question";
+	}
+
+	// 显示每道题的信息
+	public String showQuestion() {
+		User user = (User) session.get("user");
+		System.out.println(question==null);
+		System.out.println();
+		question = userService.showQuestion(question.getQuestionid());
+		return "show_question";
 	}
 }

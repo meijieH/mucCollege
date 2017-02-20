@@ -97,26 +97,7 @@ public class AdminAction{
 	//获取session
 	ActionContext actionContext=ActionContext.getContext();
 	Map session=actionContext.getSession();	
-	//1.对管理员的操作**********
-    //注册
-	@SuppressWarnings("unchecked")
-	public String register() throws Exception{
-		adminService.register(admin);
-		return "input";
-	}
-	//登陆
-	@SuppressWarnings("unchecked")
-	public String login(){
-		User db_admin=adminService.CheckLogin(admin);
-		if(db_admin==null){
-			return "input";
-		}
-		else{
-			session.put("admin",db_admin);
-			admin=(User)session.get("admin");
-			return "index";	
-		}		
-	}	
+
 	//显示管理员信息
 	public String showAdminInfo(){
 		admin=(User)session.get("admin");

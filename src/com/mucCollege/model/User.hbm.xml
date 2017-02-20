@@ -162,6 +162,14 @@
             </key>
             <one-to-many class="com.mucCollege.model.Question" />
         </set>
+        <set name="tests" inverse="true">
+            <key>
+                <column name="testcreator">
+                    <comment>考试的创建者</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Question" />
+        </set>
         <set name="selectcourses_2" inverse="true">
             <key>
                 <column name="student">

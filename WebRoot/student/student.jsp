@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -26,14 +27,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<img src="/mucCollege/images/face.jpg" alt="" width="80" height="80">
 		</div>
 		<div class="name">
-			<i></i>张三
+			<i></i><c:out value="${user.username}"></c:out>
 		</div>
 		<div class="option-nav">
 			<ul>
 				<li>个人信息</li>
 				<li>学习中心</li>
 				<li>考试中心</li>
-				<li></li>
+				<!-- merge时请保留下方的后台链接，可以放在其他页面里,方法名称和链接对应即可 -->
+				<li><a href="user/user_showInfo">查看信息</a></li>
+                <li><a href="user/user_showEdit">修改资料</a></li>
+			    <li><a href="user/user_showMessage">查看消息</a></li>
+			    <li><a href="student/student_showMyCourse">我的课程</a></li>
+			    <li><a href="student/student_showMyError">我的错题集，暂时未分类，之后再说</a></li>
+			    <!-- merge保留结束by候梅洁 -->
 			</ul>
 		</div>
 	</div>

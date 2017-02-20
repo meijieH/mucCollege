@@ -35,6 +35,11 @@
                 <comment>题干</comment>
             </column>
         </property>
+        <property name="annotation" type="java.lang.String">
+            <column name="annotation" length="65535">
+                <comment>答案解析</comment>
+            </column>
+        </property>
         <property name="answer" type="java.lang.String">
             <column name="answer" length="65535">
                 <comment>标准答案</comment>
@@ -90,6 +95,11 @@
                 <comment>是否题目对学生可见</comment>
             </column>
         </property>
+        <property name="depth" type="java.lang.Double">
+            <column name="depth" precision="22" scale="0">
+                <comment>难度</comment>
+            </column>
+        </property>
         <set name="collections" inverse="true">
             <key>
                 <column name="question" />
@@ -103,14 +113,6 @@
                 </column>
             </key>
             <one-to-many class="com.mucCollege.model.Testque" />
-        </set>
-        <set name="errorques" inverse="true">
-            <key>
-                <column name="question">
-                    <comment>题库中题目id</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Errorque" />
         </set>
         <set name="testques_1" inverse="true">
             <key>
@@ -126,13 +128,6 @@
             </key>
             <one-to-many class="com.mucCollege.model.Collection" />
         </set>
-        <set name="errorques_1" inverse="true">
-            <key>
-                <column name="question">
-                    <comment>题库中题目id</comment>
-                </column>
-            </key>
-            <one-to-many class="com.mucCollege.model.Errorque" />
-        </set>
+        
     </class>
 </hibernate-mapping>
