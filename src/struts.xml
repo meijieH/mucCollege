@@ -3,70 +3,63 @@
     "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
-     <constant name="struts.i18n.encoding" value="utf-8"/>
-     <constant name="struts.devMode" value="true" />
-     <!--Struts2中Action对象的创建交给spring完成-->
-     <constant name="struts.objectFactory" value="spring" />      
-     <package name="admin" namespace="/admin" extends="struts-default">
-	        <action name="admin_*" class="adminAction" method="{1}">
-	        	<result name="index">/admin/index.jsp</result> 
-	        	<result name="input">/admin/login.jsp</result>
-	        	<result name="show_info">/admin/show_info.jsp</result>
-	        	<result name="show_edit">/admin/show_edit.jsp</result>
-	        	<result name="all_student">/admin/all_student.jsp</result>
-	        	<result name="all_teacher">/admin/all_teacher.jsp</result>
-	        	<result name="view_student">/admin/view_student.jsp</result>
-	        	<result name="view_teacher">/admin/view_teacher.jsp</result>
-	        	<result name="edit_student">/admin/edit_student.jsp</result>
-	        	<result name="edit_teacher">/admin/edit_teacher.jsp</result>
-	        	<result name="add_question">/admin/add_question.jsp</result>
-	        	<result name="view_question">/admin/view_question.jsp</result>
-	        	<result name="all_question">/admin/all_question.jsp</result>
-	        	<result name="edit_question">/admin/edit_question.jsp</result>
-	        	<result name="add_course">/admin/add_course.jsp</result>
-	        	<result name="view_course">/admin/view_course.jsp</result>
-	        	<result name="edit_course">/admin/edit_course.jsp</result>
-	        	<result name="view_dept">/admin/view_dept.jsp</result>
-	        	<result name="edit_dept">/admin/edit_dept.jsp</result>
-	        </action>  
-	 </package> 
-	 <package name="user" namespace="/user" extends="struts-default">
-	        <action name="user_*" class="userAction" method="{1}">
-	        	<result name="admin">/admin/index.jsp</result> 
-	        	<result name="teacher">/teacher/teacher.jsp</result> 
-	        	<result name="student">/student/student.jsp</result> 
-	        	<result name="login">/index.jsp</result> 
-	        	<result name="register">/register.jsp</result>
-	        	<result name="show_view">/myInfo.jsp</result>
-	        	<result name="show_edit">/show_edit.jsp</result>
-	        	<result name="message">/message.jsp</result>
-	        	<result name="all_question">/teacher/questions/qesset.jsp</result>
-	        	<result name="my_question">/teacher/questions/myqes.jsp</result>
-	        	<result name="add_question">/teacher/questions/addqes.jsp</result>
-	        	<result name="show_question">/teacher/questions/quedetail.jsp</result>
-	        </action>  
-	 </package>
-	 <package name="student" namespace="/student" extends="struts-default">
-	        <action name="student_*" class="studentAction" method="{1}">
-	        	<result name="index">/student/student.jsp</result> 
-	        	<result name="input">/student/stu_login.jsp</result> 
-	        	<result name="myCourse">/student/study/mylesson.jsp</result>
-	        </action>  
-	 </package>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.devMode" value="true" />
+	<!--Struts2中Action对象的创建交给spring完成 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<package name="admin" namespace="/admin" extends="struts-default">
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result name="index">/admin/index.jsp</result>
+			<result name="input">/admin/login.jsp</result>
+			<result name="show_info">/admin/show_info.jsp</result>
+			<result name="show_edit">/admin/show_edit.jsp</result>
+			<result name="all_student">/admin/all_student.jsp</result>
+			<result name="all_teacher">/admin/all_teacher.jsp</result>
+			<result name="view_student">/admin/view_student.jsp</result>
+			<result name="view_teacher">/admin/view_teacher.jsp</result>
+			<result name="edit_student">/admin/edit_student.jsp</result>
+			<result name="edit_teacher">/admin/edit_teacher.jsp</result>
+			<result name="add_question">/admin/add_question.jsp</result>
+			<result name="view_question">/admin/view_question.jsp</result>
+			<result name="all_question">/admin/all_question.jsp</result>
+			<result name="edit_question">/admin/edit_question.jsp</result>
+			<result name="add_course">/admin/add_course.jsp</result>
+			<result name="view_course">/admin/view_course.jsp</result>
+			<result name="edit_course">/admin/edit_course.jsp</result>
+			<result name="view_dept">/admin/view_dept.jsp</result>
+			<result name="edit_dept">/admin/edit_dept.jsp</result>
+		</action>
+	</package>
+	<package name="user" namespace="/user" extends="struts-default">
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="admin">/admin/index.jsp</result>
+			<result name="teacher">/teacher/teacher.jsp</result>
+			<result name="student">/student/student.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="register">/register.jsp</result>
+			<result name="show_view">/myInfo.jsp</result>
+			<result name="show_edit">/show_edit.jsp</result>
+			<result name="message">/message.jsp</result>
+		</action>
+	</package>
+	<package name="student" namespace="/student" extends="struts-default">
+		<action name="student_*" class="studentAction" method="{1}">
+			<result name="index">/student/student.jsp</result>
+			<result name="input">/student/stu_login.jsp</result>
+			<result name="myCourse">/student/study/mylesson.jsp</result>
+		</action>
+	</package>
 	<package name="teacher" namespace="/teacher" extends="struts-default">
-	    <action name="teacher_*" class="com.mucCollege.action.TeacherAction" method="{1}">
-	        <result name="register">register.jsp</result>
-	        <result name="index">index.jsp</result>
-	        <result name="login">login.jsp</result>
-	        
-		</action>
-		<action name="teacourse_*" class="com.mucCollege.action.TeacourseAction" method="{1}">
-		    <result name="courselist">courselist.jsp</result>
-		    <result name="course">course.jsp</result>
-		</action>
-		<action name="teatest_*" class="com.mucCollege.action.TeatestAction" method="{1}">
-		    <result name="testlist">testlist.jsp</result>
-		    <result name="testpaper">testpaper.jsp</result>
+		<action name="teacher_*" class="teacherAction" method="{1}">
+			<result name="register">register.jsp</result>
+			<result name="index">index.jsp</result>
+			<result name="login">index.jsp</result>
+			<result name="show_view">/myInfo.jsp</result>
+			<result name="addQuestion">/teacher/questions/addqes.jsp</result>
+			<result name="all_question">/teacher/questions/qesset.jsp</result>
+			<result name="my_question">/teacher/questions/myqes.jsp</result>
+			<result name="add_question">/teacher/questions/addqes.jsp</result>
+			<result name="show_question">/teacher/questions/quedetail.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.mucCollege.model.Question;
+import com.mucCollege.model.User;
 @Repository
 @Service@Transactional
 public class QuestionDao {
@@ -43,11 +44,14 @@ public class QuestionDao {
 	}
 	//ͨ通过id查询
 	public Question GetQuestionById(Integer questionid) {  
-        Session s = factory.getCurrentSession();
+		Session s = factory.getCurrentSession();
+		Question question=(Question)s.get(Question.class, questionid);
+		//User user = (User) s.get(User.class, userid);
+        /*Session s = factory.getCurrentSession();
         String hql="From Question question where question.questionid="+questionid;
         Query q = s.createQuery(hql);
     	List queList = q.list();
-        Question question = (Question)queList.get(0);//返回类型是Object
+        Question question = (Question)queList.get(0);//返回类型是Object*/
         return question;
     }
 	//通过subject查询	

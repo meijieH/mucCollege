@@ -17,7 +17,7 @@
 		<property name="driverClass" value="org.gjt.mm.mysql.Driver"/><!-- 另外一个驱动，同样可连接数据库 -->
 		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/java_test?useUnicode=true&amp;characterEncoding=UTF-8"/>
 		<property name="user" value="root"/>                               <!-- 上句后半句会减少乱码的可能性 -->
-		<property name="password" value=""/>
+		<property name="password" value="961216hmj"/>
 		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
 		<property name="initialPoolSize" value="1"/>
 		<!--连接池中保留的最小连接数。-->

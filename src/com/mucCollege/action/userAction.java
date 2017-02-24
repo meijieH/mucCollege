@@ -71,22 +71,18 @@ public class UserAction {
 	 */
 	@SuppressWarnings("unchecked")
 	public String login() {
-		try {
-			user = userService.queryUserByUsernum(user.getUsernum());
-			if (user == null) {
-				setMessage("学工号不存在");
-				return "login";
-			}
-
-			if (!user.getPassword().endsWith(user.getPassword())) {
-				setMessage("学工号或密码错误");
-				return "login";
-			}
-			session.put("user", user);
-		} catch (Exception e) {
-			setMessage(e.getMessage());
+		user = userService.queryUserByUsernum(user.getUsernum());
+		if (user == null) {
+			// setMessage("学工号不存在");
 			return "login";
+			//return null;
 		}
+		if (!user.getPassword().endsWith(user.getPassword())) {
+			// setMessage("学工号或密码错误");
+			return "login";
+			//return null;
+		}
+		session.put("user", user);
 		if (user.getUsertype().getUsertypeid() == 1) {
 			System.out.println(user.getUsertype().getUsertypeid());
 			return "admin";
@@ -187,39 +183,5 @@ public class UserAction {
 	public String showMessage() {
 		User user = (User) session.get("user");
 		return "message";
-	}
-
-	// 添加题目
-	public String toAddQuestion(){
-		User user=(User)session.get("user");
-		return "addQuestion";
-	}
-	public String addQuestion() {
-		User user = (User) session.get("user");
-		userService.addQuestion(question);
-		return "all_question";
-	}
-
-	// 显示所有题目
-	public String showAllQuestion() {
-		User user = (User) session.get("user");
-		queList = userService.showAllQuestion();
-		return "all_question";
-	}
-
-	// 显示我添加的所有题目
-	public String showMyQuestions() {
-		User user = (User) session.get("user");
-		queList = userService.showMyQuestions(user.getUserid());
-		return "my_question";
-	}
-
-	// 显示每道题的信息
-	public String showQuestion() {
-		User user = (User) session.get("user");
-		System.out.println(question==null);
-		System.out.println();
-		question = userService.showQuestion(question.getQuestionid());
-		return "show_question";
 	}
 }

@@ -56,27 +56,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<table class="table de-table" style="rules:none;">
 					<tr>
 						<td>类型</td>
-						<td><s:property value="quetype.typename"/>
+						<td><s:property value="question.quetype.typename"/>
 						</td>
 					</tr>
 					<tr>
 						<td>创建者</td>
-						<td><s:property value="user.username"/>
+						<td><s:property value="question.user.username"/>
 						</td>
 					</tr>
 					<tr>
 						<td>题干</td>
-						<td><s:property value="stem"/>
+						<td><s:property value="question.stem"/>
 						</td>
 					</tr>
 					<tr>
 						<td>答案</td>
-						<td><s:property value="answer"/>
+						<td><s:property value="question.answer"/>
 						</td>
 					</tr>
 				</table>
 				<button style="margin-left:500px;" type="submit"
-					class="btn btn-success btn-de">修改信息</button>
+					class="btn btn-success btn-de"><a href="">修改信息</a></button>
 			</s:form>
 	</div>
 	<script src="js/jquery.min.js"></script>

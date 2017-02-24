@@ -71,7 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    			<tr>
 	    				<td><input type="checkbox"></td>
 	    				<td><s:property value="depth"/></td>
-	    				<td><a href="user/user_showQuestion?question.questionid='<s:property value="questionid"/>'"><s:property value="stem" /></a></td>
+	    				<td><a href="teacher/teacher_showQuestion?question.questionid=<s:property value='questionid'/>"><s:property value="questionid"/>.<s:property value="stem" /></a></td>
 	    				<td>3</td>
 	    				<td>23%</td>
 	    				<td><s:property value="quetype.typename"/></td>

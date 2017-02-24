@@ -39,19 +39,19 @@
 						    <li>
 		 	 					<span class="left-span"><label for="sgStem">请输入题干</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="sgStem" placeholder="在这里输入题目"></textarea>
+		 	 						<textarea class="" id="sgStem" name="question.stem" placeholder="在这里输入题目"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="singleOption1">A、</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="singleOption" id="singleOption1">
+		 	 						<input type="text" class="singleOption" id="singleOption1" name="question.option1">
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="singleOption2">B、</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="singleOption" id="singleOption2">
+		 	 						<input type="text" class="singleOption" id="singleOption2"  name="question.option1">
 						        </span>
 						    </li>
 						    <li>

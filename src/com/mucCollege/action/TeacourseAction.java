@@ -8,6 +8,8 @@ import javax.annotation.Resource;
 import org.apache.struts2.interceptor.SessionAware;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Course;
 import com.mucCollege.model.StuClass;
@@ -16,8 +18,8 @@ import com.mucCollege.model.User;
 import com.mucCollege.service.TeacourseService;
 import com.opensymphony.xwork2.Action;
 
-@Controller
-@Scope("prototype")
+@Service@Transactional
+@Controller@Scope("prototype")
 public class TeacourseAction implements Action ,SessionAware{
 	@Resource TeacourseService teacourseService;
 	private Map<String, Object> session;
