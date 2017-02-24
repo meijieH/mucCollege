@@ -26,7 +26,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   <!--标题 -->
 		<div>
 			<div class="content-title settest-lesson-t"><i class="fa fa-thumb-tack" aria-hidden="true"></i>计算机基础 </div>
-			<a href="teacher/test/testedit.jsp" target="_blank" role="button" class="btn btn-default manual-settest-btn">自行组卷</a>
+			<a href="teacher/test/testedit.jsp" target="_blank" role="button" class="btn btn-default manual-settest-btn">手工组卷</a>
+			<a href="teacher/test/autoassem.jsp" target="_blank" role="button" class="btn btn-default manual-settest-btn">自动组卷</a>
 		</div>
 		
 		

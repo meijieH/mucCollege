@@ -1,0 +1,60 @@
+.tab-sheets{
+	margin-top:30px;
+	border: 1px solid #dddcdc;
+}
+.que-top{
+	background-color: #eee;
+	height: 40px;
+	
+}
+
+.que-top-left{
+	padding-left:20px;
+	height: 40px;
+	line-height:40px;
+	font-size: 14px;
+	float: left;
+}
+.que-mid{
+	border-bottom:1px dashed #dddcdc;
+}
+.que-que{
+	padding:20px 0px 20px 20px;
+}
+.que-cho{
+	padding-left:20px;
+}
+.que-btm{
+	height:40px;
+	line-height:40px;
+	padding-left:20px;
+	border-bottom:1px solid #dddcdc;
+}
+.annota{
+	padding:10px 10px 10px 20px;
+	
+}
+.exam-point{
+	margin-top:10px;
+	font-weight:700;
+	line-height:25px;
+	text-align:center;
+	
+}
+.exam-ans{
+	margin-top:10px;
+	font-weight:700;
+	line-height:25px;
+	text-align:center;
+}
+.exam-anno{
+	margin-top:10px;
+	font-weight:700;
+	line-height:25px;
+	text-align:center;
+}
+.anno-body{
+	padding-left:70px;
+	word-break:normal;
+	word-wrap:break-word;
+}
