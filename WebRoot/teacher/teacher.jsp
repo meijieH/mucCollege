@@ -35,6 +35,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li onclick="changeRight('user/user_showMessage')"><i class="fa fa-user"></i>我的消息</li>
 				<li onclick="window.open('teacher/teacher_showAllQuestion','_blank')" class="link"><i class="fa fa-server"></i>题库集锦</li>
 				<li onclick="window.open('teacher/teacher_toAddQuestion','_blank')" class="link"><i class="fa fa-server"></i>添加题目</li>
+				<li onclick="window.open('teacher/teacher_showMyQuestions','_blank')" class="link"><i class="fa fa-server"></i>我的题目</li>
 				<li class="link"><i class="fa fa-file-text-o"></i>我的试卷<li>
 			</ul>
 		</div>

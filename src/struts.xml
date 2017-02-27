@@ -59,7 +59,7 @@
 			<result name="all_question">/teacher/questions/qesset.jsp</result>
 			<result name="my_question">/teacher/questions/myqes.jsp</result>
 			<result name="add_question">/teacher/questions/addqes.jsp</result>
-			<result name="show_question">/teacher/questions/quedetail.jsp</result>
+			<result name="show_question">/teacher/questions/annotation.jsp</result>
 		</action>
 	</package>
 </struts>

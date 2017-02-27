@@ -7,8 +7,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mucCollege.dao.CollectionDao;
 import com.mucCollege.dao.QuestionDao;
 import com.mucCollege.dao.TeacherDao;
+import com.mucCollege.model.Collection;
 import com.mucCollege.model.Course;
 import com.mucCollege.model.Question;
 
@@ -19,6 +21,8 @@ public class TeacherService extends UserService {
 	TeacherDao teacherDao;
 	@Resource
 	QuestionDao questionDao;
+	@Resource
+	CollectionDao collectionDao;
 
 	// 3.对题目的操作**********
 	// 增加题目
@@ -26,6 +30,10 @@ public class TeacherService extends UserService {
 		questionDao.addQuestion(question);
 	}
 
+	public void addCollection(Collection collection) throws Exception {
+		collectionDao.addcollection(collection);
+	}
+	
 	// 查看所有题目
 	public ArrayList<Question> showAllQuestion() {
 		ArrayList<Question> questionList = questionDao.QueryAllQuestion();
@@ -70,4 +78,6 @@ public class TeacherService extends UserService {
 	public void updateCourse(Course course) {
 		courseDao.updateCourse(course);
 	}
+
+	
 }

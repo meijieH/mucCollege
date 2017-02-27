@@ -27,6 +27,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 4.用户注册密码确认验证未做
 5.忘记密码
 6.errorque不应该对应question。应该对应stuque
+7.annotation.jsp中添加到我的题库还未做
+8.queset中最后一题的题型未显示很奇怪
 -->
   </body>
 </html>

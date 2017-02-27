@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="user-info">
 			<span class="user-study">我的收藏</span>
 			<span class="user-message">私信</span>
-			<span class="user-name">dueeeeeeeeeeeeeeeeyufei</span>
+			<span class="user-name"><s:property /></span>
 			<span class="user-face" onmouseover="visible('user-setting')" onclick="displayNone('user-setting')">
 				<img src="/mucCollege/images/face.jpg"/>
 			</span>
@@ -53,7 +53,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 	</div>
 	<!-- 右侧 -->
-
+	<div class="set-zone">
+	    	<table class="default-table">
+	    		<thead>
+	    			<tr>
+	    				<th class="select-all"><input type="checkbox">全选</th>
+	    				<th>难度</th>
+	    				<th>题干</th>
+	    				<th>使用次数</th>
+	    				<th>正确率</th>
+	    				<th>题型</th>
+	    				<th>来源</th>
+	    			</tr>
+	    		</thead>
+	    		<tbody>
+	    			<s:iterator value="queList" status="status">
+	    			<tr>
+	    				<td><input type="checkbox"></td>
+	    				<td><s:property value="depth"/></td>
+	    				<td><a href="teacher/teacher_showQuestion?question.questionid=<s:property value='questionid'/>"><s:property value="questionid"/>.<s:property value="stem" /></a></td>
+	    				<td>3</td>
+	    				<td>23%</td>
+	    				<td><s:property value="quetype.typename"/></td>
+	    				<td><s:property value="user.username"/></td>
+	    			</tr>
+	    			</s:iterator>
+	    		</tbody>
+	    		<tfoot>
+	    			<tr>
+	    				<td></td>
+	    				<td></td>
+	    				<td></td>
+	    				<td></td>
+	    				<td>e</td>
+	    				<td>第3题</td>
+	    				<td>共23题</td>
+	    			</tr>
+	    		</tfoot>
+	    	</table>
+	    </div>
 	<div class="tea-main-right">
 	    <iframe id="tea-main-right-frame"src="teacher/questions/frame_myqes.jsp" frameborder="0" width="100%" height="100%"></iframe>
 	</div>

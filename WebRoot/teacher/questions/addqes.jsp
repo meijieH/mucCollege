@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,16 +24,18 @@
 		<div class="page-center-right">
 			  <div class="tab-content">
 			    <div class="tab-pane active" id="singleSelect">
-			    	<form class="default-form">
+			    	<s:form cssClass="default-form" action="teacher/teacher_addQuestion" method="post">
+			    	<s:hidden name="question.quetype.quetypeid" value="1"></s:hidden>
+			    	
 			    		<ul>
 						    <li>
 		 	 					<span class="left-span"><label>当前题夹</label></span>
 		 	 					<span class="right-span">
-		 	 						<select>
-									  <option value ="">操作系统</option>
-									  <option value ="">数据结构</option>
-									  <option value="">计算机网络</option>
-									  <option value="">组成原理</option>
+		 	 						<select name="collection.collectionname">
+									  <option value ="操作系统">操作系统</option>
+									  <option value ="数据结构">数据结构</option>
+									  <option value="计算机网络">计算机网络</option>
+									  <option value="组成原理">组成原理</option>
 									</select>
 						        </span>
 						    </li>
@@ -51,7 +54,7 @@
 						    <li>
 		 	 					<span class="left-span"><label for="singleOption2">B、</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="singleOption" id="singleOption2"  name="question.option1">
+		 	 						<input type="text" class="singleOption" id="singleOption2"  name="question.option2">
 						        </span>
 						    </li>
 						    <li>
@@ -66,194 +69,197 @@
 		 	 					<span class="left-span"><label for="answer">标准答案</label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="answerSelect">
-		 	 							<label><input type="radio" name="singleAnswer" class="singleAnswer"/>A</label>
-		 	 							<label><input type="radio" name="singleAnswer" class="singleAnswer"/>B</label>
-		 	 							<label class="singleDisable"><input type="radio" name="singleAnswer" class="singleAnswer" disabled="disabled"/>C</label>
-		 	 							<label class="singleDisable"><input type="radio" name="singleAnswer" class="singleAnswer" disabled="disabled"/>D</label>
-		 	 							<label class="singleDisable"><input type="radio" name="singleAnswer" class="singleAnswer" disabled="disabled"/>E</label>
-		 	 							<label class="singleDisable"><input type="radio" name="singleAnswer" class="singleAnswer" disabled="disabled"/>F</label>
-		 	 							<label class="singleDisable"><input type="radio" name="singleAnswer" class="singleAnswer" disabled="disabled"/>G</label>
+		 	 							<label><input type="radio" name="question.answer" value="A" class="singleAnswer"/>A</label>
+		 	 							<label><input type="radio" name="singleAnswer" value="B" class="singleAnswer"/>B</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="C" class="singleAnswer" disabled="disabled"/>C</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="D" class="singleAnswer" disabled="disabled"/>D</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="E" class="singleAnswer" disabled="disabled"/>E</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="F" class="singleAnswer" disabled="disabled"/>F</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="G" class="singleAnswer" disabled="disabled"/>G</label>
 		 	 						</div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="analysis">答案解析</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="analysis" placeholder="请输入答案解析"></textarea>
+		 	 						<textarea class="" id="analysis" name="question.annotation" placeholder="请输入答案解析"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
-							           <label><input type="checkbox">同时分享到民大题库（公开）</label>
+							           <label><input type="checkbox"  value="true" name="question.isvisiable" >同时分享到民大题库（公开）</label>
 							        </div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
-		 	 						<button type="button" class="btn btn-agree" onclick="">
+		 	 						<button type="submit" class="btn btn-agree">
 									 保存
 									</button>
 						        </span>
 						    </li>
 			    		</ul>
-			    	</form>
+			    	</s:form>
 			    </div>
 			    <div class="tab-pane" id="trueFalse">
-			    	<form class="default-form">
+			    	<s:form cssClass="default-form" action="teacher/teacher_addQuestion" method="post">
+			    	<s:hidden name="question.quetype.quetypeid" value="3"></s:hidden>
 			    		<ul>
 						    <li>
 		 	 					<span class="left-span"><label>当前题夹</label></span>
 		 	 					<span class="right-span">
-		 	 						<select>
-									  <option value ="">操作系统</option>
-									  <option value ="">数据结构</option>
-									  <option value="">计算机网络</option>
-									  <option value="">组成原理</option>
+		 	 						<select name="collection.collectionname">
+									  <option value ="操作系统">操作系统</option>
+									  <option value ="数据结构">数据结构</option>
+									  <option value="计算机网络">计算机网络</option>
+									  <option value="组成原理">组成原理</option>
 									</select>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="tfStem">请输入题干</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="tfStem" placeholder="在这里输入题目"></textarea>
+		 	 						<textarea class="" id="tfStem" name="question.stem" placeholder="在这里输入题目"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="tfOption1">选项一</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="" id="tfOption1">
+		 	 						<input type="text" class="" name="question.option1" id="tfOption1">
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="tfOption2">选项二</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="" id="tfOption2">
+		 	 						<input type="text" class="" name="question.option2" id="tfOption2">
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="tfAnswer">标准答案</label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="answerSelect">
-		 	 							<label><input type="radio" name=tfAnswer/>选项一</label>
-		 	 							<label><input type="radio" name=tfAnswer/>选项二</label>
+		 	 							<label><input type="radio" name="question.answer" value="对"/>选项一</label>
+		 	 							<label><input type="radio" name="question.answer"  value="错"/>选项二</label>
 		 	 						</div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="tfAnalysis">答案解析</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="tfAnalysis" placeholder="请输入答案解析"></textarea>
+		 	 						<textarea class="" id="tfAnalysis" name="question.annotation" placeholder="请输入答案解析"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
-							           <label><input type="checkbox">同时分享到民大题库（公开）</label>
+							           <label><input type="checkbox"  value="true" name="question.isvisiable" >同时分享到民大题库（公开）</label>
 							        </div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
-		 	 						<button type="button" class="btn btn-agree" onclick="">
+		 	 						<button type="submit" class="btn btn-agree" onclick="">
 									 保存
 									</button>
 						        </span>
 						    </li>
 			    		</ul>
-			    	</form>
+			    	</s:form>
 			    </div>
 			    <div class="tab-pane" id="blankFill">
-			    	<form class="default-form">
+			    	<s:form cssClass="default-form" action="teacher/teacher_addQuestion" method="post">
+			    	<s:hidden name="question.quetype.quetypeid" value="2"></s:hidden>
 			    		<ul>
 						    <li>
 		 	 					<span class="left-span"><label>当前题夹</label></span>
 		 	 					<span class="right-span">
-		 	 						<select>
-									  <option value ="">操作系统</option>
-									  <option value ="">数据结构</option>
-									  <option value="">计算机网络</option>
-									  <option value="">组成原理</option>
+		 	 						<select name="collection.collectionname">
+									  <option value ="操作系统">操作系统</option>
+									  <option value ="数据结构">数据结构</option>
+									  <option value="计算机网络">计算机网络</option>
+									  <option value="组成原理">组成原理</option>
 									</select>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="bfStem">请输入题干</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="bfStem" placeholder="在这里输入题目"></textarea>
+		 	 						<textarea class="" id="bfStem" name="question.stem" placeholder="在这里输入题目"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="bfAnswer">标准答案</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="" id="bfAanswer" placeholder="请输入标准答案">
+		 	 						<input type="text" class="" id="bfAanswer" name="question.answer" placeholder="请输入标准答案">
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="bfAnalysis">答案解析</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="bfAnalysis" placeholder="请输入答案解析"></textarea>
+		 	 						<textarea class="" id="bfAnalysis" name="question.annotation" placeholder="请输入答案解析"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
-							           <label><input type="checkbox">同时分享到民大题库（公开）</label>
+							           <label><input type="checkbox"  value="true" name="question.isvisiable" >同时分享到民大题库（公开）</label>
 							        </div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
-		 	 						<button type="button" class="btn btn-agree" onclick="">
+		 	 						<button type="submit" class="btn btn-agree" onclick="">
 									 保存
 									</button>
 						        </span>
 						    </li>
 			    		</ul>
-			    	</form>
+			    	</s:form>
 			    </div>
 			    <div class="tab-pane" id="multipleSelect">
-			    	<form class="default-form">
+			    	<s:form cssClass="default-form" action="teacher/teacher_addQuestion" method="post">
+			    	<s:hidden name="question.quetype.quetypeid" value="6"></s:hidden>
 			    		<ul>
 						    <li>
 		 	 					<span class="left-span"><label>当前题夹</label></span>
 		 	 					<span class="right-span">
-		 	 						<select>
-									  <option value ="">操作系统</option>
-									  <option value ="">数据结构</option>
-									  <option value="">计算机网络</option>
-									  <option value="">组成原理</option>
+		 	 						<select name="collection.collectionname">
+									  <option value ="操作系统">操作系统</option>
+									  <option value ="数据结构">数据结构</option>
+									  <option value="计算机网络">计算机网络</option>
+									  <option value="组成原理">组成原理</option>
 									</select>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="msStem">请输入题干</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="msStem" placeholder="在这里输入题目"></textarea>
+		 	 						<textarea class="" id="msStem" name="question.stem" placeholder="在这里输入题目"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="multipleOption1">A、</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="multipleOption" id="multipleOption1">
+		 	 						<input type="text" class="multipleOption" name="question.option1" id="multipleOption1">
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="multipleOption2">B、</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="multipleOption" id="multipleOption2">
+		 	 						<input type="text" class="multipleOption" name="question.option2" id="multipleOption2">
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
-		 	 						<button type="button" class="btn btn-default multipleAppend" onclick="appendOption('.multipleAppend','multipleOption','multipleDisable')">
+		 	 						<button type="submit" class="btn btn-default multipleAppend" onclick="appendOption('.multipleAppend','multipleOption','multipleDisable')">
 									 添加选项
 									</button>
 						        </span>
@@ -262,91 +268,92 @@
 		 	 					<span class="left-span"><label for="answer">标准答案</label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="answerSelect">
-		 	 							<label><input type="checkbox" name="multipleAnswer" class="multipleAnswer"/>A</label>
-		 	 							<label><input type="checkbox" name="multipleAnswer" class="multipleAnswer"/>B</label>
-		 	 							<label class="multipleDisable"><input type="checkbox" name=multipleAnswer class="multipleAnswer" disabled="disabled"/>C</label>
-		 	 							<label class="multipleDisable"><input type="checkbox" name=multipleAnswer class="multipleAnswer" disabled="disabled"/>D</label>
-		 	 							<label class="multipleDisable"><input type="checkbox" name=multipleAnswer class="multipleAnswer" disabled="disabled"/>E</label>
-		 	 							<label class="multipleDisable"><input type="checkbox" name=multipleAnswer class="multipleAnswer" disabled="disabled"/>F</label>
-		 	 							<label class="multipleDisable"><input type="checkbox" name=multipleAnswer class="multipleAnswer" disabled="disabled"/>G</label>
+		 	 							<label><input type="radio" name="question.answer" value="A" class="singleAnswer"/>A</label>
+		 	 							<label><input type="radio" name="singleAnswer" value="B" class="singleAnswer"/>B</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="C" class="singleAnswer" disabled="disabled"/>C</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="D" class="singleAnswer" disabled="disabled"/>D</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="E" class="singleAnswer" disabled="disabled"/>E</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="F" class="singleAnswer" disabled="disabled"/>F</label>
+		 	 							<label class="singleDisable"><input type="radio" name="question.answer" value="G" class="singleAnswer" disabled="disabled"/>G</label>
 		 	 						</div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="analysis">答案解析</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="analysis" placeholder="请输入答案解析"></textarea>
+		 	 						<textarea class="" id="analysis" name="question.annotation" placeholder="请输入答案解析"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
-							           <label><input type="checkbox">同时分享到民大题库（公开）</label>
+							           <label><input type="checkbox"  value="true" name="question.isvisiable" >同时分享到民大题库（公开）</label>
 							        </div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
-		 	 						<button type="button" class="btn btn-agree" onclick="">
+		 	 						<button type="submit" class="btn btn-agree" onclick="">
 									 保存
 									</button>
 						        </span>
 						    </li>
 			    		</ul>
-			    	</form>
+			    	</s:form>
 			    </div>
 			    <div class="tab-pane" id="shortAnswer">
-			    	<form class="default-form">
+			    	<s:form cssClass="default-form" action="teacher/teacher_addQuestion" method="post">
+			    	<s:hidden name="question.quetype.quetypeid" value="4"></s:hidden>
 			    		<ul>
 						    <li>
 		 	 					<span class="left-span"><label>当前题夹</label></span>
 		 	 					<span class="right-span">
-		 	 						<select>
-									  <option value ="">操作系统</option>
-									  <option value ="">数据结构</option>
-									  <option value="">计算机网络</option>
-									  <option value="">组成原理</option>
+		 	 						<select name="collection.collectionname">
+									  <option value ="操作系统">操作系统</option>
+									  <option value ="数据结构">数据结构</option>
+									  <option value="计算机网络">计算机网络</option>
+									  <option value="组成原理">组成原理</option>
 									</select>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="saStem">请输入题干</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="saStem" placeholder="在这里输入题目"></textarea>
+		 	 						<textarea class="" id="saStem" name="question.stem" placeholder="在这里输入题目"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="saAnswer">标准答案</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="saAnswer" placeholder="请输入标准答案"></textarea>
+		 	 						<textarea class="" id="saAnswer" name="question.answer" placeholder="请输入标准答案"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for="saAnalysis">答案解析</label></span>
 		 	 					<span class="right-span">
-		 	 						<textarea class="" id="saAnalysis" placeholder="请输入答案解析"></textarea>
+		 	 						<textarea class="" id="saAnalysis" name="question.annotation" placeholder="请输入答案解析"></textarea>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
-							           <label><input type="checkbox">同时分享到民大题库（公开）</label>
+							           <label><input type="checkbox"  value="true" name="question.isvisiable" >同时分享到民大题库（公开）</label>
 							        </div>
 						        </span>
 						    </li>
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
-		 	 						<button type="button" class="btn btn-agree" onclick="">
+		 	 						<button type="submit" class="btn btn-agree" onclick="">
 									 保存
 									</button>
 						        </span>
 						    </li>
 			    		</ul>
-			    	</form>
+			    	</s:form>
 			    </div>
 			  </div>
 		</div>

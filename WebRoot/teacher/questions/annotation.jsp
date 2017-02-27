@@ -3,7 +3,7 @@
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@taglib prefix="struts" uri="/struts-tags"%> 
+<%@taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,15 +25,15 @@
 				<div class="que-box">
 					<div class="que-top">
 						<div class="que-top-left">
-							<span>题型：选择题</span>
+							<span>题型：<s:property value='question.quetype.typename'/></span>
 							<span> | </span>
-							<span>难易度：0.9</span>
+							<span>难易度：<s:property value='question.depth'/></span>
 						</div>
 					</div>
 					<div class="que-mid">
 						<div class="que-que">
 							<p>
-							题目
+							题目<s:property value='question.stem'/>
 							</p>
 						</div>
 						<div class="que-cho">
@@ -56,15 +56,15 @@
 				<div class="que-box">
 					<div class="annota">
 						<span class="exam-point">【考点】</span>
-						<div class="anno-body"><p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p></div>
+						<div class="anno-body"><p><s:property value='question.label'/></p></div>
 					</div>
 					<div class="annota">
 						<span class="exam-ans">【答案】</span>
-						<div class="anno-body">xxxxxxxxxxxxxxxxxxxxxx</div>
+						<div class="anno-body"><s:property value='question.answer'/></div>
 					</div>
 					<div class="annota">
 						<span class="exam-anno">【解析】</span>
-						<div class="anno-body">xxxxxxxxxxxxxxxxxx</div>	
+						<div class="anno-body"><s:property value='question.annotation'/></div>	
 					</div>
 				</div>
 			</form>

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mucCollege.model.Collection;
 import com.mucCollege.model.Coustudent;
 import com.mucCollege.model.Question;
 import com.mucCollege.model.User;
@@ -33,6 +34,7 @@ public class TeacherAction {
 	// 学生
 	private User user;
 	private Question question;
+	private Collection collection;
 	private ArrayList<Question> queList;
 	private ArrayList<Coustudent> couList;
 
@@ -50,6 +52,14 @@ public class TeacherAction {
 
 	public void setQuestion(Question question) {
 		this.question = question;
+	}
+
+	public Collection getCollection() {
+		return collection;
+	}
+
+	public void setCollection(Collection collection) {
+		this.collection = collection;
 	}
 
 	public ArrayList<Question> getQueList() {
@@ -87,9 +97,16 @@ public class TeacherAction {
 		return "addQuestion";
 	}
 
-	public String addQuestion() {
+	public String addQuestion() throws Exception {
 		User user = (User) session.get("user");
+		question.setUser(user);
 		teacherService.addQuestion(question);
+		
+		collection.setQuestion(question);
+		collection.setUser(user);
+		teacherService.addCollection(collection);
+		
+		queList = teacherService.showAllQuestion();
 		return "all_question";
 	}
 
