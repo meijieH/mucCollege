@@ -16,7 +16,7 @@ public class Test implements java.io.Serializable {
 	private StuClass stuClass;
 	private Testpaper testpaper;
 	private String testname;
-	private Integer testcreator;
+	private User user;
 	private Time starttime;
 	private String teststatement;
 	private Set stupapers = new HashSet(0);
@@ -30,12 +30,12 @@ public class Test implements java.io.Serializable {
 
 	/** full constructor */
 	public Test(StuClass stuClass, Testpaper testpaper, String testname,
-			Integer testcreator, Time starttime, String teststatement,
+			User user, Time starttime, String teststatement,
 			Set stupapers, Set stupapers_1) {
 		this.stuClass = stuClass;
 		this.testpaper = testpaper;
 		this.testname = testname;
-		this.testcreator = testcreator;
+		this.user=user;
 		this.starttime = starttime;
 		this.teststatement = teststatement;
 		this.stupapers = stupapers;
@@ -75,13 +75,13 @@ public class Test implements java.io.Serializable {
 	public void setTestname(String testname) {
 		this.testname = testname;
 	}
-
-	public Integer getTestcreator() {
-		return this.testcreator;
+	
+	public User getUser() {
+		return user;
 	}
 
-	public void setTestcreator(Integer testcreator) {
-		this.testcreator = testcreator;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Time getStarttime() {

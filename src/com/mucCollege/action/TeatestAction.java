@@ -6,6 +6,8 @@ import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.Test;
@@ -14,8 +16,8 @@ import com.mucCollege.service.TeacourseService;
 import com.mucCollege.service.TeatestService;
 import com.opensymphony.xwork2.Action;
 
-@Controller
-@Scope("prototype")
+@Service@Transactional
+@Controller@Scope("prototype")
 public class TeatestAction implements Action {
 	@Resource TeatestService teatestService;
 	@Resource TeacourseService teacourseService;

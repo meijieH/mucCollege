@@ -36,11 +36,27 @@
             </key>
             <one-to-many class="com.mucCollege.model.Teamark" />
         </set>
+        <set name="errorques" inverse="true">
+            <key>
+                <column name="stuque">
+                    <comment>学生题目id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Errorque" />
+        </set>
         <set name="teamarks_1" inverse="true">
             <key>
                 <column name="stuque" />
             </key>
             <one-to-many class="com.mucCollege.model.Teamark" />
+        </set>
+        <set name="errorques_1" inverse="true">
+            <key>
+                <column name="stuque">
+                    <comment>题库中题目id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Errorque" />
         </set>
         <set name="teamarks_2" inverse="true">
             <key>

@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="description" content="This is my page">
   </head>
   <body>
-    <c:out value="${admin.username}"></c:out>,Hello！<br>
+    <c:out value="${user.username}"></c:out>,Hello！<br>
         <a href="admin/admin_showAdminInfo">显示用户信息</a>
 	    <a href="admin/admin_showAllStudent">显示所有学生</a>
 	    <a href="admin/admin_showAllTeacher">显示所有教师</a>   

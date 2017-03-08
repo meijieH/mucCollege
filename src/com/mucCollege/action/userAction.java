@@ -1,5 +1,6 @@
 package com.mucCollege.action;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -9,19 +10,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mucCollege.model.Question;
 import com.mucCollege.model.User;
 import com.mucCollege.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 
 @Service
 @Transactional
 @Controller
 @Scope("prototype")
-public class userAction {
+public class UserAction {
 	@Resource
 	UserService userService;
 	private User user;
 	private String message;
+	private Question question;
+	private ArrayList<Question> queList;
 
 	public User getUser() {
 		return user;
@@ -39,6 +44,22 @@ public class userAction {
 		this.message = message;
 	}
 
+	public ArrayList<Question> getQueList() {
+		return queList;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+	public void setQueList(ArrayList<Question> queList) {
+		this.queList = queList;
+	}
+
 	ActionContext actionContext = ActionContext.getContext();
 	@SuppressWarnings("rawtypes")
 	Map session = actionContext.getSession();
@@ -50,21 +71,18 @@ public class userAction {
 	 */
 	@SuppressWarnings("unchecked")
 	public String login() {
-		try {
-			user = userService.queryUserByUsernum(user.getUsernum());
-			if (user == null) {
-				setMessage("用户名不存在");
-				return "login";
-			}
-			if (!user.getPassword().endsWith(user.getPassword())) {
-				setMessage("用户名或密码错误");
-				return "login";
-			}
-			session.put("user",user);
-		} catch (Exception e) {
-			setMessage(e.getMessage());
+		user = userService.queryUserByUsernum(user.getUsernum());
+		if (user == null) {
+			// setMessage("学工号不存在");
 			return "login";
+			//return null;
 		}
+		if (!user.getPassword().endsWith(user.getPassword())) {
+			// setMessage("学工号或密码错误");
+			return "login";
+			//return null;
+		}
+		session.put("user", user);
 		if (user.getUsertype().getUsertypeid() == 1) {
 			System.out.println(user.getUsertype().getUsertypeid());
 			return "admin";
@@ -79,6 +97,7 @@ public class userAction {
 
 	/**
 	 * 注册register
+	 * 
 	 * @return
 	 */
 	public String register() {
@@ -93,6 +112,7 @@ public class userAction {
 
 	/**
 	 * 修改及密码-->改为验证方式
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
@@ -103,6 +123,7 @@ public class userAction {
 
 	/**
 	 * 显示用户信息
+	 * 
 	 * @return
 	 */
 	public String showInfo() {
@@ -112,16 +133,18 @@ public class userAction {
 
 	/**
 	 * 显示要修改的信息
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public String showEdit() throws Exception{
+	public String showEdit() throws Exception {
 		user = (User) session.get("user");
 		return "show_edit";
 	}
 
 	/**
 	 * 修改用户信息
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
@@ -132,6 +155,7 @@ public class userAction {
 
 	/**
 	 * 回到首页
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
@@ -139,14 +163,25 @@ public class userAction {
 		user = (User) session.get("user");
 		return "index";
 	}
-	                                                          
+
 	/**
 	 * 退出
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public String exit() throws Exception{
+	public String exit() throws Exception {
 		session.remove("user");
 		return "login";
+	}
+
+	/**
+	 * 显示消息
+	 * 
+	 * @return
+	 */
+	public String showMessage() {
+		User user = (User) session.get("user");
+		return "message";
 	}
 }

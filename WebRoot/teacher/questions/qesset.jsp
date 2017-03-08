@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="struts" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -50,15 +51,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    			</tr>
 	    		</thead>
 	    		<tbody>
+	    			<s:iterator value="queList" status="status">
 	    			<tr>
-	    				<td><input type="checkbox">难</td>
-	    				<td>难</td>
-	    				<td>微结构体的所以然？</td>
+	    				<td><input type="checkbox"></td>
+	    				<td><s:property value="depth"/></td>
+	    				<td><a href="teacher/teacher_showQuestion?question.questionid=<s:property value='questionid'/>"><s:property value="questionid"/>.<s:property value="stem" /></a></td>
 	    				<td>3</td>
 	    				<td>23%</td>
-	    				<td>简答题</td>
-	    				<td>龚凤丽</td>
+	    				<td><s:property value="quetype.typename"/></td>
+	    				<td><s:property value="user.username"/></td>
 	    			</tr>
+	    			</s:iterator>
 	    		</tbody>
 	    		<tfoot>
 	    			<tr>

@@ -25,11 +25,11 @@
                 <comment>考试名称</comment>
             </column>
         </property>
-        <property name="testcreator" type="java.lang.Integer">
+        <many-to-one name="user" class="com.mucCollege.model.User" fetch="select" lazy="false">
             <column name="testcreator">
-                <comment>考试的创建者</comment>
+                <comment>创建者</comment>
             </column>
-        </property>
+        </many-to-one>
         <property name="starttime" type="java.sql.Time">
             <column name="starttime" length="8">
                 <comment>开始时间</comment>

@@ -10,9 +10,9 @@
             <column name="errorqueid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="question" class="com.mucCollege.model.Question" fetch="select" lazy="false">
-            <column name="question">
-                <comment>题库中题目id</comment>
+        <many-to-one name="stuque" class="com.mucCollege.model.Stuque" fetch="select" lazy="false">
+            <column name="stuque">
+                <comment>学生题目id</comment>
             </column>
         </many-to-one>
     </class>

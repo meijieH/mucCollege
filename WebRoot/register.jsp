@@ -24,27 +24,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</header>
 	 <main>
 	 	<div class="reg-form">
-	 		<form action="">
+	 		<form action="user/user_register" method="post">
 	 			<ul>
 	 				<li>
 	 					<span class="left-span">*选择角色</span>
 	 					<span class="right-span select-identity">
-	 						<span><input type="radio" name="identity">学生</span>
-	 					    <span><input type="radio" name="identity">教师</span>
+	 						<span><input type="radio" name="user.usertype.usertypeid" value="3">学生</span>
+	 					    <span><input type="radio" name="user.usertype.usertypeid" value="2">教师</span>
 	 					</span>
 	 				</li>
 	 				<li>
 	 					<span class="left-span">*学工号</span>
-	 					<span class="right-span"><input type="text"></span>
+	 					<span class="right-span"><input type="text" name="user.usernum"></span>
 	 				</li>
 	 				<li>
 	 					<span class="left-span">*邮箱</span>
-	 					<span class="right-span"><input type="email"></span>
+	 					<span class="right-span"><input type="email" name="user.email"></span>
 	 				</li>
 
 	 				<li>
 	 					<span class="left-span">*密码</span>
-	 					<span class="right-span"><input type="password"></span>
+	 					<span class="right-span"><input type="password" name="user.password"></span>
 	 				</li>
 	 				<li>
 	 					<span class="left-span">*确认密码</span>

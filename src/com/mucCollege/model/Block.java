@@ -15,9 +15,7 @@ public class Block implements java.io.Serializable {
 	private Testpaper testpaper;
 	private String blockname;
 	private String blockdes;
-	private Set groups = new HashSet(0);
-	private Set groups_1 = new HashSet(0);
-
+	private Set testques = new HashSet(0);
 	// Constructors
 
 	/** default constructor */
@@ -26,12 +24,11 @@ public class Block implements java.io.Serializable {
 
 	/** full constructor */
 	public Block(Testpaper testpaper, String blockname, String blockdes,
-			Set groups, Set groups_1) {
+			Set testques) {
 		this.testpaper = testpaper;
 		this.blockname = blockname;
 		this.blockdes = blockdes;
-		this.groups = groups;
-		this.groups_1 = groups_1;
+		this.testques=testques;
 	}
 
 	// Property accessors
@@ -68,20 +65,11 @@ public class Block implements java.io.Serializable {
 		this.blockdes = blockdes;
 	}
 
-	public Set getGroups() {
-		return this.groups;
+	public Set getTestques() {
+		return testques;
 	}
 
-	public void setGroups(Set groups) {
-		this.groups = groups;
+	public void setTestques(Set testques) {
+		this.testques = testques;
 	}
-
-	public Set getGroups_1() {
-		return this.groups_1;
-	}
-
-	public void setGroups_1(Set groups_1) {
-		this.groups_1 = groups_1;
-	}
-
 }

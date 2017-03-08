@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mucCollege.model.Block;
 import com.mucCollege.model.Question;
 import com.mucCollege.model.Testpaper;
 import com.mucCollege.model.Testque;
@@ -61,14 +62,13 @@ public class TestqueDao {
 	        Testque testque = (Testque)s.get(Testque.class, testquesid);
 	        return testque;
 	    }
-		
-		/*根据组卷中的题目查*/
+		//根据Block查询
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public ArrayList<Testque> QueryTestqueByTestpaper(Testpaper testpaper) { 
+		public ArrayList<Testque> QueryTestqueByBlock(Block block) { 
 	    	Session s = factory.getCurrentSession();
 	    	String hql = "From Testque testque where 1=1";
-	    	if(null!=testpaper && testpaper.getTestpaperid()!=0) 
-	    		hql = hql + " and testque.testpaper.testpaperid like '%" + testpaper.getTestpaperid() + "%'";
+	    	if(null!=block && block.getBlockid()!=0) 
+	    		hql = hql + " and testque.testpaper.blockid like '%" + block.getBlockid() + "%'";
 	    	Query q = s.createQuery(hql);
 	    	List testqueList = q.list();
 	    	return (ArrayList<Testque>) testqueList;

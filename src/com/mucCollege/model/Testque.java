@@ -13,11 +13,10 @@ public class Testque implements java.io.Serializable {
 
 	private Integer testquesid;
 	private Question question;
-	private Group group;
+	private Block block;
 	private Integer quesnum;
 	private Integer score;
 	private Integer depth;
-	private Integer testpaper;
 	private Set stuques = new HashSet(0);
 	private Set stuques_1 = new HashSet(0);
 
@@ -28,15 +27,14 @@ public class Testque implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Testque(Question question, Group group, Integer quesnum,
-			Integer score, Integer depth, Integer testpaper, Set stuques,
+	public Testque(Question question,Block block, Integer quesnum,
+			Integer score, Integer depth, Set stuques,
 			Set stuques_1) {
 		this.question = question;
-		this.group = group;
+		this.block=block;
 		this.quesnum = quesnum;
 		this.score = score;
 		this.depth = depth;
-		this.testpaper = testpaper;
 		this.stuques = stuques;
 		this.stuques_1 = stuques_1;
 	}
@@ -59,12 +57,12 @@ public class Testque implements java.io.Serializable {
 		this.question = question;
 	}
 
-	public Group getGroup() {
-		return this.group;
+	public Block getBlock() {
+		return block;
 	}
 
-	public void setGroup(Group group) {
-		this.group = group;
+	public void setBlock(Block block) {
+		this.block = block;
 	}
 
 	public Integer getQuesnum() {
@@ -89,14 +87,6 @@ public class Testque implements java.io.Serializable {
 
 	public void setDepth(Integer depth) {
 		this.depth = depth;
-	}
-
-	public Integer getTestpaper() {
-		return this.testpaper;
-	}
-
-	public void setTestpaper(Integer testpaper) {
-		this.testpaper = testpaper;
 	}
 
 	public Set getStuques() {

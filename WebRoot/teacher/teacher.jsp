@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="struts" %>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -25,13 +26,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<img src="/mucCollege/images/face.jpg" alt="" width="80" height="80">
 		</div>
 		<div class="name">
-			<i></i>张三
+			<i><c:out value="${user.username}"></c:out></i>
 		</div>
 		<div class="option-nav">
 			<ul>
 				<li onclick="changeRight('teacher/frame_myteacenter.jsp')" class="active"><i class="fa fa-university"></i>教学平台</li>
+<<<<<<< HEAD
 				<li onclick="changeRight('teacher/teacenter/teacenter.jsp')"><i class="fa fa-user"></i>个人信息</li>
 				<li onclick="window.open('teacher/questions/myqes.jsp','_blank')" class="link"><i class="fa fa-server"></i>我的题库</li>
+=======
+				<li onclick="changeRight('user/user_showInfo')"><i class="fa fa-user"></i>个人信息</li>
+				<li onclick="changeRight('user/user_showMessage')"><i class="fa fa-user"></i>我的消息</li>
+				<li onclick="window.open('teacher/teacher_showAllQuestion','_blank')" class="link"><i class="fa fa-server"></i>题库集锦</li>
+				<li onclick="window.open('teacher/teacher_toAddQuestion','_blank')" class="link"><i class="fa fa-server"></i>添加题目</li>
+				<li onclick="window.open('teacher/teacher_showMyQuestions','_blank')" class="link"><i class="fa fa-server"></i>我的题目</li>
+>>>>>>> origin/master
 				<li class="link"><i class="fa fa-file-text-o"></i>我的试卷<li>
 			</ul>
 		</div>
