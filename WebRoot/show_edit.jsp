@@ -24,14 +24,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="shortcut icon" href="<%=basePath%>images/icon.png">
  </head> 
 <body> 
-    <header> 
-	</header>
 	<main class="container">
 	<div class="row">
-		<div class="col-md-3 myinfo white">
-			
-		</div>
-		<div class="col-md-9 right_row9" style="padding-left:40px;height:590px;">
+		<div class="col-md-9 right_row9">
            <div class="left200  white" >
 		<h3>修改用户信息</h3>
 		<s:form action="user/user_updateUser" method="post" cssStyle="margin-left:20px;">
@@ -45,9 +40,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<s:textfield name="user.dept" label="地址" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
 			<s:submit cssClass="btn btn-green" value="保存"></s:submit>
 		</s:form>
-	</div>
-	</div>
-
 	</div>
 
 </body>

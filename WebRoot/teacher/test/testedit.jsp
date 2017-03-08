@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 	 <%@include file="/common/topbar.jsp"%>
-	 
+	 这个页面先别加东西 有大的修改！
 	 <!-- 左侧操作区 -->
 	 <div class="fl">
 	 	<!-- 标题设置 --> 

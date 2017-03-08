@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/com_lessondetail.css">
 	<link rel="stylesheet" type="text/css" href="css/tea_mylesdetail.css">
+	<link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	<%@include file="/common/topbar.jsp"%>
@@ -25,11 +26,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="lesson-info">课程信息</div>
 			<h1 class="lesson-name">计算机基础</h1>
 			<div class="ld-box">
-				<h2 class="ld-title">课件(别点击)</h2>
+				<h2 class="ld-title">课件</h2>
 				<ul class="ld-lists">
 					<li>
 						<a href="student/study/waredetail.jsp" target="_blank">
-							<p>指令的机器级表示 .ppt(不完善)&nbsp;<time>2016/1/2</time></p>   
+							<p>指令的机器级表示 .ppt&nbsp;<time>2016/1/2</time></p>   
 						</a>
 					</li>
 					<li></li>
@@ -37,11 +38,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</div>
 			<div class="ld-box">
-				<h2 class="ld-title">作业(别点击)</h2>
+				<h2 class="ld-title">作业</h2>
 				<ul class="ld-lists">
 					<li>
 						<a href="student/study/waredetail.jsp" target="_blank">
-							<p>JMS大作业 (不完善)&nbsp;<time>2016/1/2</time></p>   
+							<p>JMS大作业&nbsp;<time>2016/1/2</time></p>   
 						</a>
 					</li>
 					<li></li>
@@ -49,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</div>
 			<div class="ld-box">
-				<h2 class="ld-title">考试(点击！)</h2>
+				<h2 class="ld-title">考试</h2>
 				<ul class="ld-lists">
 					<li>
 						<a href="" target="_blank">
@@ -58,49 +59,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</li>
 					<!-- 添加试卷 -->
 					<li>
-						<a href="teacher/test/settest.jsp" class="add-paper" target="_blank">+ 添加考试</a>
+						<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>
 					</li>
 					<li></li>
 				</ul>
 			</div>
 		</div>
     </div>
-
-	<!-- <div class = "lesson-introduce">
-		<h2>课程简介</h2>
-		<p>blablabla</p>
-		<h3>基本信息</h3>
-		<div>
-			<p>
-				<span>院系：信息工程学院</span>
-			</p>
-			<p>
-				<span>专业：电子信息（或无等）</span>
-			</p>
-			<p>
-				<span>开课时间：2015-7-9</span>
-			</p>
-			<p>
-				<span>课时：56课时</span>
-			</p>
-			<p>
-				<span>学分：1</span>
-			</p>
-		</div>
-		<h3>课程大纲</h3>
-		<p>
-        	1.第一章
-        	  1.1XXXX
-               1.1.2xxx
-              1.2XXXXX
-            2.第二章(依次类推)
-        </p>
-		<a href="#">课件管理</a>
-		<a href="#">学生管理</a>
-		<a href="teacher/test/testlist.jsp">考卷管理（只有这个可以点击）</a>
-		<a href="#">作业</a>
-		<a href="#">考试分析</a>
-		<a href="#">题库</a>
-	</div>			 -->
+    <div class="modal" id="addTest" tabindex="-1" role="dialog" >
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	    	<div class="modal-body">
+	          <div class="modal-top">
+	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	          </div>
+		      <div class="addtest-ways">
+			      <div onclick="">
+			      	<div>从我的试卷中选择</div>
+			      	<i class="fa fa-pencil" aria-hidden="true"></i>
+			      	<p>从教师“我的试卷”中抽选题目</p>
+			      </div>
+			      <div>
+			      	<div>半自动组卷</div>
+			      	<i class="fa fa-print" aria-hidden="true"></i>
+			      	<p>由手工添加题目的方式和选择导入题库题目的方式共同组成</p>
+			      </div>
+			      <div onclick="window.open('','_blank');">
+			      	<div>自动组卷</div>
+			      	<i class="fa fa-cog" aria-hidden="true"></i>
+			      	<p>机器随机组卷，可以设置试卷难度比、题型、考察知识范围等属性</p>
+			      </div>
+		      </div>
+		      <div>
+		      </div class="settest-time">
+		      234
+		     </div>
+	    </div>
+	  </div>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

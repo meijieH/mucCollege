@@ -20,22 +20,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/frame_myqes.css">
 </head>
 <body>
-<<<<<<< HEAD
 	<%@include file="/common/topbar.jsp" %>
 	<div class="page-center">
 		<div class="page-center-right">
 			<div class="screen-conditions">
-=======
-	<header>
-		<div class="user-info">
-			<span class="user-study">我的收藏</span>
-			<span class="user-message">私信</span>
-			<span class="user-name"><s:property /></span>
-			<span class="user-face" onmouseover="visible('user-setting')" onclick="displayNone('user-setting')">
-				<img src="/mucCollege/images/face.jpg"/>
-			</span>
-			<div id="user-setting" class="display-none user-setting">
->>>>>>> origin/master
 				<ul>
 					<li>
 						<label class="qes-label">题型：</label>
@@ -84,7 +72,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  </ul>
 			</div>
 		</div>
-<<<<<<< HEAD
 		<div class="page-center-left">
 			<div class="my-collects">
 				<ul>
@@ -95,24 +82,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li class="collect" data-toggle="modal" data-target="#newCollect">+ 新建题库</li>
 				</ul>
 			</div>
-=======
-	</header>
-	<!-- 左侧栏 -->
-	<div class="tea-main-left">
-		<div class="tea-img">
-			<img src="/mucCollege/images/face.jpg" alt="" width="80" height="80">
-		</div>
-		<div class="tea-name">
-			<i><c:out value="${user.username}"></c:out></i>
-		</div>
-		<div class="tea-option-nav">
-			<ul>
-				<li><i class="fa fa-server"></i>我的题库</li>
-				<li><i class="fa fa-plus-square-o"></i>原创试题</li>
-				<li><i class="fa fa-cloud"></i>海量题源</li>
-				<li><i class="fa fa-location-arrow"></i>导出题目<li>
-			</ul>
->>>>>>> origin/master
 		</div>
 	</div>	
 	<div class="modal" id="newCollect" tabindex="-1" role="dialog" >
@@ -121,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="modal-body">
 	          <div class="modal-top">
 	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	       		<h4 class="modal-title message-title" id="myModalLabel">请输入新题库名称</h4>
+	       		<h4 class="modal-title message-title">请输入新题库名称</h4>
 	          </div>
 		      <div>
 		      	<form action="">
@@ -136,71 +105,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    </div>
 	  </div>
 	</div>
-<<<<<<< HEAD
 	<div class="modal" id="deleteCollect" tabindex="-1" role="dialog" >
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	    	<div class="modal-body">
 	          <div class="modal-top">
 	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	       		<h4 class="modal-title message-title" id="myModalLabel">系统提示您</h4>
+	       		<h4 class="modal-title message-title" >系统提示您</h4>
 	          </div>
+	          <form action="">
 		      <div>
-		      	<form action="">
 		      		题库一经删除，无法恢复。您确认要删除该题库吗？
-		      	</form>
 		      </div>
 		      <div class="modal-option">
 		      	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 		        <button type="button" class="btn btn-agree">确定</button>
 		      </div>
-		     </div>
+		      </form>
+		    </div>
 	    </div>
 	  </div>
-=======
-	<!-- 右侧 -->
-	<div class="set-zone">
-	    	<table class="default-table">
-	    		<thead>
-	    			<tr>
-	    				<th class="select-all"><input type="checkbox">全选</th>
-	    				<th>难度</th>
-	    				<th>题干</th>
-	    				<th>使用次数</th>
-	    				<th>正确率</th>
-	    				<th>题型</th>
-	    				<th>来源</th>
-	    			</tr>
-	    		</thead>
-	    		<tbody>
-	    			<s:iterator value="queList" status="status">
-	    			<tr>
-	    				<td><input type="checkbox"></td>
-	    				<td><s:property value="depth"/></td>
-	    				<td><a href="teacher/teacher_showQuestion?question.questionid=<s:property value='questionid'/>"><s:property value="questionid"/>.<s:property value="stem" /></a></td>
-	    				<td>3</td>
-	    				<td>23%</td>
-	    				<td><s:property value="quetype.typename"/></td>
-	    				<td><s:property value="user.username"/></td>
-	    			</tr>
-	    			</s:iterator>
-	    		</tbody>
-	    		<tfoot>
-	    			<tr>
-	    				<td></td>
-	    				<td></td>
-	    				<td></td>
-	    				<td></td>
-	    				<td>e</td>
-	    				<td>第3题</td>
-	    				<td>共23题</td>
-	    			</tr>
-	    		</tfoot>
-	    	</table>
-	    </div>
-	<div class="tea-main-right">
-	    <iframe id="tea-main-right-frame"src="teacher/questions/frame_myqes.jsp" frameborder="0" width="100%" height="100%"></iframe>
->>>>>>> origin/master
 	</div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
