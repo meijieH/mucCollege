@@ -311,3 +311,32 @@ select option{
 	color:#15c288;
 	font-family:"Microsoft Yahei",微软雅黑;
 }
+/*模态框*/
+.modal-option{
+	margin-top:10px;
+	text-align:right;
+}
+.modal-top{
+	height:40px;
+}
+.message-title{
+	color:rgb(21,194,136);
+}
+/*字体颜色*/
+.clr-red{
+	color:red;
+}
+.clr-blue{
+	color:blue;
+}
+
+/*省略号*/
+.dotdotdot{
+	visibility:hidden;
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    background-color:white;
+    padding-left:10px;
+}

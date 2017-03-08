@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul>
 				<li onclick="changeRight('teacher/frame_myteacenter.jsp')" class="active"><i class="fa fa-university"></i>教学平台</li>
 				<li onclick="changeRight('teacher/teacenter/teacenter.jsp')"><i class="fa fa-user"></i>个人信息</li>
-				<li onclick="window.open('teacher/questions/myqes.jsp','_blank')" class="link"><i class="fa fa-server"></i>题库集锦</li>
+				<li onclick="window.open('teacher/questions/myqes.jsp','_blank')" class="link"><i class="fa fa-server"></i>我的题库</li>
 				<li class="link"><i class="fa fa-file-text-o"></i>我的试卷<li>
 			</ul>
 		</div>

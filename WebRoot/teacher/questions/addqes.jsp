@@ -37,6 +37,16 @@
 						        </span>
 						    </li>
 						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
 		 	 					<span class="left-span"><label for="sgStem">请输入题干</label></span>
 		 	 					<span class="right-span">
 		 	 						<textarea class="" id="sgStem" placeholder="在这里输入题目"></textarea>
@@ -83,6 +93,12 @@
 						        </span>
 						    </li>
 						    <li>
+		 	 					<span class="left-span"><label>知识点</label></span>
+		 	 					<span class="right-span">
+		 	 						<input type="text" class="">
+						        </span>
+						    </li>
+						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
@@ -112,6 +128,16 @@
 									  <option value ="">数据结构</option>
 									  <option value="">计算机网络</option>
 									  <option value="">组成原理</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
 									</select>
 						        </span>
 						    </li>
@@ -149,6 +175,12 @@
 						        </span>
 						    </li>
 						    <li>
+		 	 					<span class="left-span"><label>知识点</label></span>
+		 	 					<span class="right-span">
+		 	 						<input type="text" class="">
+						        </span>
+						    </li>
+						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
@@ -182,6 +214,16 @@
 						        </span>
 						    </li>
 						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
 		 	 					<span class="left-span"><label for="bfStem">请输入题干</label></span>
 		 	 					<span class="right-span">
 		 	 						<textarea class="" id="bfStem" placeholder="在这里输入题目"></textarea>
@@ -197,6 +239,12 @@
 		 	 					<span class="left-span"><label for="bfAnalysis">答案解析</label></span>
 		 	 					<span class="right-span">
 		 	 						<textarea class="" id="bfAnalysis" placeholder="请输入答案解析"></textarea>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>知识点</label></span>
+		 	 					<span class="right-span">
+		 	 						<input type="text" class="">
 						        </span>
 						    </li>
 						    <li>
@@ -229,6 +277,16 @@
 									  <option value ="">数据结构</option>
 									  <option value="">计算机网络</option>
 									  <option value="">组成原理</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
 									</select>
 						        </span>
 						    </li>
@@ -279,6 +337,12 @@
 						        </span>
 						    </li>
 						    <li>
+		 	 					<span class="left-span"><label>知识点</label></span>
+		 	 					<span class="right-span">
+		 	 						<input type="text" class="">
+						        </span>
+						    </li>
+						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
 		 	 						<div class="checkbox">
@@ -304,10 +368,20 @@
 		 	 					<span class="left-span"><label>当前题夹</label></span>
 		 	 					<span class="right-span">
 		 	 						<select>
-									  <option value ="">操作系统</option>
-									  <option value ="">数据结构</option>
+									  <option value="">操作系统</option>
+									  <option value="">数据结构</option>
 									  <option value="">计算机网络</option>
 									  <option value="">组成原理</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
 									</select>
 						        </span>
 						    </li>
@@ -327,6 +401,12 @@
 		 	 					<span class="left-span"><label for="saAnalysis">答案解析</label></span>
 		 	 					<span class="right-span">
 		 	 						<textarea class="" id="saAnalysis" placeholder="请输入答案解析"></textarea>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>知识点</label></span>
+		 	 					<span class="right-span">
+		 	 						<input type="text" class="">
 						        </span>
 						    </li>
 						    <li>

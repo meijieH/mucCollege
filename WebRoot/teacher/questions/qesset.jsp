@@ -27,22 +27,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </style>
 </head>
 <body>
-	<header>
-		<div class="user-info">
-			<span class="user-study">我的收藏</span>
-			<span class="user-message">私信</span>
-			<span class="user-name">duyufei</span>
-			<span class="user-face" onmouseover="visible('user-setting')" onclick="displayNone('user-setting')">
-				<img src="/mucCollege/images/face.jpg"/>
-			</span>
-			<div id="user-setting" class="display-none user-setting">
-				<ul>
-					<li><a href="#">修改密码</a></li>
-					<li><a href="#">退出</a></li>
-				</ul>
-			</div>
-		</div>
-	</header>
 	<main>
        <!-- 搜索 -->
 	    <div class="search-box">

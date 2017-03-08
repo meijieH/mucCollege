@@ -1,4 +1,7 @@
-/*隐藏和显示*/
+function active(item){
+	$(item).addClass('active');
+	$(item).siblings().removeClass('active');
+}
 function visible(id){
 	$('#'+id).removeClass('display-none').addClass('visible');
 }
@@ -8,3 +11,4 @@ function displayNone(id){
 function hidden(id){
 	$('#'+id).removeClass('visible').addClass('hidden');
 }
+
