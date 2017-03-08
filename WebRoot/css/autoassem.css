@@ -1,0 +1,29 @@
+.tab-sheets{
+	margin-top:30px;
+	border: 1px solid #dddcdc;
+	width: 100%;
+}
+.nav-tabs{
+	margin-top: 10px;
+}
+.settest-length{
+	width:100px;
+}
+.right-span{
+	float: right;
+	padding-right:30px;
+}
+.q-type{
+	width:70%;
+}
+.q-add{
+	width:30%;
+	float:right;
+}
+input[type=text]{
+	width:80px;
+	height:40px;
+}
+ul>li{
+	line-height: 40px;
+}
