@@ -17,6 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	<%@include file="/common/topbar.jsp" %>
@@ -26,21 +27,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<img src="/mucCollege/images/face.jpg" alt="" width="80" height="80">
 		</div>
 		<div class="name">
-			<i><c:out value="${user.username}"></c:out></i>
+			<c:out value="${user.username}"></c:out>
 		</div>
 		<div class="option-nav">
 			<ul>
 				<li onclick="changeRight('teacher/frame_myteacenter.jsp')" class="active"><i class="fa fa-university"></i>教学平台</li>
 				<li onclick="changeRight('user/user_showInfo')"><i class="fa fa-user"></i>个人信息</li>
-				<li onclick="window.open('user/user_toUpdatePassword','_blank')" class="link"><i class="fa fa-server"></i>修改密码</li>
-				<li onclick="changeRight('user/user_showMessage')"><i class="fa fa-user"></i>我的消息</li>
-				<li onclick="window.open('teacher/teacher_showAllQuestion','_blank')" class="link"><i class="fa fa-server"></i>题库集锦</li>
-				<li onclick="window.open('teacher/teacher_toAddQuestion','_blank')" class="link"><i class="fa fa-server"></i>添加题目</li>
-				<li onclick="window.open('teacher/teacher_showMyQuestions','_blank')" class="link"><i class="fa fa-server"></i>我的题目</li>
-				<li onclick="window.open('teacher/teacher_getMyCourse','_blank')" class="link"><i class="fa fa-server"></i>我的课程</li>
-				<li onclick="window.open('teacher/teacher_getAllCourses','_blank')" class="link"><i class="fa fa-server"></i>添加课程</li>
-				<li onclick="window.open('test/test_getMyTestpapers','_blank')" class="link"><i class="fa fa-file-text-o"></i>我的试卷库<li>
-				<li onclick="window.open('test/test_getAllTestpapers','_blank')"  class="link"><i class="fa fa-file-text-o"></i>试卷集</li>
+				<li onclick="changeRight('user/user_showMessage')"><i class="fa fa-comments-o" aria-hidden="true"></i>我的消息</li>
+				<li onclick="window.open('teacher/teacher_toAddQuestion','_blank')" class="link"><i class="fa fa-pencil" aria-hidden="true"></i>手工添题</li>
+				<li onclick="window.open('teacher/teacher_showMyQuestions','_blank')" class="link"><i class="fa fa-folder-open" aria-hidden="true"></i>我的题库</li>
+				<li class="link"><i class="fa fa-file-text-o"></i>我的试卷<li>
 			</ul>
 		</div>
 	</div>

@@ -5,9 +5,9 @@
 	</div>
 	<div class="nav-theme">
 		<ul>
-			<li><i class="fa fa-hand-o-right" aria-hidden="true"></i>学习资源</li>
-			<li><i class="fa fa-rocket" aria-hidden="true"></i>试卷库</li>
-			<li><i class="fa fa-cloud" aria-hidden="true"></i>题海</li>
+			<li><i class="fa fa-hand-o-right" aria-hidden="true"></i>首页</li>
+			<li  onclick="window.open('teacher/teacher_showAllQuestion','_blank')"><i class="fa fa-rocket" aria-hidden="true"></i>题库</li>
+			<li><i class="fa fa-cloud" aria-hidden="true"></i>试卷库</li>
 		</ul>
 	</div>
 	<div class="user-info">

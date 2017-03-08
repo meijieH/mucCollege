@@ -1,0 +1,28 @@
+body{
+	background:white;
+}
+.questions li{
+	width:100%;
+	background:green;
+	margin-bottom:10px;
+}
+.qes-info{
+	background:white;
+	line-height:40px;
+	padding:0 10px;
+	color:#999;
+	border-left:5px solid rgba(21,194,136,1);
+}
+.qes-info span{
+	display:iline-block;
+	margin-right:10px;
+}
+.qes-stem{
+	background:white;
+}
+.qes-operate{
+	background:white;
+	line-height:40px;
+	padding:0 10px;
+	border-bottom:1px dotted rgba(21,194,136,1);
+}
