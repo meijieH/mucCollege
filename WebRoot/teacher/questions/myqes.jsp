@@ -90,7 +90,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="modal-body">
 	          <div class="modal-top">
 	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	       		<h4 class="modal-title message-title" id="myModalLabel">请输入新题库名称</h4>
+	       		<h4 class="modal-title message-title">请输入新题库名称</h4>
 	          </div>
 		      <div>
 		      	<form action="">
@@ -111,18 +111,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="modal-body">
 	          <div class="modal-top">
 	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	       		<h4 class="modal-title message-title" id="myModalLabel">系统提示您</h4>
+	       		<h4 class="modal-title message-title" >系统提示您</h4>
 	          </div>
+	          <form action="">
 		      <div>
-		      	<form action="">
 		      		题库一经删除，无法恢复。您确认要删除该题库吗？
-		      	</form>
 		      </div>
 		      <div class="modal-option">
 		      	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 		        <button type="button" class="btn btn-agree">确定</button>
 		      </div>
-		     </div>
+		      </form>
+		    </div>
 	    </div>
 	  </div>
 	</div>

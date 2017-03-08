@@ -59,12 +59,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</li>
 					<!-- 添加试卷 -->
 					<li>
-						<a href="teacher/test/settest.jsp" class="add-paper" target="_blank">+ 添加考试</a>
+						<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>
 					</li>
 					<li></li>
 				</ul>
 			</div>
 		</div>
     </div>
+    <div class="modal" id="addTest" tabindex="-1" role="dialog" >
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	    	<div class="modal-body">
+	          <div class="modal-top">
+	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	          </div>
+		      <div class="addtest-ways">
+			      <div onclick="">
+			      	<div>从我的试卷中选择</div>
+			      	<i class="fa fa-pencil" aria-hidden="true"></i>
+			      	<p>从教师“我的试卷”中抽选题目</p>
+			      </div>
+			      <div>
+			      	<div>半自动组卷</div>
+			      	<i class="fa fa-print" aria-hidden="true"></i>
+			      	<p>由手工添加题目的方式和选择导入题库题目的方式共同组成</p>
+			      </div>
+			      <div onclick="window.open('','_blank');">
+			      	<div>自动组卷</div>
+			      	<i class="fa fa-cog" aria-hidden="true"></i>
+			      	<p>机器随机组卷，可以设置试卷难度比、题型、考察知识范围等属性</p>
+			      </div>
+		      </div>
+		      <div>
+		      </div class="settest-time">
+		      234
+		     </div>
+	    </div>
+	  </div>
+	</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
