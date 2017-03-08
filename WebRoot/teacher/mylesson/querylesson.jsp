@@ -9,45 +9,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
     <base href="<%=basePath%>">
 	<meta charset="utf-8">
-	<title>我的课程</title>
+	<title>查找课程</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	<header>
-		<h1>我的课程</h1>
-		<span>
-			<label for="lesson">选择课程：</label>
-		    <select name="lesson" id="lesson">
-		    	<option value="#">高等数学</option>
-		    	<option value="#">大学英语</option>
-		    	<option value="#">线性代数</option>
-		    </select>
-		    <button>选择</button>
-		</span>
-		<span>
-			<label for="keyword">关键字：</label>
-			<input type="text" id="keyword">
-			<button>搜索</button>
-		</span>
+		<s:form action="teacher/teacher_getCoursesByName" method="post">
+		<input class="search-field form-control input-sm" title="关键词" name="coursename" placeholder="输入关键词...">
+						<button class="btn btn-info btn-sm" type="submit">搜 索</button>
+						</s:form>
 	</header>
 	<main>
 		<ul class="class-list">
-			<s:iterator value="teacouList">
+		<s:iterator value="couList" status="status">
 			<li>
-				<a href="teacher/mylesson/mylesdetail.jsp">
 					<div>
 						<img src="images/jisuanjijichu.jpg" alt="计算机基础" width="160px" height="160px;">
-						<p><s:property value="course.coursename"/></p>
+						<p><s:property value="coursename"/></p>
 						<div>
-							<p>授课班级<s:property value="stuClass.classname"/></p>
-							<p>开课时间<s:property value="year"/>年第<s:property value="term"/>学期</p>
+							<p>课程描述：<s:property value="detail"/></p>
+							<p>所属大类：<s:property value="subject.subjectname"/></p>
+							<p>所属学院：<s:property value="dept.deptname"/></p>
+							<p>课程状态:<s:property value="state"/></p>
 						</div>
+						<a href="teacher/teacher_toAddCourse?course.courseid=<s:property value='courseid'/>"><button>添加为我的课程</button></a>
 				    </div>
-				</a>
 			</li>
-			</s:iterator> 
+			</s:iterator>
 		</ul>
 			<a href="#">
 					<h3>添加课程</h3>

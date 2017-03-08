@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -10,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="renderer" content="webkit">
-	<title>民大学院 添加考试</title>
+	<title>试卷库</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -63,22 +64,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<table class="table table-hover">
 				<thead>
 					<tr>
-						<th>试卷名</th>
-						<th>创建时间</th>
+						<th>试卷编号</th>
+						<th>试卷名称</th>
+						<th>题目总数</th>
+						<th>试卷总分</th>
+						<th>总时间</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td><a>第一章测验</a></td>
-						<td>2016/05/22 22:00</td>
+				<s:iterator value="testpaperList" status="status">
+				<tr>
+					
+					
+						<td><a href="test/test_showTestpaper?testpaper.testpaperid=<s:property value='testpaperid'/>"><s:property value="testpaperid"/></a></td>
+						<td><s:property value="testpapername"/></td>
+						<td><s:property value="questionum"/></td>
+						<td><s:property value="totalscore"/></td>
+						<td><s:property value="totaltime"/></td>
+				
 					</tr>
+					
+					</s:iterator>
 				</tbody>
 				<tfood>
 					<tr>
-						<td>总计28份</td>
+						<td>数量28份</td>
 					</tr>
 				</tfood>
 			</table>
 		</div>
+	
 	</main>
 </body>

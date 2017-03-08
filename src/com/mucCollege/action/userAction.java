@@ -25,6 +25,7 @@ public class UserAction {
 	UserService userService;
 	private User user;
 	private String message;
+	private String newPassword;
 	private Question question;
 	private ArrayList<Question> queList;
 
@@ -42,6 +43,14 @@ public class UserAction {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
 	}
 
 	public ArrayList<Question> getQueList() {
@@ -116,11 +125,17 @@ public class UserAction {
 	 * @return
 	 * @throws Exception
 	 */
-	public String updatePassword() throws Exception {
+
+	public String toUpdatePassword() {
+		user=(User)session.get("user");
+		return "updatePassword";
+	}
+	public String updatePassword() throws Exception{
+		user=(User)session.get("user");
+		user.setPassword(newPassword);
 		userService.update(user);
 		return "show_view";
 	}
-
 	/**
 	 * 显示用户信息
 	 * 

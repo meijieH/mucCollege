@@ -11,11 +11,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Collection;
+import com.mucCollege.model.Course;
 import com.mucCollege.model.Coustudent;
 import com.mucCollege.model.Question;
+import com.mucCollege.model.StuClass;
+import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.User;
+import com.mucCollege.service.CourseService;
 import com.mucCollege.service.CoustudentService;
 import com.mucCollege.service.ErrorqueService;
+import com.mucCollege.service.StuClassService;
 import com.mucCollege.service.StudentService;
 import com.mucCollege.service.TeacherService;
 import com.opensymphony.xwork2.ActionContext;
@@ -31,13 +36,21 @@ public class TeacherAction {
 	CoustudentService coustudentService;
 	@Resource
 	ErrorqueService errorqueService;
+	@Resource
+	StuClassService stuClassService;
 	// 学生
 	private User user;
 	private Question question;
 	private Collection collection;
+	private Course course;
+	private Teacourse teacourse;
+	private StuClass stuClass;
 	private ArrayList<Question> queList;
-	private ArrayList<Coustudent> couList;
-
+	private ArrayList<Course> couList;
+	private ArrayList<Teacourse> teacouList;
+	private ArrayList<Coustudent> couStuList;
+	private ArrayList<StuClass> stuClaList;
+	private String coursename;
 	public User getUser() {
 		return user;
 	}
@@ -62,6 +75,30 @@ public class TeacherAction {
 		this.collection = collection;
 	}
 
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	public Teacourse getTeacourse() {
+		return teacourse;
+	}
+
+	public void setTeacourse(Teacourse teacourse) {
+		this.teacourse = teacourse;
+	}
+
+	public StuClass getStuClass() {
+		return stuClass;
+	}
+
+	public void setStuClass(StuClass stuClass) {
+		this.stuClass = stuClass;
+	}
+
 	public ArrayList<Question> getQueList() {
 		return queList;
 	}
@@ -70,12 +107,44 @@ public class TeacherAction {
 		this.queList = queList;
 	}
 
-	public ArrayList<Coustudent> getCouList() {
+	public ArrayList<Course> getCouList() {
 		return couList;
 	}
 
-	public void setCouList(ArrayList<Coustudent> couList) {
+	public void setCouList(ArrayList<Course> couList) {
 		this.couList = couList;
+	}
+	
+	public ArrayList<Teacourse> getTeacouList() {
+		return teacouList;
+	}
+
+	public void setTeacouList(ArrayList<Teacourse> teacouList) {
+		this.teacouList = teacouList;
+	}
+
+	public ArrayList<Coustudent> getCouStuList() {
+		return couStuList;
+	}
+
+	public void setCouStuList(ArrayList<Coustudent> couStuList) {
+		this.couStuList = couStuList;
+	}
+
+	public ArrayList<StuClass> getStuClaList() {
+		return stuClaList;
+	}
+
+	public void setStuClaList(ArrayList<StuClass> stuClaList) {
+		this.stuClaList = stuClaList;
+	}
+
+	public String getCoursename() {
+		return coursename;
+	}
+
+	public void setCoursename(String coursename) {
+		this.coursename = coursename;
 	}
 
 	// 获取session
@@ -134,7 +203,55 @@ public class TeacherAction {
 		System.out.println(question==null);
 		return "show_question";
 	}
-	
-	//修改题目
-	
+	public String toAddCourse(){
+		user=(User)session.get("user");
+		//System.out.println(course.getCourseid());
+		//System.out.println(teacherService==null);
+		course=teacherService.queryCourseById(course.getCourseid());
+		stuClaList=stuClassService.queryClassByDept(user.getDept().getDeptid());
+		return "add_Course";
+	}
+	public String addCourse() throws Exception{
+		user=(User)session.get("user");
+		System.out.println(course.getCourseid());
+		course=teacherService.queryCourseById(course.getCourseid());
+		teacourse.setCourse(course);
+		teacourse.setUser(user);
+		teacourse.setStuClass(stuClass);
+		teacourse.setState("正在审核");
+		teacherService.addTeacourse(teacourse);
+		teacouList=teacherService.queryMyCourses(user.getUserid());
+		//teacherService.addCourse(course);
+		return "view_mycourse";
+	}
+	//查看我的课程
+	public String getMyCourse() throws Exception{
+		user=(User)session.get("user");
+		teacouList=teacherService.queryMyCourses(user.getUserid());
+		return "view_mycourse";
+	}
+	//查看某一课程
+	public String showCourse(){
+		teacherService.queryCourseById(course.getCourseid());
+		return "view_course";
+	}
+	//检索课程
+	public String getCoursesByName() throws Exception{
+		couList=teacherService.queryCourse(coursename);
+		return "all_course";
+	}
+	//查看全部课程
+	public String getAllCourses(){
+		couList=teacherService.showAllCourses();
+		return "all_course";
+	}
+	//修改课程
+	public String showEditCourse(){
+		teacherService.queryCourseById(course.getCourseid());
+		return "edit_course";
+	}
+	public String updateCourse(){
+		teacherService.updateCourse(course);
+		return "view_course";
+	}
 }

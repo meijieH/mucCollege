@@ -1,6 +1,6 @@
 <%@page import="com.mucCollege.model.Course"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="struts" %>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
      <div class="apply-lesson-right">
         <div class="default-form">
-			<form action="/teacher/teacourse_apply">
+			<form action="teacher/teacher_addCourse" method="post">
 				<ul>
 					
 		            <li>
@@ -51,6 +51,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</span>
 					</li>
 					<li>
+						<span class="left-span">*班级</span>
+						<span class="right-span">
+						<select  name="teacourse.stuClass">
+							<s:iterator value="stuClaList">
+							<option value="<s:property value='classid'/>"><s:property value="classname"/></option>
+							</s:iterator>
+						</select>
+						</span>
+					</li>
+					<li>
 						<span class="left-span">*课程学分</span>
 						<span class="right-span"><input type="number" name="teacourse.couscore"></span>
 					</li>
@@ -60,13 +70,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</li>
 					<li>
 						<span class="left-span">*课程名</span>
-						<span class="right-span"><input type="text" name="teacourse.course.coursename" placeholder="请输入课程名称      例如：美术鉴赏"></span>
+						<span class="right-span"><s:property value="course.coursename"/></span>
+					</li>
+					<li>
+						<span class="left-span">课程类别</span>
+						<span class="right-span"><s:property value="course.subject.subjectname"/></span>
 					</li>
 					<li>
 						<span class="left-span">*课程描述</span>
-						<span class="right-span"><textarea  name="teacourse.course.detail" placeholder="请输入课程描述"></textarea></span>
+						<span class="right-span"><s:property value="course.detail"/></span>
 					</li>
-					
+					<s:hidden name="course.courseid"></s:hidden>
 					<li>
 						<span class="left-span">&nbsp;</span>
 						<span class="right-span"><input type="submit" value="申请开课" class="btn btn-agree"></span>

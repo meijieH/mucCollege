@@ -60,10 +60,10 @@ public class StuClassDao {
     }
 	//条件查找:通过学院查找
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<StuClass> QueryClassByDept(Dept dept) { 
+	public ArrayList<StuClass> QueryClassByDept(int deptid) { 
     	Session s = factory.getCurrentSession();
     	String hql = "From StuClass stuClass where 1=1";//最基本的
-    	if(!dept.equals("")) hql = hql + " and stuClass.dept.deptid like '%" + dept.getDeptid() + "%'";
+    	hql = hql + " and stuClass.dept.deptid =" + deptid;
     	Query q = s.createQuery(hql);
 		List classList = q.list();
     	return (ArrayList<StuClass>) classList;

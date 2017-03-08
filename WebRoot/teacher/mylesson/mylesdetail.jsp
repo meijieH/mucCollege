@@ -58,14 +58,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</li>
 					<!-- 添加试卷 -->
 					<li>
-						<a href="teacher/test/settest.jsp" class="add-paper" target="_blank">+ 添加考试</a>
+						<a href="teacher/teacher_getAllTests.jsp" class="add-paper" target="_blank">+ 添加考试</a>
 					</li>
 					<li></li>
 				</ul>
 			</div>
 		</div>
     </div>
-
+	<div class="lesson-detail">
+		<div class="lesson-detail-left">
+			<div class="lesson-info">课程设置</div>
+			<h1 class="lesson-name">学生管理</h1>
+			<div class="ld-box">
+				<h2 class="ld-title">学生(别点击)</h2>
+				<ul class="ld-lists">
+					<li>
+						<a href="teacher/mylesson/stumanage.jsp" target="_blank">
+							<p>查看学生</p>   
+						</a>
+					</li>
+					<li>添加学生</li>
+					<li>删除学生</li>
+				</ul>
+			</div>
+		</div>
+    </div>
+	
 	<!-- <div class = "lesson-introduce">
 		<h2>课程简介</h2>
 		<p>blablabla</p>

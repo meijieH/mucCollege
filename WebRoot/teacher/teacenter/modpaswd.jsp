@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -19,11 +20,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<hr>
 	</header>
 	<main class="container-fluid">
+	<s:form action="user/user_updatePassword" method="post">
   		<div class="row">
 	    	<div class="form-group">
                 <label class="control-label col-md-1">原密码：</label>
                 <div class="col-md-4"> 
-      	         	XXXXXXXXXXXXXXXX
+      	         	<s:property value="user.password"/>
                 </div>
             </div>
 		</div>
@@ -32,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="form-group">
                 <label class="control-label col-md-1">新	密码：</label>
                 <div class="col-md-4"> 
-      	         	<input type="text">
+      	         	<input type="text" name="newPassword">
                 </div>
             </div>
 		</div>
@@ -41,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    	<div class="form-group">
                 <label class="control-label col-md-1">确认密码：</label>
                 <div class="col-md-4"> 
-      	         	<input type="text">
+      	         	<input type="text"  name="">
                 </div>
             </div>
 		</div>
@@ -52,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <div class="form-group col-md-1">
 	        	<button type="reset" value="Reset" class="btn btn-primary pull-right">重 置</button>
 	    </div>
-
+	</s:form>
 	</main>
 </body>
 </html>

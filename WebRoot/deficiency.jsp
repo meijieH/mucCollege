@@ -29,6 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 6.errorque不应该对应question。应该对应stuque
 7.annotation.jsp中添加到我的题库还未做
 8.queset中最后一题的题型未显示很奇怪
+9.login.jsp中“学生”、“教师”未起到分类验证的作用
 -->
   </body>
 </html>
