@@ -13,30 +13,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-<!--  
-	 <script src="https://ajax.googleapis.bootcss.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-     <script src="http://maxcdn.bootstrapcdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-     <script type="text/javascript">
-
-         function allSelect() {
-             if ($(":checkbox").attr("checked") != "checked") {
-                 $(":checkbox").prop('checked',false); $(":checkbox").prop('checked',true);
-             }
-             else {
-                 $(":checkbox").removeAttr("checked");
-             }
-             $(":checkbox").each(function () {
-                 if ($(this).attr("checked") == "checked") {
-                     $(this).removeAttr("checked");
-                 }
-                 else {
-                     $(this).attr("checked", "checked");
-                 }
-         }
-     </script>
-     -->
 </head>
 <body>
+先留着。作为参考。
 	<header>
 		<h1>计算机基础</h1>
 		<hr>
