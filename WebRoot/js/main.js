@@ -8,7 +8,7 @@ function visible(id){
 function displayNone(id){
 	$('#'+id).removeClass('visible').addClass('display-none');
 }
-function hidden(id){
+/*function hide(id){
 	$('#'+id).removeClass('visible').addClass('hidden');
-}
+}*/
 

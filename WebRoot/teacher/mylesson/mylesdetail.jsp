@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li>
 						<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>
 					</li>
-					<li></li>
+					<li><br></li>
 				</ul>
 			</div>
 		</div>
@@ -70,33 +70,131 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	    	<div class="modal-body">
-	          <div class="modal-top">
-	        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	          </div>
-		      <div class="addtest-ways">
-			      <div onclick="">
-			      	<div>从我的试卷中选择</div>
-			      	<i class="fa fa-pencil" aria-hidden="true"></i>
-			      	<p>从教师“我的试卷”中抽选题目</p>
+		          <div class="modal-top">
+		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="visible('addtestWays');displayNone('settest');displayNone('messageTitle');"><span aria-hidden="true">&times;</span></button>
+		        	<h4 class="modal-title message-title display-none" id="messageTitle">从我的试卷中选择</h4>
+		          </div>
+			      <div class="addtestWays" id="addtestWays">
+				      <div onclick="displayNone('addtestWays');visible('settest');visible('messageTitle');">
+				      	<div>从我的试卷中选择</div>
+				      	<i class="fa fa-pencil" aria-hidden="true"></i>
+				      	<p>从教师“我的试卷”中抽选题目</p>
+				      </div>
+				      <div>
+				      	<div>半自动组卷</div>
+				      	<i class="fa fa-print" aria-hidden="true"></i>
+				      	<p>由手工添加题目的方式和选择导入题库题目的方式共同组成</p>
+				      </div>
+				      <div onclick="window.open('/mucCollege/teacher/test/autoassem.jsp','_blank');">
+				      	<div>自动组卷</div>
+				      	<i class="fa fa-cog" aria-hidden="true"></i>
+				      	<p>机器随机组卷，可以设置试卷难度比、题型、考察知识范围等属性</p>
+				      </div>
 			      </div>
-			      <div>
-			      	<div>半自动组卷</div>
-			      	<i class="fa fa-print" aria-hidden="true"></i>
-			      	<p>由手工添加题目的方式和选择导入题库题目的方式共同组成</p>
+			      <div class="settest display-none" id="settest">
+			       		<form action="">
+			       			<div>
+				       			<p>
+				       				课程：
+					       			<select>
+					       				<option>高等数学</option>
+					       				<option>大学物理</option>
+					       				<option>13</option>
+					       				<option>6</option>
+					       			</select>
+				       			</p>
+				       			<p>
+				       				试卷：
+					       			<select>
+					       				<option>简单小测试</option>
+					       				<option>143</option>
+					       				<option>期中测试</option>
+					       				<option>6</option>
+					       			</select>
+				       			</p>
+				       		</div>
+				       		<table>
+				       			<tr>
+				       				<th></th>
+				       				<th>年</th>
+				       				<th>月</th>
+				       				<th>日</th>
+				       				<th>时/分</th>
+				       			</tr>
+				       			<tr>
+				       				<td>开始于：</td>
+				       				<td>
+				       					<select class="date-option">
+				       						<option>2017</option>
+				       						<option>2018</option>
+				       					</select>
+				       				</td>
+				       				<td>
+				       					<select class="date-option">
+				       						<option>1</option>
+				       						<option>2</option>
+				       						<option>12</option>
+				       					</select>
+				       				</td>
+				       				<td>
+				       					<select class="date-option">
+				       						<option>1</option>
+				       						<option>2</option>
+				       						<option>31</option>
+				       					</select>
+				       				</td>
+				       				<td>
+				       					<input type="time" class="date-option"/>
+				       				</td>
+				       			</tr>
+				       			<tr>
+				       				<td>结束于：</td>
+				       				<td>
+				       					<select class="date-option">
+				       						<option>2017</option>
+				       						<option>2018</option>
+				       					</select>
+				       				</td>
+				       				<td>
+				       					<select class="date-option">
+				       						<option>1</option>
+				       						<option>2</option>
+				       						<option>12</option>
+				       					</select>
+				       				</td>
+				       				<td>
+				       					<select class="date-option">
+				       						<option>1</option>
+				       						<option>2</option>
+				       						<option>31</option>
+				       					</select>
+				       				</td>
+				       				<td>
+				       					<input type="time" class="date-option"/>
+				       				</td>
+				       			</tr>
+				       			<tr>
+				       				<td>历时：</td>
+				       				<td>
+				       					2小时20分
+				       				</td>
+				       			</tr>
+				       		</table>
+				       		<div class="visible-set">
+				       			<p>考试结束后是否向学生公开答案:</p>
+				       			<p><label><input type="radio" name="visAnswer"/>是</label><label><input type="radio" checked="true" name="visAnswer"/>否</label></p>
+				       			<!--<p>考试结束后是否向学生公开解析:</p>
+				       			<p><label><input type="radio" name=""/>是</label><label><input type="radio" checked="true" name=""/>否</label></p>-->
+				       		</div>
+				       		<div>
+				       			<a href="" class="btn btn-agree">已完成设置,即刻生效</a>
+				       		</div>
+			       		</form>
 			      </div>
-			      <div onclick="window.open('','_blank');">
-			      	<div>自动组卷</div>
-			      	<i class="fa fa-cog" aria-hidden="true"></i>
-			      	<p>机器随机组卷，可以设置试卷难度比、题型、考察知识范围等属性</p>
-			      </div>
-		      </div>
-		      <div>
-		      </div class="settest-time">
-		      234
 		     </div>
-	    </div>
-	  </div>
-	</div>
+		 </div>
+	   </div>
+	 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

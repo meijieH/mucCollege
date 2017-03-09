@@ -18,14 +18,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="css/std_frame_mystudy.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="frame-mystudy-nav">
-		<ul>
-			<li>我的课程</li>
-			<li>我的收藏</li>
-			<li>错题本</li>
-			<li>模拟练习</li>
-		</ul>
-	</nav>
 	<div>
 		<div id="mylesson">
 
@@ -40,13 +32,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  </ul>
 			</div> -->
 
-            <!-- 搜索 -->
-            <div class="search-box">
-            	<form action="" class="">
-				    <input type="text" class="search-input" placeholder="">
-				    <button type="submit" class="btn btn-default">搜索</button>
-				</form>
-            </div>
 			
 			<!-- 课程列表 -->
 			<div class="lesson-lists">
@@ -61,8 +46,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					      </div>
 					    </a>
                 	</li>
-                	<li></li>
-                	<li></li>
                 </ul>
 			</div>
 

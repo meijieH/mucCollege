@@ -43,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 右侧 -->
 
 	<div class="main-right">
-	    <iframe id="tea-main-right-frame"src="teacher/frame_myteacenter.jsp" frameborder="0" width="100%" height="100%"></iframe>
+	    <iframe id="tea-main-right-frame" src="teacher/frame_myteacenter.jsp" frameborder="0" width="100%" height="100%"></iframe>
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript">

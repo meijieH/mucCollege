@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/home.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	<%@include file="/common/topbar.jsp" %>
@@ -31,9 +32,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<div class="option-nav">
 			<ul>
-				<li>个人信息</li>
-				<li>学习中心</li>
-				<li>考试中心</li>
+				<li  class="active">我的课程</li>
+				<li>错题本</li>
+				<li>我的收藏</li>
+				<li><a href="user/user_showInfo"><i class="fa fa-user"></i>个人信息</a></li>
+				------------
 				<!-- merge时请保留下方的后台链接，可以放在其他页面里,方法名称和链接对应即可 -->
 				<li><a href="user/user_showInfo">查看信息</a></li>
                 <li><a href="user/user_showEdit">修改资料</a></li>
