@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/font-aswome.min.css">
 </head>
 <body>  
+  <script src="js/autoassem.js"></script>
   <%@include file="/common/topbar.jsp" %>
   <div class="page-center">
     <div class="page-center-right">
@@ -61,28 +62,57 @@
                         <i class="fa fa-trash-o" aria-hidden="true"> </i>
                     </span>
                     </li>
-                  <li>
-                  <span class="left-span"><label>作图题</label></span>
+                  <li class="singleDisable">
+                  <span class="left-span"><label>判断题</label></span>
                     <span class="right-span">
                       <input type="text"></input><label>道 </label>
                         <i class="fa fa-trash-o" aria-hidden="true"> </i>
                     </span>
                   </li>
-                  <li>
-                    <span class="left-span"><label>计算题</label></span>
+                  <!-- <li>
+                    <span class="left-span"><label>简答题</label></span>
                     <span class="right-span">
                       <input type="text"></input><label>道 </label>
                         <i class="fa fa-trash-o" aria-hidden="true" > </i>
                     </span>
-                    </li>
+                  </li>
+                  <li>
+                    <span class="left-span"><label>应用题</label></span>
+                    <span class="right-span">
+                      <input type="text"></input><label>道 </label>
+                        <i class="fa fa-trash-o" aria-hidden="true" > </i>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="left-span"><label>多选题</label></span>
+                    <span class="right-span">
+                      <input type="text"></input><label>道 </label>
+                        <i class="fa fa-trash-o" aria-hidden="true" > </i>
+                    </span>
+                  </li> -->
                 </ul>
               </div>
               <div class="q-add">
-              	<ul>
-              		<li>
-              			
-              		</li>
-              	</ul>
+              	 <ul>
+                  <li>
+                    <button type="button">单选题</button>
+                  </li>
+                  <li>
+                    <button type="button">填空题</button>
+                  </li>
+                  <li>
+                    <button type="button">判断题</button>
+                  </li>
+                  <li>
+                    <button type="button">简答题</button>
+                  </li>
+                  <li>
+                    <button type="button">应用题</button>
+                  </li>
+                  <li>
+                    <button type="button">多选题</button>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

@@ -15,10 +15,14 @@
 }
 .q-type{
 	width:70%;
+	float: left;
 }
 .q-add{
 	width:30%;
-	float:right;
+	float: right;
+}
+.q-whole{
+	overflow: hidden;
 }
 input[type=text]{
 	width:80px;
@@ -26,4 +30,8 @@ input[type=text]{
 }
 ul>li{
 	line-height: 40px;
+}
+.q-add ul>li{
+	line-height: 40px;
+	display: inline;
 }
