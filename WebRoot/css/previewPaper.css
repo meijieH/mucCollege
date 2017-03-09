@@ -1,0 +1,53 @@
+body{
+	background-color:white;
+}
+.paper-title{
+	margin:10px 0;
+}
+.paper-title>label{
+	float:left;
+	font-weight:bold;
+	font-size:18px;
+}
+.paper-title>input{
+	border:none;
+	background-color:rgb(245,245,245);
+}
+.paper-title>input:hover{
+	border:none;
+}
+.paper-title>div{
+	line-height:30px;
+ 	border-bottom:1px dotted #eee;
+}
+.paper-title>div>span{
+	diaplay:inline-block;
+	padding:0 20px;
+	color:#888;
+	border-right:1px solid #eee;
+}
+.paper-title>div>span:first-child{
+	padding-left:0;
+}
+.paper-title>div>span:last-child{
+	border-right:none;
+}
+.block-title{
+	font-weight:bold;
+	font-size:16px;
+	line-height:30px;
+}
+/*题目*/
+.question .score{
+	color:rgb(224,136,77);
+	font-weight:bold;
+	font-size:14px;
+}
+.option>li{
+	line-height:24px;
+	text-indent:1em;
+}
+.control{
+	line-height:100px;
+	text-align:center;
+}

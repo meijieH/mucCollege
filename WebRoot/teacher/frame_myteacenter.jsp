@@ -18,38 +18,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 	<!-- 教学平台导航 -->
-	<nav class="frame-myteacenter-nav">
+	<!--<nav class="frame-myteacenter-nav">
 		<ul>
 			<li><a href="#">批量管理(未设置)</a></li>
 		</ul>
-	</nav>
+	</nav>-->
 
-	<!-- 搜索 -->
+	<!-- 搜索
     <div class="search-box">
     	<form action="" class="">
 		    <input type="text" class="search-input" placeholder="搜索我的课程......">
 		    <button type="submit" class="btn btn-default">搜索</button>
 		</form>
-    </div>
+    </div> -->
+	
+	加一个课程状态（正在开课 已经结束）
 	
 	<!-- 课程列表 -->
 	<div class="box-lists">
         <ul>
-        	<li class="box">
-        		<a href="teacher/mylesson/mylesdetail.jsp" target="_blank">
-			      <div class="box-content">
-				      <img src="images/jisuanjijichu.jpg" alt="计算机基础"/>
-				      <div class="caption ml-ls-b-info">
-				        <div class="lesson-name">计算机基础(课程名)</div>
-				        <div class="lesson-info">
-				        	<div class="stu-origin" title="学生来源"><i class="fa fa-tags fa-wa"></i>14软件工程</div>
-				        	<div class="stu-number" title="班级人数"><i class="fa fa-user "></i>23</div>
-				        </div>
+        	<s:iterator value="teacouList">
+	        	<li class="box">
+	        		<a href="teacher/mylesson/mylesdetail.jsp" target="_blank">
+				      <div class="box-content">
+					      <!--<img src="images/jisuanjijichu.jpg" alt="计算机基础"/>-->
+					      <div class="caption ml-ls-b-info">
+					        <div class="lesson-name"><s:property value="course.coursename"/></div>
+					        <div class="lesson-info">
+					        	<div class="start-time" title="开课时间"><i class="fa fa-tags fa-wa"></i><s:property value="year"/>学年，第<s:property value="term"/>学期</div>
+					        	<div class="stu-origin" title="学生来源"><i class="fa fa-tags fa-wa"></i><s:property value="stuClass.classname"/></div>
+					        	<div class="stu-number" title="班级人数"><i class="fa fa-user "></i>23</div>
+					        </div>
+					      </div>
 				      </div>
-			      </div>
-			    </a>
-        	</li>
-        	<li></li>
+				    </a>
+	        	</li>
+	        </s:iterator>
         	<li class="box null-lesson-box">
         		<a href="teacher/mylesson/addlesson.jsp" target="_blank">
 			      <div class="box-content">
@@ -59,5 +63,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	</li>
         </ul>
 	</div>
+	
+	<!--<s:iterator value="teacouList">
+		<li>
+			<a href="teacher/mylesson/mylesdetail.jsp">
+				<div>
+					<img src="images/jisuanjijichu.jpg" alt="计算机基础" width="160px" height="160px;">
+					<p><s:property value="course.coursename"/></p>
+					<div>
+						<p>授课班级<s:property value="stuClass.classname"/></p>
+						<p>开课时间<s:property value="year"/>年第<s:property value="term"/>学期</p>
+					</div>
+			    </div>
+			</a>
+		</li>
+	</s:iterator>-->
 </body>
 </html>

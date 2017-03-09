@@ -14,6 +14,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  	很久以前彩奕写的。——dyf
   	<h1><struts:property value="testpaper.testpapername"/></h1>
   	
   	<p>问题数量：<struts:property value="testpaper.questionnum"/> 总分：<struts:property value="testpaper.totalscore"/> 总时间：<struts:property value="testpaper.totaltime"/></p>

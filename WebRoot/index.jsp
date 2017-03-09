@@ -19,6 +19,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	 <%@include file="/common/topbar.jsp"%>
@@ -73,11 +74,10 @@
 	 	 	</div>
 		</div>
 	   </div>
-	   <div class="recommend-lesson">
+	   <!--<div class="recommend-lesson">
 	   		<h2 class="recommend-lesson-t">推荐课程</h2>
 	   		<div class="lessons">
 	   			<ul>
-	   				<!-- 请在这里显示10个      dyf -->
 	   				<li class="lesson-hover-box">
 	   					<a href="#" title="C++语言程序设计基础" target="_blank">
 	   						<div class="lesson-img">
@@ -104,14 +104,11 @@
 	   				</li>
 	   			</ul>
 	   		</div>
-	   </div>
-	   </div>
-	   <br/>
-	      <a href="student/student.jsp" class="btn btn-default">去学生页面（临时按钮）</a>
-	      <a href="teacher/teacher.jsp" class="btn btn-default">去教师页面（临时按钮）</a>
+	   </div>-->
 	</main>
-
  	<footer class="index-footer">
+ 		<a href="student/student.jsp" class="btn btn-default">去学生页面（临时按钮）</a>
+	      <a href="teacher/teacher.jsp" class="btn btn-default">去教师页面（临时按钮）</a>
 		民大学院团队
 	</footer>
   
