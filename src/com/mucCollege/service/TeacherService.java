@@ -10,9 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mucCollege.dao.CollectionDao;
 import com.mucCollege.dao.QuestionDao;
 import com.mucCollege.dao.TeacherDao;
+import com.mucCollege.dao.TeacourseDao;
 import com.mucCollege.model.Collection;
 import com.mucCollege.model.Course;
+import com.mucCollege.model.Coustudent;
 import com.mucCollege.model.Question;
+import com.mucCollege.model.Teacourse;
 
 @Service
 @Transactional
@@ -23,6 +26,8 @@ public class TeacherService extends UserService {
 	QuestionDao questionDao;
 	@Resource
 	CollectionDao collectionDao;
+	@Resource
+	TeacourseDao teacourseDao;
 
 	// 3.对题目的操作**********
 	// 增加题目
@@ -42,8 +47,7 @@ public class TeacherService extends UserService {
 
 	// 查看我添加的题目
 	public ArrayList<Question> showMyQuestions(int userid) {
-		ArrayList<Question> questionList = questionDao
-				.QueryQuestionByAdder(userid);
+		ArrayList<Question> questionList = questionDao.QueryQuestionByAdder(userid);
 		return questionList;
 	}
 
@@ -64,19 +68,34 @@ public class TeacherService extends UserService {
 
 	// 4.对课程的操作**********
 	// 增加课程
-	public void addCourse(Course course) {
-		courseDao.addCourse(course);
+	public void addTeacourse(Teacourse teacourse) throws Exception {
+		teacourseDao.addTeacourse(teacourse);
 	}
 
 	// 查看课程
-	public Course showCourse(int courseid) {
+	public Course queryCourseById(int courseid) {
 		Course db_course = courseDao.GetCourseById(courseid);
 		return db_course;
 	}
 
+	//查找课程
+	public ArrayList<Course> queryCourse(String coursename) throws Exception{
+		ArrayList<Course> couList=courseDao.queryCourseByCoursename(coursename);
+		return couList;
+	}
+	//查看我的课程
+	public ArrayList<Teacourse> queryMyCourses(int userid) throws Exception{
+		ArrayList<Teacourse> teacouList=teacourseDao.queryTeacourseByTeacherid(userid);
+		return teacouList;
+	}
 	// 修改课程
 	public void updateCourse(Course course) {
 		courseDao.updateCourse(course);
+	}
+
+	public ArrayList<Course> showAllCourses() {
+		ArrayList<Course> couList=courseDao.QueryAllCourse();
+		return couList;
 	}
 
 	

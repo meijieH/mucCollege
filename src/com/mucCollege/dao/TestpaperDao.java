@@ -57,12 +57,12 @@ public class TestpaperDao {
 	    	List testpaperList = q.list();
 	    	return (ArrayList<Testpaper>) testpaperList;
 	    }
-        //根据创建者条件查
+        //根据创建者查
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public ArrayList<Testpaper> QueryTestpaperByCreator(String creator) { 
+		public ArrayList<Testpaper> QueryTestpaperByCreator(Integer creatorid) { 
 	    	Session s = factory.getCurrentSession();
 	    	String hql = "From Testpaper testpaper where 1=1";
-	    	if(!creator.equals("")) hql = hql + " and testpaper.creator like '%" + creator + "%'";
+	    	hql = hql + " and testpaper.user.userid =" + creatorid;
 	    	Query q = s.createQuery(hql);
 	    	List testpaperList = q.list();
 	    	return (ArrayList<Testpaper>) testpaperList;

@@ -1,5 +1,6 @@
 package com.mucCollege.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,6 +14,7 @@ import com.mucCollege.dao.TeacourseDao;
 import com.mucCollege.model.Course;
 import com.mucCollege.model.StuClass;
 import com.mucCollege.model.Teacourse;
+import com.mucCollege.model.Test;
 import com.mucCollege.model.User;
 
 @Service
@@ -35,20 +37,6 @@ public class TeacourseService {
 	}
 	public void register(Teacourse teacourse) throws Exception{
 		teacourse.setCourse(courseDao.GetCourseById(teacourse.getCourse().getCourseid()));
-		teacourse.setStuClass(stuClassDao.getStuClassById(teacourse.getStuClass().getClassid()));
-		teacourseDao.addTeacourse(teacourse);
-	}
-	public void apply(Teacourse teacourse) throws Exception{
-		Course result=courseDao.queryCourseByCoursename(teacourse.getCourse().getCoursename());
-		if(result!=null){
-			if(result.getState().endsWith("待审批")){
-				throw new Exception("同名课程已被申请开设，正在审批中，请等待审批");
-			}else{
-				throw new Exception("同名课程已存在，请直接选择添加此课程，不要重复申请");
-			}
-		}
-		Integer courseid=courseDao.addCourse(teacourse.getCourse());
-		teacourse.setCourse(courseDao.GetCourseById(courseid));
 		teacourse.setStuClass(stuClassDao.getStuClassById(teacourse.getStuClass().getClassid()));
 		teacourseDao.addTeacourse(teacourse);
 	}

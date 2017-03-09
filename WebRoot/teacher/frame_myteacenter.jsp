@@ -1,7 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+//ArrayList<Teacourse> teacourseList=(ArrayList<Teacourse>)request.getSession.getAttribute("teacourselist");
+//System.out.print((teacourseList==null)+"dkiwfje");
 %>
 <!DOCTYPE html>
 <html>
@@ -37,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 课程列表 -->
 	<div class="box-lists">
         <ul>
-        	<s:iterator value="teacouList">
+        	<s:iterator value="teacouList" status="status">
 	        	<li class="box">
 	        		<a href="teacher/mylesson/mylesdetail.jsp" target="_blank">
 				      <div class="box-content">
@@ -55,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	        	</li>
 	        </s:iterator>
         	<li class="box null-lesson-box">
-        		<a href="teacher/mylesson/addlesson.jsp" target="_blank">
+        		<a href="teacher/teacher_getAllCourses" target="_blank">
 			      <div class="box-content">
 				     +&nbsp;添加课程
 			      </div>

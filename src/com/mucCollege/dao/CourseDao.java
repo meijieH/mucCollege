@@ -25,12 +25,13 @@ public class CourseDao {
 		List<Course> results=q.list();
     	return results;
 	}
-	public Course queryCourseByCoursename(String coursename) throws Exception{//获取已注册且正常的课程
+	@SuppressWarnings("unchecked")
+	public ArrayList<Course> queryCourseByCoursename(String coursename) throws Exception{//获取已注册且正常的课程
 		Session s = factory.getCurrentSession();
     	String hql = "From Course course where course.coursename like '%" + coursename + "%'";
     	Query q = s.createQuery(hql);
-    	Course result=(Course) q.uniqueResult();
-    	return result;
+    	List couList=q.list();
+    	return (ArrayList<Course>)couList;
 	}
 	//增
 	public Integer addCourse(Course course){

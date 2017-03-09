@@ -40,6 +40,7 @@
 			<result name="show_view">/myInfo.jsp</result>
 			<result name="show_edit">/show_edit.jsp</result>
 			<result name="message">/message.jsp</result>
+			<result name="updatePassword">/teacher/teacenter/modpaswd.jsp</result>
 		</action>
 	</package>
 	<package name="student" namespace="/student" extends="struts-default">
@@ -60,6 +61,17 @@
 			<result name="my_question">/teacher/questions/myqes.jsp</result>
 			<result name="add_question">/teacher/questions/addqes.jsp</result>
 			<result name="show_question">/teacher/questions/annotation.jsp</result>
+			<result name="view_mycourse">/teacher/frame_myteacenter.jsp</result>
+			<result name="view_course">/teacher/mylesson/mylesdetail.jsp</result>
+			<result name="add_Course">/teacher/mylesson/addlesson.jsp</result>
+			<result name="all_course">/teacher/mylesson/querylesson.jsp</result>
+		</action>
+	</package>
+	<package name="test" namespace="/test" extends="struts-default">
+		<action name="test_*" class="teatestAction" method="{1}">
+			<result name="my_testpaper">/teacher/test/testlist.jsp</result>
+			<result name="all_testpaper">/teacher/test/settest.jsp</result>
+			<result name="show_testpaper">/teacher/test/testpaper.jsp</result>
 		</action>
 	</package>
 </struts>
