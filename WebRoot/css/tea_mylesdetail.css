@@ -29,35 +29,47 @@
 	color: rgb(29,163,98);
 }
 /*添加考试-选择类型*/
-.addtest-ways{
+.addtestWays{
 	height:190px;
 }
-.addtest-ways>div{
+.addtestWays>div{
 	float:left;
 	width:33%;
 	height:180px;
 	text-align:center;
 	cursor:pointer;
 }
-.addtest-ways>div:hover>i,.addtest-ways>div:focus>p,.addtest-ways>div:hover>p,.addtest-ways>div:focus>p{
+.addtestWays>div:hover>i,.addtestWays>div:focus>p,.addtestWays>div:hover>p,.addtestWays>div:focus>p{
 	color:orange;
 }
-.addtest-ways>div>i{
+.addtestWays>div>i{
 	font-size:36px;
 	color: rgb(33,119,199);
 	line-height:100px;
 }
-.addtest-ways>div>div:first-child{
+.addtestWays>div>div:first-child{
 	font-weight:bolder;
 	font-size:18px;
 }
-.addtest-ways>div>p{
+.addtestWays>div>p{
 	text-align:left;
-	color: rgb(33,119,199);
+	color: #888;
 	font-size:14px;
 	text-indent:2em;
 }
-/*设置时间*/
-.settest-time{
-	height:190px;
+/*设置试卷*/
+.settest{
+	height:340px;
+}
+.date-option{
+	width:100px;
+	margin-right:20px;
+}
+.visible-set{
+	margin-top:10px;
+}
+.visible-set label{
+	display:inline-block;
+	margin-right:50px;
+	cursor:pointer;
 }
