@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</header>
 	<main>
 		<ul class="class-list">
-			<s:iterator value="teacouList">
+			<s:iterator value="teacouList"  status="status">
 			<li>
 				<a href="teacher/mylesson/mylesdetail.jsp">
 					<div>

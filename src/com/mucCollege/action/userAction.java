@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Question;
+import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.User;
+import com.mucCollege.service.TeacherService;
+import com.mucCollege.service.TeacourseService;
 import com.mucCollege.service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.sun.xml.internal.bind.v2.model.core.ID;
@@ -23,10 +26,13 @@ import com.sun.xml.internal.bind.v2.model.core.ID;
 public class UserAction {
 	@Resource
 	UserService userService;
+	@Resource
+	TeacherService teacherService;
 	private User user;
 	private String message;
 	private String newPassword;
 	private Question question;
+	private ArrayList<Teacourse> teacouList;
 	private ArrayList<Question> queList;
 
 	public User getUser() {
@@ -69,6 +75,14 @@ public class UserAction {
 		this.queList = queList;
 	}
 
+	public ArrayList<Teacourse> getTeacouList() {
+		return teacouList;
+	}
+
+	public void setTeacouList(ArrayList<Teacourse> teacouList) {
+		this.teacouList = teacouList;
+	}
+
 	ActionContext actionContext = ActionContext.getContext();
 	@SuppressWarnings("rawtypes")
 	Map session = actionContext.getSession();
@@ -77,9 +91,10 @@ public class UserAction {
 	 * 登陆login
 	 * 
 	 * @return
+	 * @throws Exception 
 	 */
 	@SuppressWarnings("unchecked")
-	public String login() {
+	public String login() throws Exception {
 		user = userService.queryUserByUsernum(user.getUsernum());
 		if (user == null) {
 			// setMessage("学工号不存在");
@@ -97,6 +112,8 @@ public class UserAction {
 			return "admin";
 		} else if (user.getUsertype().getUsertypeid() == 2) {
 			System.out.println(user.getUsertype().getUsertypeid());
+			teacouList=teacherService.queryMyCourses(user.getUserid());
+			session.put("teacourselist", teacouList);
 			return "teacher";
 		} else {
 			System.out.println(user.getUsertype().getUsertypeid());
@@ -174,9 +191,14 @@ public class UserAction {
 	 * @return
 	 * @throws Exception
 	 */
+	@SuppressWarnings("unchecked")
 	public String backIndex() throws Exception {
 		user = (User) session.get("user");
-		return "index";
+		teacouList=teacherService.queryMyCourses(user.getUserid());
+		System.out.print(teacherService==null);
+		System.out.print(teacouList==null);
+		session.put("teacourselist", teacouList);
+		return "teacher";
 	}
 
 	/**

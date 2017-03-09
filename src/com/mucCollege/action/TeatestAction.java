@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.jms.Session;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -110,5 +109,13 @@ public class TeatestAction {
 	public String showTestpaper() throws Exception{
 		testpaper=teatestService.getTestpaperById(testpaper.getTestpaperid());
 		return "show_testpaper";
+	}
+	public String toPartAutoPapers(){
+		user=(User)session.get("user");
+		return "part_autopapers";
+	}
+	public String toAutoPapers(){
+		user=(User)session.get("user");
+		return "autopapers";
 	}
 }

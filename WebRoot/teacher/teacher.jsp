@@ -1,3 +1,4 @@
+<%@page import="com.mucCollege.model.Teacourse"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -36,14 +37,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li onclick="changeRight('user/user_showMessage')"><i class="fa fa-comments-o" aria-hidden="true"></i>我的消息</li>
 				<li onclick="window.open('teacher/teacher_toAddQuestion','_blank')" class="link"><i class="fa fa-pencil" aria-hidden="true"></i>手工添题</li>
 				<li onclick="window.open('teacher/teacher_showMyQuestions','_blank')" class="link"><i class="fa fa-folder-open" aria-hidden="true"></i>我的题库</li>
-				<li class="link"><i class="fa fa-file-text-o"></i>我的试卷<li>
+				<li onclick="window.open('test/test_getMyTestpapers','_blank')" class="link"><i class="fa fa-file-text-o"></i>我的试卷<li>
 			</ul>
 		</div>
 	</div>
 	<!-- 右侧 -->
 
 	<div class="main-right">
-	    <iframe id="tea-main-right-frame"src="teacher/frame_myteacenter.jsp" frameborder="0" width="100%" height="100%"></iframe>
+	    <iframe id="tea-main-right-frame" src="teacher/teacher_getMyCourse" frameborder="0" width="100%" height="100%"></iframe>
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script type="text/javascript">
