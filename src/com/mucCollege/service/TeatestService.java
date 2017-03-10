@@ -61,4 +61,20 @@ public class TeatestService {
 		return testList;
 	}
 
+	public ArrayList<Block> getBlockList(Integer testpaperid) {
+		ArrayList<Block> blockList=blockDao.queryBlockByTestpaperid(testpaperid);
+		return blockList;
+	}
+
+	public ArrayList<Testque> getTestqueByBlock(Integer blockid) {
+		ArrayList<Testque> testqueList=testqueDao.QueryTestqueByBlock(blockid);
+		return testqueList;
+	}
+
+	public Block getBlockById(Integer blockid) {
+		
+		Block block=blockDao.queryBlockById(blockid);
+		return block;
+	}
+
 }

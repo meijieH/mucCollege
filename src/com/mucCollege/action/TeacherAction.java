@@ -17,7 +17,6 @@ import com.mucCollege.model.Question;
 import com.mucCollege.model.StuClass;
 import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.User;
-import com.mucCollege.service.CourseService;
 import com.mucCollege.service.CoustudentService;
 import com.mucCollege.service.ErrorqueService;
 import com.mucCollege.service.StuClassService;
