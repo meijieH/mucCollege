@@ -26,7 +26,13 @@
 	      <div class="tab-sheets">
 	          <div class="ranges-box">
 	          	<div class="htitle">已选范围(从我的题库)</div>
-	           	<div class="ranges" id="ranges">1234</div>  
+	           	<div class="ranges" id="ranges">
+	           		<ul>
+	           			<li class="display-none">我的题库一<i class="fa fa-close" aria-hidden="true" onclick="deleteRanges('range1',this);"></i></li>
+	           			<li class="display-none">我的题库二<i class="fa fa-close" aria-hidden="true" onclick="deleteRanges('range2',this);"></i></li>
+	           			<li class="display-none">我的题库三<i class="fa fa-close" aria-hidden="true" onclick="deleteRanges('range3',this);"></i></li>
+	           		</ul>
+	           	</div>  
 	          </div>
 	          <div class="setting-box default-form">
 	          	<div class="htitle">试卷设置</div>
@@ -34,7 +40,7 @@
 	          		<li>
 	          			<span class="left-span">*试卷名称</span>
 	 					<span class="right-span">
-	 						<input type="text" />
+	 						<input type="text" id="prePaperTitle"/>
 	 					</span>
 	          		</li>
 	          		<li>
@@ -45,7 +51,7 @@
 		 					<label><input type="radio" name="diff"/>困难</label>
 	 					</span>
 	          		</li>
-	          		<li>
+	          		<!--<li>
 	          			<span class="left-span">*开始时间</span>
 	 					<span class="right-span">
 	 						<span><input type="datetime-local"/></span>
@@ -56,7 +62,7 @@
 	 					<span class="right-span">
 	 						<span><input type="datetime-local"/></span>
 	 					</span>
-	          		</li>
+	          		</li>  -->
 	          	</ul>
 	          </div>
 	          <div class="htitle">题型、题量、预设分值</div>
@@ -67,59 +73,63 @@
 	                  <li>
 	                    <span class="left-span"><label>单选题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0"></input><label>道 （最多23道）</label>
-	                    	<input type="number" min="1" max="20" value="1"></input><label>道 / 分 </label>
-	                    </span>
-	                  </li>
-	                  <li>
-	                    <span class="left-span"><label>填空题</label></span>
-	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0"></input><label>道 （最多23道）</label>
-	                    	<input type="number" min="1" max="20" value="1"></input><label>道 / 分 </label>
-	                    </span>
-	                    </li>
-	                  <li class="singleDisable">
-	                  <span class="left-span"><label>判断题</label></span>
-	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0"></input><label>道 （最多23道）</label>
-	                    	<input type="number" min="1" max="20" value="1"></input><label>道 / 分 </label>
-	                    </span>
-	                  </li>
-	                  <li>
-	                    <span class="left-span"><label>简答题</label></span>
-	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0"></input><label>道 （最多23道）</label>
-	                    	<input type="number" min="1" max="20" value="1"></input><label>道 / 分 </label>
-	                    </span>
-	                  </li>
-	                  <li>
-	                    <span class="left-span"><label>应用题</label></span>
-	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0"></input><label>道 （最多23道）</label>
-	                    	<input type="number" min="1" max="20" value="1"></input><label>道 / 分 </label>
+	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
 	                  <li>
 	                    <span class="left-span"><label>多选题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0"></input><label>道 （最多23道）</label>
-	                    	<input type="number" min="1" max="20" value="1"></input><label>道 / 分 </label>
+	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
+	                  <li class="singleDisable">
+	                  <span class="left-span"><label>判断题</label></span>
+	                    <span class="right-span">
+	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
+	                    </span>
+	                  </li>
+	                  <li>
+	                    <span class="left-span"><label>填空题</label></span>
+	                    <span class="right-span">
+	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
+	                    </span>
+	                  </li>
+	                  <li>
+	                    <span class="left-span"><label>简答题</label></span>
+	                    <span class="right-span">
+	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
+	                    </span>
+	                  </li>
+	                  <li>
+	                    <span class="left-span"><label>应用题</label></span>
+	                    <span class="right-span">
+	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
+	                    </span>
+	                  </li>
+	                  
 	                </ul>
 	              </div>
 	            </div>
 	          </div>
+          	  <div class="htitle">合计</div>
+         	  <div class="count-detail">总计<span id="preTotalScore">0</span>分。</div>
 	          <div class="preview-control">
-	          	<button class="btn btn-agree" onclick="window.open('teacher/test/previewPaper.jsp','_blank')" >设置好了，预览试卷</button>
+	          	<button class="btn btn-agree" onclick="previewPaper();window.open('teacher/test/previewPaper.jsp','_blank');" >设置好了，预览试卷</button>
 	          </div>
 	      </div>
 	    </div>
 	    <div class="page-center-left">
-	      <ul class="nav nav-tabs choose-ways">
-	        <!--<li><a href="#article" data-toggle="tab">按章节</a></li>-->
+	      <div class="htitle myqes-title">我的题库</div>
+	      <!--<ul class="nav nav-tabs choose-ways">
+	        <li><a href="#article" data-toggle="tab">按章节</a></li>
 	        <li class="active"><a href="#que" data-toggle="tab">我的题库</a></li>
-	      </ul>
+	      </ul>-->
 	      <div class="tab-content">
 	        <!--<div class="tab-pane choose-pane" id="home">
 	          	 按章节选范围未实现
@@ -127,13 +137,16 @@
 	        <div class="tab-pane choose-pane active" id="que">
 	            <ul class="from-myqes">
 	              <li>
-	                <label><input type="checkbox" name="myqes">我的题库一</label>
+	              	<input type="checkbox" onclick="controlRanges(this)" name="myqes" value="我的题库一"/>
+	                <span id="range1" onclick="viewRanges(this);">我的题库一</span>
 	              </li>
 	              <li>
-	                <label><input type="checkbox" name="myqes">我的题库二</label>
+	              	<input type="checkbox" onclick="controlRanges(this)" name="myqes" value="我的题库二"/>
+	                <span id="range2" onclick="viewRanges(this);">我的题库二</span>
 	              </li>
 	              <li>
-	                <label><input type="checkbox" name="myqes">我的题库三</label>
+	              	<input type="checkbox" onclick="controlRanges(this)" name="myqes" value="我的题库三"/>
+	                <span id="range3" onclick="viewRanges(this);">我的题库三</span>
 	              </li> 
 	            </ul>
 	        </div>
@@ -143,6 +156,7 @@
   </div>  
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 <script src="js/autoassem.js"></script>
 </body>
 </html>

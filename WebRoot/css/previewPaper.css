@@ -10,8 +10,8 @@ body{
 	font-size:18px;
 }
 .paper-title>input{
+	float:left;
 	border:none;
-	background-color:rgb(245,245,245);
 }
 .paper-title>input:hover{
 	border:none;
