@@ -80,12 +80,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				      	<i class="fa fa-pencil" aria-hidden="true"></i>
 				      	<p>从教师“我的试卷”中抽选题目</p>
 				      </div>
-				      <div>
+				      <div onclick="window.open('test/test_toPartAutoPapers')">
 				      	<div>半自动组卷</div>
 				      	<i class="fa fa-print" aria-hidden="true"></i>
 				      	<p>由手工添加题目的方式和选择导入题库题目的方式共同组成</p>
 				      </div>
-				      <div onclick="window.open('/mucCollege/teacher/test/autoassem.jsp','_blank');">
+				      <div  onclick="window.open('test/test_toAutoPapers','_blank')">
 				      	<div>自动组卷</div>
 				      	<i class="fa fa-cog" aria-hidden="true"></i>
 				      	<p>机器随机组卷，可以设置试卷难度比、题型、考察知识范围等属性</p>

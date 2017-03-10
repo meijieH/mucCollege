@@ -72,6 +72,9 @@
 			<result name="my_testpaper">/teacher/test/testlist.jsp</result>
 			<result name="all_testpaper">/teacher/test/settest.jsp</result>
 			<result name="show_testpaper">/teacher/test/testpaper.jsp</result>
+			<result name="show_testqueList">/teacher/test/testque.jsp</result>
+			<result name="part_autopapers">/teacher/test/testedit.jsp</result>
+			<result name="autopapers">/teacher/test/autoassem.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -11,9 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mucCollege.model.Block;
 import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.Test;
 import com.mucCollege.model.Testpaper;
+import com.mucCollege.model.Testque;
 import com.mucCollege.model.User;
 import com.mucCollege.service.TeacourseService;
 import com.mucCollege.service.TeatestService;
@@ -32,6 +34,10 @@ public class TeatestAction {
 	private Teacourse teacourse;
 	private List<Test> testlist;
 	private Testpaper testpaper;
+	private Block block;
+	private ArrayList<Block> blockList;
+	private Testque testque;
+	private ArrayList<Testque> testqueList;
 	private ArrayList<Test> testList;
 	private ArrayList<Testpaper> testpaperList;
 
@@ -83,14 +89,47 @@ public class TeatestAction {
 		this.testpaperList = testpaperList;
 	}
 
+	public Block getBlock() {
+		return block;
+	}
+
+	public void setBlock(Block block) {
+		this.block = block;
+	}
+
+	public ArrayList<Block> getBlockList() {
+		return blockList;
+	}
+
+	public void setBlockList(ArrayList<Block> blockList) {
+		this.blockList = blockList;
+	}
+
+	public Testque getTestque() {
+		return testque;
+	}
+
+	public void setTestque(Testque testque) {
+		this.testque = testque;
+	}
+
+	public ArrayList<Testque> getTestqueList() {
+		return testqueList;
+	}
+
+	public void setTestqueList(ArrayList<Testque> testqueList) {
+		this.testqueList = testqueList;
+	}
+
 	// 获取session
 	ActionContext actionContext = ActionContext.getContext();
 	Map session = actionContext.getSession();
 
 	// 查看教师个人试卷库
 	public String getMyTestpapers() throws Exception {
-		user=(User)session.get("user");
-		testpaperList=teatestService.queryTestpaperByCreator(user.getUserid());
+		user = (User) session.get("user");
+		testpaperList = teatestService
+				.queryTestpaperByCreator(user.getUserid());
 		return "my_testpaper";
 	}
 
@@ -102,12 +141,30 @@ public class TeatestAction {
 
 	// 某门课程的对应的考试
 	public String getTestpapersByLesson() throws Exception {
-		testList = teatestService.queryTestsByLesson(teacourse.getTeacourseid());
+		testList = teatestService
+				.queryTestsByLesson(teacourse.getTeacourseid());
 		return "lesson_testpapers";
 	}
-	//查看某张试卷
-	public String showTestpaper() throws Exception{
-		testpaper=teatestService.getTestpaperById(testpaper.getTestpaperid());
+
+	// 查看某张试卷
+	public String showTestpaper() throws Exception {
+		//testpaper = teatestService.getTestpaperById(testpaper.getTestpaperid());
+		blockList=teatestService.getBlockList(testpaper.getTestpaperid());
 		return "show_testpaper";
+	}
+	//查看某张试卷的某块题目
+	public String showTestQuestion() throws Exception{
+		block=teatestService.getBlockById(block.getBlockid());
+		testqueList=teatestService.getTestqueByBlock(block.getBlockid());
+		return "show_testqueList";
+	}
+	public String toPartAutoPapers() {
+		user = (User) session.get("user");
+		return "part_autopapers";
+	}
+
+	public String toAutoPapers() {
+		user = (User) session.get("user");
+		return "autopapers";
 	}
 }

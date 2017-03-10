@@ -113,8 +113,6 @@ public class UserAction {
 		} else if (user.getUsertype().getUsertypeid() == 2) {
 			System.out.println(user.getUsertype().getUsertypeid());
 			teacouList=teacherService.queryMyCourses(user.getUserid());
-			System.out.print(teacherService==null);
-			System.out.print(teacouList==null);
 			session.put("teacourselist", teacouList);
 			return "teacher";
 		} else {
@@ -197,8 +195,6 @@ public class UserAction {
 	public String backIndex() throws Exception {
 		user = (User) session.get("user");
 		teacouList=teacherService.queryMyCourses(user.getUserid());
-		System.out.print(teacherService==null);
-		System.out.print(teacouList==null);
 		session.put("teacourselist", teacouList);
 		return "teacher";
 	}

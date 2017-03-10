@@ -16,7 +16,8 @@ import com.mucCollege.model.Testpaper;
 public class TestpaperDao {
 
 		@Resource SessionFactory factory;
-			public Testpaper getTestpaperById(Integer id) throws Exception{
+
+	public Testpaper getTestpaperById(Integer id) throws Exception{
 		Session s = factory.getCurrentSession();
 		Testpaper testpaper=(Testpaper) s.get(Testpaper.class, id);
 		return testpaper;

@@ -11,7 +11,7 @@
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"> 
           <!--组件扫描    所有的注解都写在这个包里了，这个包里有dom、action、dao等子包     要改动base-package -->
-<context:component-scan base-package="com.mucCollege"/>  <!-- 要在xx包中找注解 -->
+<context:component-scan base-package="com.mucCollege.*"/>  <!-- 要在xx包中找注解 -->
 	                                                                 <!-- 要改动数据库的连接 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">  <!-- 自动生成的class也可以的 -->
 		<property name="driverClass" value="org.gjt.mm.mysql.Driver"/><!-- 另外一个驱动，同样可连接数据库 -->
