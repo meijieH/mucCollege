@@ -1,7 +1,5 @@
-.tab-sheets{
-	margin-top:10px;
-}
-.nav-tabs{
+.tab-sheets{}
+.myqes-title{
 	margin-top: 10px;
 }
 .htitle{
@@ -21,17 +19,38 @@
 	line-height:30px;
 	font-size:16px;
 }
-.from-myqes>li>label{
+.from-myqes>li>span{
 	cursor:pointer;
 }
-.from-myqes>li>label>input{
+.from-myqes>li>input{
 	margin-right:10px;
+	cursor:pointer;
 }
 /*范围*/
 .ranges-box>.ranges{
-	height:120px;
+	min-height:120px;
+	max-height:240px;
 	background-color:white;
 	border-radius:5px;
+	padding:5px;
+}
+#ranges>ul>li{
+	line-height:30px;
+	padding:0 0px 0 10px;
+	border:1px solid #15c288;
+	border-radius:15px;
+	float:left;
+	margin-right:10px;
+	color:#888;
+}
+#ranges>ul>li>i{
+	margin-left:5px;
+	padding-left:5px;
+	cursor:pointer;
+	color:black;
+}
+#ranges>ul>li>i:hover{
+	color:#15c288;
 }
 /*设考试*/
 .setting-box{
@@ -51,6 +70,11 @@
 }
 .q-type>ul>li>span.right-span>label{
 	margin-right:50px;
+}
+/*总分*/
+.count-detail{
+	line-height:40px;
+	text-indent:2em;
 }
 /*预览*/
 .preview-control{
