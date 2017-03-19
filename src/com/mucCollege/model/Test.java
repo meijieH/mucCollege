@@ -13,7 +13,7 @@ public class Test implements java.io.Serializable {
 	// Fields
 
 	private Integer testid;
-	private StuClass stuClass;
+	private Teacourse teacourse;
 	private Testpaper testpaper;
 	private String testname;
 	private User user;
@@ -29,10 +29,10 @@ public class Test implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Test(StuClass stuClass, Testpaper testpaper, String testname,
+	public Test(Teacourse teacourse, Testpaper testpaper, String testname,
 			User user, Time starttime, String teststatement,
 			Set stupapers, Set stupapers_1) {
-		this.stuClass = stuClass;
+		this.teacourse=teacourse;
 		this.testpaper = testpaper;
 		this.testname = testname;
 		this.user=user;
@@ -52,12 +52,12 @@ public class Test implements java.io.Serializable {
 		this.testid = testid;
 	}
 
-	public StuClass getStuClass() {
-		return this.stuClass;
+	public Teacourse getTeacourse() {
+		return teacourse;
 	}
 
-	public void setStuClass(StuClass stuClass) {
-		this.stuClass = stuClass;
+	public void setTeacourse(Teacourse teacourse) {
+		this.teacourse = teacourse;
 	}
 
 	public Testpaper getTestpaper() {

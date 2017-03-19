@@ -23,14 +23,13 @@
 	<%@include file="/common/topbar.jsp"%>
 	<div class="page-center">
 		<div class="tab-sheets">
-			<form class="default-form">
+			<form class="default-form" action="teacher/teacher_addCollection" method="post">
 				<div class="que-box">
 					<div class="que-top">
 						<div class="que-top-left">
 							<span>题型：<s:property value='question.quetype.typename' />
 							</span> <span> | </span> <span>难易度：<s:property
-									value='question.depth' />
-							</span>
+									value='question.depth' /> </span>
 						</div>
 					</div>
 					<div class="que-mid">
@@ -50,20 +49,23 @@
 									<s:property value="question.option3" />
 									<br>
 									<s:property value="question.option4" />
-									
+
 								</s:if>
 							</p>
 						</div>
 					</div>
 					<div class="que-btm">
 						<div class="dropdown">
-							<select>
-								<option>添加到我的题库</option>
-								<option value="">极限</option>
-								<option value="">函数</option>
-								<option value="">不定积分</option>
-								<option value="">多重积分</option>
+							<select name="collection.collectionname">
+								<s:iterator value="collecStrings">
+									<option value="<s:property/>">
+										<s:property />
+									</option>
+								</s:iterator>
 							</select>
+							<s:hidden name="question.questionid"></s:hidden>
+							<button type="submit">收藏</button>
+							
 						</div>
 					</div>
 				</div>

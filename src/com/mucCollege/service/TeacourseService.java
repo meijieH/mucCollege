@@ -35,9 +35,4 @@ public class TeacourseService {
 	public Teacourse getTeacourseById(Integer id)throws Exception{
 		return teacourseDao.getTeacourseById(id);
 	}
-	public void register(Teacourse teacourse) throws Exception{
-		teacourse.setCourse(courseDao.GetCourseById(teacourse.getCourse().getCourseid()));
-		teacourse.setStuClass(stuClassDao.getStuClassById(teacourse.getStuClass().getClassid()));
-		teacourseDao.addTeacourse(teacourse);
-	}
 }

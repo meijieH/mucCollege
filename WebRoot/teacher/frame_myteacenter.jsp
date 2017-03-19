@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <ul>
         	<s:iterator value="teacouList" status="status">
 	        	<li class="box">
-	        		<a href="teacher/mylesson/mylesdetail.jsp" target="_blank">
+	        		<a href="teacher/teacher_showCourse?teacourse.teacourseid=<s:property value='teacourseid'/>" target="_blank">
 				      <div class="box-content">
 					      <!--<img src="images/jisuanjijichu.jpg" alt="计算机基础"/>-->
 					      <div class="caption ml-ls-b-info">

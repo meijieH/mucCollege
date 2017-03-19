@@ -50,6 +50,14 @@
                 <comment>课程状态</comment>
             </column>
         </property>
+        <set name="tests" inverse="true">
+            <key>
+                <column name="teacourse">
+                    <comment>考试对应的课程</comment>
+                </column>
+            </key>
+            <one-to-many class="com.mucCollege.model.Test" />
+        </set>
         <set name="coustudents" inverse="true">
             <key>
                 <column name="teccourse">

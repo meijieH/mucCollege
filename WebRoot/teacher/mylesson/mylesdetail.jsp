@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -24,9 +25,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="lesson-detail">
 		<div class="lesson-detail-left">
 			<div class="lesson-info">课程信息</div>
-			<h1 class="lesson-name">计算机基础</h1>
+			<h1 class="lesson-name"><s:property value="teacourse.course.coursename"/></h1>
 			<div class="ld-box">
-				<h2 class="ld-title">课件</h2>
+				<h2 class="ld-title">课件（待完善）</h2>
 				<ul class="ld-lists">
 					<li>
 						<a href="student/study/waredetail.jsp" target="_blank">
@@ -38,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>
 			</div>
 			<div class="ld-box">
-				<h2 class="ld-title">作业</h2>
+				<h2 class="ld-title">作业（待完善）</h2>
 				<ul class="ld-lists">
 					<li>
 						<a href="student/study/waredetail.jsp" target="_blank">
@@ -52,11 +53,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="ld-box">
 				<h2 class="ld-title">考试</h2>
 				<ul class="ld-lists">
+					<s:iterator>
 					<li>
 						<a href="" target="_blank">
-							<p>简单的课堂小练习&nbsp;<time>2016/1/2 23:00</time></p>   
+							<p><s:property value="test.testname"/>&nbsp;<time><s:property value="test.starttime"/></time></p>   
 						</a>
 					</li>
+					</s:iterator>
 					<!-- 添加试卷 -->
 					<li>
 						<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>

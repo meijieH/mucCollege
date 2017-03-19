@@ -11,7 +11,7 @@
             <generator class="increment"></generator>
         </id>
         <many-to-one name="teacourse" class="com.mucCollege.model.Teacourse" fetch="select" lazy="false">
-            <column name="teccourse">
+            <column name="teacourse">
                 <comment>对应的课程</comment>
             </column>
         </many-to-one>

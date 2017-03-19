@@ -57,11 +57,27 @@ public class CollectionDao {
 
 	/* 根据收藏夹名称查 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Collection> QuerycollectionBycollectionname(String collectionname) {
+	public ArrayList<Collection> queryCollectionBycollectionname(String collectionname) {
 		Session s = factory.getCurrentSession();
 		String hql = "From Collection collection where 1=1";
 		if (!collectionname.equals(""))
 			hql = hql + " and collection.collectionname like '%" + collectionname + "%'";
+		Query q = s.createQuery(hql);
+		List collectionList = q.list();
+		return (ArrayList<Collection>) collectionList;
+	}
+
+	public List<String> queryNameByTeacher(Integer userid) {
+		Session s=factory.getCurrentSession();
+		String hql="select distinct(collectionname) from Collection collection where collection.user.userid ="+userid;
+		Query q = s.createQuery(hql);
+		List<String> stringList = q.list();
+		return stringList;
+	}
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<Collection> queryCollectionByTeacher(Integer userid){
+		Session s=factory.getCurrentSession();
+		String hql="From Collection collection where collection.user.userid ="+userid;
 		Query q = s.createQuery(hql);
 		List collectionList = q.list();
 		return (ArrayList<Collection>) collectionList;

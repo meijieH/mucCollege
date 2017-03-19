@@ -10,9 +10,9 @@
             <column name="testid" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="stuClass" class="com.mucCollege.model.StuClass" fetch="select" lazy="false">
-            <column name="class">
-                <comment>被分配考试的班级</comment>
+        <many-to-one name="Teacourse" class="com.mucCollege.model.Teacourse" fetch="select" lazy="false">
+            <column name="teacourse">
+                <comment>被分配考试的课程</comment>
             </column>
         </many-to-one>
         <many-to-one name="testpaper" class="com.mucCollege.model.Testpaper" fetch="select" lazy="false">

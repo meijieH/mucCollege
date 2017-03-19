@@ -1,6 +1,7 @@
 package com.mucCollege.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -96,6 +97,26 @@ public class TeacherService extends UserService {
 	public ArrayList<Course> showAllCourses() {
 		ArrayList<Course> couList=courseDao.QueryAllCourse();
 		return couList;
+	}
+
+	public List<String> queryColByTeacher(Integer userid) {
+		List<String> stringList=collectionDao.queryNameByTeacher(userid);
+		return stringList;
+	}
+
+	public Teacourse queryTeaCourseById(Integer teacourseid) throws Exception {
+		Teacourse teacourse=teacourseDao.getTeacourseById(teacourseid);
+		return teacourse;
+	}
+
+	public List<Collection> queryCollectionByName(String collectionname) {
+		List<Collection> collections=collectionDao.queryCollectionBycollectionname(collectionname);
+		return collections;
+	}
+
+	public ArrayList<Collection> queryCollectionByTeacher(Integer userid) {
+		List<Collection> collections=collectionDao.queryCollectionByTeacher(userid);
+		return (ArrayList<Collection>)collections;		
 	}
 
 	

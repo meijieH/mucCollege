@@ -107,8 +107,10 @@
 	   </div>-->
 	</main>
  	<footer class="index-footer">
+ 	<!-- 
  		<a href="student/student.jsp" class="btn btn-default">去学生页面（临时按钮）</a>
 	      <a href="teacher/teacher.jsp" class="btn btn-default">去教师页面（临时按钮）</a>
+	       -->
 		民大学院团队
 	</footer>
   

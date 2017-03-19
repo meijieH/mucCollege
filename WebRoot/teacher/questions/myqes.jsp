@@ -55,11 +55,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div id="" class="results">
 			  <ul class="questions">
-			  	<s:iterator value="queList" status="status">
+			  	<s:iterator value="collectionList" status="status">
 			  	<li>
-			  		<div class="qes-info"><span class="fr">创建者：<s:property value="user.username"/></span><span>题型：<span class="clr-blue"><s:property value="quetype.typename"/></span></span><span>难易度：<span class="clr-red"><s:property value="depth"/></span></span></div>
+			  	<p>23</p>
+			  		<div class="qes-info"><span class="fr">创建者：<s:property value="question.user.username"/></span><span>题型：<span class="clr-blue"><s:property value="question.quetype.typename"/></span></span><span>难易度：<span class="clr-red"><s:property value="question.depth"/></span></span></div>
 			  		<div class="qes-stem">
-			  		    <a href="teacher/teacher_showQuestion?question.questionid=<s:property value='questionid'/>"><s:property value="questionid"/>.<s:property value="stem" /></a>
+			  		    <a href="teacher/teacher_showQuestion?question.questionid=<s:property value='question.questionid'/>"><s:property value="question.questionid"/>.<s:property value="question.stem" /></a>
 			  			<div class="dotdotdot">...</div>
 			  		</div>
 			  		<div class="qes-operate">
@@ -76,9 +77,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="my-collects">
 				<ul>
 					<li class="collect collect-title">我的题库</li>
-					<li class="collect active" onclick="active(this)">教师题库一</li>
-					<li class="collect" onclick="active(this)">教师题库二</li>
-					<li class="collect" onclick="active(this)">教师题库三</li>
+					<s:iterator value="collecStrings">
+						<li class="collect" onclick="window.open('teacher/teacher_getMyCollection?collection.collectioname=<s:property />')"><s:property /></li>
+					</s:iterator>
 					<li class="collect" data-toggle="modal" data-target="#newCollect">+ 新建题库</li>
 				</ul>
 			</div>
@@ -93,8 +94,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	       		<h4 class="modal-title message-title">请输入新题库名称</h4>
 	          </div>
 		      <div>
-		      	<form action="">
-		      		<input type="text" />
+		      	<form action="teacher/teacher_addCollection">
+		      		<input type="text" name="collection.collectionname"/>
 		      	</form>
 		      </div>
 		      <div class="modal-option">
