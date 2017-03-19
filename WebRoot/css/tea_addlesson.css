@@ -1,15 +1,13 @@
-.apply-lesson-left{
-    width:310px;
-    float:left;
+.page-center-left,.page-center-right{
+	padding-top:10px;
 }
-.apply-lesson-t{
-    margin-top:10px;
-    margin-left:10px;
+.content-title{
+    width:240px;
 }
-.al-describe-t{
-	margin-left:10px;
+.content-describe{
+	width:240px;
 	text-indent:2em;
 }
-.apply-lesson-right{
-    margin-left:320px;
+.rspantext{
+	line-height:40px;
 }

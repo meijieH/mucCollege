@@ -20,35 +20,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/tea_frame_myteacenter.css">
 </head>
 <body>
-	<!-- 教学平台导航 -->
-	<!--<nav class="frame-myteacenter-nav">
-		<ul>
-			<li><a href="#">批量管理(未设置)</a></li>
-		</ul>
-	</nav>-->
 
-	<!-- 搜索
-    <div class="search-box">
-    	<form action="" class="">
-		    <input type="text" class="search-input" placeholder="搜索我的课程......">
-		    <button type="submit" class="btn btn-default">搜索</button>
-		</form>
-    </div> -->
-	
-	加一个课程状态（正在开课 已经结束）
+	<div class="courase-status">
+		<div class="htitle">请选择课程状态:</div>
+		<select>
+			<option>正在开课</option>
+			<option>待审核</option>
+			<option>已经结束</option>
+		</select>
+	</div>
 	
 	<!-- 课程列表 -->
-	<div class="box-lists">
+	<div class="box-lists myclass">
         <ul>
         	<s:iterator value="teacouList" status="status">
 	        	<li class="box">
 	        		<a href="teacher/mylesson/mylesdetail.jsp" target="_blank">
 				      <div class="box-content">
-					      <!--<img src="images/jisuanjijichu.jpg" alt="计算机基础"/>-->
 					      <div class="caption ml-ls-b-info">
 					        <div class="lesson-name"><s:property value="course.coursename"/></div>
 					        <div class="lesson-info">
-					        	<div class="start-time" title="开课时间"><i class="fa fa-tags fa-wa"></i><s:property value="year"/>学年，第<s:property value="term"/>学期</div>
+					        	<div class="start-time" title="开课时间"><i class="fa fa-clock-o"></i><s:property value="year"/>学年，第<s:property value="term"/>学期</div>
 					        	<div class="stu-origin" title="学生来源"><i class="fa fa-tags fa-wa"></i><s:property value="stuClass.classname"/></div>
 					        	<div class="stu-number" title="班级人数"><i class="fa fa-user "></i>23</div>
 					        </div>

@@ -1,0 +1,25 @@
+/*右侧*/
+.all-lessons{
+	padding-top:10px;
+}
+.all-lessons>ul>li.box{
+	float:left;
+	padding:10px;
+}
+.box-lists .box:hover{
+	border-color:#15c288;
+}
+/*左侧*/
+.page-center-left{
+	padding-top:10px;
+}
+.content-describe{
+	margin-bottom:10px;
+	text-indent:2em;
+}
+.content-describe p{
+	margin:0;
+}
+.content-describe a{
+	cursor:pointer;
+}
