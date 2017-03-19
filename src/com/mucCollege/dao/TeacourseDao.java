@@ -106,4 +106,14 @@ public class TeacourseDao {
 		List teacourseList = q.list();
 		return (ArrayList<Teacourse>) teacourseList;
 	}
+
+	public ArrayList<Teacourse> QueryTeacourseByState(String state) {
+		Session s = factory.getCurrentSession();
+		String hql = "From Teacourse teacourse where 1=1";
+		if (null != state)
+			hql = hql + " and teacourse.state = '"+state+"'";
+		Query q = s.createQuery(hql);
+		List teacourseList = q.list();
+		return (ArrayList<Teacourse>) teacourseList;
+	}
 }

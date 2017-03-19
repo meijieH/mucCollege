@@ -84,6 +84,11 @@ public class TeacherService extends UserService {
 		ArrayList<Course> couList=courseDao.queryCourseByCoursename(coursename);
 		return couList;
 	}
+	//通过课程状态查找课程
+	public ArrayList<Teacourse> queryCourseByState(String state) {
+		ArrayList<Teacourse> couList=teacourseDao.QueryTeacourseByState(state);
+		return couList;
+	}
 	//查看我的课程
 	public ArrayList<Teacourse> queryMyCourses(int userid) throws Exception{
 		ArrayList<Teacourse> teacouList=teacourseDao.queryTeacourseByTeacherid(userid);
@@ -118,6 +123,8 @@ public class TeacherService extends UserService {
 		List<Collection> collections=collectionDao.queryCollectionByTeacher(userid);
 		return (ArrayList<Collection>)collections;		
 	}
+
+	
 
 	
 }

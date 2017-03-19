@@ -58,6 +58,7 @@ public class CollectionDao {
 	/* 根据收藏夹名称查 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public ArrayList<Collection> queryCollectionBycollectionname(String collectionname) {
+		System.out.print(collectionname);
 		Session s = factory.getCurrentSession();
 		String hql = "From Collection collection where 1=1";
 		if (!collectionname.equals(""))

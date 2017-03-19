@@ -53,10 +53,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="ld-box">
 				<h2 class="ld-title">考试</h2>
 				<ul class="ld-lists">
-					<s:iterator>
+					<s:iterator value="testList" status="status">
 					<li>
-						<a href="" target="_blank">
-							<p><s:property value="test.testname"/>&nbsp;<time><s:property value="test.starttime"/></time></p>   
+						<a href="test/test_getPaperByTest?test.testid=<s:property value='testid'/>" target="_blank">
+							<p><s:property value="testname"/>&nbsp;<time><s:property value="starttime"/></time></p>   
 						</a>
 					</li>
 					</s:iterator>

@@ -31,6 +31,7 @@ public class TeatestAction {
 	@Resource
 	TeacourseService teacourseService;
 	private User user;
+	private Test test;
 	private Teacourse teacourse;
 	private List<Test> testlist;
 	private Testpaper testpaper;
@@ -47,6 +48,14 @@ public class TeatestAction {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Test getTest() {
+		return test;
+	}
+
+	public void setTest(Test test) {
+		this.test = test;
 	}
 
 	public Teacourse getTeacourse() {
@@ -135,10 +144,25 @@ public class TeatestAction {
 
 	// 试题集
 	public String getAllTestpapers() {
+		user=(User)session.get("user");
 		testpaperList = teatestService.queryAllPapers();
 		return "all_testpaper";
 	}
+	
+	//个人：根据名称查找试卷
+	public String getMyTestpaperByName(){
+		user=(User)session.get("user");
+		testpaperList = teatestService.queryMyTestpaperByName(testpaper.getTestpapername(),user.getUserid());
+		return "my_testpaper";
+	}
 
+	//全部：根据名称查找试卷
+	public String getAllTestpaperByName(){
+		user=(User)session.get("user");
+		System.out.print(user.getUsername());
+		testpaperList=teatestService.queryAllTestpaperByName(testpaper.getTestpapername());
+		return "all_testpaper";
+	}
 	// 某门课程的对应的考试
 	public String getTestpapersByLesson() throws Exception {
 		testList = teatestService
@@ -150,6 +174,12 @@ public class TeatestAction {
 	public String showTestpaper() throws Exception {
 		//testpaper = teatestService.getTestpaperById(testpaper.getTestpaperid());
 		blockList=teatestService.getBlockList(testpaper.getTestpaperid());
+		return "show_testpaper";
+	}
+	//查看考试对应的试卷
+	public String getPaperByTest(){
+		test=teatestService.getTestById(test.getTestid());
+		blockList=teatestService.getBlockList(test.getTestpaper().getTestpaperid());
 		return "show_testpaper";
 	}
 	//查看某张试卷的某块题目

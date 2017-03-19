@@ -48,12 +48,23 @@ public class TestpaperDao {
 	        List testpaperList = q.list();
 	        return (ArrayList<Testpaper>) testpaperList;
 	    }				
-		/*根据组的卷的名称条件查*/
+		/*所有：根据组的卷的名称条件查*/
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		public ArrayList<Testpaper> QueryTestpaperByName(String testpapername) { 
+		public ArrayList<Testpaper> QueryMyTestpaperByName(String testpapername,Integer userid) { 
 	    	Session s = factory.getCurrentSession();
 	    	String hql = "From Testpaper testpaper where 1=1";
-	    	if(!testpapername.equals("")) hql = hql + " and testpaper.testpapername like '%" + testpapername + "%'";
+	    	if(!testpapername.equals("")) hql = hql + " and testpaper.testpapername like '%" + testpapername + "%' and testpaper.user.userid="+userid;
+	    	Query q = s.createQuery(hql);
+	    	List testpaperList = q.list();
+	    	return (ArrayList<Testpaper>) testpaperList;
+	    }
+		
+		/*个人：根据组的卷的名称条件查*/
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		public ArrayList<Testpaper> QueryAllTestpaperByName(String testpapername) { 
+	    	Session s = factory.getCurrentSession();
+	    	String hql = "From Testpaper testpaper where 1=1";
+	    	if(!testpapername.equals("")) hql = hql + " and testpaper.testpapername like '%" + testpapername+"%'";
 	    	Query q = s.createQuery(hql);
 	    	List testpaperList = q.list();
 	    	return (ArrayList<Testpaper>) testpaperList;
