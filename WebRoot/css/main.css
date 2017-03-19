@@ -39,7 +39,7 @@ i{
 .visible{
 	visibility:visible;
 }
-/*统一绿色导航*/
+/*绿色导航*/
 header{
 	width: 100%;
 	height: 60px;
@@ -197,7 +197,14 @@ select option{
 	color:#eee;
 	background:rgb(21,194,136);
 }
-/*统一的内容页标题样式*/
+.btn-orange{
+	border:1px solid #15c2888;
+	background:orange;
+	lineheight:40px;
+	padding-left:15px;
+	color:white;
+}
+/*内容页标题样式*/
 .content-title{
 	width: 300px;
 	font-family: inherit;
@@ -212,7 +219,10 @@ select option{
     margin-bottom:10px;
     color:#15c288;
 }
-/*统一的内容页描述样式*/
+.page-center-left .content-title{
+	width:240px;
+}
+/*内容页描述样式*/
 .content-describe{
 	padding:5px;
 	background-color: white;
@@ -221,7 +231,17 @@ select option{
     font-size: 14px;
     color:#bbb;
 }
-/*统一的注册类表单样式*/
+.page-center-left .content-describe{
+	width:240px;
+}
+/*绿色粗体标题*/
+.htitle{
+	font-size:16px;
+	color:#15c288;
+	line-height:30px;
+	font-weight:bolder;
+}
+/*注册类表单样式*/
 .default-form{
 	width: 550px;
 	border-radius: 8px;
@@ -329,10 +349,15 @@ select option{
 .clr-red{
 	color:red;
 }
+.clr-deepred{
+	color:rgb(224,136,77);
+}
 .clr-blue{
 	color:blue;
 }
-
+.clr-green{
+	color:#15c288;
+}
 /*省略号*/
 .dotdotdot{
 	visibility:hidden;
@@ -342,4 +367,16 @@ select option{
     right:0;
     background-color:white;
     padding-left:10px;
+}
+/*左栏搜索*/
+form>input.search-field{
+	width:170px;
+	margin-right:8px;      
+}
+.search-btn{
+	height:40px;
+}
+/*记录底部*/
+.list-bottom>p{
+	float:left;
 }

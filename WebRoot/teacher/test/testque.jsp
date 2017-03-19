@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/tea_settest.css">
 </head>
 <body>
 题型:<s:property value="block.blockname"/><br>

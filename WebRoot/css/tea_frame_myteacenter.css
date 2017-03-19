@@ -19,12 +19,20 @@
 .frame-myteacenter-nav>ul>li:hover{
     color: #fff;
 }
-#mylesson{
-    /*border: 1px solid red;*/
+
+/*课程状态*/
+.courase-status{
+	margin:10px 0;
 }
-
-
-/*课程盒子列表border: 1px solid rgb(6,105,173);*/
+.courase-status>select{
+	width:100px;
+}
+.courase-status>div.htitle{
+	float:left;
+	margin-right:10px;
+	line-height:40px;
+}
+/*课程盒子列表*/
 .box-lists .box:hover{
 	border: 1px solid rgb(29,163,98);
 }
@@ -32,21 +40,23 @@
 	color:rgb(29,163,98);
 }
 .lesson-name{
-    color: rgb(29,163,98);
+    color:  #15c288;
     text-decoration: none;
     font-size: 16px;
-    padding-top: 10px;
     line-height: 30px;
 }
 .lesson-name:hover{
-    color: grey;
+    color: rgb(29,163,98);
 }
 .lesson-info i{
 	width:24px;
 }
+.start-time,.stu-origin{
+	color:#888;
+}
 .stu-number{
 	color:rgb(185,74,72);
 }
-.stu-origin{
-	color:rgb(153,153,153);
+.myclass .box{
+	float:left;
 }

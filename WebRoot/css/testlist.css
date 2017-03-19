@@ -1,0 +1,33 @@
+.page-center-left{
+	padding-top:10px;
+}
+.page-center-right{
+	background-color:white;
+	padding:10px;
+}
+.sortbox{
+	margin-top:2px;
+	margin-bottom:10px;
+	line-height:40px;
+	padding-left:10px;
+	border-left:5px solid #15c288;
+	border-radius:3px;
+}
+.itemcount{
+	padding-right:10px;
+}
+/*试卷列表*/
+.testlists li{
+	list-style:none;
+	border-bottom:1px dotted rgb(221,221,221);
+	background-color:white;
+	padding:10px;
+}
+.testlists li:hover{
+	background-color:rgb(249,249,249);
+}
+.testlists li div span:last-child{
+	width:150px;
+	text-align:left;
+	float:right;
+}

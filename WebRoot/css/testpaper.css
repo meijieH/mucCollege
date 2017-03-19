@@ -1,0 +1,87 @@
+.page-center{
+	background-color:white;
+}
+.page-center-left{
+	margin-top:10px;
+ 	width:774px;
+}
+.page-center-right{
+	margin-top:10px;
+ 	width:248px;
+}
+/*试卷*/
+.paper-title{
+	text-align:center;
+	font-size:16px;
+	line-height:40px; 
+	padding-top:10px;
+	color:rgb(185,74,72);
+}
+/*条导航*/
+.paper-bar{
+	line-height:30px;
+	padding:0 10px;
+	border-radius:5px;
+}
+/*题目导航*/
+.vertical-bar{
+	bottom:75px;
+	border:1px solid rgb(238,238,238);
+	border-bottom:0; 
+}
+.v-bar-fix{
+	top:0;
+	bottom:73px;
+	width:248px;
+	position:fixed;
+	border:1px solid rgb(238,238,238); 
+}
+.allview-tle{
+	text-align:center;
+	font-size:16px;
+	border-bottom:1px dotted rgb(238,238,238);
+	line-height:40px; 
+}
+.block-nav{
+	overflow:auto;
+}
+.block-nav>li{
+	clear:both;
+}
+.block-title-nav{
+	font-weight:bolder;
+	font-size:14px;
+	margin-left:10px;
+	margin-top:10px;
+}
+.block-que-nav{
+	padding:10px;
+}
+.block-que-nav>li{
+	float:left;
+	width:30px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	border:1px solid rgb(238,238,238);
+	margin-right:10px;
+	margin-bottom:10px;
+	cursor:pointer;
+}
+.block-que-nav>li:hover{
+	color:white;
+	background-color:#15c288;
+	border:1px solid #15c288;
+}
+/*操作*/
+.testing-option{
+	position:fixed;
+	bottom:0;
+	background-color:white;
+	width:248px;
+	height:75px;
+	line-height:75px;
+	text-align:center;
+	border:1px solid rgb(238,238,238);
+	margin-bottom:-1px;
+}
