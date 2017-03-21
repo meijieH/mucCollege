@@ -1,0 +1,77 @@
+/*试卷信息*/
+.paper-info{
+	margin-top:10px;
+	height:85px;
+}
+.paper-title{
+	line-height:30px;
+	text-align:center;
+	font-size:16px;
+	color:rgb(185,74,72);
+}
+.paper-info>div.detail{
+	clear:both;
+	margin-bottom:5px;
+}
+.paper-info>div.detail>div{
+	float:left;
+}
+.paper-info>div.detail>div.paper-score,.paper-info>div.detail>div.paper-range{
+	float:right;
+	width:120px;
+}
+.paper-info>div.detail>div.paper-tea,.paper-info>div.detail>div.paper-time{
+	width:120px;
+}
+.paper-info>div.detail>div.paper-course,.paper-info>div.detail>div.paper-notnull{
+	margin:0 auto;
+}
+/*试卷主体*/
+.page-center-left{
+	margin-top:10px;
+ 	width:774px;
+}
+.page-center-right{
+	margin-top:10px;
+ 	width:248px;
+}
+.block-title{
+	font-weight:bold;
+	font-size:16px;
+	line-height:30px;
+}
+/*题目*/
+.question .score{
+	color:rgb(224,136,77);
+	font-weight:bold;
+	font-size:14px;
+}
+.option>li{
+	line-height:24px;
+	text-indent:1em;
+}
+.control{
+	line-height:100px;
+	text-align:center;
+}
+/*答案和解析*/
+.answer-score,.analysis{
+	border:1px dotted #eee;
+	padding:10px;
+	background-color:#eee; 
+}
+.analysis{
+	margin-top:-10px;
+}
+.answer-score>.que-score{
+	width:100px;
+}
+/*试卷整体分析*/
+.result-analysis{
+	border:1px dashed #888;
+	padding:10px;
+}
+.chart-name{
+	color:rgb(185,74,72);
+}
+

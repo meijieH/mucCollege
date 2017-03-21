@@ -24,21 +24,17 @@ body{
     /*border: 1px solid red;*/
 }
 
-/*搜索样式*/
-.search-box{
-    margin-bottom: 10px;
+/*课程状态*/
+.courase-status{
+	margin:10px 0;
 }
-.search-box .search-input{
-    width: 50%;
-    border: none;
-    font-size: 16px;
-    color: black;
+.courase-status>select{
+	width:100px;
 }
-.search-box button{
-    border: none;
-    line-height: 40px;
-    padding-top: 0;
-    padding-bottom: 0;
+.courase-status>div.htitle{
+	float:left;
+	margin-right:10px;
+	line-height:40px;
 }
 /*课程列表*/
 .lesson-lists .lesson-box{
@@ -62,7 +58,6 @@ body{
     color: rgb(66,139,202);
     text-decoration: none;
     font-size: 16px;
-    padding-top: 10px;
     line-height: 30px;
 }
 .lesson-name:hover{

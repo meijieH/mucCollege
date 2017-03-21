@@ -14,7 +14,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" href="../../css/main.css">
 </head>
 <body>
-	<header>
+	闲置。
+	<!--<header>
 		<h1>泰勒公式全章测试</h1>
 		<div>
 			<span>考号：14047000</span>
@@ -99,6 +100,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<p>您本次得分58.5 ，本套试题满分 60</p>
 			<button>关闭</button>
 		</div>
-	</main>
+	</main>-->
 </body>
 </html>

@@ -1,0 +1,35 @@
+/*发布消息*/
+.page-center-left{
+	margin-top:10px;
+ 	width:774px;
+}
+.page-center-right{
+	margin-top:10px;
+ 	width:248px;
+}
+.default-form{
+	margin-top:10px;
+}
+.news-content{
+	height:220px;
+}
+/*往期消息*/
+.oldnews>li{
+	border-bottom:1px dashed #15c288;
+}
+.oldnews>li:last-child{
+	border-bottom:none;
+}
+span.date{
+	width:65px;
+	display:inline-block;
+}
+span.time{
+	width:38px;
+	display:inline-block;
+}
+.viewmore{
+	text-align:right;
+	padding-tight:10px;
+	cursot:pointer;
+}

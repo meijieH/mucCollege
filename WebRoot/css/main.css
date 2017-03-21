@@ -28,7 +28,9 @@ i{
 .fr{
 	float:right;
 }
-
+.clear{
+	clear:both;
+}
 /*隐藏和显示*/
 .display-none{
 	display:none;
@@ -355,8 +357,14 @@ select option{
 .clr-blue{
 	color:blue;
 }
+.clr-linkblue{
+	color:#337ab7;
+}
 .clr-green{
 	color:#15c288;
+}
+.clr-grey{
+	color:#888;
 }
 /*省略号*/
 .dotdotdot{

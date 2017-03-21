@@ -5,42 +5,55 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <title>编辑个人信息</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<link rel="stylesheet" href="<%=basePath%>css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="<%=basePath%>css/main.css">
-	<link rel="shortcut icon" href="<%=basePath%>images/icon.png">
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<title>民大学院 编辑个人信息</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/myinfo.css">
  </head> 
-<body> 
-	<main class="container">
-	<div class="row">
-		<div class="col-md-9 right_row9">
-           <div class="left200  white" >
-		<h3>修改用户信息</h3>
-		<s:form action="user/user_updateUser" method="post" cssStyle="margin-left:20px;">
-			<s:hidden name="user.userid"></s:hidden>
-			<s:hidden name="user.usertype.usertypeid"></s:hidden>
-			<s:textfield name="user.username" label="用户名" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
-			<s:textfield name="user.usernum" label="学工号" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
-			<s:textfield name="user.password" label="密码" cssClass="str_input"  cssStyle="margin-top:8px;"></s:textfield>
-			<s:textfield name="user.phonenum" label="电话" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
-			<s:textfield name="user.email" label="邮箱" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
-			<s:textfield name="user.dept" label="地址" cssClass="str_input" cssStyle="margin-top:8px;"></s:textfield>
-			<s:submit cssClass="btn btn-green" value="保存"></s:submit>
-		</s:form>
-	</div>
-
+<body>
+	<h1 class="htitle">修改用户信息</h1>
+	<s:form action="user/user_updateUser" method="post">
+		<s:hidden name="user.userid"></s:hidden>
+		<s:hidden name="user.usertype.usertypeid"></s:hidden>
+		<s:hidden name="user.user.password"></s:hidden>
+		<table class="myinfo my-info-edit" style="rules:none;">
+				<tr>
+					<td class="label">真实姓名</td>
+					<td><c:out value="${user.reaname}">（李明）</c:out></td>
+				</tr>
+				<tr>
+					<td class="label">用户名</td>
+					<td><s:textfield name="user.username"></s:textfield></td>
+				</tr>
+				<tr>
+					<td class="label">学工号</td>
+					<td><s:textfield name="user.usernum"></s:textfield></td>
+				</tr>
+				<tr>
+					<td class="label">性别</td>
+					<td><c:out value="${user.gender}">（女）</c:out></td>
+				</tr>
+				<tr>
+					<td class="label">电话</td>
+					<td><s:textfield name="user.phonenum"></s:textfield></td>
+				</tr>
+				<tr>
+					<td class="label">邮箱</td>
+					<td><s:textfield name="user.email"></s:textfield></td>
+				</tr>
+				<tr>
+					<td class="label">学院</td>
+					<td><s:textfield name="user.dept"></s:textfield></td>
+				</tr>
+			</table>
+		<s:submit cssClass="btn btn-info" value="保存"></s:submit>
+	</s:form>
 </body>
 </html>

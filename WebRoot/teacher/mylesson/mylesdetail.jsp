@@ -24,8 +24,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="lesson-detail">
 		<div class="lesson-detail-left">
 			<div class="lesson-info">课程信息</div>
-			<h1 class="lesson-name">计算机基础</h1>
-			<div class="ld-box">
+			<div>
+				<h1 class="content-title lesson-name">计算机基础</h1>
+				<a class="push-info" href="teacher/teacenter/pushnews.jsp" target="_blank"><i class="fa fa-bullhorn" aria-hidden="true"></i>发布通告</a>
+			</div>
+			<div class="clear">
+				<div class="ld-box">
 				<h2 class="ld-title">课件</h2>
 				<ul class="ld-lists">
 					<li>
@@ -33,36 +37,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<p>指令的机器级表示 .ppt&nbsp;<time>2016/1/2</time></p>   
 						</a>
 					</li>
-					<li></li>
-					<li></li>
 				</ul>
-			</div>
-			<div class="ld-box">
-				<h2 class="ld-title">作业</h2>
-				<ul class="ld-lists">
-					<li>
-						<a href="student/study/waredetail.jsp" target="_blank">
-							<p>JMS大作业&nbsp;<time>2016/1/2</time></p>   
-						</a>
-					</li>
-					<li></li>
-					<li></li>
-				</ul>
-			</div>
-			<div class="ld-box">
-				<h2 class="ld-title">考试</h2>
-				<ul class="ld-lists">
-					<li>
-						<a href="" target="_blank">
-							<p>简单的课堂小练习&nbsp;<time>2016/1/2 23:00</time></p>   
-						</a>
-					</li>
-					<!-- 添加试卷 -->
-					<li>
-						<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>
-					</li>
-					<li><br></li>
-				</ul>
+				</div>
+				<div class="ld-box">
+					<h2 class="ld-title">作业</h2>
+					<ul class="ld-lists">
+						<li>
+							<a href="student/study/waredetail.jsp" target="_blank">
+								<p>JMS大作业&nbsp;<time>2016/1/2</time></p>   
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="ld-box">
+					<h2 class="ld-title">考试</h2>
+					<ul class="ld-lists">
+						<li onclick="window.open('student/test/testing.jsp','_blank');">
+							<div class="test-name" title="简单的课堂小练习（要考的试卷一）">简单的课堂小练习（要考的试卷一）</div>
+							<div class="test-time">2016/1/2 23:00</div>
+							<div class="test-option wait">未开始</div>
+						</li>
+						<li onclick="window.open('student/test/testing.jsp','_blank');">
+							<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷A（考完的试卷一：没改完）</div>
+							<div class="test-time">2016/1/2 23:00</div>
+							<div class="test-option enter"">在进行</div>
+						</li>
+						<li onclick="window.open('student/test/testing.jsp','_blank');">
+							<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷A（考完的试卷一：没改完）</div>
+							<div class="test-time">2016/1/2 23:00</div>
+							<div class="test-option done">待批阅</div>
+						</li>
+						<li onclick="window.open('student/test/testing.jsp','_blank');">
+							<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷B（考完的试卷二）</div>
+							<div class="test-time">2016/1/2 23:00</div>
+							<div class="test-option end">已完成</div>
+						</li>
+						<!-- 添加试卷 -->
+						<li>
+							<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
     </div>

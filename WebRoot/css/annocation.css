@@ -1,19 +1,20 @@
 .tab-sheets{
 	margin-top:30px;
-	border: 1px solid #dddcdc;
+	border: 1px dashed #eee;
 }
 .que-top{
-	background-color: #eee;
+	background-color:white;
 	height: 40px;
-	
 }
 
 .que-top-left{
-	padding-left:20px;
-	height: 40px;
 	line-height:40px;
+	padding-left:20px;
 	font-size: 14px;
-	float: left;
+}
+.que-top-right{
+	float:right;
+	line-height:40px;
 }
 .que-mid{
 	border-bottom:1px dashed #dddcdc;
@@ -57,4 +58,5 @@
 	padding-left:70px;
 	word-break:normal;
 	word-wrap:break-word;
+	border-bottom:1px dotted rgb(238,238,238);
 }

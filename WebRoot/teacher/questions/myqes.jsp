@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/myqes.css">
 	<link rel="stylesheet" type="text/css" href="css/frame_myqes.css">
+	<link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	<%@include file="/common/topbar.jsp" %>
@@ -59,11 +60,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			  	<li>
 			  		<div class="qes-info"><span class="fr">创建者：<s:property value="user.username"/></span><span>题型：<span class="clr-blue"><s:property value="quetype.typename"/></span></span><span>难易度：<span class="clr-red"><s:property value="depth"/></span></span></div>
 			  		<div class="qes-stem">
-			  		    <a href="teacher/teacher_showQuestion?question.questionid=<s:property value='questionid'/>"><s:property value="questionid"/>.<s:property value="stem" /></a>
+			  		    <s:property value="questionid"/> 、<s:property value="stem" />
 			  			<div class="dotdotdot">...</div>
 			  		</div>
 			  		<div class="qes-operate">
-			  			<a><i class="fa fa-file-text-o"></i>查看解析</a>
+			  			<a href="teacher/teacher_showQuestion?question.questionid=<s:property value='questionid'/>"><i class="fa fa-file-text-o"></i>查看解析</a>
 			  			<a><i class="fa fa-question-circle"></i>纠错</a>
 			  			<a><i class="fa fa-trash-o"></i>删除</a>
 			  		</div>
@@ -99,7 +100,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      </div>
 		      <div class="modal-option">
 		      	<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-		        <button type="button" class="btn btn-agree">保存</button>
+		        <button type="button" class="btn btn-info">保存</button>
 		      </div>
 		     </div>
 	    </div>
