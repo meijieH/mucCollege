@@ -3,6 +3,8 @@ package com.mucCollege.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 /**
  * Teacourse entity. @author MyEclipse Persistence Tools
  */
@@ -20,6 +22,7 @@ public class Teacourse implements java.io.Serializable {
 	private Double couscore;
 	private Double coutime;
 	private String state;
+	private Set tests=new HashSet(0);
 	private Set coustudents = new HashSet(0);
 	private Set selectcourses = new HashSet(0);
 	private Set coustudents_1 = new HashSet(0);
@@ -33,7 +36,7 @@ public class Teacourse implements java.io.Serializable {
 	/** full constructor */
 	public Teacourse(User user, StuClass stuClass, Course course, Integer year,
 			Integer term, Double couscore, Double coutime, String state,
-			Set coustudents, Set selectcourses, Set coustudents_1) {
+			 Set tests,Set coustudents, Set selectcourses, Set coustudents_1) {
 		this.user = user;
 		this.stuClass = stuClass;
 		this.course = course;
@@ -42,6 +45,7 @@ public class Teacourse implements java.io.Serializable {
 		this.couscore = couscore;
 		this.coutime = coutime;
 		this.state = state;
+		this.tests=tests;
 		this.coustudents = coustudents;
 		this.selectcourses = selectcourses;
 		this.coustudents_1 = coustudents_1;
@@ -119,6 +123,14 @@ public class Teacourse implements java.io.Serializable {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public Set getTests() {
+		return tests;
+	}
+
+	public void setTests(Set tests) {
+		this.tests = tests;
 	}
 
 	public Set getCoustudents() {

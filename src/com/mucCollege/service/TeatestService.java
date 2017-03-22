@@ -60,6 +60,16 @@ public class TeatestService {
 		ArrayList<Testpaper> testList=testpaperDao.QueryTestpaperByCreator(userid);
 		return testList;
 	}
+	
+	public ArrayList<Testpaper> queryMyTestpaperByName(String testpapername,Integer userid) {
+		ArrayList<Testpaper> testList=testpaperDao.QueryMyTestpaperByName(testpapername,userid);
+		return testList;
+	}
+	
+	public ArrayList<Testpaper> queryAllTestpaperByName(String testpapername) {
+		ArrayList<Testpaper> testList=testpaperDao.QueryAllTestpaperByName(testpapername);
+		return testList;
+	}
 
 	public ArrayList<Block> getBlockList(Integer testpaperid) {
 		ArrayList<Block> blockList=blockDao.queryBlockByTestpaperid(testpaperid);
@@ -70,6 +80,7 @@ public class TeatestService {
 		ArrayList<Testque> testqueList=testqueDao.QueryTestqueByBlock(blockid);
 		return testqueList;
 	}
+	
 
 	public Block getBlockById(Integer blockid) {
 		
@@ -77,4 +88,8 @@ public class TeatestService {
 		return block;
 	}
 
+	public Test getTestById(Integer testid) {
+		Test test=testDao.GetTestById(testid);
+		return test;
+	}
 }

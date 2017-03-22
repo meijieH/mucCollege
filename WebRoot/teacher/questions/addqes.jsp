@@ -32,10 +32,9 @@
 		 	 					<span class="left-span"><label>当前题夹</label></span>
 		 	 					<span class="right-span">
 		 	 						<select name="collection.collectionname">
-									  <option value ="操作系统">操作系统</option>
-									  <option value ="数据结构">数据结构</option>
-									  <option value="计算机网络">计算机网络</option>
-									  <option value="组成原理">组成原理</option>
+		 	 							<s:iterator value="collecStrings">
+									  		<option value ="<s:property/>"><s:property/></option>
+									  	</s:iterator>
 									</select>
 						        </span>
 						    </li>

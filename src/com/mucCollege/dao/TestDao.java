@@ -95,8 +95,7 @@ public class TestDao {
 	/*根据所属的课程查考试*/
 	public ArrayList<Test> queryTestByTeacourseId(Integer id) throws Exception {
 		Session s = factory.getCurrentSession();
-		String hql = "From Test test where test.teacourse.teacourseid like '%"
-				+ id + "%'";
+		String hql = "From Test test where test.teacourse.teacourseid = "+id;
 		Query q = s.createQuery(hql);
 		@SuppressWarnings("unchecked")
 		List results = q.list();

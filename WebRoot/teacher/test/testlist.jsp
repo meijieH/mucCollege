@@ -69,8 +69,8 @@
 		</div>
 		<div class="page-center-left">
 			<div class="content-title"><i class="fa fa-thumb-tack" aria-hidden="true"></i>我的试卷库</div>
-			<s:form action="teacher/teacher_getCoursesByName" method="post">
-				<input type="text" class="search-field" title="关键词" name="coursename" placeholder="输入关键词...">
+			<s:form action="test/test_getMyTestpaperByName" method="post">
+				<input type="text" class="search-field" title="关键词" name="testpaper.testpapername" placeholder="输入关键词...">
 				<button class="btn btn-agree search-btn" type="submit">搜 索</button>
 			</s:form>
 		</div>

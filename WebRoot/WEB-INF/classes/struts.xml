@@ -66,6 +66,7 @@
 			<result name="view_course">/teacher/mylesson/mylesdetail.jsp</result>
 			<result name="add_Course">/teacher/mylesson/addlesson.jsp</result>
 			<result name="all_course">/teacher/mylesson/querylesson.jsp</result>
+			<result name="teacher">/teacher/frame_myteacenter.jsp</result>
 		</action>
 	</package>
 	<package name="test" namespace="/test" extends="struts-default">
@@ -76,6 +77,7 @@
 			<result name="show_testqueList">/teacher/test/testque.jsp</result>
 			<result name="part_autopapers">/teacher/test/testedit.jsp</result>
 			<result name="autopapers">/teacher/test/autoassem.jsp</result>
+			
 		</action>
 	</package>
 </struts>

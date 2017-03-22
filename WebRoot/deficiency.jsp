@@ -30,6 +30,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 7.annotation.jsp中添加到我的题库还未做
 8.queset中最后一题的题型未显示很奇怪
 9.login.jsp中“学生”、“教师”未起到分类验证的作用
+10.教师的分题库Collection
+11.给testpaper加字段为"难度":每道题的加权平均分 
+12.教师首页加一个课程状态（正在开课 已经结束）
+13.教师添加问题时，选项C的内容更加不进去
+14.题库和我的题库页面分类选择题目未实现
 -->
   </body>
 </html>

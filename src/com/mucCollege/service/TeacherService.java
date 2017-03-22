@@ -1,6 +1,7 @@
 package com.mucCollege.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -83,6 +84,11 @@ public class TeacherService extends UserService {
 		ArrayList<Course> couList=courseDao.queryCourseByCoursename(coursename);
 		return couList;
 	}
+	//通过课程状态查找课程
+	public ArrayList<Teacourse> queryCourseByState(String state) {
+		ArrayList<Teacourse> couList=teacourseDao.QueryTeacourseByState(state);
+		return couList;
+	}
 	//查看我的课程
 	public ArrayList<Teacourse> queryMyCourses(int userid) throws Exception{
 		ArrayList<Teacourse> teacouList=teacourseDao.queryTeacourseByTeacherid(userid);
@@ -97,6 +103,28 @@ public class TeacherService extends UserService {
 		ArrayList<Course> couList=courseDao.QueryAllCourse();
 		return couList;
 	}
+
+	public List<String> queryColByTeacher(Integer userid) {
+		List<String> stringList=collectionDao.queryNameByTeacher(userid);
+		return stringList;
+	}
+
+	public Teacourse queryTeaCourseById(Integer teacourseid) throws Exception {
+		Teacourse teacourse=teacourseDao.getTeacourseById(teacourseid);
+		return teacourse;
+	}
+
+	public List<Collection> queryCollectionByName(String collectionname) {
+		List<Collection> collections=collectionDao.queryCollectionBycollectionname(collectionname);
+		return collections;
+	}
+
+	public ArrayList<Collection> queryCollectionByTeacher(Integer userid) {
+		List<Collection> collections=collectionDao.queryCollectionByTeacher(userid);
+		return (ArrayList<Collection>)collections;		
+	}
+
+	
 
 	
 }

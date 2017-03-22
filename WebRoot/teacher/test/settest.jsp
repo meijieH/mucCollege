@@ -26,13 +26,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	   <!--标题 -->
 		<div>
-			<div class="content-title settest-lesson-t"><i class="fa fa-thumb-tack" aria-hidden="true"></i>计算机基础 </div>
+			<div class="content-title settest-lesson-t"><i class="fa fa-thumb-tack" aria-hidden="true"></i><s:property value="user.username"/>，您好 </div>
 			<a href="teacher/test/testedit.jsp" target="_blank" role="button" class="btn btn-default manual-settest-btn">手工组卷</a>
 			<a href="teacher/test/autoassem.jsp" target="_blank" role="button" class="btn btn-default manual-settest-btn">自动组卷</a>
 		</div>
-		
-		
-		
 		<!--设置考试-->
 		<div class=" settest-time">
 		   <form>
@@ -53,8 +50,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    
 	    <!-- 搜索 -->
 		<div class="search-box paper-search">
-	    	<form action="" class="">
-			    <input type="text" class="search-input" placeholder="请输入考卷名进行查询">
+	    	<form action="test/test_getAllTestpaperByName" class="">
+			    <input type="text" class="search-input" name="testpaper.testpapername" placeholder="请输入考卷名进行查询">
 			    <button type="submit" class="btn btn-default">搜索</button>
 			</form>
 	    </div>
@@ -73,10 +70,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</thead>
 				<tbody>
 				<s:iterator value="testpaperList" status="status">
-				<tr>
-					
-					
-						<td><a href="test/test_showTestpaper?testpaper.testpaperid=<s:property value='testpaperid'/>"><s:property value="testpaperid"/></a></td>
+				<tr onclick="window.open('test/test_showTestpaper?testpaper.testpaperid=<s:property value='testpaperid'/>')">
+						<td><s:property value="testpaperid"/></td>
 						<td><s:property value="testpapername"/></td>
 						<td><s:property value="questionum"/></td>
 						<td><s:property value="totalscore"/></td>
