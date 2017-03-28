@@ -28,9 +28,11 @@
 	          	<div class="htitle">已选范围(从我的题库)</div>
 	           	<div class="ranges" id="ranges">
 	           		<ul>
-	           			<li class="display-none">我的题库一<i class="fa fa-close" aria-hidden="true" onclick="deleteRanges('range1',this);"></i></li>
-	           			<li class="display-none">我的题库二<i class="fa fa-close" aria-hidden="true" onclick="deleteRanges('range2',this);"></i></li>
-	           			<li class="display-none">我的题库三<i class="fa fa-close" aria-hidden="true" onclick="deleteRanges('range3',this);"></i></li>
+					<s:iterator value="collecStrings">
+						<li class="display-none" onclick="window.open('teacher/teacher_getMyCollection?collection.collectionname=<s:property />')"><s:property />
+							<i class="fa fa-close" aria-hidden="true" onclick="deleteRanges('range1',this);"></i>
+						</li>
+					</s:iterator>
 	           		</ul>
 	           	</div>  
 	          </div>

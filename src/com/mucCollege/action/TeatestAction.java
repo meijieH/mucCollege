@@ -17,6 +17,7 @@ import com.mucCollege.model.Test;
 import com.mucCollege.model.Testpaper;
 import com.mucCollege.model.Testque;
 import com.mucCollege.model.User;
+import com.mucCollege.service.TeacherService;
 import com.mucCollege.service.TeacourseService;
 import com.mucCollege.service.TeatestService;
 import com.opensymphony.xwork2.ActionContext;
@@ -30,6 +31,8 @@ public class TeatestAction {
 	TeatestService teatestService;
 	@Resource
 	TeacourseService teacourseService;
+	@Resource
+	TeacherService teacherService;
 	private User user;
 	private Test test;
 	private Teacourse teacourse;
@@ -41,6 +44,7 @@ public class TeatestAction {
 	private ArrayList<Testque> testqueList;
 	private ArrayList<Test> testList;
 	private ArrayList<Testpaper> testpaperList;
+	private List<String> collecStrings;
 
 	public User getUser() {
 		return user;
@@ -130,6 +134,14 @@ public class TeatestAction {
 		this.testqueList = testqueList;
 	}
 
+	public List<String> getCollecStrings() {
+		return collecStrings;
+	}
+
+	public void setCollecStrings(List<String> collecStrings) {
+		this.collecStrings = collecStrings;
+	}
+
 	// 获取session
 	ActionContext actionContext = ActionContext.getContext();
 	Map session = actionContext.getSession();
@@ -137,8 +149,7 @@ public class TeatestAction {
 	// 查看教师个人试卷库
 	public String getMyTestpapers() throws Exception {
 		user = (User) session.get("user");
-		testpaperList = teatestService
-				.queryTestpaperByCreator(user.getUserid());
+		testpaperList = teatestService.queryTestpaperByCreator(user.getUserid());
 		return "my_testpaper";
 	}
 
@@ -195,6 +206,7 @@ public class TeatestAction {
 
 	public String toAutoPapers() {
 		user = (User) session.get("user");
+		collecStrings = teacherService.queryColByTeacher(user.getUserid());
 		return "autopapers";
 	}
 }

@@ -20,6 +20,7 @@ import com.mucCollege.model.Question;
 import com.mucCollege.model.StuClass;
 import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.Test;
+import com.mucCollege.model.Testpaper;
 import com.mucCollege.model.User;
 import com.mucCollege.service.CoustudentService;
 import com.mucCollege.service.ErrorqueService;
@@ -60,6 +61,7 @@ public class TeacherAction {
 	private ArrayList<StuClass> stuClaList;
 	private List<String> collecStrings;
 	private ArrayList<Test> testList;
+	private ArrayList<Testpaper> testpaperList;
 	private ArrayList<Collection> collectionList;
 	private String coursename;
 	private String keyName;
@@ -167,6 +169,14 @@ public class TeacherAction {
 	public void setCoursename(String coursename) {
 		this.coursename = coursename;
 	}
+	
+	public ArrayList<Testpaper> getTestpaperList() {
+		return testpaperList;
+	}
+
+	public void setTestpaperList(ArrayList<Testpaper> testpaperList) {
+		this.testpaperList = testpaperList;
+	}
 
 	public ArrayList<Collection> getCollectionList() {
 		return collectionList;
@@ -266,8 +276,7 @@ public class TeacherAction {
 	// 显示我添加的所有题目
 	public String showMyQuestions() {
 		User user = (User) session.get("user");
-		collectionList = teacherService.queryCollectionByTeacher(user
-				.getUserid());
+		collectionList = teacherService.queryCollectionByTeacher(user.getUserid());
 		collecStrings = teacherService.queryColByTeacher(user.getUserid());
 		return "my_question";
 	}
@@ -310,10 +319,11 @@ public class TeacherAction {
 
 	// 查看某一课程
 	public String showCourse() throws Exception {
-		teacourse = teacherService.queryTeaCourseById(teacourse
-				.getTeacourseid());
-		testList = teatestService
-				.queryTestsByLesson(teacourse.getTeacourseid());
+		User user=(User)session.get("user");
+		teacourse = teacherService.queryTeaCourseById(teacourse.getTeacourseid());
+		testList = teatestService.queryTestsByLesson(teacourse.getTeacourseid());
+		testpaperList = teatestService.queryTestpaperByCreator(user.getUserid());
+		teacouList = teacherService.queryMyCourses(user.getUserid());
 		return "view_course";
 	}
 

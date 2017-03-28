@@ -100,19 +100,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				       			<p>
 				       				课程：
 					       			<select>
-					       				<option>高等数学</option>
-					       				<option>大学物理</option>
-					       				<option>13</option>
-					       				<option>6</option>
+					       			
+					       				<s:iterator value="teacouList" status="status">
+					       				<option><s:property value="course.coursename"/></option>
+					       				</s:iterator>
 					       			</select>
 				       			</p>
 				       			<p>
 				       				试卷：
 					       			<select>
-					       				<option>简单小测试</option>
-					       				<option>143</option>
-					       				<option>期中测试</option>
-					       				<option>6</option>
+					       				<s:iterator value="testpaperList" status="status">
+					       				<option><s:property value="testpapername"/></option>
+					       				</s:iterator>
 					       			</select>
 				       			</p>
 				       		</div>
