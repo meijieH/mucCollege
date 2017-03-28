@@ -16,7 +16,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="css/mytest.css">
 </head>
 <body class="container">
-	<h1>minda的考试</h1>
+	闲置。
+	<!--<h1>minda的考试</h1>
 	
 	 <div class="panel-group">
 	    <h3>最近一周内的考试</h3>
@@ -98,6 +99,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</span>
 		<button>Go</button>
 	</div>
+	
+	-->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>

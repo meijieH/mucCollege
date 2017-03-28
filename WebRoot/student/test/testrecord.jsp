@@ -12,7 +12,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<title>考试记录</title>
 </head>
 <body class="container">
-	<h1>考试记录</h1>
+
+	闲置。
+	<!--<h1>考试记录</h1>
 	<header>
 		<span>
 			<label for="subject">科目</label>
@@ -94,6 +96,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</span>
 		<button>Go</button>
 	</div>
-	</main>
+	</main>-->
 </body>
 </html>

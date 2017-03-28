@@ -19,6 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="css/main.css" >
 	<link rel="stylesheet" type="text/css" href="css/myqes.css">
 	<link rel="stylesheet" type="text/css" href="css/frame_myqes.css">
+	<link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	<%@include file="/common/topbar.jsp" %>

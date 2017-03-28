@@ -1,5 +1,6 @@
 .add-paper{
-	display: block;
+	display: inline-block;
+	width:370px;
 	line-height: 30px;
 	border: 1px solid #ddd;
 	border-radius: 5px;
@@ -27,6 +28,9 @@
 	padding: 0 10px;
 	cursor: pointer;
 	color: rgb(29,163,98);
+}
+.lesson-name{
+	float:left;
 }
 /*添加考试-选择类型*/
 .addtestWays{
@@ -72,4 +76,17 @@
 	display:inline-block;
 	margin-right:50px;
 	cursor:pointer;
+}
+/*发布消息*/
+a.push-info{
+	display:inline-block;
+	line-height:42px;
+	clear:right;
+	width:120px;
+	color:#337ab7;
+	text-align:center;
+	text-decoration:none;
+}
+a.push-info:hover{
+	color:blue;
 }

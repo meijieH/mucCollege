@@ -33,11 +33,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="option-nav">
 			<ul>
 				<li onclick="changeRight('teacher/teacher_getMyCourse')" class="active"><i class="fa fa-university"></i>教学平台</li>
-				<li onclick="changeRight('user/user_showInfo')"><i class="fa fa-user"></i>个人信息</li>
-				<li onclick="changeRight('user/user_showMessage')"><i class="fa fa-comments-o" aria-hidden="true"></i>我的消息</li>
-				<li onclick="window.open('teacher/teacher_toAddQuestion','_blank')" class="link"><i class="fa fa-pencil" aria-hidden="true"></i>手工添题</li>
 				<li onclick="window.open('teacher/teacher_showMyQuestions','_blank')" class="link"><i class="fa fa-folder-open" aria-hidden="true"></i>我的题库</li>
 				<li onclick="window.open('test/test_getMyTestpapers','_blank')" class="link"><i class="fa fa-file-text-o"></i>我的试卷</li>
+				<li onclick="window.open('teacher/teacher_toAddQuestion','_blank')" class="link"><i class="fa fa-pencil" aria-hidden="true"></i>手工添题</li>
+				<li onclick="changeRight('user/user_showMessage')"><i class="fa fa-comments-o" aria-hidden="true"></i>我的消息</li>
+				<li onclick="changeRight('user/user_showInfo')"><i class="fa fa-user"></i>个人信息</li>
 			</ul>
 		</div>
 	</div>
@@ -47,21 +47,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <iframe id="tea-main-right-frame" src="teacher/teacher_getMyCourse" frameborder="0" width="100%" height="100%"></iframe>
 	</div>
 	<script src="js/jquery.min.js"></script>
-	<script type="text/javascript">
-	function changeRight(src){
-	   var rightFrame=document.getElementById('tea-main-right-frame');
-	   console.log(src);
-	   rightFrame.src=src;
-	}
-	
-	/*左侧导航栏*/
-	$('.tea-option-nav ul li').click(function(){
-		if((!$(this).hasClass('active'))&&(!$(this).hasClass('link'))){
-			$(this).addClass('active');
-			$(this).siblings().removeClass('active');
-		}
-	});
-	
-	</script>
+	<script src="js/main.js"></script>
 </body>
 </html>

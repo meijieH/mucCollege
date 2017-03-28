@@ -5,7 +5,7 @@ function appendOption(appendButton,option,disableClass){
 	var newOption = '<li>'+
 		'<span class="left-span"><label for="'+option+number+'">'+String.fromCharCode(64 + number)+'、</label></span>'+
 			'<span class="right-span">'+
-				'<input type="text" class="'+option+'" id="'+option+number+'">'+
+				'<input type="text" class="'+option+'" id="'+option+number+'" name="question.option'+number+'">'+
         '</span>'+
         '<span class="deleteOption" title="删除选项" onclick="deleteOption(this,\''+option+'\')"> <i class="fa fa-times" aria-hidden="true"></i></span>'+
    ' </li>';

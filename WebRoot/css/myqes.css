@@ -119,7 +119,6 @@ input.search-input{
 	overflow:hidden;
 	line-height:20px;
     max-height:100px;
-    cursor:pointer;
 }
 .qes-operate>a{
 	margin-right:20px;

@@ -17,6 +17,7 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/addqes.css">
+    <link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>	
 	<%@include file="/common/topbar.jsp" %>
@@ -26,7 +27,6 @@
 			    <div class="tab-pane active" id="singleSelect">
 			    	<s:form cssClass="default-form" action="teacher/teacher_addQuestion" method="post">
 			    	<s:hidden name="question.quetype.quetypeid" value="1"></s:hidden>
-			    	
 			    		<ul>
 						    <li>
 		 	 					<span class="left-span"><label>当前题夹</label></span>
@@ -35,6 +35,16 @@
 		 	 							<s:iterator value="collecStrings">
 									  		<option value ="<s:property/>"><s:property/></option>
 									  	</s:iterator>
+									</select>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
 									</select>
 						        </span>
 						    </li>
@@ -53,7 +63,7 @@
 						    <li>
 		 	 					<span class="left-span"><label for="singleOption2">B、</label></span>
 		 	 					<span class="right-span">
-		 	 						<input type="text" class="singleOption" id="singleOption2"  name="question.option2">
+		 	 						<input type="text" class="singleOption" id="singleOption2" name="question.option2">
 						        </span>
 						    </li>
 						    <li>
@@ -115,6 +125,16 @@
 									  <option value ="数据结构">数据结构</option>
 									  <option value="计算机网络">计算机网络</option>
 									  <option value="组成原理">组成原理</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
 									</select>
 						        </span>
 						    </li>
@@ -186,6 +206,16 @@
 						        </span>
 						    </li>
 						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
 		 	 					<span class="left-span"><label for="bfStem">请输入题干</label></span>
 		 	 					<span class="right-span">
 		 	 						<textarea class="" id="bfStem" name="question.stem" placeholder="在这里输入题目"></textarea>
@@ -238,6 +268,16 @@
 						        </span>
 						    </li>
 						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
 		 	 					<span class="left-span"><label for="msStem">请输入题干</label></span>
 		 	 					<span class="right-span">
 		 	 						<textarea class="" id="msStem" name="question.stem" placeholder="在这里输入题目"></textarea>
@@ -258,7 +298,7 @@
 						    <li>
 		 	 					<span class="left-span"><label for=""></label></span>
 		 	 					<span class="right-span">
-		 	 						<button type="submit" class="btn btn-default multipleAppend" onclick="appendOption('.multipleAppend','multipleOption','multipleDisable')">
+		 	 						<button  type="button"  class="btn btn-default multipleAppend" onclick="appendOption('.multipleAppend','multipleOption','multipleDisable');">
 									 添加选项
 									</button>
 						        </span>
@@ -314,6 +354,16 @@
 									  <option value ="数据结构">数据结构</option>
 									  <option value="计算机网络">计算机网络</option>
 									  <option value="组成原理">组成原理</option>
+									</select>
+						        </span>
+						    </li>
+						    <li>
+		 	 					<span class="left-span"><label>学科</label></span>
+		 	 					<span class="right-span">
+		 	 						<select>
+									  <option value="">计算机</option>
+									  <option value="">哲学</option>
+									  <option value="">民族学</option>
 									</select>
 						        </span>
 						    </li>

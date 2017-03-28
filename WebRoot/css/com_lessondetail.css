@@ -48,6 +48,39 @@
 	list-style: circle;
 }
 .ld-lists li{
-	padding-left: 10px;
+	padding:5px 10px;
 	line-height: 30px;
+	cursor:pointer;
+}
+.ld-lists>li:hover{
+	color:#337ab7;
+}
+/*考试单行*/
+.ld-lists>li>div{
+	float:left;
+}
+.test-name{
+	width:180px;
+	white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    padding-right:10px;
+}
+.test-time{
+	width:120px;
+}
+.test-option{
+	padding:0 3px;
+}
+.enter{
+	color:green;
+}
+.wait{
+	color:orange;
+}
+.done{
+	color:blue;
+}
+.overtime{
+	color:grey;
 }

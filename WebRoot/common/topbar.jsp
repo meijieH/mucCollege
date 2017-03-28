@@ -26,4 +26,5 @@
 		</div>
 	</div>
 </header>
+<script src="/mucCollege/js/jquery.min.js"></script>
 <script src="/mucCollege/js/main.js"></script>

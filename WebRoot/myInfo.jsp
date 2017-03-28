@@ -18,52 +18,43 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/myinfo.css">
+	<link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
-   <h1 class="content-title">账户信息</h1>
-	<div class="col-md-9 right_row9">
+   		<h1 class="htitle">账户信息</h1>
 		<s:form action="user/user_showEdit" method="post">
-			<table class="table de-table" style="rules:none;">
+			<table class="myinfo myinfo-show" style="rules:none;">
 				<tr>
-					<td>用户名</td>
-					<td><c:out value="${user.username}"></c:out>
-					</td>
+					<td class="label">真实姓名</td>
+					<td><c:out value="${user.reaname}">（李明）</c:out></td>
 				</tr>
 				<tr>
-					<td>用户密码</td>
-					<td><c:out value="${user.password}"></c:out>
-					</td>
+					<td class="label">用户名</td>
+					<td><c:out value="${user.username}"></c:out></td>
 				</tr>
 				<tr>
-					<td>联系电话</td>
-					<td><c:out value="${user.phonenum}"></c:out>
-					</td>
+					<td class="label">密码</td>
+					<td>***</td>
 				</tr>
 				<tr>
-					<td>真实姓名</td>
-					<td><c:out value="${user.reaname}"></c:out>
-					</td>
+					<td class="label">性别</td>
+					<td><c:out value="${user.gender}">（女）</c:out></td>
 				</tr>
 				<tr>
-					<td>用户性别</td>
-					<td><c:out value="${user.gender}"></c:out>
-					</td>
-				</tr>
-
-				<tr>
-					<td>用户邮箱</td>
-					<td><c:out value="${user.email}"></c:out>
-					</td>
+					<td class="label">电话</td>
+					<td><c:out value="${user.phonenum}"></c:out></td>
 				</tr>
 				<tr>
-					<td>用户学院</td>
-					<td>
-					<br></td>
+					<td class="label">邮箱</td>
+					<td><c:out value="${user.email}"></c:out></td>
+				</tr>
+				<tr>
+					<td class="label">学院</td>
+					<td>（信息工程学院）</td>
 				</tr>
 			</table>
-			<button style="margin-left:500px;" type="submit"
-				class="btn btn-success btn-de">修改信息</button>
+			<button type="submit" class="btn btn-info btn-edit">修改信息</button>
 		</s:form>
-	</div>
 </body>
 </html>

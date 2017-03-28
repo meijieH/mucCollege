@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -25,47 +24,62 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="lesson-detail">
 		<div class="lesson-detail-left">
 			<div class="lesson-info">课程信息</div>
-			<h1 class="lesson-name"><s:property value="teacourse.course.coursename"/></h1>
-			<div class="ld-box">
-				<h2 class="ld-title">课件（待完善）</h2>
+			<div>
+				<h1 class="content-title lesson-name"><s:property value="teacourse.course.coursename"/></h1>
+				<a class="push-info" href="teacher/teacenter/pushnews.jsp" target="_blank"><i class="fa fa-bullhorn" aria-hidden="true"></i>发布通告</a>
+			</div>
+			<div class="clear">
+				<div class="ld-box">
+				<h2 class="ld-title">课件</h2>
 				<ul class="ld-lists">
 					<li>
 						<a href="student/study/waredetail.jsp" target="_blank">
 							<p>指令的机器级表示 .ppt&nbsp;<time>2016/1/2</time></p>   
 						</a>
 					</li>
-					<li></li>
-					<li></li>
 				</ul>
-			</div>
-			<div class="ld-box">
-				<h2 class="ld-title">作业（待完善）</h2>
-				<ul class="ld-lists">
-					<li>
-						<a href="student/study/waredetail.jsp" target="_blank">
-							<p>JMS大作业&nbsp;<time>2016/1/2</time></p>   
-						</a>
-					</li>
-					<li></li>
-					<li></li>
-				</ul>
-			</div>
-			<div class="ld-box">
-				<h2 class="ld-title">考试</h2>
-				<ul class="ld-lists">
-					<s:iterator value="testList" status="status">
-					<li>
-						<a href="test/test_getPaperByTest?test.testid=<s:property value='testid'/>" target="_blank">
-							<p><s:property value="testname"/>&nbsp;<time><s:property value="starttime"/></time></p>   
-						</a>
-					</li>
-					</s:iterator>
-					<!-- 添加试卷 -->
-					<li>
-						<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>
-					</li>
-					<li><br></li>
-				</ul>
+				</div>
+				<div class="ld-box">
+					<h2 class="ld-title">作业</h2>
+					<ul class="ld-lists">
+						<li>
+							<a href="student/study/waredetail.jsp" target="_blank">
+								<p>JMS大作业&nbsp;<time>2016/1/2</time></p>   
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="ld-box">
+					<h2 class="ld-title">考试</h2>
+					<ul class="ld-lists">
+						<s:iterator value="testList" status="status">
+						<li onclick="window.open('test/test_getPaperByTest?test.testid=<s:property value='testid'/>','_blank');">
+							<div class="test-name" title="<s:property value="testname"/>"><s:property value="testname"/></div>
+							<div class="test-time"><s:property value="starttime"/></div>
+							<div class="test-option wait">未开始</div>
+						</li>
+						</s:iterator>
+						<li onclick="window.open('student/test/testing.jsp','_blank');">
+							<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷A（考完的试卷一：没改完）</div>
+							<div class="test-time">2016/1/2 23:00</div>
+							<div class="test-option enter"">在进行</div>
+						</li>
+						<li onclick="window.open('student/test/testing.jsp','_blank');">
+							<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷A（考完的试卷一：没改完）</div>
+							<div class="test-time">2016/1/2 23:00</div>
+							<div class="test-option done">待批阅</div>
+						</li>
+						<li onclick="window.open('student/test/testing.jsp','_blank');">
+							<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷B（考完的试卷二）</div>
+							<div class="test-time">2016/1/2 23:00</div>
+							<div class="test-option end">已完成</div>
+						</li>
+						<!-- 添加试卷 -->
+						<li>
+							<a data-toggle="modal" data-target="#addTest" class="add-paper">+ 添加考试</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
     </div>

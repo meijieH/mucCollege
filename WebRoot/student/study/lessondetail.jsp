@@ -10,12 +10,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="renderer" content="webkit">
-	<title>课程信息-计算机基础</title>
+	<title>民大学院 我的课程 计算机基础</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/com_lessondetail.css">
     <link rel="stylesheet" href="css/std_lessondetail.css">
+    <link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	<%@include file="/common/topbar.jsp" %>
@@ -49,13 +50,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="ld-box">
 				<h2 class="ld-title">考试</h2>
 				<ul class="ld-lists">
-					<li>
-						<a href="student/test/testing.jsp" target="_blank">
-							<p>简单的课堂小练习&nbsp;<time>2016/1/2 23:00</time></p>   
-						</a>
+					<li onclick="window.open('student/test/testing.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（要考的试卷一）">简单的课堂小练习（要考的试卷一）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option enter">进入考试</div>
 					</li>
-					<li></li>
-					<li></li>
+					<li onclick="window.open('student/test/testing.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷A（考完的试卷一：没改完）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option wait"">待批改</div>
+					</li>
+					<li onclick="window.open('student/test/testing.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷A（考完的试卷一：没改完）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option wait"">待批改</div>
+					</li>
+					<li onclick="window.open('student/test/testresult.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷B（考完的试卷二）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option done">查看试卷</div>
+					</li>
+					<li onclick="window.open('student/test/testresult.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷B（考完的试卷二）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option done">查看试卷</div>
+					</li>
+					<li onclick="window.open('student/test/testing.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷C（没有考）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option overtime">已过期</div>
+					</li>
+					<li onclick="window.open('student/test/testing.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷C（没有考）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option overtime">已过期</div>
+					</li>
+					<li onclick="window.open('student/test/testing.jsp','_blank');">
+						<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷C（没有考）</div>
+						<div class="test-time">2016/1/2 23:00</div>
+						<div class="test-option overtime">已过期</div>
+					</li>
 				</ul>
 			</div>
 		</div>
