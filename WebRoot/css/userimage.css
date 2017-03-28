@@ -1,0 +1,112 @@
+.content-describe{
+	margin-top:10px;
+}
+.userimage{
+	margin:120px auto;
+	width:200px;
+	height:200px;
+	border:1px double #888;
+	text-align:center;
+	line-height:200px;
+	border-radius:120px;
+}
+/*标签*/
+.user-label{
+	position:absolute;
+	margin-top:-360px;
+}
+.label {
+	position:absolute;
+	width:120px;
+	height:35px;
+	line-height:28px;
+	text-align:center;
+	font-size:16px;
+	font-weight:boloder;
+	color:white;
+	background:#fff;
+	border-radius:5px; /* 圆角 */
+}
+.label:hover{
+	border-radius:5px; /* 圆角 */
+}
+.label>.arrow {
+	background-color: red;
+	position:absolute;
+	border:solid 8px #c05050;
+	top:9px;
+	right:-16px; 
+	width:0;
+	font-size:0;
+	border-color:#fff #fff #fff rgb(131,190,197);
+}
+.label .arrow-left{
+	top:9px;
+	left:-16px; 
+	border-color:#fff rgb(131,190,197) #fff  #fff;
+}
+/*标签位置&颜色*/
+.label1{
+	margin-top:205px;
+	margin-left:260px;
+	background-color:rgb(193,35,43);
+}
+.label .arrow1{
+	border-color:#fff  #fff  #fff rgb(193,35,43);
+}
+.label2{
+	margin-top:160px;
+	margin-left:230px;
+	background-color:rgb(181,195,52);
+}
+.label .arrow2{
+	border-color:#fff  #fff  #fff rgb(181,195,52);
+}
+.label3{
+	margin-top:102px;
+	margin-left:260px;
+	background-color:rgb(252,206,16);
+}
+.label .arrow3{
+	border-color:#fff  #fff  #fff rgb(252,206,16);
+}
+.label4{
+	margin-top:210px;
+	margin-left:630px;
+	background-color:rgb(250,216,96);
+}
+.label .arrow4{
+	border-color:#fff rgb(250,216,96) #fff  #fff;
+}
+.label5{
+	margin-top:160px;
+	margin-left:670px;
+	background-color:rgb(155,202,99);
+}
+.label .arrow5{
+	border-color:#fff rgb(155,202,99) #fff  #fff;
+}
+.label6{
+	margin-top:110px;
+	margin-left:640px;
+	background-color:rgb(254,132,99);
+}
+.label .arrow6{
+	border-color:#fff rgb(254,132,99) #fff  #fff;
+}
+.label7{
+	margin-top:50px;
+	margin-left:670px;
+	background-color:rgb(39,114,123);
+}
+.label .arrow7{
+	border-color:#fff rgb(39,114,123) #fff  #fff;
+}
+.label8{
+	margin-top:40px;
+	margin-left:240px;
+	background-color:rgb(232,124,37);
+}
+.label .arrow8{
+	border-color:#fff  #fff  #fff rgb(232,124,37);
+}
