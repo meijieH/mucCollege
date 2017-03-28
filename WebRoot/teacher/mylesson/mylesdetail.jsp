@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="lesson-detail-left">
 			<div class="lesson-info">课程信息</div>
 			<div>
-				<h1 class="content-title lesson-name">计算机基础</h1>
+				<h1 class="content-title lesson-name"><s:property value="teacourse.course.coursename"/></h1>
 				<a class="push-info" href="teacher/teacenter/pushnews.jsp" target="_blank"><i class="fa fa-bullhorn" aria-hidden="true"></i>发布通告</a>
 			</div>
 			<div class="clear">
@@ -52,11 +52,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="ld-box">
 					<h2 class="ld-title">考试</h2>
 					<ul class="ld-lists">
-						<li onclick="window.open('student/test/testing.jsp','_blank');">
-							<div class="test-name" title="简单的课堂小练习（要考的试卷一）">简单的课堂小练习（要考的试卷一）</div>
-							<div class="test-time">2016/1/2 23:00</div>
+						<s:iterator value="testList" status="status">
+						<li onclick="window.open('test/test_getPaperByTest?test.testid=<s:property value='testid'/>','_blank');">
+							<div class="test-name" title="<s:property value="testname"/>"><s:property value="testname"/></div>
+							<div class="test-time"><s:property value="starttime"/></div>
 							<div class="test-option wait">未开始</div>
 						</li>
+						</s:iterator>
 						<li onclick="window.open('student/test/testing.jsp','_blank');">
 							<div class="test-name" title="简单的课堂小练习（考完的试卷一）">试卷A（考完的试卷一：没改完）</div>
 							<div class="test-time">2016/1/2 23:00</div>

@@ -193,9 +193,8 @@
                var option = {
                		color: ['#e52c3c','#f7b1ab','#fa506c','#f59288','#f8c4d8',
             		'#e54f5c','#f06d5c','#e54f80','#f29c9f','#eeb5b7'],
-				    tooltip : {
-				        trigger: 'item',
-				        formatter: "{b} : {c} ({d}%)"
+				     tooltip : {
+				        trigger: 'axis'
 				    },
 				    series : [
 				        {

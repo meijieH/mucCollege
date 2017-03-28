@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/myqes.css">
 <link rel="stylesheet" type="text/css" href="css/frame_myqes.css">
+<link rel="shortcut icon" href="images/logo.png">
 </head>
 <body>
 	<%@include file="/common/topbar.jsp"%>
@@ -58,8 +59,8 @@
 			<div id="" class="results">
 				<ul class="questions">
 					<s:if test="collectionList==null">
-				无可显示的记录。
-				</s:if>
+						无可显示的记录。
+					</s:if>
 					<s:else>
 						<s:iterator value="collectionList" status="status">
 							<s:if test="question!=null">
@@ -74,14 +75,13 @@
 									</span> </span>
 								</div>
 								<div class="qes-stem">
-									<a
-										href="teacher/teacher_showQuestion?question.questionid=<s:property value="question.questionid"/>"><s:property
-											value="question.questionid" />.<s:property
+									<a href="teacher/teacher_showQuestion?question.questionid=<s:property value="question.questionid"/>"><s:property
+											value="question.questionid" />、<s:property
 											value="question.stem" /> </a>
 									<div class="dotdotdot">...</div>
 								</div>
 								<div class="qes-operate">
-									<a><i class="fa fa-file-text-o"></i>查看解析</a> <a><i
+									<a href="teacher/teacher_showQuestion?question.questionid=<s:property value='question.questionid'/>"><i class="fa fa-file-text-o"></i>查看解析</a> <a><i
 										class="fa fa-question-circle"></i>纠错</a> <a><i
 										class="fa fa-trash-o"></i>删除</a>
 								</div></li>
@@ -97,7 +97,7 @@
 					<li class="collect collect-title">我的题库</li>
 					<s:iterator value="collecStrings">
 						<li class="collect"
-							onclick="window.open('teacher/teacher_getMyCollection?collection.collectionname=<s:property />')"><s:property />
+							onclick="window.open('teacher/teacher_getMyCollection?collection.collectionname=<s:property />');active(this);"><s:property />
 						</li>
 					</s:iterator>
 					<li class="collect" data-toggle="modal" data-target="#newCollect">+

@@ -21,27 +21,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 
-	<div class="courase-status">
-		<div class="htitle">请选择课程状态:</div>
-		<select>
-			<option>正在开课</option>
-			<option>待审核</option>
-			<option>已经结束</option>
-		</select>
-	</div>
+	<s:form action="teacher/teacher_getCourseByState" method="post">
+		<div class="courase-status">
+			<div class="htitle">请选择课程状态:</div>
+			<select name="teacourse.state">
+				<option value="全部课程">全部课程</option>
+				<option value="正在开课">正在开课</option>
+				<option value="正在审核">正在审核</option>
+				<option value="已经结束">已经结束</option>
+			</select>
+			<button type="submit" class="btn btn-agree search-btn">检索</button>
+		</div>
+	</s:form>
 	
 	<!-- 课程列表 -->
 	<div class="box-lists myclass">
         <ul>
         	<s:iterator value="teacouList" status="status">
 	        	<li class="box">
-	        		<a href="teacher/mylesson/mylesdetail.jsp" target="_blank">
+	        		<a href="teacher/teacher_showCourse?teacourse.teacourseid=<s:property value='teacourseid'/>" target="_blank">
 				      <div class="box-content">
 					      <div class="caption ml-ls-b-info">
 					        <div class="lesson-name"><s:property value="course.coursename"/></div>
 					        <div class="lesson-info">
 					        	<div class="start-time" title="开课时间"><i class="fa fa-clock-o"></i><s:property value="year"/>学年，第<s:property value="term"/>学期</div>
 					        	<div class="stu-origin" title="学生来源"><i class="fa fa-tags fa-wa"></i><s:property value="stuClass.classname"/></div>
+					        	<div class="stu-origin" title="课程状态"><i class="fa fa-university"></i><s:property value="state" /></div>
 					        	<div class="stu-number" title="班级人数"><i class="fa fa-user "></i>23</div>
 					        </div>
 					      </div>
