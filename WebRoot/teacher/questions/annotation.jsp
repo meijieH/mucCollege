@@ -30,17 +30,14 @@
 							<span>试题来源：（计算机408统考卷）
 						</div>
 						<div class="que-top-left">
-							<span>题型：<s:property value='question.quetype.typename' />
-							</span> <span> | </span> <span>难易度：<s:property
-									value='question.depth' /> </span>
+							<span>题型：<s:property value='question.quetype.typename' /></span>
+							 <span> | </span> 
+							 <span>难易度：<s:property value='question.depth'/></span>
 						</div>
 					</div>
 					<div class="que-mid">
 						<div class="que-que">
-							<p>
-								题目
-								<s:property value='question.stem' />
-							</p>
+							<p><s:property value='question.stem' /></p>
 						</div>
 						<div class="que-cho">
 							<p>

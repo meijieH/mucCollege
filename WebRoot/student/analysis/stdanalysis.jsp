@@ -22,6 +22,8 @@
 	<%@include file="/common/topbar.jsp" %>
 	<div class="page-center">
 		<div class="content-describe lesson-select">
+			<div class="htitle">当前课程</div>
+			<span>学生课程一</span>
 			<div class="htitle">课程状态</div>
 			<select>
 				<option>正在开课</option>
