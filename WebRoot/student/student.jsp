@@ -42,11 +42,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<div>
 				<!-- merge时请保留下方的后台链接，可以放在其他页面里,方法名称和链接对应即可 -->
-				<li><a href="user/user_showInfo">查看信息</a></li>
+				<!--  <li><a href="user/user_showInfo">查看信息</a></li>
                 <li><a href="user/user_showEdit">修改资料</a></li>
 			    <li><a href="user/user_showMessage">查看消息</a></li>
 			    <li><a href="student/student_showMyCourse">我的课程</a></li>
-			    <li><a href="student/student_showMyError">我的错题集，暂时未分类，之后再说</a></li>
+			    <li><a href="student/student_showMyError">我的错题集，暂时未分类，之后再说</a></li>-->
 			    <!-- merge保留结束by候梅洁 -->
 		</div>
 	</div>
