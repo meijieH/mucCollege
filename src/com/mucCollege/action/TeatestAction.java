@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.model.Block;
+import com.mucCollege.model.Question;
 import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.Test;
 import com.mucCollege.model.Testpaper;
@@ -45,6 +46,20 @@ public class TeatestAction {
 	private ArrayList<Test> testList;
 	private ArrayList<Testpaper> testpaperList;
 	private List<String> collecStrings;
+	
+	private int danxuanNum;
+	private int duoxuanNum;
+	private int panduanNum;
+	private int tiankongNum;
+	private int jiandaNum;
+	private int yingyongNum;
+	private String label;
+	ArrayList<Question> danxuanList;
+	ArrayList<Question> duoxuanList;
+	ArrayList<Question> panduanList;
+	ArrayList<Question> tiankongList;
+	ArrayList<Question> jiandaist;
+	ArrayList<Question> yinyongList;
 
 	public User getUser() {
 		return user;
@@ -142,6 +157,113 @@ public class TeatestAction {
 		this.collecStrings = collecStrings;
 	}
 
+	
+	public int getDanxuanNum() {
+		return danxuanNum;
+	}
+
+	public void setDanxuanNum(int danxuanNum) {
+		this.danxuanNum = danxuanNum;
+	}
+
+	public int getDuoxuanNum() {
+		return duoxuanNum;
+	}
+
+	public void setDuoxuanNum(int duoxuanNum) {
+		this.duoxuanNum = duoxuanNum;
+	}
+
+	public int getPanduanNum() {
+		return panduanNum;
+	}
+
+	public void setPanduanNum(int panduanNum) {
+		this.panduanNum = panduanNum;
+	}
+
+	public int getTiankongNum() {
+		return tiankongNum;
+	}
+
+	public void setTiankongNum(int tiankongNum) {
+		this.tiankongNum = tiankongNum;
+	}
+
+	public int getJiandaNum() {
+		return jiandaNum;
+	}
+
+	public void setJiandaNum(int jiandaNum) {
+		this.jiandaNum = jiandaNum;
+	}
+
+	public int getYingyongNum() {
+		return yingyongNum;
+	}
+
+	public void setYingyongNum(int yingyongNum) {
+		this.yingyongNum = yingyongNum;
+	}
+
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+	
+	public ArrayList<Question> getDanxuanList() {
+		return danxuanList;
+	}
+
+	public void setDanxuanList(ArrayList<Question> danxuanList) {
+		this.danxuanList = danxuanList;
+	}
+
+	public ArrayList<Question> getDuoxuanList() {
+		return duoxuanList;
+	}
+
+	public void setDuoxuanList(ArrayList<Question> duoxuanList) {
+		this.duoxuanList = duoxuanList;
+	}
+
+	public ArrayList<Question> getPanduanList() {
+		return panduanList;
+	}
+
+	public void setPanduanList(ArrayList<Question> panduanList) {
+		this.panduanList = panduanList;
+	}
+
+	public ArrayList<Question> getTiankongList() {
+		return tiankongList;
+	}
+
+	public void setTiankongList(ArrayList<Question> tiankongList) {
+		this.tiankongList = tiankongList;
+	}
+
+	public ArrayList<Question> getJiandaist() {
+		return jiandaist;
+	}
+
+	public void setJiandaist(ArrayList<Question> jiandaist) {
+		this.jiandaist = jiandaist;
+	}
+
+	public ArrayList<Question> getYinyongList() {
+		return yinyongList;
+	}
+
+	public void setYinyongList(ArrayList<Question> yinyongList) {
+		this.yinyongList = yinyongList;
+	}
+
+
+
 	// 获取session
 	ActionContext actionContext = ActionContext.getContext();
 	Map session = actionContext.getSession();
@@ -208,5 +330,16 @@ public class TeatestAction {
 		user = (User) session.get("user");
 		collecStrings = teacherService.queryColByTeacher(user.getUserid());
 		return "autopapers";
+	}
+	public String formPaper(){
+		System.out.print(label);
+		danxuanList=teatestService.getTestqueByType(label,1,danxuanNum);
+		System.out.println(danxuanList.size());
+		duoxuanList=teatestService.getTestqueByType(label,6,duoxuanNum);
+		panduanList=teatestService.getTestqueByType(label,3,panduanNum);
+		tiankongList=teatestService.getTestqueByType(label,2,tiankongNum);
+		jiandaist=teatestService.getTestqueByType(label,4,jiandaNum);
+		yinyongList=teatestService.getTestqueByType(label,5,yingyongNum);
+		return "previewPaper";
 	}
 }

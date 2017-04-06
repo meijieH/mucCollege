@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="lesson-detail-left">
 			<div class="lesson-info">课程信息</div>
 			<div>
-				<h1 class="content-title lesson-name"><s:property value="teacourse.course.coursename"/></h1>
+				<h1 class="content-title lesson-name"><s:hidden name="label" value="teacourse.course.coursename"></s:hidden><s:property value="teacourse.course.coursename"/></h1>
 				<a class="push-info" href="teacher/teacenter/pushnews.jsp" target="_blank"><i class="fa fa-bullhorn" aria-hidden="true"></i>发布通告</a>
 			</div>
 			<div class="clear">

@@ -77,7 +77,7 @@
 			<result name="show_testqueList">/teacher/test/testque.jsp</result>
 			<result name="part_autopapers">/teacher/test/testedit.jsp</result>
 			<result name="autopapers">/teacher/test/autoassem.jsp</result>
-			
+			<result name="previewPaper">/teacher/test/previewPaper.jsp</result>	
 		</action>
 	</package>
 </struts>

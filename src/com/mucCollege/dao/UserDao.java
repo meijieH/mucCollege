@@ -59,7 +59,7 @@ public class UserDao {
 		Session s = factory.getCurrentSession();
 		String hql = "From User user where 1=1";
 		if (!usernum.equals(""))
-			hql = hql + " and user.usernum =" + usernum ;
+			hql = hql + " and user.usernum ='" + usernum +"'";
 		Query q = s.createQuery(hql);
 		User user = (User) q.uniqueResult();
 		return user;

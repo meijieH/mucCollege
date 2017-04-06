@@ -3,7 +3,7 @@
   String path = request.getContextPath();
   String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@taglib prefix="struts" uri="/struts-tags"%> 
+<%@taglib prefix="s" uri="/struts-tags"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +21,7 @@
 <body>  
   <%@include file="/common/topbar.jsp" %>
   <div class="page-center">
-  	<form action="" >
+  	<form action="test/test_formPaper" method="post">
 	    <div class="page-center-right">
 	      <div class="tab-sheets">
 	          <div class="ranges-box">
@@ -36,6 +36,7 @@
 	           		</ul>
 	           	</div>  
 	          </div>
+	          <s:hidden name="label" value="软件工程"></s:hidden>
 	          <div class="setting-box default-form">
 	          	<div class="htitle">试卷设置</div>
 	          	<ul>
@@ -75,42 +76,42 @@
 	                  <li>
 	                    <span class="left-span"><label>单选题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" name="danxuanNum" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
 	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
 	                  <li>
 	                    <span class="left-span"><label>多选题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" name="duoxuanNum" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
 	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
 	                  <li class="singleDisable">
 	                  <span class="left-span"><label>判断题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" name="panduanNum" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
 	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
 	                  <li>
 	                    <span class="left-span"><label>填空题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" name="tiankongNum" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
 	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
 	                  <li>
 	                    <span class="left-span"><label>简答题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" name="jiandaNum" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
 	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
 	                  <li>
 	                    <span class="left-span"><label>应用题</label></span>
 	                    <span class="right-span">
-	                    	<input type="number" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
+	                    	<input type="number" name="yingyongNum" min="0" max="23" value="0" class="amount" onkeyup="countScore();" onchange="countScore();"></input><label>道 （最多23道）</label>
 	                    	<input type="number" min="1" max="20" value="1" class="perScore" onkeyup="countScore();" onchange="countScore();"></input><label>道 / 分 </label>
 	                    </span>
 	                  </li>
@@ -122,7 +123,7 @@
           	  <div class="htitle">合计</div>
          	  <div class="count-detail">总计<span id="preTotalScore">0</span>分。</div>
 	          <div class="preview-control">
-	          	<button class="btn btn-agree" onclick="previewPaper();window.open('teacher/test/previewPaper.jsp','_blank');" >设置好了，预览试卷</button>
+	          	<button class="btn btn-agree" type="submit" >设置好了，预览试卷</button>
 	          </div>
 	      </div>
 	    </div>
@@ -138,18 +139,12 @@
 	        </div>-->
 	        <div class="tab-pane choose-pane active" id="que">
 	            <ul class="from-myqes">
+	            <s:iterator value="collecStrings">
 	              <li>
 	              	<input type="checkbox" onclick="controlRanges(this)" name="myqes" value="我的题库一"/>
-	                <span id="range1" onclick="viewRanges(this);">我的题库一</span>
+	                <span id="range1" onclick="viewRanges(this);"><s:property/></span>
 	              </li>
-	              <li>
-	              	<input type="checkbox" onclick="controlRanges(this)" name="myqes" value="我的题库二"/>
-	                <span id="range2" onclick="viewRanges(this);">我的题库二</span>
-	              </li>
-	              <li>
-	              	<input type="checkbox" onclick="controlRanges(this)" name="myqes" value="我的题库三"/>
-	                <span id="range3" onclick="viewRanges(this);">我的题库三</span>
-	              </li> 
+	              </s:iterator>
 	            </ul>
 	        </div>
 	      </div>

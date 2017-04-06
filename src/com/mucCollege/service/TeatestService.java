@@ -11,10 +11,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mucCollege.dao.BlockDao;
+import com.mucCollege.dao.QuestionDao;
 import com.mucCollege.dao.TestDao;
 import com.mucCollege.dao.TestpaperDao;
 import com.mucCollege.dao.TestqueDao;
 import com.mucCollege.model.Block;
+import com.mucCollege.model.Question;
 import com.mucCollege.model.Teacourse;
 import com.mucCollege.model.Test;
 import com.mucCollege.model.Testpaper;
@@ -31,7 +33,9 @@ public class TeatestService {
 	BlockDao blockDao;
 	@Resource
 	TestqueDao testqueDao;
-
+	@Resource
+	QuestionDao questionDao;
+	
 	public ArrayList<Test> testlist(Integer id) throws Exception {
 		return testDao.queryTestByTeacourseId(id);
 	}
@@ -91,5 +95,10 @@ public class TeatestService {
 	public Test getTestById(Integer testid) {
 		Test test=testDao.GetTestById(testid);
 		return test;
+	}
+
+	public ArrayList<Question> getTestqueByType(String label,int type,int Num) {
+		ArrayList<Question> queList=questionDao.QueryQuestionByLabel(label,type,Num);
+		return queList;
 	}
 }

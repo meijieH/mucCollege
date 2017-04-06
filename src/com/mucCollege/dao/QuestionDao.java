@@ -46,12 +46,6 @@ public class QuestionDao {
 	public Question GetQuestionById(Integer questionid) {  
 		Session s = factory.getCurrentSession();
 		Question question=(Question)s.get(Question.class, questionid);
-		//User user = (User) s.get(User.class, userid);
-        /*Session s = factory.getCurrentSession();
-        String hql="From Question question where question.questionid="+questionid;
-        Query q = s.createQuery(hql);
-    	List queList = q.list();
-        Question question = (Question)queList.get(0);//返回类型是Object*/
         return question;
     }
 	//通过subject查询	
@@ -66,10 +60,11 @@ public class QuestionDao {
     }
 	//通过label查询	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public ArrayList<Question> QueryQuestionByLabel(String label) { 
+	public ArrayList<Question> QueryQuestionByLabel(String label,int type,int num) { 
+		System.out.print("hhah"+label);
     	Session s = factory.getCurrentSession();
     	String hql = "From Question question where 1=1";//保证空条件查询不出错
-    	if(!label.equals("")) hql = hql + " and question.label like '%" + label + "%'";
+    	if(!label.equals("")) hql = hql + " and question.label ='软件工程' and question.type =" + type;//+" limit "+num;
     	Query q = s.createQuery(hql);
     	List labelList = q.list();
     	return (ArrayList<Question>) labelList;
