@@ -1,14 +1,32 @@
-body {
-      position: relative;
+.question .option>li{
 }
-.nav-testing{
-    position: absolute;
+.question .option>li>label>input[type="radio"]{
+	margin-right:10px;
+	line-height:24px;
 }
-.nav-testing-fix{
-	position:fixed;
-	top:0;
-
+.question .option>li>label:hover{
+	color:#15c288;
+	cursor:pointer;
 }
-#plate1{
-	margin-top: 90px;
+.clr-green{
+	color:#15c288;
+}
+/*答题区域*/
+.tf-option>li{
+	float:left;
+}
+.tf-option{
+	height:29px;
+}
+input[type=text].text-answer,.text-answer{
+	width:500px;
+	max-width:500px;
+	background:#eee;
+	line-height:30px;
+	padding:0 5px;
+	margin-top:5px;
+	border:none;
+}
+input[type=text].text-answer:hover,.text-answer:hover{
+	border:none;
 }

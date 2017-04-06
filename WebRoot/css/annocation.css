@@ -10,15 +10,18 @@
 	line-height:40px;
 	padding-left:20px;
 	font-size: 14px;
-	background-color:#eee;
+	background-color: #fff;
+	border-left:5px solid #15c288;
+	color:#15c288;
 	width:300px;
 }
 .que-top-right{
 	float:right;
 	line-height:40px;
+	color:#15c288;
 }
 .que-mid{
-	border-bottom:1px dashed #dddcdc;
+	border-bottom:1px dashed #fff;
 }
 .que-que{
 	padding:20px 0px 20px 20px;
@@ -27,10 +30,14 @@
 	padding-left:20px;
 }
 .que-btm{
-	height:40px;
-	line-height:40px;
+	height:50px;
+	line-height:50px;
+	padding-top:10px;
 	padding-left:20px;
-	border-bottom:1px solid #dddcdc;
+}
+/*添加到收藏夹*/
+.addtocollect{
+	width:220px;
 }
 .annota{
 	padding:10px 10px 10px 20px;
@@ -59,5 +66,14 @@
 	padding-left:70px;
 	word-break:normal;
 	word-wrap:break-word;
-	border-bottom:1px dotted rgb(238,238,238);
+}
+/*举一反三*/
+.examples-title{
+	background-color: #fff;
+	border-left:5px solid #15c288;
+	color:#15c288;
+}
+.example{
+	border-radius:20px;
+	margin-top:10px;
 }

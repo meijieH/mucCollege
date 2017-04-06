@@ -17,15 +17,16 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/previewPaper.css">
     <link rel="stylesheet" href="css/testpaper.css">
+     <link rel="stylesheet" href="css/testing.css">
     <link rel="shortcut icon" href="images/logo.png">
 </head>
-<body>	
+<body onload="startTime();">	
 	<%@include file="/common/topbar.jsp" %>
   	<div class="page-center">
 			<div class="page-center-right">
 				<!--右侧未设置功能-->
 				<div class="vertical-bar">
-					<div class="htitle allview-tle">题目总览</div>
+					<div class="htitle allview-tle clr-red">倒计时 <span><span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span></span></div>
 					<ul class="block-nav">
 						<li>
 							<div class="block-title-nav">一、单选题</div>
@@ -93,7 +94,7 @@
 			  		<h1 class="htitle paper-title">计算机网络期中测试卷（软工）<s:property value="testpaper.testpapername"/></h1>
 			  		<p>问题数量：<s:property value="testpaper.questionnum"/> 
 			  	总分：<s:property value="testpaper.totalscore"/> 
-			  	总时间：<s:property value="testpaper.totaltime"/></p>
+			  	总时间：<span id="totaltime"><s:property value="testpaper.totaltime"/>120</span>分钟</p>
 			  	</div>
 			  	<div class="paper-bar">
 			  		<s:iterator value="blockList" status="status">
@@ -109,17 +110,17 @@
 						</div>
 						<div class="question singleSelect">
 							<div>
-									<span>1、（这里是题目在大题中的编号）</span>
+									<span>1、</span>
 									<span class="score">（<b class="score-num">0</b>分）</span>
 									<span class="stem">
 										从前有座山，山里有座庙，庙里有个小和尚。那座山叫什么名字？
 									</span>
 							</div>
 							<ul class="option">
-								<li>A、武当山</li>
-								<li>B、香山</li>
-								<li>C、泰山</li>
-								<li>D、华山</li>
+								<li><label><input type="radio" value="A" name="1">A、武当山</label></li>
+								<li><label><input type="radio" value="B" name="1">B、香山</label></li>
+								<li><label><input type="radio" value="C" name="1">C、华山</label></li>
+								<li><label><input type="radio" value="D" name="1">D、泰山</label></li>
 							</ul>
 						</div>
 					</div>
@@ -131,17 +132,17 @@
 						</div>
 						<div class="question multipleSelect">
 							<div>
-									<span>1、（这里是题目在大题中的编号）</span>
+									<span>1、</span>
 									<span class="score">（<b class="score-num">0</b>分）</span>
 									<span class="stem">
 										从前有座山，山里有座庙，庙里有个小和尚。那座山叫什么名字？
 									</span>
 							</div>
 							<ul class="option">
-								<li>A、武当山</li>
-								<li>B、香山</li>
-								<li>C、泰山</li>
-								<li>D、华山</li>
+								<li><label><input type="radio" value="A" name="1">A、武当山</label></li>
+								<li><label><input type="radio" value="B" name="1">B、香山</label></li>
+								<li><label><input type="radio" value="C" name="1">C、华山</label></li>
+								<li><label><input type="radio" value="D" name="1">D、泰山</label></li>
 							</ul>
 						</div>
 					</div>
@@ -153,12 +154,16 @@
 						</div>
 						<div class="question judgeSelect">
 							<div>
-									<span>1、（这里是题目在大题中的编号）</span>
+									<span>1、</span>
 									<span class="score">（<b class="score-num">0</b>分）</span>
 									<span class="stem">
 										从前有座山，山里有座庙，庙里有个小和尚。那座山叫什么名字？（     ）
 									</span>
 							</div>
+							<ul class="option tf-option">
+								<li><label><input type="radio" value="1" name="1">对</label></li>
+								<li><label><input type="radio" value="0" name="1">错</label></li>
+							</ul>
 						</div>
 					</div>
 					<div id="blockBlankFill">
@@ -169,12 +174,17 @@
 						</div>
 						<div class="question blankFill">
 							<div>
-									<span>1、（这里是题目在大题中的编号）</span>
+									<span>1、</span>
 									<span class="score">（<b class="score-num">0</b>分）</span>
 									<span class="stem">
 										从前有座山，山里有座庙，庙里有个小和尚。那座山叫_____？
 									</span>
 							</div>
+							<ul class="option">
+								<li>
+									<input type="text" class="text-answer"/>	
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div id="blockShortAnswer">
@@ -185,12 +195,17 @@
 						</div>
 						<div class="question shortAnswer">
 							<div>
-									<span>1、（这里是题目在大题中的编号）</span>
+									<span>1、</span>
 									<span class="score">（<b class="score-num">0</b>分）</span>
 									<span class="stem">
 										从前有座山，山里有座庙，庙里有个小和尚。那座山叫？
 									</span>
 							</div>
+							<ul class="option">
+								<li>
+									<textarea rows="4" cols="" class="text-answer"></textarea>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div id="blockSynthesis">
@@ -201,12 +216,17 @@
 						</div>
 						<div class="question synthesis">
 							<div>
-									<span>1、（这里是题目在大题中的编号）</span>
+									<span>1、</span>
 									<span class="score">（<b class="score-num">0</b>分）</span>
 									<span class="stem">
 										从前有座山，山里有座庙，庙里有个小和尚。那座山叫？
 									</span>
 							</div>
+							<ul class="option">
+								<li>
+									<textarea rows="4" cols="" class="text-answer"></textarea>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -215,5 +235,6 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/papernav.js"></script>
+	<script src="js/testing.js"></script>
 </body>
 </html>

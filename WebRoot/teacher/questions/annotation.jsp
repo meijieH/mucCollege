@@ -55,7 +55,7 @@
 					</div>
 					<div class="que-btm">
 						<div class="dropdown">
-							<select name="collection.collectionname">
+							<select name="collection.collectionname" class="addtocollect"> 
 								<s:iterator value="collecStrings">
 									<option value="<s:property/>">
 										<s:property />
@@ -63,7 +63,7 @@
 								</s:iterator>
 							</select>
 							<s:hidden name="question.questionid"></s:hidden>
-							<button type="submit">收藏</button>
+							<button type="submit" class="btn btn-agree">收藏到我的题库</button>
 						</div>
 					</div>
 				</div>
@@ -87,6 +87,68 @@
 						<span class="exam-anno htitle">解析</span>
 						<div class="anno-body">
 							<s:property value='question.annotation' />
+						</div>
+					</div>
+				</div>
+				
+				<div class="que-box">
+					<div class="que-top">
+						<div class="que-top-left examples-title">
+							<span>举一反三</span>
+						</div>
+					</div>
+					<div class="que-mid example" onclick="window.open('teacher/teacher_showQuestion?question.questionid=<s:property value="question.questionid"/>','_blank')">
+						<div class="que-que">
+							<p><s:property value='question.stem' /></p>
+						</div>
+						<div class="que-cho">
+							<p>
+								<s:if test="question.quetype.quetypeid==1">
+									<s:property value="question.option1" />
+									<br>
+									<s:property value="question.option2" />
+									<br>
+									<s:property value="question.option3" />
+									<br>
+									<s:property value="question.option4" />
+								</s:if>
+							</p>
+						</div>
+					</div>
+					<div class="que-mid example" onclick="window.open('teacher/teacher_showQuestion?question.questionid=<s:property value="question.questionid"/>','_blank')">
+						<div class="que-que">
+							<p><s:property value='question.stem' /></p>
+						</div>
+						<div class="que-cho">
+							<p>
+								<s:if test="question.quetype.quetypeid==1">
+									<s:property value="question.option1" />
+									<br>
+									<s:property value="question.option2" />
+									<br>
+									<s:property value="question.option3" />
+									<br>
+									<s:property value="question.option4" />
+								</s:if>
+							</p>
+						</div>
+					</div>
+					<div class="que-mid example" onclick="window.open('teacher/teacher_showQuestion?question.questionid=<s:property value="question.questionid"/>','_blank')">
+						<div class="que-que">
+							<p><s:property value='question.stem' /></p>
+						</div>
+						<div class="que-cho">
+							<p>
+								<s:if test="question.quetype.quetypeid==1">
+									<s:property value="question.option1" />
+									<br>
+									<s:property value="question.option2" />
+									<br>
+									<s:property value="question.option3" />
+									<br>
+									<s:property value="question.option4" />
+								</s:if>
+							</p>
 						</div>
 					</div>
 				</div>
